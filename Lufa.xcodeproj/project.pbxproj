@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3E8223B90DE00469FD1 /* AppDelegate.swift */; };
 		3DABA3EB223B90DE00469FD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3EA223B90DE00469FD1 /* ViewController.swift */; };
-		3DABA3EE223B90DE00469FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3EC223B90DE00469FD1 /* Main.storyboard */; };
+		3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3EC223B90DE00469FD1 /* Home.storyboard */; };
 		3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */; };
 		3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F2223B90E100469FD1 /* Assets.xcassets */; };
-		3DABA3F6223B90E100469FD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F4223B90E100469FD1 /* LaunchScreen.storyboard */; };
+		3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F4223B90E100469FD1 /* Launch.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3DABA3E5223B90DE00469FD1 /* Lufa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lufa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DABA3E8223B90DE00469FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DABA3EA223B90DE00469FD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3DABA3ED223B90DE00469FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DABA3ED223B90DE00469FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		3DABA3F0223B90DE00469FD1 /* Lufa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lufa.xcdatamodel; sourceTree = "<group>"; };
 		3DABA3F2223B90E100469FD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3DABA3F5223B90E100469FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3DABA3F5223B90E100469FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		3DABA3F7223B90E100469FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,8 +40,10 @@
 		3DABA3DC223B90DE00469FD1 = {
 			isa = PBXGroup;
 			children = (
-				3DABA3E7223B90DE00469FD1 /* Lufa */,
+				3DABA3FD223B930200469FD1 /* Configuration */,
+				3DABA400223B939700469FD1 /* Source */,
 				3DABA3E6223B90DE00469FD1 /* Products */,
+				3DABA3FF223B933400469FD1 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,18 +55,112 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3DABA3E7223B90DE00469FD1 /* Lufa */ = {
+		3DABA3FD223B930200469FD1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA3FE223B930C00469FD1 /* Debug */,
+				3DABA3F7223B90E100469FD1 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3DABA3FE223B930C00469FD1 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		3DABA3FF223B933400469FD1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA3F2223B90E100469FD1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3DABA400223B939700469FD1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA402223B93BA00469FD1 /* Contexts */,
+				3DABA405223B93E600469FD1 /* Functionalities */,
+				3DABA406223B940400469FD1 /* UI */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3DABA401223B93AA00469FD1 /* LocalRepository */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */,
+			);
+			path = LocalRepository;
+			sourceTree = "<group>";
+		};
+		3DABA402223B93BA00469FD1 /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA408223B94B600469FD1 /* Application */,
+				3DABA404223B93D300469FD1 /* Synchronization */,
+				3DABA403223B93C300469FD1 /* RemoteRepository */,
+				3DABA401223B93AA00469FD1 /* LocalRepository */,
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
+		3DABA403223B93C300469FD1 /* RemoteRepository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RemoteRepository;
+			sourceTree = "<group>";
+		};
+		3DABA404223B93D300469FD1 /* Synchronization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Synchronization;
+			sourceTree = "<group>";
+		};
+		3DABA405223B93E600469FD1 /* Functionalities */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA409223B94DF00469FD1 /* Home */,
+				3DABA407223B949600469FD1 /* Launch */,
+			);
+			path = Functionalities;
+			sourceTree = "<group>";
+		};
+		3DABA406223B940400469FD1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3DABA407223B949600469FD1 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA3EA223B90DE00469FD1 /* ViewController.swift */,
+				3DABA3F4223B90E100469FD1 /* Launch.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		3DABA408223B94B600469FD1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				3DABA3E8223B90DE00469FD1 /* AppDelegate.swift */,
-				3DABA3EA223B90DE00469FD1 /* ViewController.swift */,
-				3DABA3EC223B90DE00469FD1 /* Main.storyboard */,
-				3DABA3F2223B90E100469FD1 /* Assets.xcassets */,
-				3DABA3F4223B90E100469FD1 /* LaunchScreen.storyboard */,
-				3DABA3F7223B90E100469FD1 /* Info.plist */,
-				3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */,
 			);
-			path = Lufa;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		3DABA409223B94DF00469FD1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3DABA3EC223B90DE00469FD1 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +221,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DABA3F6223B90E100469FD1 /* LaunchScreen.storyboard in Resources */,
+				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
 				3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */,
-				3DABA3EE223B90DE00469FD1 /* Main.storyboard in Resources */,
+				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,20 +243,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3DABA3EC223B90DE00469FD1 /* Main.storyboard */ = {
+		3DABA3EC223B90DE00469FD1 /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3DABA3ED223B90DE00469FD1 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
-		3DABA3F4223B90E100469FD1 /* LaunchScreen.storyboard */ = {
+		3DABA3F4223B90E100469FD1 /* Launch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3DABA3F5223B90E100469FD1 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Launch.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,7 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Lufa/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Lufa/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
