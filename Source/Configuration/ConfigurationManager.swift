@@ -22,7 +22,7 @@ class ConfigurationManager {
                 return nil
             }
             
-            let api: Dictionary<String, Any> = dictWrapped["lufaAPI"] as! Dictionary<String, Any>
+            let api: Dictionary<String, Any> = dictWrapped["LufaAPI"] as! Dictionary<String, Any>
             
             guard let result = api["serverAddress"] as? String else {
                 return nil
@@ -35,21 +35,19 @@ class ConfigurationManager {
     //MARK: Helper
     func loadConfiguration() -> Dictionary<String, Any>? {
         
-        let filePath = Bundle.main.path(forResource: "config", ofType: "plist")
+        let fileURL = Bundle.main.url(forResource: "config", withExtension: "plist")
+        
         let fileData: Data
         let dict: Dictionary<String, Any>
         
-        guard let filePathWrapped = filePath else {
-            return nil
-        }
-        
-        guard let url = URL.init(string: filePathWrapped) else {
+        guard let url = fileURL else {
             return nil
         }
         
         do {
             fileData = try Data.init(contentsOf: url)
-        } catch _ {
+        } catch let error {
+            print("Load network configurations error: \(error.localizedDescription)")
             return nil
         }
         

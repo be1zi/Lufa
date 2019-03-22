@@ -5,7 +5,7 @@
 	<key>LufaAPI</key>
 	<dict>
 		<key>serverAddress</key>
-		<string>https://developer.lufthansa.com/docs/api_flightops/</string>
+		<string>https://developer.lufthansa.com/docs/api_flightops</string>
 	</dict>
 </dict>
 </plist>
