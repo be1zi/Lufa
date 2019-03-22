@@ -13,6 +13,8 @@
 		3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */; };
 		3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F2223B90E100469FD1 /* Assets.xcassets */; };
 		3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F4223B90E100469FD1 /* Launch.storyboard */; };
+		3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AB2244DB84002B6A77 /* config.plist */; };
+		3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */; };
 		E88845594E8369D5B2E47661 /* Pods_Lufa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		3DABA3F2223B90E100469FD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DABA3F5223B90E100469FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		3DABA3F7223B90E100469FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DD4A3AB2244DB84002B6A77 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		731208F7E4CD314223BB4C4E /* Pods-Lufa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.release.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.release.xcconfig"; sourceTree = "<group>"; };
 		952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lufa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B414BBDB5F15B288D515813B /* Pods-Lufa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.debug.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 		3DABA3FE223B930C00469FD1 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				3DD4A3AB2244DB84002B6A77 /* config.plist */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -89,6 +94,7 @@
 		3DABA400223B939700469FD1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3DD4A3AD2244E296002B6A77 /* Configuration */,
 				3DABA402223B93BA00469FD1 /* Contexts */,
 				3DABA405223B93E600469FD1 /* Functionalities */,
 				3DABA406223B940400469FD1 /* UI */,
@@ -170,6 +176,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		3DD4A3AD2244E296002B6A77 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		558B9B8444BA9FBCF7EE30B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +198,6 @@
 				B414BBDB5F15B288D515813B /* Pods-Lufa.debug.xcconfig */,
 				731208F7E4CD314223BB4C4E /* Pods-Lufa.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -248,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,
 				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
 				3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
@@ -308,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* ViewController.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,
