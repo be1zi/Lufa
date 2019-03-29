@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 typealias RemoteRepositorySuccess = () -> Void
-typealias RemoteRepositoryFailure = () -> (Error?)
+typealias RemoteRepositoryFailure = (Error?) -> Void
 
 class RemoteRepositoryContext {
     
@@ -30,8 +30,7 @@ class RemoteRepositoryContext {
         self.serverAddress = address
     }
     
-    
-    func get(endPoint end: String?) {
+    func get(endPoint end: String?, parameters: Dictionary<String, Any>?) {
     
         guard let address = prepareAddress(endPoint: end) else {
             return
@@ -42,6 +41,25 @@ class RemoteRepositoryContext {
         }
         
         //TODO: send request using alamofire - AF.request
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: ["a" : "b"])
+            .validate()
+            .responseJSON { response in
+            
+                guard response.result.isSuccess else {
+                    print("ERROR request GET from: \(address), message: \(response.error?.localizedDescription ?? "empty message")")
+                    return
+                }
+                
+                guard let value = response.result.value as? [String: Any] else {
+                    print("Wrong response value from: \(address), message: \(response.error?.localizedDescription ?? "empty message")")
+                    return
+                }
+                
+                print(value)
+        }
 }
     
     //MARK: Helper

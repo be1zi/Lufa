@@ -18,6 +18,7 @@
 		3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3B122452539002B6A77 /* BaseViewController.swift */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
+		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
 		E88845594E8369D5B2E47661 /* Pods_Lufa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		3DD4A3B122452539002B6A77 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
+		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		731208F7E4CD314223BB4C4E /* Pods-Lufa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.release.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.release.xcconfig"; sourceTree = "<group>"; };
 		952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lufa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B414BBDB5F15B288D515813B /* Pods-Lufa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.debug.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				3DABA3EC223B90DE00469FD1 /* Home.storyboard */,
+				3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */,
 				3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */,
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
+				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* ViewController.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
