@@ -4,6 +4,10 @@
 <dict>
 	<key>LufaAPI</key>
 	<dict>
+		<key>secret</key>
+		<string>ZEYgkeDnQ5</string>
+		<key>key</key>
+		<string>jsjjxuj62dmt926s83hwfj3r</string>
 		<key>serverAddress</key>
 		<string>https://developer.lufthansa.com/docs/api_flightops</string>
 	</dict>

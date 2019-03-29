@@ -13,27 +13,28 @@ class ConfigurationManager {
     //MARK: Singleton
     static let sharedInstance = ConfigurationManager()
     
-    //MARK: Getter for serverAddress variable
+    //MARK: Getters for config variables
     var serverAddress: String? {
         get {
-            let dict = loadConfiguration()
-            
-            guard let dictWrapped = dict else {
-                return nil
-            }
-            
-            let api: Dictionary<String, Any> = dictWrapped["LufaAPI"] as! Dictionary<String, Any>
-            
-            guard let result = api["serverAddress"] as? String else {
-                return nil
-            }
-            
-            return result
+            return getPropertyFromConfigFile(name: "serverAddress")
         }
     }
     
-    //MARK: Helper
-    func loadConfiguration() -> Dictionary<String, Any>? {
+    var serverKey: String? {
+        get {
+            return getPropertyFromConfigFile(name: "key")
+        }
+    }
+    
+    var serverSecret: String? {
+        get {
+            return getPropertyFromConfigFile(name: "secret")
+        }
+    }
+    
+    //MARK: Helpers
+    
+    private func loadConfiguration() -> Dictionary<String, Any>? {
         
         let fileURL = Bundle.main.url(forResource: "config", withExtension: "plist")
         
@@ -58,5 +59,21 @@ class ConfigurationManager {
         }
         
         return dict
+    }
+    
+    private func getPropertyFromConfigFile(name: String) -> String? {
+        let dict = loadConfiguration()
+        
+        guard let dictWrapped = dict else {
+            return nil
+        }
+        
+        let api: Dictionary<String, Any> = dictWrapped["LufaAPI"] as! Dictionary<String, Any>
+        
+        guard let result = api[name] as? String else {
+            return nil
+        }
+        
+        return result
     }
 }
