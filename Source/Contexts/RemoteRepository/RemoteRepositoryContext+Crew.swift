@@ -7,13 +7,12 @@
 //
 
 import Foundation
-import Alamofire
 
 extension RemoteRepositoryContext {
         
     func getAllCrew(withSuccess: RemoteRepositorySuccess, andFailure: RemoteRepositoryFailure) {
         
-        get(endPoint: "v1/flight_operations/crew_services/COMMON_CREWLIST", parameters: nil)
+        get(endPoint: "v1/flight_operations/crew_services/COMMON_CREWLIST", parameters: nil, contentType: .JSON)
         
     }
 }

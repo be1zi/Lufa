@@ -19,6 +19,7 @@
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
+		3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */; };
 		E88845594E8369D5B2E47661 /* Pods_Lufa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Authenticate.swift"; sourceTree = "<group>"; };
 		731208F7E4CD314223BB4C4E /* Pods-Lufa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.release.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.release.xcconfig"; sourceTree = "<group>"; };
 		952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lufa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B414BBDB5F15B288D515813B /* Pods-Lufa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.debug.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		3DABA403223B93C300469FD1 /* RemoteRepository */ = {
 			isa = PBXGroup;
 			children = (
+				3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */,
 				3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */,
 				3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */,
 			);
@@ -365,6 +368,7 @@
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* ViewController.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
+				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

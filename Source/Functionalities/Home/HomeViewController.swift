@@ -13,10 +13,10 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: {
-            print("Success")
+        RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
+            print(result)
         }) { error in
-            print("Failure")
+        
         }
     }
 }

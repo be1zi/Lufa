@@ -9,7 +9,7 @@
 		<key>key</key>
 		<string>jsjjxuj62dmt926s83hwfj3r</string>
 		<key>serverAddress</key>
-		<string>https://developer.lufthansa.com/docs/api_flightops</string>
+		<string>https://api.lufthansa.com</string>
 	</dict>
 </dict>
 </plist>
