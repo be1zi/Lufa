@@ -14,9 +14,9 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
-            print(result)
+            
         }) { error in
-        
+
         }
     }
 }

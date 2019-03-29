@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-typealias RemoteRepositorySuccess = ([String: Any]) -> Void
+typealias RemoteRepositorySuccess = ([String: Any]?) -> Void
 typealias RemoteRepositoryFailure = (Error?) -> Void
 
 enum ContentType {

@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreData
+import Foundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    static let sharedInstance = AppDelegate()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
         return true
     }
@@ -86,6 +88,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func setAuthorizationToken(token: String, type: String) {
+        UserDefaults.standard.set(type, forKey: "token_type")
+        UserDefaults.standard.set(token, forKey: "access_token")
+    }
+    
+    func getAuthorizationToken() -> String? {
+        return UserDefaults.standard.object(forKey: "access_token") as? String
+    }
+    
+    func getAuthorizationType() -> String? {
+        return UserDefaults.standard.object(forKey: "token_type") as? String
     }
 }
 

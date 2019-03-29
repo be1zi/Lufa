@@ -27,9 +27,40 @@ extension RemoteRepositoryContext {
                       "grant_type" : "client_credentials"] as [String: String]
         
         post(endPoint: "/v1/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { result in
-            if let success = success {
-                success(result)
+            
+            guard let result = result else {
+                
+                if let failure = failure {
+                    failure(nil)
+                }
+                
+                return
             }
+            
+            guard let tokenType = result["token_type"] as? String else {
+                
+                if let failure = failure {
+                    failure(nil)
+                }
+                
+                return
+            }
+            
+            guard let token = result["access_token"] as? String else {
+                
+                if let failure = failure {
+                    failure(nil)
+                }
+                
+                return
+            }
+            
+            AppDelegate.sharedInstance.setAuthorizationToken(token: token, type: tokenType)
+            
+            if let success = success {
+                success(nil)
+            }
+            
         }) { error in
             if let failure = failure {
                 failure(error)
