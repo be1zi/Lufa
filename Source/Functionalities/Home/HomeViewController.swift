@@ -12,11 +12,5 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
-            
-        }) { error in
-
-        }
     }
 }

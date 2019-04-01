@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LaunchViewController.swift
 //  Lufa
 //
 //  Created by Konrad Belzowski on 15/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController {
+class LaunchViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

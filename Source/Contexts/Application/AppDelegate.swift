@@ -14,10 +14,24 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    lazy var windowController: WindowController? = {
+        
+        guard let window = window else {
+            return nil
+        }
+        
+        let wc = WindowController.init(window: window)
+
+        return wc
+    }()
 
     static let sharedInstance = AppDelegate()
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        configureUserInterface()
+        
         return true
     }
 
@@ -90,6 +104,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //MARK: Configurations
+    func configureUserInterface() {
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        windowController?.presentAuthorizationController()
+        window?.makeKeyAndVisible()
+    }
+    
+    //MARK: User defaults
     func setAuthorizationToken(token: String, type: String) {
         UserDefaults.standard.set(type, forKey: "token_type")
         UserDefaults.standard.set(token, forKey: "access_token")
