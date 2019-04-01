@@ -15,8 +15,17 @@ class AuthorizationViewController: BaseViewController {
     //MARK: Actions
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {
+        
         RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
-            print("Authorized with success")
+
+            let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()?.children.first
+            
+            guard let viewController = vc else {
+                return
+            }
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
+
         }) { error in
             print("Error authorization: \(error?.localizedDescription ?? "empty message")")
         }

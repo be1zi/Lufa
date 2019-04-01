@@ -28,7 +28,7 @@ class WindowController {
 
         presentViewControllerAsRoot(viewController: viewController)
     }
-    
+        
     private func presentViewControllerAsRoot(viewController: UIViewController) {
         
          let rootViewController = window.rootViewController
