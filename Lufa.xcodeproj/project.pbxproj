@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
 		3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3E8223B90DE00469FD1 /* AppDelegate.swift */; };
 		3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3EA223B90DE00469FD1 /* LaunchViewController.swift */; };
 		3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3EC223B90DE00469FD1 /* Home.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
 		3DABA3E5223B90DE00469FD1 /* Lufa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lufa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DABA3E8223B90DE00469FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DABA3EA223B90DE00469FD1 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D34DC83225351A800590FD2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3D34DC84225351AF00590FD2 /* Button */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3D34DC84225351AF00590FD2 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				3D34DC85225351BE00590FD2 /* Button+Lufa.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		3DABA3DC223B90DE00469FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +185,7 @@
 		3DABA406223B940400469FD1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3D34DC83225351A800590FD2 /* UIKit */,
 				3DEA56FF2251FBE9003A34D4 /* WindowController */,
 				3DD4A3B4224525CA002B6A77 /* ProgressPresenter */,
 				3DD4A3B3224525B6002B6A77 /* NoDataPresenter */,
@@ -394,6 +413,7 @@
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
+				3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
 				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
