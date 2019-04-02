@@ -46,7 +46,7 @@ class ProgressPresenter {
     }
     
     func hideProgress() {
-        DispatchQueue.main.async { [weak self] in
+        DispatchQueue.main.async {
             HUD.hide()
         }
     }
