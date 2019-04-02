@@ -16,18 +16,22 @@ class AuthorizationViewController: BaseViewController {
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {
         
-        RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
-
-            let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()?.children.first
-            
-            guard let viewController = vc else {
-                return
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
+                
+                let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()?.children.first
+                
+                guard let viewController = vc else {
+                    return
+                }
+                
+                self.navigationController?.pushViewController(viewController, animated: true)
+                
+                self.progressPresenter?.hideProgress()
+            }) { error in
+                print("Error authorization: \(error?.localizedDescription ?? "empty message")")
+                self.progressPresenter?.hideProgress()
             }
-            
-            self.navigationController?.pushViewController(viewController, animated: true)
-
-        }) { error in
-            print("Error authorization: \(error?.localizedDescription ?? "empty message")")
-        }
+        })
     }
 }

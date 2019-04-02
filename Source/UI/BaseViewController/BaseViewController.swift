@@ -10,4 +10,7 @@ import UIKit
 
 class BaseViewController : UIViewController {
     
+    lazy var progressPresenter: ProgressPresenter? = {
+        return ProgressPresenter.init(viewVontroller: self)
+    }()
 }
