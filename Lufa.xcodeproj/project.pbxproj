@@ -22,7 +22,6 @@
 		3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */; };
 		3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */; };
 		3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEA56F72251F523003A34D4 /* Authorization.storyboard */; };
-		3DEA56FE2251F749003A34D4 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA56FD2251F749003A34D4 /* Button+Lufa.swift */; };
 		3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA57002251FBFC003A34D4 /* WindowController.swift */; };
 		E88845594E8369D5B2E47661 /* Pods_Lufa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +44,6 @@
 		3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Authenticate.swift"; sourceTree = "<group>"; };
 		3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3DEA56F72251F523003A34D4 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
-		3DEA56FD2251F749003A34D4 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Button+Lufa.swift"; path = "../../../../../Documents/Button+Lufa.swift"; sourceTree = "<group>"; };
 		3DEA57002251FBFC003A34D4 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		731208F7E4CD314223BB4C4E /* Pods-Lufa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lufa.release.xcconfig"; path = "Target Support Files/Pods-Lufa/Pods-Lufa.release.xcconfig"; sourceTree = "<group>"; };
 		952E261AA916F8BE830B87A7 /* Pods_Lufa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lufa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				3DEA56FF2251FBE9003A34D4 /* WindowController */,
-				3DEA56F92251F6F7003A34D4 /* UIKit */,
 				3DD4A3B4224525CA002B6A77 /* ProgressPresenter */,
 				3DD4A3B3224525B6002B6A77 /* NoDataPresenter */,
 				3DD4A3B022452508002B6A77 /* BaseViewController */,
@@ -198,8 +195,8 @@
 		3DABA409223B94DF00469FD1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3DABA3EC223B90DE00469FD1 /* Home.storyboard */,
 				3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */,
+				3DABA3EC223B90DE00469FD1 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -241,22 +238,6 @@
 				3DEA56F72251F523003A34D4 /* Authorization.storyboard */,
 			);
 			path = Authorization;
-			sourceTree = "<group>";
-		};
-		3DEA56F92251F6F7003A34D4 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				3DEA56FA2251F6FC003A34D4 /* Button */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		3DEA56FA2251F6FC003A34D4 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				3DEA56FD2251F749003A34D4 /* Button+Lufa.swift */,
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		3DEA56FF2251FBE9003A34D4 /* WindowController */ = {
@@ -416,7 +397,6 @@
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
 				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
-				3DEA56FE2251F749003A34D4 /* Button+Lufa.swift in Sources */,
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
