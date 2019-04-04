@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  Lufa
+
+  Created by Konrad Belzowski on 04/04/2019.
+  Copyright © 2019 Konrad Belzowski. All rights reserved.
+*/
+
+//Authorization
+"authorization.title" = "LufaAirHarm";
+"authorization.message" = "Cześć!\nJeszcze nie zautoryzowany ? Żaden problem, po prostu zrób to teraz.";
+"authorization.button.authorize.title" = "Autoryzuj";
+"authorization.button.changeLanguage.pl" = "PL";
+"authorization.button.changeLanguage.en" = "EN";
+
+//Language
+"language.title" = "LufaAirHarm";
+"language.message" = "Witamy w aplikacji Lufa. Proszę wybrać język.";
+"language.button.polish" = "Polski";
+"language.button.english" = "Angielski";
+
+//Loading
+"loading.title" = "Wczytywanie";

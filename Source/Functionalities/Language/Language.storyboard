@@ -14,7 +14,7 @@
         <scene sceneID="HUS-5k-0yS">
             <objects>
                 <viewController id="xyv-lJ-QP5" customClass="LanguageViewController" customModule="Lufa" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f6H-d3-L60" customClass="Language">
+                    <view key="view" contentMode="scaleToFill" id="f6H-d3-L60">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

@@ -15,6 +15,24 @@ class AuthorizationViewController: BaseViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    //MARK: Properties
+    
+    override func loadTranslations() {
+        super.loadTranslations()
+        
+        titleLabel.text = "authorization.title".localized()
+        infoLabel.text = "authorization.message".localized()
+        authorizeButton.setTitle("authorization.button.authorize.title".localized(), for: .normal)
+        
+        let currentLanguage = LanguageManager.sharedInstance.currentLanguage
+        
+        if currentLanguage == LANGUAGE_PL {
+            changeLanguageButton.setTitle("authorization.button.changeLanguage.pl".localized(), for: .normal)
+        } else {
+            changeLanguageButton.setTitle("authorization.button.changeLanguage.en".localized(), for: .normal)
+        }
+    }
+    
     //MARK: Actions
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {

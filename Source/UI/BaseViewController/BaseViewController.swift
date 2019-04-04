@@ -10,7 +10,23 @@ import UIKit
 
 class BaseViewController : UIViewController {
     
+    //MARK: Variables
+    
     lazy var progressPresenter: ProgressPresenter? = {
         return ProgressPresenter.init(viewVontroller: self)
     }()
+    
+    //MARK: Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        loadTranslations()
+    }
+    
+    //MARK: Properties
+    
+    func loadTranslations() {
+        
+    }
 }

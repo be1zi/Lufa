@@ -35,7 +35,7 @@ class ProgressPresenter {
                 return
             }
         
-            let text = withText ?? "loading"
+            let text = withText ?? "loading.title".localized()
             
             HUD.show(HUDContentType.labeledProgress(title: text, subtitle: nil))
             

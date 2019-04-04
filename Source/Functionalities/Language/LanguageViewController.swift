@@ -16,13 +16,24 @@ class LanguageViewController: BaseViewController {
     @IBOutlet weak var polishButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
     
+    //MAKR: Properties
+    
+    override func loadTranslations() {
+        super.loadTranslations()
+        
+    }
+    
     //MARK: Actions
     
     @IBAction func polishButtonAction(_ sender: UIButton) {
+        LanguageManager.sharedInstance.currentLanguage = LANGUAGE_PL
+        
         AppDelegate.sharedInstance.windowController?.presentAuthorizationController()
     }
     
     @IBAction func englishButtonAction(_ sender: Any) {
+        LanguageManager.sharedInstance.currentLanguage = LANGUAGE_EN
+        
         AppDelegate.sharedInstance.windowController?.presentAuthorizationController()
     }
 }
