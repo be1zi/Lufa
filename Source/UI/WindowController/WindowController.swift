@@ -28,6 +28,28 @@ class WindowController {
 
         presentViewControllerAsRoot(viewController: viewController)
     }
+    
+    func presentLanguageController() {
+        
+        let vc = UIStoryboard.init(name: "Language", bundle: nil).instantiateInitialViewController()
+        
+        guard let viewController = vc else {
+            return
+        }
+        
+        presentViewControllerAsRoot(viewController: viewController)
+    }
+    
+    func presentHomeController() {
+        
+        let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()?.children.first
+        
+        guard let viewController = vc else {
+            return
+        }
+        
+        presentViewControllerAsRoot(viewController: viewController)
+    }
         
     private func presentViewControllerAsRoot(viewController: UIViewController) {
         

@@ -13,8 +13,12 @@ import Foundation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    static var sharedInstance: AppDelegate  {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
     
+    var window: UIWindow?
+
     lazy var windowController: WindowController? = {
         
         guard let window = window else {
@@ -25,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return wc
     }()
-
-    static let sharedInstance = AppDelegate()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -108,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureUserInterface() {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        windowController?.presentAuthorizationController()
+        windowController?.presentLanguageController()
         window?.makeKeyAndVisible()
     }
     

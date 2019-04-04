@@ -11,6 +11,9 @@ import UIKit
 class AuthorizationViewController: BaseViewController {
     
     @IBOutlet weak var authorizeButton: UIButton!
+    @IBOutlet weak var changeLanguageButton: UIButton!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     //MARK: Actions
     
@@ -18,20 +21,16 @@ class AuthorizationViewController: BaseViewController {
         
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
-                
-                let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()?.children.first
-                
-                guard let viewController = vc else {
-                    return
-                }
-                
-                self.navigationController?.pushViewController(viewController, animated: true)
-                
+                AppDelegate.sharedInstance.windowController?.presentHomeController()
                 self.progressPresenter?.hideProgress()
             }) { error in
                 print("Error authorization: \(error?.localizedDescription ?? "empty message")")
                 self.progressPresenter?.hideProgress()
             }
         })
+    }
+    
+    @IBAction func changeLanguageAction(_ sender: Any) {
+        AppDelegate.sharedInstance.windowController?.presentLanguageController()
     }
 }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome in LufaAirHarm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClC-LX-pbe">
-                                <rect key="frame" x="20" y="114" width="335" height="30"/>
+                                <rect key="frame" x="20" y="164" width="335" height="30"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -42,21 +42,50 @@
                                     <action selector="authorizeButtonAction:" destination="4Mp-Cl-meZ" eventType="touchUpInside" id="d4l-ji-gmE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello! Not authorized yet ? No problem, just do it now" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhD-ko-DOf">
+                                <rect key="frame" x="20" y="492" width="335" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UL-02-iJS">
+                                <rect key="frame" x="325" y="84" width="30" height="30"/>
+                                <state key="normal" title="EN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeLanguageAction:" destination="4Mp-Cl-meZ" eventType="touchUpInside" id="Iss-QN-oYo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ClC-LX-pbe" firstAttribute="top" secondItem="n4C-41-mcm" secondAttribute="top" constant="50" id="HKi-Ey-Po5"/>
+                            <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="xhD-ko-DOf" secondAttribute="trailing" constant="20" id="6MA-0j-rMz"/>
+                            <constraint firstItem="xhD-ko-DOf" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" constant="20" id="8Jz-7x-KkM"/>
+                            <constraint firstItem="ClC-LX-pbe" firstAttribute="top" secondItem="n4C-41-mcm" secondAttribute="top" constant="100" id="HKi-Ey-Po5"/>
+                            <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="3UL-02-iJS" secondAttribute="trailing" constant="20" id="I5l-7B-VCU"/>
+                            <constraint firstItem="ufP-1h-wct" firstAttribute="top" secondItem="xhD-ko-DOf" secondAttribute="bottom" constant="40" id="UbU-GM-ZvQ"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="bottom" secondItem="ufP-1h-wct" secondAttribute="bottom" constant="50" id="cVU-tH-T02"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="ufP-1h-wct" secondAttribute="trailing" constant="20" id="jfo-QM-CAP"/>
                             <constraint firstItem="ClC-LX-pbe" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" constant="20" id="nBd-o1-rbn"/>
                             <constraint firstItem="ufP-1h-wct" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" constant="20" id="u20-Zi-aDa"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="ClC-LX-pbe" secondAttribute="trailing" constant="20" id="x9d-2w-tbN"/>
+                            <constraint firstItem="3UL-02-iJS" firstAttribute="top" secondItem="n4C-41-mcm" secondAttribute="top" constant="20" id="yez-f9-QSG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n4C-41-mcm"/>
                     </view>
                     <navigationItem key="navigationItem" id="v2s-hF-Nlt"/>
                     <connections>
                         <outlet property="authorizeButton" destination="ufP-1h-wct" id="qLw-mv-1kw"/>
+                        <outlet property="changeLanguageButton" destination="3UL-02-iJS" id="tIg-3d-iWc"/>
+                        <outlet property="infoLabel" destination="xhD-ko-DOf" id="Tjx-y7-jNz"/>
+                        <outlet property="titleLabel" destination="ClC-LX-pbe" id="S0H-ye-EJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIJ-VV-R1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
