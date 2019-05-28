@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CheckIn" representedClassName="CheckIn" syncable="YES" codeGenerationType="class">
+    <entity name="CheckIn" representedClassName="CheckIn" syncable="YES">
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="boardingBegin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="briefingBegin" optional="YES" attributeType="String" syncable="YES"/>
@@ -13,14 +13,14 @@
         <attribute name="paxOnBoard" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="readinessNotification" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
-    <entity name="Crew" representedClassName="Crew" syncable="YES" codeGenerationType="class">
+    <entity name="Crew" representedClassName="Crew" syncable="YES">
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="departureAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flightDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flightDesignator" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="crewMembers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="crew" inverseEntity="CrewMember" syncable="YES"/>
     </entity>
-    <entity name="CrewFlight" representedClassName="CrewFlight" syncable="YES" codeGenerationType="class">
+    <entity name="CrewFlight" representedClassName="CrewFlight" syncable="YES">
         <attribute name="dutyCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flightDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flightDesignator" optional="YES" attributeType="String" syncable="YES"/>
@@ -28,7 +28,7 @@
         <relationship name="exFlight" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="exFlight" inverseEntity="CrewMember" syncable="YES"/>
         <relationship name="toFlight" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CrewMember" inverseName="toFlight" inverseEntity="CrewMember" syncable="YES"/>
     </entity>
-    <entity name="CrewMember" representedClassName="CrewMember" syncable="YES" codeGenerationType="class">
+    <entity name="CrewMember" representedClassName="CrewMember" syncable="YES">
         <attribute name="courseNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="crewPosition" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dutyCode" optional="YES" attributeType="String" syncable="YES"/>
@@ -40,18 +40,18 @@
         <relationship name="exFlight" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CrewFlight" inverseName="exFlight" inverseEntity="CrewFlight" syncable="YES"/>
         <relationship name="toFlight" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CrewFlight" inverseName="toFlight" inverseEntity="CrewFlight" syncable="YES"/>
     </entity>
-    <entity name="Duty" representedClassName="Duty" syncable="YES" codeGenerationType="class">
+    <entity name="Duty" representedClassName="Duty" syncable="YES">
         <attribute name="fromDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pkNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="toDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="dutyDays" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DutyDay" inverseName="duty" inverseEntity="DutyDay" syncable="YES"/>
     </entity>
-    <entity name="DutyDay" representedClassName="DutyDay" syncable="YES" codeGenerationType="class">
+    <entity name="DutyDay" representedClassName="DutyDay" syncable="YES">
         <attribute name="day" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="duty" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Duty" inverseName="dutyDays" inverseEntity="Duty" syncable="YES"/>
         <relationship name="dutyEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DutyEvent" inverseName="dutyDay" inverseEntity="DutyEvent" syncable="YES"/>
     </entity>
-    <entity name="DutyEvent" representedClassName="DutyEvent" syncable="YES" codeGenerationType="class">
+    <entity name="DutyEvent" representedClassName="DutyEvent" syncable="YES">
         <attribute name="endLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endTimeZoneOffset" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -66,17 +66,17 @@
         <relationship name="dutyDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DutyDay" inverseName="dutyEvents" inverseEntity="DutyDay" syncable="YES"/>
         <relationship name="dutyLinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DutyEventLink" inverseName="dutyEvent" inverseEntity="DutyEventLink" syncable="YES"/>
     </entity>
-    <entity name="DutyEventAttributes" representedClassName="DutyEventAttributes" syncable="YES" codeGenerationType="class">
+    <entity name="DutyEventAttributes" representedClassName="DutyEventAttributes" syncable="YES">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dutyEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DutyEvent" inverseName="attributes" inverseEntity="DutyEvent" syncable="YES"/>
     </entity>
-    <entity name="DutyEventLink" representedClassName="DutyEventLink" syncable="YES" codeGenerationType="class">
+    <entity name="DutyEventLink" representedClassName="DutyEventLink" syncable="YES">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uri" optional="YES" attributeType="URI" syncable="YES"/>
         <relationship name="dutyEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DutyEvent" inverseName="dutyLinks" inverseEntity="DutyEvent" syncable="YES"/>
     </entity>
-    <entity name="Flight" representedClassName="Flight" syncable="YES" codeGenerationType="class">
+    <entity name="Flight" representedClassName="Flight" syncable="YES">
         <attribute name="aircraftSubtype" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="arrivalGate" optional="YES" attributeType="String" syncable="YES"/>

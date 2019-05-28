@@ -27,6 +27,27 @@
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
 		3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */; };
+		3DE0EE26229D1ADC009AD5D8 /* LocalRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE25229D1AD9009AD5D8 /* LocalRepositoryContext.swift */; };
+		3DE0EE44229D211E009AD5D8 /* DutyEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE30229D211D009AD5D8 /* DutyEvent+CoreDataClass.swift */; };
+		3DE0EE45229D211E009AD5D8 /* DutyEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE31229D211D009AD5D8 /* DutyEvent+CoreDataProperties.swift */; };
+		3DE0EE46229D211E009AD5D8 /* DutyEventAttributes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE32229D211D009AD5D8 /* DutyEventAttributes+CoreDataClass.swift */; };
+		3DE0EE47229D211E009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE33229D211D009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift */; };
+		3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE34229D211D009AD5D8 /* DutyEventLink+CoreDataClass.swift */; };
+		3DE0EE49229D211E009AD5D8 /* DutyEventLink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE35229D211D009AD5D8 /* DutyEventLink+CoreDataProperties.swift */; };
+		3DE0EE4A229D211E009AD5D8 /* CrewFlight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE36229D211D009AD5D8 /* CrewFlight+CoreDataClass.swift */; };
+		3DE0EE4B229D211E009AD5D8 /* CrewFlight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE37229D211D009AD5D8 /* CrewFlight+CoreDataProperties.swift */; };
+		3DE0EE4C229D211E009AD5D8 /* CheckIn+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE38229D211D009AD5D8 /* CheckIn+CoreDataClass.swift */; };
+		3DE0EE4D229D211E009AD5D8 /* CheckIn+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE39229D211D009AD5D8 /* CheckIn+CoreDataProperties.swift */; };
+		3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE3A229D211D009AD5D8 /* CrewMember+CoreDataClass.swift */; };
+		3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE3B229D211D009AD5D8 /* CrewMember+CoreDataProperties.swift */; };
+		3DE0EE50229D211E009AD5D8 /* DutyDay+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE3C229D211D009AD5D8 /* DutyDay+CoreDataClass.swift */; };
+		3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE3D229D211D009AD5D8 /* DutyDay+CoreDataProperties.swift */; };
+		3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE3E229D211D009AD5D8 /* Flight+CoreDataClass.swift */; };
+		3DE0EE53229D211E009AD5D8 /* Flight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE3F229D211D009AD5D8 /* Flight+CoreDataProperties.swift */; };
+		3DE0EE54229D211E009AD5D8 /* Crew+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE40229D211E009AD5D8 /* Crew+CoreDataClass.swift */; };
+		3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE41229D211E009AD5D8 /* Crew+CoreDataProperties.swift */; };
+		3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE42229D211E009AD5D8 /* Duty+CoreDataClass.swift */; };
+		3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE43229D211E009AD5D8 /* Duty+CoreDataProperties.swift */; };
 		3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */; };
 		3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEA56F72251F523003A34D4 /* Authorization.storyboard */; };
 		3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA57002251FBFC003A34D4 /* WindowController.swift */; };
@@ -57,6 +78,27 @@
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Authenticate.swift"; sourceTree = "<group>"; };
+		3DE0EE25229D1AD9009AD5D8 /* LocalRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryContext.swift; sourceTree = "<group>"; };
+		3DE0EE30229D211D009AD5D8 /* DutyEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE31229D211D009AD5D8 /* DutyEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE32229D211D009AD5D8 /* DutyEventAttributes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyEventAttributes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE33229D211D009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyEventAttributes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE34229D211D009AD5D8 /* DutyEventLink+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyEventLink+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE35229D211D009AD5D8 /* DutyEventLink+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyEventLink+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE36229D211D009AD5D8 /* CrewFlight+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewFlight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE37229D211D009AD5D8 /* CrewFlight+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewFlight+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE38229D211D009AD5D8 /* CheckIn+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckIn+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE39229D211D009AD5D8 /* CheckIn+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckIn+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE3A229D211D009AD5D8 /* CrewMember+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewMember+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE3B229D211D009AD5D8 /* CrewMember+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CrewMember+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE3C229D211D009AD5D8 /* DutyDay+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyDay+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE3D229D211D009AD5D8 /* DutyDay+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DutyDay+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE3E229D211D009AD5D8 /* Flight+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE3F229D211D009AD5D8 /* Flight+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE40229D211E009AD5D8 /* Crew+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crew+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE41229D211E009AD5D8 /* Crew+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crew+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DE0EE42229D211E009AD5D8 /* Duty+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duty+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DE0EE43229D211E009AD5D8 /* Duty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duty+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3DEA56F72251F523003A34D4 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		3DEA57002251FBFC003A34D4 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -188,7 +230,8 @@
 		3DABA401223B93AA00469FD1 /* LocalRepository */ = {
 			isa = PBXGroup;
 			children = (
-				3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */,
+				3DE0EE27229D203D009AD5D8 /* Model */,
+				3DE0EE25229D1AD9009AD5D8 /* LocalRepositoryContext.swift */,
 			);
 			path = LocalRepository;
 			sourceTree = "<group>";
@@ -299,6 +342,34 @@
 				3D34DC872253536700590FD2 /* ProgressPresenter.swift */,
 			);
 			path = ProgressPresenter;
+			sourceTree = "<group>";
+		};
+		3DE0EE27229D203D009AD5D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DE0EE30229D211D009AD5D8 /* DutyEvent+CoreDataClass.swift */,
+				3DE0EE31229D211D009AD5D8 /* DutyEvent+CoreDataProperties.swift */,
+				3DE0EE32229D211D009AD5D8 /* DutyEventAttributes+CoreDataClass.swift */,
+				3DE0EE33229D211D009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift */,
+				3DE0EE34229D211D009AD5D8 /* DutyEventLink+CoreDataClass.swift */,
+				3DE0EE35229D211D009AD5D8 /* DutyEventLink+CoreDataProperties.swift */,
+				3DE0EE36229D211D009AD5D8 /* CrewFlight+CoreDataClass.swift */,
+				3DE0EE37229D211D009AD5D8 /* CrewFlight+CoreDataProperties.swift */,
+				3DE0EE38229D211D009AD5D8 /* CheckIn+CoreDataClass.swift */,
+				3DE0EE39229D211D009AD5D8 /* CheckIn+CoreDataProperties.swift */,
+				3DE0EE3A229D211D009AD5D8 /* CrewMember+CoreDataClass.swift */,
+				3DE0EE3B229D211D009AD5D8 /* CrewMember+CoreDataProperties.swift */,
+				3DE0EE3C229D211D009AD5D8 /* DutyDay+CoreDataClass.swift */,
+				3DE0EE3D229D211D009AD5D8 /* DutyDay+CoreDataProperties.swift */,
+				3DE0EE3E229D211D009AD5D8 /* Flight+CoreDataClass.swift */,
+				3DE0EE3F229D211D009AD5D8 /* Flight+CoreDataProperties.swift */,
+				3DE0EE40229D211E009AD5D8 /* Crew+CoreDataClass.swift */,
+				3DE0EE41229D211E009AD5D8 /* Crew+CoreDataProperties.swift */,
+				3DE0EE42229D211E009AD5D8 /* Duty+CoreDataClass.swift */,
+				3DE0EE43229D211E009AD5D8 /* Duty+CoreDataProperties.swift */,
+				3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3DEA56F42251F4DC003A34D4 /* Authorization */ = {
@@ -464,19 +535,40 @@
 			files = (
 				3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */,
 				3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */,
+				3DE0EE44229D211E009AD5D8 /* DutyEvent+CoreDataClass.swift in Sources */,
 				3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */,
+				3DE0EE50229D211E009AD5D8 /* DutyDay+CoreDataClass.swift in Sources */,
+				3DE0EE4A229D211E009AD5D8 /* CrewFlight+CoreDataClass.swift in Sources */,
+				3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */,
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
+				3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */,
 				3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
+				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
+				3DE0EE4D229D211E009AD5D8 /* CheckIn+CoreDataProperties.swift in Sources */,
 				3DA6E99322560B7C00015999 /* String+Lufa.swift in Sources */,
+				3DE0EE54229D211E009AD5D8 /* Crew+CoreDataClass.swift in Sources */,
+				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
+				3DE0EE49229D211E009AD5D8 /* DutyEventLink+CoreDataProperties.swift in Sources */,
+				3DE0EE4B229D211E009AD5D8 /* CrewFlight+CoreDataProperties.swift in Sources */,
 				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
 				3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */,
+				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
+				3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */,
+				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,
+				3DE0EE53229D211E009AD5D8 /* Flight+CoreDataProperties.swift in Sources */,
+				3DE0EE47229D211E009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift in Sources */,
+				3DE0EE4C229D211E009AD5D8 /* CheckIn+CoreDataClass.swift in Sources */,
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,
+				3DE0EE26229D1ADC009AD5D8 /* LocalRepositoryContext.swift in Sources */,
+				3DE0EE46229D211E009AD5D8 /* DutyEventAttributes+CoreDataClass.swift in Sources */,
+				3DE0EE45229D211E009AD5D8 /* DutyEvent+CoreDataProperties.swift in Sources */,
+				3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */,
 				3DA6E996225610B100015999 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
