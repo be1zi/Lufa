@@ -1,8 +1,9 @@
-Jako cz�onek za�ogi samolotu chc� w aplikacji mobilnej:
-- sprawdzi� jakie loty obs�uguj� oraz ich daty,
-- wy�wietli� lotniska z kt�rych wylatuj� oraz do kt�rych przylatuj�,
-- wy�wietli� numer pomieszczenia odprawy oraz jej czas,
-- wy�wietli� godzin� odjazdu busu dla za�ogi,
-- wy�wietli� godzin� startu przyjmowania pasa�er�w na pok�ad,
-- wy�wietli� list� pracownik�w z kt�rymi obs�uguj� dany lot,
-- sprawdzi� przydzielone mi na s�u�bie zadania wraz z miejscem i czasem ich wykonywania.
+1. Jako członek załogi samolotu po zalogowaniu do aplikacji chcę mieć wyświetlone dane najbliższego lotu, który obsługuję, aby mieć go niego szybki dostęp i nie musieć wyszukiwać go w harmonogramie.
+
+2. Jako członek załogi samolotu chcę wyświetlić listę lotów na najbliższy tydzień/miesiąc/dla zadanego przedziału czasowego, aby móc szybko sprawdzić w jakie dni pracuję oraz jakie loty obsługuję.
+
+3. Jako członek załogi samolotu chcę wyświetlić szczegóły lotu, który obsługuję (linia, lotnisko źródłowe oraz docelowe, zaplanowany start i lądowanie, czas lotu, bramy oraz pozycje podczas startu i lądowania), aby móc się odpowiednio do niego przygotować.
+
+4. Jako członek załogi samolotu chcę wyświetlić czasy i miejsca związane z odprawą dla załogi danego lotu, aby wiedzieć gdzie i o której godzinie powinienem być gotowy do lotu.
+
+5. Jako członek załogi samolotu chcę wyświetlić listę reszty członków załogi wraz z ich pozycjami, która obsługuje dany lot, aby w razie potrzeby móc sie z kimś wcześniej skontaktować.
