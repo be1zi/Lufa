@@ -9,7 +9,7 @@
 		<key>key</key>
 		<string>jsjjxuj62dmt926s83hwfj3r</string>
 		<key>serverAddress</key>
-		<string>https://api.lufthansa.com</string>
+		<string>https://oauth-test.lufthansa.com</string>
 	</dict>
 </dict>
 </plist>

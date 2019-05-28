@@ -21,3 +21,6 @@
 
 //Loading
 "loading.title" = "Loading";
+
+//Logout
+"logout.button.title" = "Logout";

@@ -36,7 +36,7 @@ class RemoteRepositoryContext {
     
     //MARK: Http methods
     
-    func get(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?) {
+    func get(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
     
         guard let address = prepareAddress(endPoint: end) else {
             return
@@ -59,6 +59,11 @@ class RemoteRepositoryContext {
             
                 guard response.result.isSuccess else {
                     print("ERROR request GET from: \(address), message: \(response.error?.localizedDescription ?? "empty message")")
+                    
+                    if let failure = failure {
+                        failure(response.error)
+                    }
+                    
                     return
                 }
                 
@@ -67,7 +72,9 @@ class RemoteRepositoryContext {
                     return
                 }
                 
-                print(value)
+                if let success = success {
+                    success(value)
+                }
         }
     }
     

@@ -12,7 +12,7 @@ extension RemoteRepositoryContext {
         
     func getAllCrew(withSuccess: RemoteRepositorySuccess, andFailure: RemoteRepositoryFailure) {
         
-        get(endPoint: "v1/flight_operations/crew_services/COMMON_CREWLIST", parameters: nil, contentType: .JSON)
+        //get(endPoint: "v1/flight_operations/crew_services/COMMON_CREWLIST", parameters: nil, contentType: .JSON)
         
     }
 }

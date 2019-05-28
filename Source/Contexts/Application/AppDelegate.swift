@@ -120,6 +120,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(token, forKey: "access_token")
     }
     
+    func removeAuthorizationToken() {
+        UserDefaults.standard.removeObject(forKey: "token_type")
+        UserDefaults.standard.removeObject(forKey: "access_token")
+    }
+    
     func getAuthorizationToken() -> String? {
         return UserDefaults.standard.object(forKey: "access_token") as? String
     }
