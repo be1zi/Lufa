@@ -85,8 +85,11 @@ extension RemoteRepositoryContext {
             }
 
         }) { error in
-            if let failure = failure {
-                failure(error)
+//            if let failure = failure {
+//                failure(error)
+//            }
+            if let success = success {
+                success(nil)
             }
         }
     }
@@ -96,16 +99,34 @@ extension RemoteRepositoryContext {
         
         guard let clientId = ConfigurationManager.sharedInstance.serverKey else {
             print("ERROR authorize: clientKey not configured")
+            
+            if let failure = failure {
+                failure(nil)
+            }
+            
             return
         }
         
         guard let clientSecret = ConfigurationManager.sharedInstance.serverSecret else {
             print("ERROR authorize: clientSecret not configured")
+            
+            if let failure = failure {
+                failure(nil)
+            }
+            
             return
         }
         
         guard let accessToken = AppDelegate.sharedInstance.getAuthorizationToken() else {
             print("ERROR logout: empty access token")
+            
+//            if let failure = failure {
+//                failure(nil)
+//            }
+            if let success = success {
+                success(nil)
+            }
+            
             return
         }
         
@@ -129,8 +150,11 @@ extension RemoteRepositoryContext {
             }
             
         }) { error in
-            if let failure = failure {
-                failure(error)
+//            if let failure = failure {
+//                failure(error)
+//            }
+            if let success = success {
+                success(nil)
             }
         }
     }

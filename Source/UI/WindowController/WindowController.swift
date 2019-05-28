@@ -53,7 +53,7 @@ class WindowController {
         
     private func presentViewControllerAsRoot(viewController: UIViewController) {
         
-         let rootViewController = window.rootViewController
+        let rootViewController = window.rootViewController
         
         window.rootViewController = viewController
         
