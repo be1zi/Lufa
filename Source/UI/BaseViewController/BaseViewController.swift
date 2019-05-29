@@ -21,12 +21,27 @@ class BaseViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        loadConfigurations()
         loadTranslations()
     }
     
     //MARK: Properties
     
+    func loadConfigurations() {
+        
+        let navigationBarHidden = shouldHideNavigationBar()
+        self.navigationController?.setNavigationBarHidden(navigationBarHidden, animated: true)
+    }
+    
     func loadTranslations() {
         
+    }
+    
+    func shouldHideNavigationBar() -> Bool {
+        return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l58-b7-oKj">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,14 @@
             <objects>
                 <viewController id="xyv-lJ-QP5" customClass="LanguageViewController" customModule="Lufa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f6H-d3-L60">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LufaAirHarm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GP9-za-qgS">
-                                <rect key="frame" x="20" y="164" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainScreen" translatesAutoresizingMaskIntoConstraints="NO" id="S0c-2J-20v">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su3-O7-jdA">
-                                <rect key="frame" x="20" y="573" width="335" height="44"/>
+                                <rect key="frame" x="20" y="768" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4L3-oG-JPc"/>
                                 </constraints>
@@ -46,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48N-kD-Sup">
-                                <rect key="frame" x="20" y="509" width="335" height="44"/>
+                                <rect key="frame" x="20" y="704" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ppy-VB-uUt"/>
                                 </constraints>
@@ -67,7 +64,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome in Lufa-app. Please choose your language." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypz-wu-vvF">
-                                <rect key="frame" x="20" y="428" width="335" height="41"/>
+                                <rect key="frame" x="20" y="623" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -79,13 +76,14 @@
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="ypz-wu-vvF" secondAttribute="trailing" constant="20" id="FtB-MC-3Ph"/>
                             <constraint firstItem="48N-kD-Sup" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" constant="20" id="Gbb-pn-1G2"/>
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="48N-kD-Sup" secondAttribute="trailing" constant="20" id="Kjm-m3-qG5"/>
-                            <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="GP9-za-qgS" secondAttribute="trailing" constant="20" id="QJ1-0y-92b"/>
+                            <constraint firstAttribute="bottom" secondItem="S0c-2J-20v" secondAttribute="bottom" id="RPS-u2-XIb"/>
                             <constraint firstItem="ypz-wu-vvF" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" constant="20" id="RfX-7P-UWh"/>
+                            <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="S0c-2J-20v" secondAttribute="trailing" id="YCr-DE-SLv"/>
                             <constraint firstItem="Su3-O7-jdA" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" constant="20" id="Z3x-R4-rdI"/>
+                            <constraint firstItem="S0c-2J-20v" firstAttribute="top" secondItem="f6H-d3-L60" secondAttribute="top" id="dzb-8h-kWb"/>
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="Su3-O7-jdA" secondAttribute="trailing" constant="20" id="e3J-uO-k51"/>
-                            <constraint firstItem="GP9-za-qgS" firstAttribute="top" secondItem="Kst-DW-Uqn" secondAttribute="top" constant="100" id="g7m-2w-TMz"/>
-                            <constraint firstItem="GP9-za-qgS" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" constant="20" id="hDn-N5-Dbk"/>
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="bottom" secondItem="Su3-O7-jdA" secondAttribute="bottom" constant="50" id="vXU-al-Lka"/>
+                            <constraint firstItem="S0c-2J-20v" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" id="xpy-bJ-kXm"/>
                             <constraint firstItem="48N-kD-Sup" firstAttribute="top" secondItem="ypz-wu-vvF" secondAttribute="bottom" constant="40" id="z1s-bA-wKc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kst-DW-Uqn"/>
@@ -95,7 +93,6 @@
                         <outlet property="englishButton" destination="Su3-O7-jdA" id="Df6-5B-m6R"/>
                         <outlet property="infoLabel" destination="ypz-wu-vvF" id="je4-qc-GQ6"/>
                         <outlet property="polishButton" destination="48N-kD-Sup" id="fzC-Lk-eag"/>
-                        <outlet property="titleLabel" destination="GP9-za-qgS" id="Y4x-ys-afF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCd-fv-gmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,7 +105,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l58-b7-oKj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G00-JW-qAg">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -121,4 +118,7 @@
             <point key="canvasLocation" x="293.60000000000002" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MainScreen" width="828" height="1792"/>
+    </resources>
 </document>

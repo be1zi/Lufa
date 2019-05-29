@@ -13,14 +13,14 @@ class AuthorizationViewController: BaseViewController {
     @IBOutlet weak var authorizeButton: UIButton!
     @IBOutlet weak var changeLanguageButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     //MARK: Properties
     
     override func loadTranslations() {
         super.loadTranslations()
         
-        titleLabel.text = "authorization.title".localized()
+        welcomeLabel.text = "authorization.welcome".localized()
         infoLabel.text = "authorization.message".localized()
         authorizeButton.setTitle("authorization.button.authorize.title".localized(), for: .normal)
         
@@ -31,6 +31,10 @@ class AuthorizationViewController: BaseViewController {
         } else {
             changeLanguageButton.setTitle("authorization.button.changeLanguage.en".localized(), for: .normal)
         }
+    }
+    
+    override func shouldHideNavigationBar() -> Bool {
+        return true
     }
     
     //MARK: Actions

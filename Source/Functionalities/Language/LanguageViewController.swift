@@ -11,7 +11,6 @@ import UIKit
 
 class LanguageViewController: BaseViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var polishButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
@@ -20,7 +19,10 @@ class LanguageViewController: BaseViewController {
     
     override func loadTranslations() {
         super.loadTranslations()
-        
+    }
+    
+    override func shouldHideNavigationBar() -> Bool {
+        return true
     }
     
     //MARK: Actions

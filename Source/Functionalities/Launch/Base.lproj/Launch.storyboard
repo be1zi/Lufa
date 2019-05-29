@@ -17,7 +17,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="U37-ka-DH7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U37-ka-DH7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="4h4-9g-idd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U37-ka-DH7" secondAttribute="trailing" id="8Q4-WC-RuG"/>
+                            <constraint firstItem="U37-ka-DH7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ge0-Hk-tw3"/>
+                            <constraint firstAttribute="bottom" secondItem="U37-ka-DH7" secondAttribute="bottom" id="wcp-gR-Vwn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreen" width="828" height="1792"/>
+    </resources>
 </document>
