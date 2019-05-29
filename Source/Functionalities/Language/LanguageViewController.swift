@@ -19,6 +19,10 @@ class LanguageViewController: BaseViewController {
     
     override func loadTranslations() {
         super.loadTranslations()
+        
+        self.polishButton.setTitle("language.button.polish".localized(), for: .normal)
+        self.englishButton.setTitle("language.button.english".localized(), for: .normal)
+        self.infoLabel.text = "language.message".localized()
     }
     
     override func shouldHideNavigationBar() -> Bool {
