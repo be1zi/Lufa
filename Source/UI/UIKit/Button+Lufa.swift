@@ -37,4 +37,17 @@ extension UIButton {
             return UIColor.init(cgColor: layer.borderColor ?? UIColor.clear.cgColor)
         }
     }
+    
+//    @IBInspectable var selectedColor: UIColor {
+//        set {
+//            backgroundColor = UIColor.lufaCyanColor
+//        }
+//        get {
+//            if let backgroundColor = backgroundColor {
+//                return backgroundColor
+//            } else {
+//                return UIColor.clear
+//            }
+//        }
+//    }
 }

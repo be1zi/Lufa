@@ -22,32 +22,37 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su3-O7-jdA">
-                                <rect key="frame" x="20" y="768" width="374" height="44"/>
+                                <rect key="frame" x="20" y="758" width="374" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="0.25093900240384615" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4L3-oG-JPc"/>
                                 </constraints>
-                                <state key="normal" title="English"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="English">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="englishButtonAction:" destination="xyv-lJ-QP5" eventType="touchUpInside" id="2Xv-MD-mzj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48N-kD-Sup">
-                                <rect key="frame" x="20" y="704" width="374" height="44"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48N-kD-Sup">
+                                <rect key="frame" x="20" y="689" width="374" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="0.24583082932692307" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ppy-VB-uUt"/>
                                 </constraints>
-                                <state key="normal" title="Polish"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Polish">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="22"/>
@@ -56,7 +61,7 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -64,15 +69,15 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome in Lufa-app. Please choose your language." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypz-wu-vvF">
-                                <rect key="frame" x="20" y="623" width="374" height="41"/>
+                                <rect key="frame" x="20" y="613" width="374" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Su3-O7-jdA" firstAttribute="top" secondItem="48N-kD-Sup" secondAttribute="bottom" constant="20" id="5a6-gu-Scb"/>
+                            <constraint firstItem="Su3-O7-jdA" firstAttribute="top" secondItem="48N-kD-Sup" secondAttribute="bottom" constant="25" id="5a6-gu-Scb"/>
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="ypz-wu-vvF" secondAttribute="trailing" constant="20" id="FtB-MC-3Ph"/>
                             <constraint firstItem="48N-kD-Sup" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" constant="20" id="Gbb-pn-1G2"/>
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="48N-kD-Sup" secondAttribute="trailing" constant="20" id="Kjm-m3-qG5"/>
@@ -82,9 +87,9 @@
                             <constraint firstItem="Su3-O7-jdA" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" constant="20" id="Z3x-R4-rdI"/>
                             <constraint firstItem="S0c-2J-20v" firstAttribute="top" secondItem="f6H-d3-L60" secondAttribute="top" id="dzb-8h-kWb"/>
                             <constraint firstItem="Kst-DW-Uqn" firstAttribute="trailing" secondItem="Su3-O7-jdA" secondAttribute="trailing" constant="20" id="e3J-uO-k51"/>
-                            <constraint firstItem="Kst-DW-Uqn" firstAttribute="bottom" secondItem="Su3-O7-jdA" secondAttribute="bottom" constant="50" id="vXU-al-Lka"/>
+                            <constraint firstItem="Kst-DW-Uqn" firstAttribute="bottom" secondItem="Su3-O7-jdA" secondAttribute="bottom" constant="60" id="vXU-al-Lka"/>
                             <constraint firstItem="S0c-2J-20v" firstAttribute="leading" secondItem="Kst-DW-Uqn" secondAttribute="leading" id="xpy-bJ-kXm"/>
-                            <constraint firstItem="48N-kD-Sup" firstAttribute="top" secondItem="ypz-wu-vvF" secondAttribute="bottom" constant="40" id="z1s-bA-wKc"/>
+                            <constraint firstItem="48N-kD-Sup" firstAttribute="top" secondItem="ypz-wu-vvF" secondAttribute="bottom" constant="35" id="z1s-bA-wKc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kst-DW-Uqn"/>
                     </view>

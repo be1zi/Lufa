@@ -56,6 +56,7 @@
 		3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5E229D2385009AD5D8 /* duty_1.json */; };
 		3DE0EE66229D2385009AD5D8 /* crew_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5F229D2385009AD5D8 /* crew_2.json */; };
 		3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE68229D26AE009AD5D8 /* JsonReader.swift */; };
+		3DE0EE74229FA621009AD5D8 /* UIColor+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */; };
 		3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */; };
 		3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEA56F72251F523003A34D4 /* Authorization.storyboard */; };
 		3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA57002251FBFC003A34D4 /* WindowController.swift */; };
@@ -115,6 +116,7 @@
 		3DE0EE5E229D2385009AD5D8 /* duty_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = duty_1.json; path = ../../../Downloads/duty_1.json; sourceTree = "<group>"; };
 		3DE0EE5F229D2385009AD5D8 /* crew_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = crew_2.json; path = ../../../Downloads/crew_2.json; sourceTree = "<group>"; };
 		3DE0EE68229D26AE009AD5D8 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
+		3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Lufa.swift"; sourceTree = "<group>"; };
 		3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3DEA56F72251F523003A34D4 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		3DEA57002251FBFC003A34D4 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -138,17 +140,10 @@
 		3D34DC83225351A800590FD2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				3D34DC84225351AF00590FD2 /* Button */,
+				3D34DC85225351BE00590FD2 /* Button+Lufa.swift */,
+				3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */,
 			);
 			path = UIKit;
-			sourceTree = "<group>";
-		};
-		3D34DC84225351AF00590FD2 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				3D34DC85225351BE00590FD2 /* Button+Lufa.swift */,
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		3DA6E9832255F6CE00015999 /* Language */ = {
@@ -617,6 +612,7 @@
 				3DE0EE46229D211E009AD5D8 /* DutyEventAttributes+CoreDataClass.swift in Sources */,
 				3DE0EE45229D211E009AD5D8 /* DutyEvent+CoreDataProperties.swift in Sources */,
 				3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */,
+				3DE0EE74229FA621009AD5D8 /* UIColor+Lufa.swift in Sources */,
 				3DA6E996225610B100015999 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
