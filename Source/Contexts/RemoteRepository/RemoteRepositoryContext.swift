@@ -48,10 +48,11 @@ class RemoteRepositoryContext {
         
         let headers = getHeader(contentType: contentType)
         let encoding = getEncoding(contentType: contentType)
-
+        let params = prepareData(data: parameters)
+        
         AF.request(url,
                    method: .get,
-                   parameters: parameters,
+                   parameters: params,
                    encoding: encoding,
                    headers: headers)
             .validate()
@@ -90,10 +91,11 @@ class RemoteRepositoryContext {
         
         let headers = getHeader(contentType: contentType)
         let encoding = getEncoding(contentType: contentType)
-            
+        let params = prepareData(data: parameters)
+
         AF.request(url,
                    method: .post,
-                   parameters: parameters,
+                   parameters: params,
                    encoding: encoding,
                    headers: headers)
             .validate()
@@ -172,5 +174,21 @@ class RemoteRepositoryContext {
         }
         
         return encoder
+    }
+    
+    private func prepareData(data: [String: Any]?) -> [String: Any]? {
+        
+        if var data = data {
+            
+            for object in data {
+                if object.value is Date {
+                    data[object.key] = DateFormatter.dateToString(date: object.value as! Date)
+                }
+            }
+            
+            return data
+        }
+        
+        return nil
     }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
+		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift */; };
+		3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */; };
 		3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6E9842255F71900015999 /* LanguageViewController.swift */; };
 		3DA6E9872255F74100015999 /* Language.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6E9862255F74100015999 /* Language.storyboard */; };
 		3DA6E98C22560AF600015999 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6E98E22560AF600015999 /* Localizable.strings */; };
@@ -66,6 +68,8 @@
 /* Begin PBXFileReference section */
 		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
+		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+DutyEvents.swift"; sourceTree = "<group>"; };
+		3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Lufa.swift"; sourceTree = "<group>"; };
 		3DA6E9842255F71900015999 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		3DA6E9862255F74100015999 /* Language.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Language.storyboard; sourceTree = "<group>"; };
 		3DA6E98D22560AF600015999 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA6E99222560B7C00015999 /* String+Lufa.swift */,
+				3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 			children = (
 				3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */,
 				3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */,
+				3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift */,
 				3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */,
 			);
 			path = RemoteRepository;
@@ -585,6 +591,7 @@
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
 				3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
+				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift in Sources */,
 				3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */,
 				3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
@@ -604,6 +611,7 @@
 				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
 				3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */,
 				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,
+				3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */,
 				3DE0EE53229D211E009AD5D8 /* Flight+CoreDataProperties.swift in Sources */,
 				3DE0EE47229D211E009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift in Sources */,
 				3DE0EE4C229D211E009AD5D8 /* CheckIn+CoreDataClass.swift in Sources */,

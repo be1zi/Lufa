@@ -15,6 +15,22 @@ class HomeViewController: BaseViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getData()
+    }
+    
+    //MARK: Data
+    
+    func getData() {
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
+                
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+                print("ERROR get data: \(error ?? "" as Any) , \(error?.localizedDescription ?? "" as Any)")
+            })
+        })
     }
     
     //MARK: Action
