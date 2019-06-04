@@ -38,16 +38,12 @@ extension UIButton {
         }
     }
     
-//    @IBInspectable var selectedColor: UIColor {
-//        set {
-//            backgroundColor = UIColor.lufaCyanColor
-//        }
-//        get {
-//            if let backgroundColor = backgroundColor {
-//                return backgroundColor
-//            } else {
-//                return UIColor.clear
-//            }
-//        }
-//    }
+    func setStyle(selected: Bool) {
+        
+        if selected {
+            layer.backgroundColor = UIColor.lufaCyanColor.cgColor
+        } else {
+            layer.backgroundColor = UIColor.lufaWhiteColor.cgColor
+        }
+    }
 }

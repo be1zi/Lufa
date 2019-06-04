@@ -15,6 +15,13 @@ class LanguageViewController: BaseViewController {
     @IBOutlet weak var polishButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
     
+    //MARK: Initialize
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setStyle()
+    }
+    
     //MAKR: Properties
     
     override func loadTranslations() {
@@ -29,6 +36,17 @@ class LanguageViewController: BaseViewController {
         return true
     }
     
+    private func setStyle() {
+        
+        if LanguageManager.sharedInstance.selected {
+            
+            let selectedPL = LanguageManager.sharedInstance.currentLanguage == LANGUAGE_PL
+            
+            polishButton.setStyle(selected: selectedPL)
+            englishButton.setStyle(selected: !selectedPL)
+        }
+    }
+    
     //MARK: Actions
     
     @IBAction func polishButtonAction(_ sender: UIButton) {
@@ -39,7 +57,7 @@ class LanguageViewController: BaseViewController {
     
     @IBAction func englishButtonAction(_ sender: Any) {
         LanguageManager.sharedInstance.currentLanguage = LANGUAGE_EN
-        
+                
         AppDelegate.sharedInstance.windowController?.presentAuthorizationController()
     }
 }

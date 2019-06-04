@@ -15,10 +15,13 @@ class LanguageManager {
     
     static var sharedInstance = LanguageManager()
     
+    var selected = false
+    
     var currentLanguage: String {
         set {
             UserDefaults.standard.set(newValue, forKey: "currentLanguage")
             UserDefaults.standard.synchronize()
+            selected = true
         }
         get {
             return UserDefaults.standard.object(forKey: "currentLanguage") as? String ?? LANGUAGE_EN
