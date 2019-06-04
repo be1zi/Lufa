@@ -8,7 +8,7 @@
 
 //Authorization
 "authorization.welcome" = "Welcome in";
-"authorization.message" = "Hello!\nNot authorized yet ? No problem, just do it now.";
+"authorization.message" = "Hello! Not authorized yet?\nNo problem, just do it now.";
 "authorization.button.authorize.title" = "Authorize";
 "authorization.button.changeLanguage.pl" = "PL";
 "authorization.button.changeLanguage.en" = "EN";
