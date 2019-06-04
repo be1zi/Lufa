@@ -62,3 +62,12 @@ extension DutyEvent {
     @objc(removeDutyLinks:)
     @NSManaged public func removeFromDutyLinks(_ values: NSSet)
 }
+
+// MARK: Serializer
+extension DutyEvent {
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.eventType = data["eventType"] as? String
+    }
+}

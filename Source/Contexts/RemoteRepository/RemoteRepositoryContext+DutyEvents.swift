@@ -35,6 +35,11 @@ extension RemoteRepositoryContext {
             if let failure = failure {
                 failure(error)
             }
+            
+            
+            if let result = JsonReader.loadFromFile(withName: "duty_1") {
+                LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "DutyEvent")
+            }
         }
     }
 }

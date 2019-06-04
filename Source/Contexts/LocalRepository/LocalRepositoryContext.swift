@@ -44,4 +44,41 @@ class LocalRepositoryContext {
             }
         }
     }
+    
+    func parseAndSave(data: [String: Any], name: String) {
+        
+        let context = LocalRepositoryContext.context
+        
+        if let entity = NSEntityDescription.entity(forEntityName: name, in: context) {
+            let object = NSManagedObject(entity: entity, insertInto: context)
+
+            object.serialize(data: data)
+            
+            do {
+                try context.save()
+            } catch {
+                print("Save error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func parseAndSave(data: [[String: Any]], name: String) {
+        
+        let context = LocalRepositoryContext.context
+        
+        for singleData in data {
+        
+            if let entity = NSEntityDescription.entity(forEntityName: name, in: context) {
+                let object = NSManagedObject(entity: entity, insertInto: context)
+                
+                object.serialize(data: singleData)
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("Save error: \(error.localizedDescription)")
+        }
+    }
 }
