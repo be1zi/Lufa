@@ -38,3 +38,15 @@ extension Crew {
     @objc(removeCrewMembers:)
     @NSManaged public func removeFromCrewMembers(_ values: NSSet)
 }
+
+//MARK: Serialize
+extension Crew {
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.flightDesignator = data["flightDesignator"] as? String
+        self.flightDate = data["flightDate"] as? NSDate
+        self.departureAirport = data["departureAirport"] as? String
+        self.arrivalAirport = data["arrivalAirport"] as? String
+    }
+}
