@@ -29,3 +29,22 @@ extension CheckIn {
     @NSManaged public var paxOnBoard: NSDate?
 
 }
+
+//MARK: Serialize
+extension CheckIn {
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.flightDesignator = data["flightDesignator"] as? String
+        self.flightDate = data["flightDate"] as? NSDate
+        self.departureAirport = data["departureAirport"] as? String
+        self.arrivalAirport = data["arrivalAirport"] as? String
+        self.briefingRoom = data["briefingRoom"] as? String
+        self.briefingBegin = data["arrivalAirport"] as? String
+        self.crewAtSecurityCheck = data["crewAtSecurityCheck"] as? NSDate
+        self.crewBusDeparture = data["crewBusDeparture"] as? NSDate
+        self.readinessNotification = data["readinessNotification"] as? NSDate
+        self.boardingBegin = data["boardingBegin"] as? NSDate
+        self.paxOnBoard = data["paxOnBoard"] as? NSDate
+    }
+}

@@ -45,6 +45,7 @@ class LocalRepositoryContext {
         }
     }
     
+    //MAKR: - Save data
     func parseAndSave(data: [String: Any], name: String) {
         
         let context = LocalRepositoryContext.context
@@ -56,6 +57,7 @@ class LocalRepositoryContext {
             
             do {
                 try context.save()
+                print("Data saved successfully")
             } catch {
                 print("Save error: \(error.localizedDescription)")
             }
@@ -77,8 +79,26 @@ class LocalRepositoryContext {
         
         do {
             try context.save()
+            print("Data saved successfully")
         } catch {
             print("Save error: \(error.localizedDescription)")
+        }
+    }
+    
+    func executeFetch(fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> [NSManagedObject] {
+        
+        var result: [NSManagedObject]? = []
+        
+        do {
+            result = try LocalRepositoryContext.context.fetch(fetchRequest) as? [NSManagedObject]
+        } catch {
+            print("Fetch error: \(error), \(error.localizedDescription)")
+        }
+        
+        if let result = result {
+            return result
+        } else {
+            return []
         }
     }
 }

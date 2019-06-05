@@ -31,3 +31,24 @@ extension Flight {
     @NSManaged public var flightTime: String?
 
 }
+
+//MAKR: Serialize
+extension Flight {
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.flightDesignator = data["flightDesignator"] as? String
+        self.operatingAirline = data["flightDesignator"] as? String
+        self.flightDate = data["flightDesignator"] as? NSDate
+        self.departureAirport = data["flightDesignator"] as? String
+        self.arrivalAirport = data["flightDesignator"] as? String
+        self.scheduledTimeOfDeparture = data["flightDesignator"] as? NSDate
+        self.scheduledTimeOfArrival = data["flightDesignator"] as? NSDate
+        self.aircraftSubtype = data["flightDesignator"] as? String
+        self.departureGate = data["flightDesignator"] as? String
+        self.departurePosition = data["flightDesignator"] as? String
+        self.arrivalGate = data["flightDesignator"] as? String
+        self.arrivalPosition = data["flightDesignator"] as? String
+        self.flightTime = data["flightDesignator"] as? String
+    }
+}
