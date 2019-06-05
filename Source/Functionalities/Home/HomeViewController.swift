@@ -25,7 +25,7 @@ class HomeViewController: BaseViewController {
         
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
-              self.progressPresenter?.hideProgress()
+                self.progressPresenter?.hideProgress()
             }, andFailure: { error in
                 self.progressPresenter?.hideProgress()
                 print("ERROR get data: \(error ?? "" as Any) , \(error?.localizedDescription ?? "" as Any)")
@@ -36,7 +36,16 @@ class HomeViewController: BaseViewController {
             RemoteRepositoryContext.sharedInstance.getCheckIn(params: [:], withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
             }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
                 print("ERROR get checkIn: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
+            })
+        })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
             })
         })
     }
