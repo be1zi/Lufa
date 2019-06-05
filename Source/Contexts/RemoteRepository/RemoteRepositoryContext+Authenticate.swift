@@ -51,45 +51,58 @@ extension RemoteRepositoryContext {
 
         post(endPoint: "/lhcrew/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { result in
 
-            guard let result = result else {
-
-                if let failure = failure {
-                    failure(nil)
+            DispatchQueue.global().async {
+            
+                guard let result = result else {
+                    
+                    DispatchQueue.main.async {
+                        if let failure = failure {
+                            failure(nil)
+                        }
+                    }
+                    
+                    return
                 }
-
-                return
-            }
-
-            guard let tokenType = result["token_type"] as? String else {
-
-                if let failure = failure {
-                    failure(nil)
+                
+                guard let tokenType = result["token_type"] as? String else {
+                    
+                    DispatchQueue.main.async {
+                        if let failure = failure {
+                            failure(nil)
+                        }
+                    }
+                    
+                    return
                 }
-
-                return
-            }
-
-            guard let token = result["access_token"] as? String else {
-
-                if let failure = failure {
-                    failure(nil)
+                
+                guard let token = result["access_token"] as? String else {
+                    
+                    DispatchQueue.main.async {
+                        if let failure = failure {
+                            failure(nil)
+                        }
+                    }
+                    
+                    return
                 }
-
-                return
+                
+                AppDelegate.sharedInstance.setAuthorizationToken(token: token, type: tokenType)
+                
+                DispatchQueue.main.async {
+                    if let success = success {
+                        success(nil)
+                    }
+                }
             }
-
-            AppDelegate.sharedInstance.setAuthorizationToken(token: token, type: tokenType)
-
-            if let success = success {
-                success(nil)
-            }
-
+            
         }) { error in
 //            if let failure = failure {
 //                failure(error)
 //            }
-            if let success = success {
-                success(nil)
+            DispatchQueue.main.async {
+                if let success = success {
+                    success(nil)
+                }
             }
         }
     }
@@ -136,25 +149,34 @@ extension RemoteRepositoryContext {
         
         post(endPoint: "/lhcrew/logout_backend", parameters: params, contentType: .XFORM, withSuccess: { result in
             
-            guard let result = result else {
-                
-                if let failure = failure {
-                    failure(nil)
+            DispatchQueue.global().async {
+                guard let result = result else {
+                    
+                    DispatchQueue.main.async {
+                        if let failure = failure {
+                            failure(nil)
+                        }
+                    }
+                    
+                    return
                 }
                 
-                return
-            }
-
-            if let success = success {
-                success(result)
+                DispatchQueue.main.async {
+                    if let success = success {
+                        success(result)
+                    }
+                }
             }
             
         }) { error in
 //            if let failure = failure {
 //                failure(error)
 //            }
-            if let success = success {
-                success(nil)
+            
+            DispatchQueue.main.async {
+                if let success = success {
+                    success(nil)
+                }
             }
         }
     }

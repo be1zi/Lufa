@@ -14,22 +14,34 @@ extension RemoteRepositoryContext {
         
         get(endPoint: "v1/flight_operations/crew_services/COMMON_CHECK_IN_TIMES", parameters: params, contentType: .JSON , withSuccess: { response in
             
-            if let response = response {
-                LocalRepositoryContext.sharedInstance.parseAndSave(data: response, name: "CheckIn")
-            }
+            DispatchQueue.global().async {
                 
-            if let success = success {
-                success(nil)
+                if let response = response {
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: response, name: "CheckIn")
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    if let success = success {
+                        success(nil)
+                    }
+                }
+                
             }
-            
         }) { error in
             
-            if let result = JsonReader.loadFromFile(withName: "check-in_1") {
-                LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "CheckIn")
-            }
+            DispatchQueue.global().async {
             
-            if let failure = failure {
-                failure(error)
+                if let result = JsonReader.loadFromFile(withName: "check-in_1") {
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "CheckIn")
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    if let failure = failure {
+                        failure(error)
+                    }
+                }
             }
         }
     }

@@ -26,19 +26,35 @@ extension RemoteRepositoryContext {
                                      "toDate" : endDate]
         get(endPoint: "v1/flight_operations/crew_services/COMMON_DUTY_EVENTS", parameters: params, contentType: .JSON , withSuccess: { response in
             
-            if let success = success {
-                success(nil)
+            DispatchQueue.global().async {
+                
+                if let response = response {
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: response, name: "DutyEvent")
+                }
+                
+                DispatchQueue.main.async {
+                 
+                    if let success = success {
+                        success(nil)
+                    }
+                    
+                }
             }
             
         }) { error in
             
-            if let failure = failure {
-                failure(error)
-            }
-            
-            
-            if let result = JsonReader.loadFromFile(withName: "duty_1") {
-                LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "DutyEvent")
+            DispatchQueue.global().async {
+                
+                if let result = JsonReader.loadFromFile(withName: "duty_1") {
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "DutyEvent")
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    if let failure = failure {
+                        failure(error)
+                    }
+                }
             }
         }
     }
