@@ -12,6 +12,7 @@
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift */; };
 		3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */; };
 		3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */; };
+		3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7B22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift */; };
 		3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6E9842255F71900015999 /* LanguageViewController.swift */; };
 		3DA6E9872255F74100015999 /* Language.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6E9862255F74100015999 /* Language.storyboard */; };
 		3DA6E98C22560AF600015999 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6E98E22560AF600015999 /* Localizable.strings */; };
@@ -72,6 +73,7 @@
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+DutyEvents.swift"; sourceTree = "<group>"; };
 		3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Lufa.swift"; sourceTree = "<group>"; };
 		3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Lufa.swift"; sourceTree = "<group>"; };
+		3DA47B7B22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+CheckIn.swift"; sourceTree = "<group>"; };
 		3DA6E9842255F71900015999 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		3DA6E9862255F74100015999 /* Language.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Language.storyboard; sourceTree = "<group>"; };
 		3DA6E98D22560AF600015999 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */,
 				3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */,
+				3DA47B7B22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift */,
 				3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+DutyEvents.swift */,
 				3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */,
 			);
@@ -621,6 +624,7 @@
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
 				3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */,
 				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
+				3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */,
 				3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */,
 				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,
 				3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */,
