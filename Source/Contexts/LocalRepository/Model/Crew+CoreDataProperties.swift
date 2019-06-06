@@ -52,5 +52,11 @@ extension Crew {
         self.flightDate = data["flightDate"] as? NSDate
         self.departureAirport = data["departureAirport"] as? String
         self.arrivalAirport = data["arrivalAirport"] as? String
+        
+        if let crewMembers = data["crewMembers"] as? [[String: Any]] {
+            self.addToCrewMembers(addRelationship(data: crewMembers, name: "CrewMember"))
+        } else if let crewMembers = data["crewMembers"] as? [String:Any] {
+            self.addToCrewMembers(addRelationship(data: [crewMembers], name: "CrewMember"))
+        }
     }
 }

@@ -133,6 +133,83 @@ class LocalRepositoryContext {
         }
     }
     
+    func addAttribute(data: [[String: Any]], name: String) -> NSSet {
+        
+        let context = LocalRepositoryContext.context
+        let set: NSSet = []
+        
+        
+        
+//        var updated = 0
+//        var added = 0
+//
+//        var newDataKeys: [String] = []
+//        var oldDataKeys: [String] = []
+//        var dataKeysToUpdate: [String] = []
+//
+//        guard let entity = NSEntityDescription.entity(forEntityName: name, in: context) else {
+//            return set
+//        }
+//
+//        let object = NSManagedObject(entity: entity, insertInto: nil)
+//
+//        guard let primaryKey = object.primaryKey() else {
+//            return set
+//        }
+//
+//        //Data keys
+//        for singleObject in data {
+//            if let key = singleObject[primaryKey] as? String {
+//                newDataKeys.append(key)
+//            }
+//        }
+//
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: name)
+//        let result = self.executeFetch(fetchRequest: request)
+//
+//        //Keys in database
+//        for singleResult in result {
+//            if let key = singleResult.value(forKey: primaryKey) as? String {
+//                oldDataKeys.append(key)
+//            }
+//        }
+//
+//        for key in oldDataKeys {
+//            if newDataKeys.contains(key) {
+//                dataKeysToUpdate.append(key)
+//            }
+//        }
+//
+//        for record in result {
+//
+//            if let key: String = record.value(forKey: primaryKey) as? String {
+//                if dataKeysToUpdate.contains(key) {
+//                    record.serialize(data: data.first(where: {$0[primaryKey] as! String == key})!)
+//                    updated += 1
+//                }
+//            }
+//        }
+//
+//        for singleData in data {
+//            if let key: String = singleData[primaryKey] as? String {
+//                if !dataKeysToUpdate.contains(key) {
+//                    if let entity = NSEntityDescription.entity(forEntityName: name, in: context) {
+//                        let object = NSManagedObject(entity: entity, insertInto: context)
+//
+//                        object.serialize(data: singleData)
+//                        set.adding(object)
+//                        added += 1
+//                    }
+//                }
+//            }
+//        }
+//
+//        print("Data saved to \(name): added \(added), updated \(updated)")
+        
+        return set
+    }
+    
+    //MARK: - Fetch
     func executeFetch(fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> [NSManagedObject] {
         
         var result: [NSManagedObject]? = []
@@ -150,6 +227,7 @@ class LocalRepositoryContext {
         }
     }
     
+    //MARK: - Delete Data
     func clearDataBase() {
         
         let context = LocalRepositoryContext.context

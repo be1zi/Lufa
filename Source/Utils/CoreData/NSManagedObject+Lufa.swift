@@ -17,4 +17,8 @@ extension NSManagedObject {
     @objc func primaryKey() -> String? {
         return nil
     }
+    
+    func addRelationship(data: [[String: Any]], name: String) -> NSSet {
+        return LocalRepositoryContext.sharedInstance.addAttribute(data: data, name: name)
+    }
 }
