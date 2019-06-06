@@ -10,9 +10,39 @@ import Foundation
 
 extension RemoteRepositoryContext {
         
-    func getAllCrew(withSuccess: RemoteRepositorySuccess, andFailure: RemoteRepositoryFailure) {
-        
-        //get(endPoint: "v1/flight_operations/crew_services/COMMON_CREWLIST", parameters: nil, contentType: .JSON)
-        
+    func getAllCrew(withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+                
+        get(endPoint: "v1/flight_operations/crew_services/COMMON_CREWLIST", parameters: nil, contentType: .JSON, withSuccess: { responce in
+            
+            DispatchQueue.global().async {
+                
+                if let result = responce {
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Crew")
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    if let success = success {
+                        success(nil)
+                    }
+                }
+            }
+            
+        }) { error in
+            
+            DispatchQueue.global().async {
+                
+                if let result = JsonReader.loadFromFile(withName: "crew_1") {
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Crew")
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    if let failure = failure {
+                        failure(error)
+                    }
+                }
+            }
+        }
     }
 }

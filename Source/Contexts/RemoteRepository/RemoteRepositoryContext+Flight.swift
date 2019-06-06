@@ -34,10 +34,6 @@ extension RemoteRepositoryContext {
                     LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Flight")
                 }
                 
-                if let result = JsonReader.loadFromFile(withName: "flight_4") {
-                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Flight")
-                }
-                
                 DispatchQueue.main.async {
                     
                     if let failure = failure {

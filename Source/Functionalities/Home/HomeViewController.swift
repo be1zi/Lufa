@@ -28,7 +28,7 @@ class HomeViewController: BaseViewController {
                 self.progressPresenter?.hideProgress()
             }, andFailure: { error in
                 self.progressPresenter?.hideProgress()
-                print("ERROR get data: \(error ?? "" as Any) , \(error?.localizedDescription ?? "" as Any)")
+                print("ERROR get event: \(error ?? "" as Any) , \(error?.localizedDescription ?? "" as Any)")
             })
         })
         
@@ -46,6 +46,16 @@ class HomeViewController: BaseViewController {
                 self.progressPresenter?.hideProgress()
             }, andFailure: { error in
                 self.progressPresenter?.hideProgress()
+                print("ERROR get flight: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
+            })
+        })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+                print("ERROR get crew: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
             })
         })
     }
