@@ -36,3 +36,16 @@ extension DutyDay {
     @objc(removeDutyEvents:)
     @NSManaged public func removeFromDutyEvents(_ values: NSSet)
 }
+
+// MARK: ManagedObject override
+extension DutyDay {
+    
+    override func primaryKey() -> String? {
+        return "day"
+    }
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.day = data["day"] as? NSDate
+    }
+}

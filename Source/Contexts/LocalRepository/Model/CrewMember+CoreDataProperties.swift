@@ -28,3 +28,22 @@ extension CrewMember {
     @NSManaged public var toFlight: CrewFlight?
 
 }
+
+// MARK: ManagedObject override
+extension CrewMember {
+    
+    override func primaryKey() -> String? {
+        return "pkNumber"
+    }
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.pkNumber = data["pkNumber"] as? String
+        self.crewPosition = data["crewPosition"] as? String
+        self.posPrefix = data["posPrefix"] as? String
+        self.lastName = data["lastName"] as? String
+        self.firstName = data["firstName"] as? String
+        self.courseNumber = data["courseNumber"] as? Int32 ?? 0
+        self.dutyCode = data["dutyCode"] as? String
+    }
+}

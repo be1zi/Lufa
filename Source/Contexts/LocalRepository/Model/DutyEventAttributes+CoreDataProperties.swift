@@ -21,3 +21,20 @@ extension DutyEventAttributes {
     @NSManaged public var dutyEvent: DutyEvent?
 
 }
+
+// MARK: ManagedObject override
+extension DutyEventAttributes {
+    
+    override func primaryKey() -> String? {
+        return key
+    }
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.key = data.keys.first
+        
+        if let key = self.key {
+            self.value = data[key] as? String
+        }
+    }
+}

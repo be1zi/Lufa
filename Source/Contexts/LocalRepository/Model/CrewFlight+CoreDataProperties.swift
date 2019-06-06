@@ -24,3 +24,19 @@ extension CrewFlight {
     @NSManaged public var toFlight: CrewMember?
 
 }
+
+// MARK: ManagedObject override
+extension CrewFlight {
+    
+    override func primaryKey() -> String? {
+        return "flightDesignator"
+    }
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.flightDesignator = data["flightDesignator"] as? String
+        self.flightDate = data["flightDate"] as? NSDate
+        self.legSequenceNo = data["legSequenceNo"] as? Int32 ?? 0
+        self.dutyCode = data["dutyCode"] as? String
+    }
+}

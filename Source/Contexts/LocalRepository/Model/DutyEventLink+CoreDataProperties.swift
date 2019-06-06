@@ -19,5 +19,20 @@ extension DutyEventLink {
     @NSManaged public var key: String?
     @NSManaged public var uri: URL?
     @NSManaged public var dutyEvent: DutyEvent?
+}
 
+// MARK: ManagedObject override
+extension DutyEventLink {
+    
+    override func primaryKey() -> String? {
+        return key
+    }
+    
+    override func serialize(data: [String : Any]) {
+        self.key = data.keys.first
+        
+        if let key = self.key {
+            self.uri = data[key] as? URL
+        }
+    }
 }

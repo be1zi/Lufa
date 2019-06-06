@@ -37,3 +37,18 @@ extension Duty {
     @objc(removeDutyDays:)
     @NSManaged public func removeFromDutyDays(_ values: NSSet)
 }
+
+// MARK: ManagedObject override
+extension Duty {
+    
+    override func primaryKey() -> String? {
+        return "pkNumber"
+    }
+    
+    override func serialize(data: [String : Any]) {
+        
+        self.pkNumber = data["pkNumber"] as? String
+        self.fromDate = data["fromDate"] as? NSDate
+        self.toDate = data["toDate"] as? NSDate
+    }
+}
