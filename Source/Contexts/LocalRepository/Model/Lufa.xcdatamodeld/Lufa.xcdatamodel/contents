@@ -56,7 +56,7 @@
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="endTimeZoneOffset" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="eventCategory" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eventDefails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventDetails" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -92,15 +92,15 @@
         <attribute name="scheduledTimeOfDeparture" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Flight" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="CheckIn" positionX="9" positionY="153" width="128" height="210"/>
         <element name="Crew" positionX="-54" positionY="90" width="128" height="120"/>
-        <element name="CrewMember" positionX="-36" positionY="99" width="128" height="195"/>
         <element name="CrewFlight" positionX="-18" positionY="135" width="128" height="135"/>
+        <element name="CrewMember" positionX="-36" positionY="99" width="128" height="195"/>
         <element name="Duty" positionX="0" positionY="162" width="128" height="105"/>
         <element name="DutyDay" positionX="18" positionY="171" width="128" height="90"/>
         <element name="DutyEvent" positionX="36" positionY="180" width="128" height="240"/>
         <element name="DutyEventAttributes" positionX="-9" positionY="135" width="128" height="90"/>
         <element name="DutyEventLink" positionX="0" positionY="144" width="128" height="90"/>
-        <element name="CheckIn" positionX="9" positionY="153" width="128" height="210"/>
+        <element name="Flight" positionX="-63" positionY="-18" width="128" height="240"/>
     </elements>
 </model>

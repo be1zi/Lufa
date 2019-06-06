@@ -30,8 +30,12 @@ extension CheckIn {
 
 }
 
-//MARK: Serialize
+// MARK: ManagedObject override
 extension CheckIn {
+    
+    override func primaryKey() -> String? {
+        return "flightDesignator"
+    }
     
     override func serialize(data: [String : Any]) {
         

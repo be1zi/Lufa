@@ -39,8 +39,12 @@ extension Crew {
     @NSManaged public func removeFromCrewMembers(_ values: NSSet)
 }
 
-//MARK: Serialize
+// MARK: ManagedObject override
 extension Crew {
+    
+    override func primaryKey() -> String? {
+        return "flightDesignator"
+    }
     
     override func serialize(data: [String : Any]) {
         

@@ -18,7 +18,7 @@ extension DutyEvent {
 
     @NSManaged public var eventType: String?
     @NSManaged public var eventCategory: String?
-    @NSManaged public var eventDefails: String?
+    @NSManaged public var eventDetails: String?
     @NSManaged public var wholeDay: Bool
     @NSManaged public var startTime: NSDate?
     @NSManaged public var startLocation: String?
@@ -63,11 +63,24 @@ extension DutyEvent {
     @NSManaged public func removeFromDutyLinks(_ values: NSSet)
 }
 
-// MARK: Serializer
+// MARK: ManagedObject override
 extension DutyEvent {
+    
+    override func primaryKey() -> String? {
+        return "eventDetails"
+    }
     
     override func serialize(data: [String : Any]) {
         
         self.eventType = data["eventType"] as? String
+        self.eventCategory = data["eventCategory"] as? String
+        self.eventDetails = data["eventDetails"] as? String
+        self.wholeDay = data["wholeDay"] as? Bool ?? false
+        self.startTime = data["startTime"] as? NSDate
+        self.startLocation = data["startLocation"] as? String
+        self.startTimeZoneOffset = data["startTimeZoneOffset"] as? Int32 ?? 0
+        self.endTime = data["endTime"] as? NSDate
+        self.endLocation = data["endLocation"] as? String
+        self.endTimeZoneOffset = data["endTimeZoneOffset"] as? Int32 ?? 0
     }
 }

@@ -32,8 +32,12 @@ extension Flight {
 
 }
 
-//MAKR: Serialize
+// MARK: ManagedObject override
 extension Flight {
+    
+    override func primaryKey() -> String? {
+        return "flightDesignator"
+    }
     
     override func serialize(data: [String : Any]) {
         

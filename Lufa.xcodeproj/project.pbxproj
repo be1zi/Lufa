@@ -57,7 +57,6 @@
 		3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE59229D2385009AD5D8 /* flight_1.json */; };
 		3DE0EE61229D2385009AD5D8 /* crew_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5A229D2385009AD5D8 /* crew_1.json */; };
 		3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5B229D2385009AD5D8 /* check-in_1.json */; };
-		3DE0EE63229D2385009AD5D8 /* flight_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5C229D2385009AD5D8 /* flight_4.json */; };
 		3DE0EE64229D2385009AD5D8 /* crew_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5D229D2385009AD5D8 /* crew_3.json */; };
 		3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5E229D2385009AD5D8 /* duty_1.json */; };
 		3DE0EE66229D2385009AD5D8 /* crew_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5F229D2385009AD5D8 /* crew_2.json */; };
@@ -123,7 +122,6 @@
 		3DE0EE59229D2385009AD5D8 /* flight_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flight_1.json; path = ../../../Downloads/flight_1.json; sourceTree = "<group>"; };
 		3DE0EE5A229D2385009AD5D8 /* crew_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = crew_1.json; path = ../../../Downloads/crew_1.json; sourceTree = "<group>"; };
 		3DE0EE5B229D2385009AD5D8 /* check-in_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "check-in_1.json"; path = "../../../Downloads/check-in_1.json"; sourceTree = "<group>"; };
-		3DE0EE5C229D2385009AD5D8 /* flight_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flight_4.json; path = ../../../Downloads/flight_4.json; sourceTree = "<group>"; };
 		3DE0EE5D229D2385009AD5D8 /* crew_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = crew_3.json; path = ../../../Downloads/crew_3.json; sourceTree = "<group>"; };
 		3DE0EE5E229D2385009AD5D8 /* duty_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = duty_1.json; path = ../../../Downloads/duty_1.json; sourceTree = "<group>"; };
 		3DE0EE5F229D2385009AD5D8 /* crew_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = crew_2.json; path = ../../../Downloads/crew_2.json; sourceTree = "<group>"; };
@@ -428,7 +426,6 @@
 				3DE0EE5D229D2385009AD5D8 /* crew_3.json */,
 				3DE0EE5E229D2385009AD5D8 /* duty_1.json */,
 				3DE0EE59229D2385009AD5D8 /* flight_1.json */,
-				3DE0EE5C229D2385009AD5D8 /* flight_4.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -537,7 +534,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DA6E9872255F74100015999 /* Language.storyboard in Resources */,
-				3DE0EE63229D2385009AD5D8 /* flight_4.json in Resources */,
 				3DE0EE64229D2385009AD5D8 /* crew_3.json in Resources */,
 				3DE0EE66229D2385009AD5D8 /* crew_2.json in Resources */,
 				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,

@@ -13,4 +13,8 @@ extension NSManagedObject {
     @objc func serialize(data: [String: Any]) {
         
     }
+    
+    @objc func primaryKey() -> String? {
+        return nil
+    }
 }
