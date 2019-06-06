@@ -149,4 +149,27 @@ class LocalRepositoryContext {
             return []
         }
     }
+    
+    func clearDataBase() {
+        
+        let context = LocalRepositoryContext.context
+        
+        let entityNames = LocalRepositoryContext.sharedInstance.persistentContainer.managedObjectModel.entities.map(
+        { (entity) -> String in
+            return entity.name ?? ""
+        })
+        
+        for entity in entityNames {
+            
+            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+            
+            do {
+                try context.execute(deleteRequest)
+                try context.save()
+            } catch {
+                print("Error clear core data: \(error), \(error.localizedDescription)")
+            }
+        }
+    }
 }

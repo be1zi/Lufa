@@ -65,9 +65,13 @@ class HomeViewController: BaseViewController {
         
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.logout(withSuccess: { _ in
+                
+                LocalRepositoryContext.sharedInstance.clearDataBase()
                 AppDelegate.sharedInstance.removeAuthorizationToken()
                 AppDelegate.sharedInstance.windowController?.presentAuthorizationController()
+                
                 self.progressPresenter?.hideProgress()
+                
             }, andFailure: { error in
                 self.progressPresenter?.hideProgress()
                 print("ERROR logout: \(error ?? "" as Any) , \(error?.localizedDescription ?? "" as Any)")
