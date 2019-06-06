@@ -125,61 +125,93 @@ class LocalRepositoryContext {
             }
         }
         
-        do {
-            try context.save()
-            print("Data saved successfully to \(name): added \(added), updated \(updated), deleted \(deleted)")
-        } catch {
-            print("Save error: \(error.localizedDescription)")
+        DispatchQueue.main.async {
+            do {
+                try context.save()
+                print("Data saved successfully to \(name): added \(added), updated \(updated), deleted \(deleted)")
+            } catch {
+                print("Save error: \(error.localizedDescription)")
+            }
         }
     }
     
-    func addAttribute(data: [[String: Any]], name: String) -> NSSet {
+    func addAttribute(data: [[String: Any]], forProperty: String, entityName: String, rootEntityName: String, rootPrimaryKeyValue: String) -> NSSet {
         
         let context = LocalRepositoryContext.context
         let set: NSSet = []
         
+        var updated = 0
+        var added = 0
+
+        var newDataKeys: [String] = []
+        var oldDataKeys: [String] = []
+        var dataKeysToUpdate: [String] = []
+        var dataKeysToDelete: [String] = []
         
+        //Root
+        guard let rootEntity = NSEntityDescription.entity(forEntityName: rootEntityName, in: context) else {
+            return set
+        }
         
-//        var updated = 0
-//        var added = 0
-//
-//        var newDataKeys: [String] = []
-//        var oldDataKeys: [String] = []
-//        var dataKeysToUpdate: [String] = []
-//
-//        guard let entity = NSEntityDescription.entity(forEntityName: name, in: context) else {
-//            return set
-//        }
-//
-//        let object = NSManagedObject(entity: entity, insertInto: nil)
-//
-//        guard let primaryKey = object.primaryKey() else {
-//            return set
-//        }
-//
-//        //Data keys
-//        for singleObject in data {
-//            if let key = singleObject[primaryKey] as? String {
-//                newDataKeys.append(key)
-//            }
-//        }
-//
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: name)
+        let rootObject = NSManagedObject(entity: rootEntity, insertInto: nil)
+        
+        guard let rootPrimaryKey = rootObject.primaryKey() else {
+            return set
+        }
+        
+        let rootRequest = NSFetchRequest<NSFetchRequestResult>(entityName: rootEntityName)
+        rootRequest.predicate = NSPredicate(format: "\(rootPrimaryKey) = %@", rootPrimaryKeyValue)
+        let rootResult = self.executeFetch(fetchRequest: rootRequest).first
+        
+        //New object
+        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
+            return set
+        }
+
+        let object = NSManagedObject(entity: entity, insertInto: nil)
+
+        guard let primaryKey = object.primaryKey() else {
+            return set
+        }
+        
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
 //        let result = self.executeFetch(fetchRequest: request)
-//
-//        //Keys in database
-//        for singleResult in result {
-//            if let key = singleResult.value(forKey: primaryKey) as? String {
-//                oldDataKeys.append(key)
-//            }
-//        }
-//
-//        for key in oldDataKeys {
-//            if newDataKeys.contains(key) {
-//                dataKeysToUpdate.append(key)
-//            }
-//        }
-//
+
+        //Data keys
+        for singleObject in data {
+            if let key = singleObject[primaryKey] as? String {
+                newDataKeys.append(key)
+            }
+        }
+        
+        if let rootSet = rootResult?.value(forKey: forProperty) as? [[String: Any]] {
+            for setElement in rootSet {
+                if let elementKey = setElement[primaryKey] as? String {
+                    oldDataKeys.append(elementKey)
+                }
+            }
+        }
+        
+        for key in oldDataKeys {
+            if newDataKeys.contains(key) {
+                dataKeysToUpdate.append(key)
+            } else {
+                dataKeysToDelete.append(key)
+            }
+        }
+
+        for element in data {
+            if let key: String = element[primaryKey] as? String {
+                if dataKeysToUpdate.contains(key) {
+                    // wyciagniecie obiektu do edycji i jego serializacja ( bez dodawania do setu, chyba)
+                } else if dataKeysToDelete.contains(key) {
+                    //usunięcie obiektu z bazy
+                } else {
+                    // stworzenie nowego obiektu bazodanowego i dodanie do seta
+                }
+            }
+        }
+        
 //        for record in result {
 //
 //            if let key: String = record.value(forKey: primaryKey) as? String {

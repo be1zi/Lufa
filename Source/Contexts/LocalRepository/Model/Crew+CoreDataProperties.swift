@@ -53,10 +53,23 @@ extension Crew {
         self.departureAirport = data["departureAirport"] as? String
         self.arrivalAirport = data["arrivalAirport"] as? String
         
+        guard let key = self.flightDesignator else {
+            return
+        }
+        
         if let crewMembers = data["crewMembers"] as? [[String: Any]] {
-            self.addToCrewMembers(addRelationship(data: crewMembers, name: "CrewMember"))
+            self.addToCrewMembers(addRelationship(data: crewMembers,
+                                                  forProperty: "crewMembers" ,
+                                                  entityName: "CrewMember",
+                                                  rootEntityName: "Crew",
+                                                  rootPrimeryKeyValue: key))
+            
         } else if let crewMembers = data["crewMembers"] as? [String:Any] {
-            self.addToCrewMembers(addRelationship(data: [crewMembers], name: "CrewMember"))
+            self.addToCrewMembers(addRelationship(data: [crewMembers],
+                                                  forProperty: "crewMembers",
+                                                  entityName: "CrewMember",
+                                                  rootEntityName: "Crew",
+                                                  rootPrimeryKeyValue: key))
         }
     }
 }

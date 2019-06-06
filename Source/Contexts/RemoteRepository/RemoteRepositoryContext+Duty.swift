@@ -1,5 +1,5 @@
 //
-//  RemoteRepositoryContext+DutyEvents.swift
+//  RemoteRepositoryContext+Duty.swift
 //  Lufa
 //
 //  Created by Konrad Belzowski on 03/06/2019.
@@ -29,7 +29,7 @@ extension RemoteRepositoryContext {
             DispatchQueue.global().async {
                 
                 if let response = response {
-                    LocalRepositoryContext.sharedInstance.parseAndSave(data: response, name: "DutyEvent")
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: response, name: "Duty")
                 }
                 
                 DispatchQueue.main.async {
@@ -46,7 +46,7 @@ extension RemoteRepositoryContext {
             DispatchQueue.global().async {
                 
                 if let result = JsonReader.loadFromFile(withName: "duty_1") {
-                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "DutyEvent")
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Duty")
                 }
                 
                 DispatchQueue.main.async {
