@@ -27,8 +27,8 @@ extension DutyEvent {
     @NSManaged public var endLocation: String?
     @NSManaged public var endTimeZoneOffset: Int32
     @NSManaged public var dutyDay: DutyDay?
-    @NSManaged public var attributes: NSSet?
-    @NSManaged public var dutyLinks: NSSet?
+    @NSManaged public var attributes: Set<NSManagedObject>
+    @NSManaged public var dutyLinks: Set<NSManagedObject>
 }
 
 // MARK: Generated accessors for attributes
@@ -82,5 +82,9 @@ extension DutyEvent {
         self.endTime = data["endTime"] as? NSDate
         self.endLocation = data["endLocation"] as? String
         self.endTimeZoneOffset = data["endTimeZoneOffset"] as? Int32 ?? 0
+        
+        self.attributes = self.addOneToManyRelationship(data: data["eventAttributes"], set: self.attributes, forEntityName: "DutyEventAttributes")
+        
+        self.dutyLinks = self.addOneToManyRelationship(data: data["_links"], set: self.dutyLinks, forEntityName: "DutyEventLink")
     }
 }

@@ -53,8 +53,7 @@ extension Crew {
         self.departureAirport = data["departureAirport"] as? String
         self.arrivalAirport = data["arrivalAirport"] as? String
         
-        if let crewMembers = data["crewMembers"] as? [[String: Any]] {
-            self.crewMembers = self.addOneToManyRelationship(data: crewMembers, set: self.crewMembers, forEntityName: "CrewMember")
-        }
+        self.crewMembers = self.addOneToManyRelationship(data: data["crewMembers"], set: self.crewMembers, forEntityName: "CrewMember")
+
     }
 }

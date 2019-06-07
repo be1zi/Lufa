@@ -18,7 +18,7 @@ extension DutyDay {
 
     @NSManaged public var day: NSDate?
     @NSManaged public var duty: Duty?
-    @NSManaged public var dutyEvents: NSSet?
+    @NSManaged public var dutyEvents: Set<NSManagedObject>
 }
 
 // MARK: Generated accessors for dutyEvents
@@ -47,5 +47,6 @@ extension DutyDay {
     override func serialize(data: [String : Any]) {
         
         self.day = data["day"] as? NSDate
+        self.dutyEvents = self.addOneToManyRelationship(data: data["events"], set: self.dutyEvents, forEntityName: "DutyEvent")
     }
 }

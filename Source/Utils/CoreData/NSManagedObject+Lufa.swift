@@ -18,7 +18,7 @@ extension NSManagedObject {
         return nil
     }
     
-    func addOneToManyRelationship(data: [[String: Any]], set: Set<NSManagedObject>, forEntityName name: String) -> Set<NSManagedObject> {
+    func addOneToManyRelationship(data: Any?, set: Set<NSManagedObject>, forEntityName name: String) -> Set<NSManagedObject> {
         return LocalRepositoryContext.sharedInstance.addOneToManyRelationship(data:data, inSet: set, forEntityName: name)
     }
     

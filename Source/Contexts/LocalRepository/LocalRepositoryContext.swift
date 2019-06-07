@@ -138,11 +138,12 @@ class LocalRepositoryContext {
         }
     }
     
-    func addOneToManyRelationship(data: [[String: Any]], inSet set: Set<NSManagedObject>, forEntityName entityName: String) -> Set<NSManagedObject> {
+    func addOneToManyRelationship(data: Any?, inSet set: Set<NSManagedObject>, forEntityName entityName: String) -> Set<NSManagedObject> {
         
         let context = LocalRepositoryContext.context
         
         var resultSet: Set<NSManagedObject> = []
+        var newData: [[String: Any]] = []
         
         var updated = 0
         var added = 0
@@ -152,6 +153,18 @@ class LocalRepositoryContext {
         var dataKeysToUpdate: [String] = []
         var dataKeysToDelete: [String] = []
 
+        if let tmp = data as? [String: Any] {
+            for object in tmp {
+                newData.append([object.key : object.value])
+            }
+        } else {
+            if let data = data as? [[String: Any]] {
+                newData = data
+            } else {
+                return resultSet
+            }
+        }
+        
         guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
             return resultSet
         }
@@ -163,7 +176,7 @@ class LocalRepositoryContext {
         }
         
         //klucze dla nowych obiektów
-        for singleObject in data {
+        for singleObject in newData {
             if let key = singleObject[primaryKey] as? String {
                 newDataKeys.append(key)
             }
@@ -184,7 +197,7 @@ class LocalRepositoryContext {
             }
         }
         
-        for element in data {
+        for element in newData {
             if let key = element[primaryKey] as? String {
                 if dataKeysToUpdate.contains(key) {
                     if let setElement = set.first(where: {$0.value(forKey: primaryKey) as! String == key}) {
@@ -203,7 +216,7 @@ class LocalRepositoryContext {
             }
         }
             
-        print("Data saved to One To Many for entity: \(entityName): added \(added), updated \(updated), deleted: \(context.deletedObjects.count)")
+        print("Data saved One To Many for entity: \(entityName): added \(added), updated \(updated), deleted: \(context.deletedObjects.count)")
             
         return resultSet
     }

@@ -19,7 +19,7 @@ extension Duty {
     @NSManaged public var pkNumber: String?
     @NSManaged public var fromDate: NSDate?
     @NSManaged public var toDate: NSDate?
-    @NSManaged public var dutyDays: NSSet?
+    @NSManaged public var dutyDays: Set<NSManagedObject>
 }
 
 // MARK: Generated accessors for dutyDays
@@ -50,5 +50,7 @@ extension Duty {
         self.pkNumber = data["pkNumber"] as? String
         self.fromDate = data["fromDate"] as? NSDate
         self.toDate = data["toDate"] as? NSDate
+        
+        self.dutyDays = self.addOneToManyRelationship(data: data["rosterDays"], set: self.dutyDays, forEntityName: "DutyDay")
     }
 }
