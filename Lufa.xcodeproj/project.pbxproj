@@ -15,6 +15,7 @@
 		3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7B22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift */; };
 		3DA47B8122A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B8022A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift */; };
 		3DA47B8322A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B8222A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift */; };
+		3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B8422AA534A0095FA85 /* LocalRepositoryContext+Crew.swift */; };
 		3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6E9842255F71900015999 /* LanguageViewController.swift */; };
 		3DA6E9872255F74100015999 /* Language.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6E9862255F74100015999 /* Language.storyboard */; };
 		3DA6E98C22560AF600015999 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DA6E98E22560AF600015999 /* Localizable.strings */; };
@@ -75,6 +76,7 @@
 		3DA47B7B22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+CheckIn.swift"; sourceTree = "<group>"; };
 		3DA47B8022A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+CheckIn.swift"; sourceTree = "<group>"; };
 		3DA47B8222A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Flight.swift"; sourceTree = "<group>"; };
+		3DA47B8422AA534A0095FA85 /* LocalRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DA6E9842255F71900015999 /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		3DA6E9862255F74100015999 /* Language.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Language.storyboard; sourceTree = "<group>"; };
 		3DA6E98D22560AF600015999 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA47B8022A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift */,
+				3DA47B8422AA534A0095FA85 /* LocalRepositoryContext+Crew.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */,
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
 				3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */,
+				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,
 				3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */,

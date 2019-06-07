@@ -18,12 +18,7 @@ extension NSManagedObject {
         return nil
     }
     
-    func addRelationship(data: [[String: Any]],
-                         forProperty: String,
-                         entityName: String,
-                         rootEntityName: String,
-                         rootPrimeryKeyValue: String) -> NSSet {
-        
-        return LocalRepositoryContext.sharedInstance.addAttribute(data: data, forProperty: forProperty , entityName: entityName, rootEntityName: rootEntityName, rootPrimaryKeyValue: rootPrimeryKeyValue )
+    func addRelationship(data: [[String: Any]], set: Set<NSManagedObject>, forEntityName name: String) -> Set<NSManagedObject> {
+        return LocalRepositoryContext.sharedInstance.addAttribute(data:data, inSet: set, forEntityName: name)
     }
 }

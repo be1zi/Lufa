@@ -20,7 +20,7 @@ extension Crew {
     @NSManaged public var flightDate: NSDate?
     @NSManaged public var departureAirport: String?
     @NSManaged public var arrivalAirport: String?
-    @NSManaged public var crewMembers: NSSet?
+    @NSManaged public var crewMembers: Set<NSManagedObject>
 }
 
 // MARK: Generated accessors for crewMembers
@@ -53,23 +53,8 @@ extension Crew {
         self.departureAirport = data["departureAirport"] as? String
         self.arrivalAirport = data["arrivalAirport"] as? String
         
-        guard let key = self.flightDesignator else {
-            return
-        }
-        
         if let crewMembers = data["crewMembers"] as? [[String: Any]] {
-            self.addToCrewMembers(addRelationship(data: crewMembers,
-                                                  forProperty: "crewMembers" ,
-                                                  entityName: "CrewMember",
-                                                  rootEntityName: "Crew",
-                                                  rootPrimeryKeyValue: key))
-            
-        } else if let crewMembers = data["crewMembers"] as? [String:Any] {
-            self.addToCrewMembers(addRelationship(data: [crewMembers],
-                                                  forProperty: "crewMembers",
-                                                  entityName: "CrewMember",
-                                                  rootEntityName: "Crew",
-                                                  rootPrimeryKeyValue: key))
+            self.crewMembers = self.addRelationship(data: crewMembers, set: self.crewMembers, forEntityName: "CrewMember")
         }
     }
 }

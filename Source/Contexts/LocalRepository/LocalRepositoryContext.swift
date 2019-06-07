@@ -126,7 +126,10 @@ class LocalRepositoryContext {
         }
         
         DispatchQueue.main.async {
+            
             do {
+                try context.save()
+                self.clearEmptyRelationship()
                 try context.save()
                 print("Data saved successfully to \(name): added \(added), updated \(updated), deleted \(deleted)")
             } catch {
@@ -135,60 +138,41 @@ class LocalRepositoryContext {
         }
     }
     
-    func addAttribute(data: [[String: Any]], forProperty: String, entityName: String, rootEntityName: String, rootPrimaryKeyValue: String) -> NSSet {
+    func addAttribute(data: [[String: Any]], inSet set: Set<NSManagedObject>, forEntityName entityName: String) -> Set<NSManagedObject> {
         
         let context = LocalRepositoryContext.context
-        let set: NSSet = []
+        
+        var resultSet: Set<NSManagedObject> = []
         
         var updated = 0
         var added = 0
-
-        var newDataKeys: [String] = []
+        
         var oldDataKeys: [String] = []
+        var newDataKeys: [String] = []
         var dataKeysToUpdate: [String] = []
         var dataKeysToDelete: [String] = []
-        
-        //Root
-        guard let rootEntity = NSEntityDescription.entity(forEntityName: rootEntityName, in: context) else {
-            return set
-        }
-        
-        let rootObject = NSManagedObject(entity: rootEntity, insertInto: nil)
-        
-        guard let rootPrimaryKey = rootObject.primaryKey() else {
-            return set
-        }
-        
-        let rootRequest = NSFetchRequest<NSFetchRequestResult>(entityName: rootEntityName)
-        rootRequest.predicate = NSPredicate(format: "\(rootPrimaryKey) = %@", rootPrimaryKeyValue)
-        let rootResult = self.executeFetch(fetchRequest: rootRequest).first
-        
-        //New object
+
         guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
-            return set
-        }
-
-        let object = NSManagedObject(entity: entity, insertInto: nil)
-
-        guard let primaryKey = object.primaryKey() else {
-            return set
+            return resultSet
         }
         
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-//        let result = self.executeFetch(fetchRequest: request)
-
-        //Data keys
+        let object = NSManagedObject(entity: entity, insertInto: nil)
+        
+        guard let primaryKey = object.primaryKey() else {
+            return resultSet
+        }
+        
+        //klucze dla nowych obiektów
         for singleObject in data {
             if let key = singleObject[primaryKey] as? String {
                 newDataKeys.append(key)
             }
         }
         
-        if let rootSet = rootResult?.value(forKey: forProperty) as? [[String: Any]] {
-            for setElement in rootSet {
-                if let elementKey = setElement[primaryKey] as? String {
-                    oldDataKeys.append(elementKey)
-                }
+        // klucze obiektów w bazie
+        for singleObject in set {
+            if let key = singleObject.value(forKey: primaryKey) as? String{
+                oldDataKeys.append(key)
             }
         }
         
@@ -199,46 +183,29 @@ class LocalRepositoryContext {
                 dataKeysToDelete.append(key)
             }
         }
-
+        
         for element in data {
-            if let key: String = element[primaryKey] as? String {
+            if let key = element[primaryKey] as? String {
                 if dataKeysToUpdate.contains(key) {
-                    // wyciagniecie obiektu do edycji i jego serializacja ( bez dodawania do setu, chyba)
-                } else if dataKeysToDelete.contains(key) {
-                    //usunięcie obiektu z bazy
-                } else {
-                    // stworzenie nowego obiektu bazodanowego i dodanie do seta
+                    if let setElement = set.first(where: {$0.value(forKey: primaryKey) as! String == key}) {
+                        setElement.serialize(data: element)
+                        resultSet.insert(setElement)
+                        
+                        updated += 1
+                    }
+                } else if !dataKeysToDelete.contains(key) {
+                    let newRecord = NSManagedObject(entity: entity, insertInto: context)
+                    newRecord.serialize(data: element)
+                    resultSet.insert(newRecord)
+                    
+                    added += 1
                 }
             }
         }
-        
-//        for record in result {
-//
-//            if let key: String = record.value(forKey: primaryKey) as? String {
-//                if dataKeysToUpdate.contains(key) {
-//                    record.serialize(data: data.first(where: {$0[primaryKey] as! String == key})!)
-//                    updated += 1
-//                }
-//            }
-//        }
-//
-//        for singleData in data {
-//            if let key: String = singleData[primaryKey] as? String {
-//                if !dataKeysToUpdate.contains(key) {
-//                    if let entity = NSEntityDescription.entity(forEntityName: name, in: context) {
-//                        let object = NSManagedObject(entity: entity, insertInto: context)
-//
-//                        object.serialize(data: singleData)
-//                        set.adding(object)
-//                        added += 1
-//                    }
-//                }
-//            }
-//        }
-//
-//        print("Data saved to \(name): added \(added), updated \(updated)")
-        
-        return set
+            
+        print("Data saved to \(entityName): added \(added), updated \(updated), deleted: \(context.deletedObjects.count)")
+            
+        return resultSet
     }
     
     //MARK: - Fetch
@@ -280,6 +247,31 @@ class LocalRepositoryContext {
             } catch {
                 print("Error clear core data: \(error), \(error.localizedDescription)")
             }
+        }
+    }
+    
+    func clearEmptyRelationship() {
+        
+        let records: [String: String] = ["CrewMember" : "crew"]
+        
+        for record in records {
+            self.deleteRowsWithoutRelations(entityName: record.key, invertRelationsName: record.value)
+        }
+    }
+    
+    func deleteRowsWithoutRelations(entityName: String, invertRelationsName invert: String) {
+        
+        let context = LocalRepositoryContext.context
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        request.predicate = NSPredicate(format: "\(invert) = null")
+            
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        
+        do {
+            try context.execute(deleteRequest)
+        } catch {
+            print("Error delete records: \(error), \(error.localizedDescription)")
         }
     }
 }

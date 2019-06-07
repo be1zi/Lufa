@@ -45,17 +45,18 @@ class HomeViewController: BaseViewController {
             RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
             }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
                 print("ERROR get flight: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
-            })
-        })
-        
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
-                self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-                print("ERROR get crew: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
+                
+                RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
+                    self.progressPresenter?.hideProgress()
+                }, andFailure: { error in
+                    self.progressPresenter?.hideProgress()
+                    print("ERROR get crew: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
+                    
+                    if let result = LocalRepositoryContext.sharedInstance.getCrewForFlight(flightDesignator: "LH100") {
+                        print(result.crewMembers)
+                    }
+                })
             })
         })
     }

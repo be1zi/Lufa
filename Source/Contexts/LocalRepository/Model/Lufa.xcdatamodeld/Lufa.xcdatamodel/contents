@@ -18,7 +18,7 @@
         <attribute name="departureAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flightDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flightDesignator" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="crewMembers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CrewMember" inverseName="crew" inverseEntity="CrewMember" syncable="YES"/>
+        <relationship name="crewMembers" toMany="YES" deletionRule="Cascade" destinationEntity="CrewMember" inverseName="crew" inverseEntity="CrewMember" syncable="YES"/>
     </entity>
     <entity name="CrewFlight" representedClassName="CrewFlight" syncable="YES">
         <attribute name="dutyCode" optional="YES" attributeType="String" syncable="YES"/>
