@@ -45,5 +45,9 @@ extension CrewMember {
         self.firstName = data["firstName"] as? String
         self.courseNumber = data["courseNumber"] as? Int32 ?? 0
         self.dutyCode = data["dutyCode"] as? String
+        
+        self.exFlight = self.addOneToOneRelationship(data: data["exFlight"], forEntityName: "CrewFlight", forProperty: self.exFlight) as? CrewFlight
+        
+        self.toFlight = self.addOneToOneRelationship(data: data["toFlight"], forEntityName: "CrewFlight", forProperty: self.toFlight) as? CrewFlight
     }
 }

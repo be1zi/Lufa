@@ -138,7 +138,7 @@ class LocalRepositoryContext {
         }
     }
     
-    func addAttribute(data: [[String: Any]], inSet set: Set<NSManagedObject>, forEntityName entityName: String) -> Set<NSManagedObject> {
+    func addOneToManyRelationship(data: [[String: Any]], inSet set: Set<NSManagedObject>, forEntityName entityName: String) -> Set<NSManagedObject> {
         
         let context = LocalRepositoryContext.context
         
@@ -203,9 +203,60 @@ class LocalRepositoryContext {
             }
         }
             
-        print("Data saved to \(entityName): added \(added), updated \(updated), deleted: \(context.deletedObjects.count)")
+        print("Data saved to One To Many for entity: \(entityName): added \(added), updated \(updated), deleted: \(context.deletedObjects.count)")
             
         return resultSet
+    }
+    
+    func addOneToOneRelationship(data: Any?, forEntityName entityName: String, forProperty property: NSManagedObject?) -> NSManagedObject? {
+        
+        let context = LocalRepositoryContext.context
+        
+        var added = 0
+        var updated = 0
+        var deleted = 0
+        var empty = 0
+        
+        let result: NSManagedObject
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
+            return nil
+        }
+        
+        guard let data = data as? [String: Any] else {
+            
+            if let property = property {
+                do {
+                    context.delete(property)
+                    try context.save()
+                    deleted += 1
+                } catch {
+                    print("Error delete records: \(error), \(error.localizedDescription)")
+                }
+            } else {
+                empty += 1
+            }
+            
+            print("Data saved One To One for entity: \(entityName): added \(added), updated \(updated), deleted \(deleted), empty \(empty)")
+
+            return nil
+        }
+            
+        if let existedObject = property {
+            existedObject.serialize(data: data)
+            result = existedObject
+                
+            updated += 1
+        } else {
+            result = NSManagedObject(entity: entity, insertInto: context)
+            result.serialize(data: data)
+                    
+            added += 1
+        }
+        
+        print("Data saved One To One for entity: \(entityName): added \(added), updated \(updated), deleted \(deleted)")
+        
+        return result
     }
     
     //MARK: - Fetch
