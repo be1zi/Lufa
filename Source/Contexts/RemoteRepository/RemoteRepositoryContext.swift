@@ -16,9 +16,14 @@ enum ContentType {
     case JSON, XFORM
 }
 
+enum ApiType {
+    case OPEN, FlightOps
+}
+
 class RemoteRepositoryContext {
     
     let serverAddress: String?
+    let openServerAddress: String?
     
     //MARK: Singleton
     static let sharedInstance = RemoteRepositoryContext()
@@ -28,17 +33,33 @@ class RemoteRepositoryContext {
         
         guard let address = ConfigurationManager.sharedInstance.serverAddress else {
             self.serverAddress = nil
+            self.openServerAddress = nil
+            return
+        }
+        
+        guard let openAddress = ConfigurationManager.sharedInstance.openServerAddress else {
+            self.serverAddress = nil
+            self.openServerAddress = nil
             return
         }
         
         self.serverAddress = address
+        self.openServerAddress = openAddress
     }
     
     //MARK: Http methods
     
     func get(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        get(endPoint: end, parameters: parameters, apiType: .FlightOps, contentType: contentType, withSuccess: success, andFailure: failure)
+    }
     
-        guard let address = prepareAddress(endPoint: end) else {
+    func getOpen(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        get(endPoint: end, parameters: parameters, apiType: .OPEN, contentType: contentType, withSuccess: success, andFailure: failure)
+    }
+    
+    private func get(endPoint end: String?, parameters: [String: Any]?, apiType: ApiType, contentType: ContentType?,withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        
+        guard let address = prepareAddress(endPoint: end, apiType: apiType) else {
             return
         }
         
@@ -57,7 +78,7 @@ class RemoteRepositoryContext {
                    headers: headers)
             .validate()
             .responseJSON { response in
-            
+                
                 guard response.result.isSuccess else {
                     print("ERROR request GET from: \(address), message: \(response.error?.localizedDescription ?? "empty message")")
                     
@@ -80,8 +101,16 @@ class RemoteRepositoryContext {
     }
     
     func post(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        post(endPoint: end, parameters: parameters, apiType: .FlightOps, contentType: contentType, withSuccess: success, andFailure: failure)
+    }
+    
+    func postOpen(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        post(endPoint: end, parameters: parameters, apiType: .OPEN, contentType: contentType, withSuccess: success, andFailure: failure)
+    }
+    
+    private func post(endPoint end: String?, parameters: [String: Any]?, apiType: ApiType, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
-        guard let address = prepareAddress(endPoint: end) else {
+        guard let address = prepareAddress(endPoint: end, apiType: apiType) else {
             return
         }
         
@@ -125,10 +154,23 @@ class RemoteRepositoryContext {
     
     //MARK: Helper
     
-    private func prepareAddress(endPoint: String?) -> String? {
+    private func prepareAddress(endPoint: String?, apiType: ApiType) -> String? {
         
-        guard var serverAdd = serverAddress else {
-            return nil
+        var serverAdd: String
+        
+        switch apiType {
+        case .OPEN:
+            if let address = openServerAddress {
+                serverAdd = address
+            } else {
+                return nil
+            }
+        case .FlightOps:
+            if let address = serverAddress {
+                serverAdd = address
+            } else {
+                return nil
+            }
         }
         
         guard var endP = endPoint else {

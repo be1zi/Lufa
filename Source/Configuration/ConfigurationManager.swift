@@ -16,19 +16,37 @@ class ConfigurationManager {
     //MARK: Getters for config variables
     var serverAddress: String? {
         get {
-            return getPropertyFromConfigFile(name: "serverAddress")
+            return getPropertyFromConfigFile(name: "serverAddress", withRoot: "LufaAPI")
         }
     }
     
     var serverKey: String? {
         get {
-            return getPropertyFromConfigFile(name: "key")
+            return getPropertyFromConfigFile(name: "key", withRoot: "LufaAPI")
         }
     }
     
     var serverSecret: String? {
         get {
-            return getPropertyFromConfigFile(name: "secret")
+            return getPropertyFromConfigFile(name: "secret", withRoot: "LufaAPI")
+        }
+    }
+    
+    var openServerAddress: String? {
+        get {
+            return getPropertyFromConfigFile(name: "serverAddress", withRoot: "LufaOpenAPI")
+        }
+    }
+    
+    var openServerKey: String? {
+        get {
+            return getPropertyFromConfigFile(name: "key", withRoot: "LufaOpenAPI")
+        }
+    }
+    
+    var openServerSecret: String? {
+        get {
+            return getPropertyFromConfigFile(name: "secret", withRoot: "LufaOpenAPI")
         }
     }
     
@@ -61,14 +79,14 @@ class ConfigurationManager {
         return dict
     }
     
-    private func getPropertyFromConfigFile(name: String) -> String? {
+    private func getPropertyFromConfigFile(name: String, withRoot root: String) -> String? {
         let dict = loadConfiguration()
         
         guard let dictWrapped = dict else {
             return nil
         }
         
-        let api: Dictionary<String, Any> = dictWrapped["LufaAPI"] as! Dictionary<String, Any>
+        let api: Dictionary<String, Any> = dictWrapped[root] as! Dictionary<String, Any>
         
         guard let result = api[name] as? String else {
             return nil
