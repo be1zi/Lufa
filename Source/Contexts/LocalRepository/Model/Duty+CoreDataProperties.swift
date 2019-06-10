@@ -17,8 +17,8 @@ extension Duty {
     }
 
     @NSManaged public var pkNumber: String?
-    @NSManaged public var fromDate: NSDate?
-    @NSManaged public var toDate: NSDate?
+    @NSManaged public var fromDate: Date?
+    @NSManaged public var toDate: Date?
     @NSManaged public var dutyDays: Set<NSManagedObject>
 }
 
@@ -48,8 +48,8 @@ extension Duty {
     override func serialize(data: [String : Any]) {
         
         self.pkNumber = data["pkNumber"] as? String
-        self.fromDate = data["fromDate"] as? NSDate
-        self.toDate = data["toDate"] as? NSDate
+        self.fromDate = self.addDateProperty(date: data["fromDate"])
+        self.toDate = self.addDateProperty(date: data["toDate"])
         
         self.dutyDays = self.addOneToManyRelationship(data: data["rosterDays"], set: self.dutyDays, forEntityName: "DutyDay")
     }

@@ -17,7 +17,7 @@ extension Crew {
     }
 
     @NSManaged public var flightDesignator: String?
-    @NSManaged public var flightDate: NSDate?
+    @NSManaged public var flightDate: Date?
     @NSManaged public var departureAirport: String?
     @NSManaged public var arrivalAirport: String?
     @NSManaged public var crewMembers: Set<NSManagedObject>
@@ -49,7 +49,7 @@ extension Crew {
     override func serialize(data: [String : Any]) {
         
         self.flightDesignator = data["flightDesignator"] as? String
-        self.flightDate = data["flightDate"] as? NSDate
+        self.flightDate = self.addDateProperty(date: data["flightDate"])
         self.departureAirport = data["departureAirport"] as? String
         self.arrivalAirport = data["arrivalAirport"] as? String
         

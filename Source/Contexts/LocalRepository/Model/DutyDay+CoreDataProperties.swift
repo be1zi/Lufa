@@ -16,7 +16,7 @@ extension DutyDay {
         return NSFetchRequest<DutyDay>(entityName: "DutyDay")
     }
 
-    @NSManaged public var day: NSDate?
+    @NSManaged public var day: Date?
     @NSManaged public var duty: Duty?
     @NSManaged public var dutyEvents: Set<NSManagedObject>
 }
@@ -46,7 +46,7 @@ extension DutyDay {
     
     override func serialize(data: [String : Any]) {
         
-        self.day = data["day"] as? NSDate
+        self.day = self.addDateProperty(date: data["day"])
         self.dutyEvents = self.addOneToManyRelationship(data: data["events"], set: self.dutyEvents, forEntityName: "DutyEvent")
     }
 }

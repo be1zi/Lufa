@@ -25,4 +25,17 @@ extension NSManagedObject {
     func addOneToOneRelationship(data: Any?, forEntityName name: String, forProperty property: NSManagedObject?) -> NSManagedObject? {
         return LocalRepositoryContext.sharedInstance.addOneToOneRelationship(data: data, forEntityName: name, forProperty: property)
     }
+    
+    func addDateProperty(date: Any?) -> Date? {
+        
+        if let date = date as? String {
+            if let result = DateFormatter.stringToDate(date: date) {
+                return result
+            } else if let result = DateFormatter.stringToDateTime(date: date) {
+                return result
+            }
+        }
+        
+        return nil
+    }
 }

@@ -19,7 +19,6 @@ extension DutyEventAttributes {
     @NSManaged public var key: String?
     @NSManaged public var value: String?
     @NSManaged public var dutyEvent: DutyEvent?
-
 }
 
 // MARK: ManagedObject override

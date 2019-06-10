@@ -18,11 +18,11 @@ extension Flight {
 
     @NSManaged public var flightDesignator: String?
     @NSManaged public var operatingAirline: String?
-    @NSManaged public var flightDate: NSDate?
+    @NSManaged public var flightDate: Date?
     @NSManaged public var departureAirport: String?
     @NSManaged public var arrivalAirport: String?
-    @NSManaged public var scheduledTimeOfDeparture: NSDate?
-    @NSManaged public var scheduledTimeOfArrival: NSDate?
+    @NSManaged public var scheduledTimeOfDeparture: Date?
+    @NSManaged public var scheduledTimeOfArrival: Date?
     @NSManaged public var aircraftSubtype: String?
     @NSManaged public var departureGate: String?
     @NSManaged public var departurePosition: String?
@@ -43,11 +43,11 @@ extension Flight {
         
         self.flightDesignator = data["flightDesignator"] as? String
         self.operatingAirline = data["operatingAirline"] as? String
-        self.flightDate = data["flightDate"] as? NSDate
+        self.flightDate = self.addDateProperty(date: data["flightDate"])
         self.departureAirport = data["departureAirport"] as? String
         self.arrivalAirport = data["arrivalAirport"] as? String
-        self.scheduledTimeOfDeparture = data["scheduledTimeOfDeparture"] as? NSDate
-        self.scheduledTimeOfArrival = data["scheduledTimeOfArrival"] as? NSDate
+        self.scheduledTimeOfDeparture = self.addDateProperty(date: data["scheduledTimeOfDeparture"])
+        self.scheduledTimeOfArrival = self.addDateProperty(date: data["scheduledTimeOfArrival"])
         self.aircraftSubtype = data["aircraftSubtype"] as? String
         self.departureGate = data["departureGate"] as? String
         self.departurePosition = data["departurePosition"] as? String

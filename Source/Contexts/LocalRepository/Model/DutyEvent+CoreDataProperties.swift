@@ -20,10 +20,10 @@ extension DutyEvent {
     @NSManaged public var eventCategory: String?
     @NSManaged public var eventDetails: String?
     @NSManaged public var wholeDay: Bool
-    @NSManaged public var startTime: NSDate?
+    @NSManaged public var startTime: Date?
     @NSManaged public var startLocation: String?
     @NSManaged public var startTimeZoneOffset: Int32
-    @NSManaged public var endTime: NSDate?
+    @NSManaged public var endTime: Date?
     @NSManaged public var endLocation: String?
     @NSManaged public var endTimeZoneOffset: Int32
     @NSManaged public var dutyDay: DutyDay?
@@ -76,10 +76,10 @@ extension DutyEvent {
         self.eventCategory = data["eventCategory"] as? String
         self.eventDetails = data["eventDetails"] as? String
         self.wholeDay = data["wholeDay"] as? Bool ?? false
-        self.startTime = data["startTime"] as? NSDate
+        self.startTime = self.addDateProperty(date: data["startTime"])
         self.startLocation = data["startLocation"] as? String
         self.startTimeZoneOffset = data["startTimeZoneOffset"] as? Int32 ?? 0
-        self.endTime = data["endTime"] as? NSDate
+        self.endTime = self.addDateProperty(date: data["endTime"])
         self.endLocation = data["endLocation"] as? String
         self.endTimeZoneOffset = data["endTimeZoneOffset"] as? Int32 ?? 0
         

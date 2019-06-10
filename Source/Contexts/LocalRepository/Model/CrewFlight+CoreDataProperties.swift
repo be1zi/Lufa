@@ -17,7 +17,7 @@ extension CrewFlight {
     }
 
     @NSManaged public var flightDesignator: String?
-    @NSManaged public var flightDate: NSDate?
+    @NSManaged public var flightDate: Date?
     @NSManaged public var legSequenceNo: Int32
     @NSManaged public var dutyCode: String?
     @NSManaged public var exFlight: CrewMember?
@@ -35,7 +35,7 @@ extension CrewFlight {
     override func serialize(data: [String : Any]) {
         
         self.flightDesignator = data["flightDesignator"] as? String
-        self.flightDate = data["flightDate"] as? NSDate
+        self.flightDate = self.addDateProperty(date: data["flightDate"])
         self.legSequenceNo = data["legSequenceNo"] as? Int32 ?? 0
         self.dutyCode = data["dutyCode"] as? String
     }
