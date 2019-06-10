@@ -24,39 +24,15 @@ class HomeViewController: BaseViewController {
     func getData() {
         
         progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
+            RemoteRepositoryContext.sharedInstance.getAllCountries(withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-                print("ERROR get event: \(error ?? "" as Any) , \(error?.localizedDescription ?? "" as Any)")
-            })
-        })
-        
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getCheckIn(params: [:], withSuccess: { _ in
-                self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-                print("ERROR get checkIn: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
-            })
-        })
-        
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
-                self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
-                print("ERROR get flight: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
                 
-                RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
-                    self.progressPresenter?.hideProgress()
-                }, andFailure: { error in
-                    self.progressPresenter?.hideProgress()
-                    print("ERROR get crew: \(error ?? "" as Any), \(error?.localizedDescription ?? "" as Any)")
-                    
-                    if let result = LocalRepositoryContext.sharedInstance.getCrewForFlight(flightDesignator: "LH100") {
-                        print(result.crewMembers)
-                    }
-                })
+                print("Success get Countries")
+                
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+                
+                print("Error get countries")
             })
         })
     }

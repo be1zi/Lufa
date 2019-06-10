@@ -123,7 +123,7 @@ extension RemoteRepositoryContext {
                       "client_secret" : clientSecret,
                       "grant_type" : "client_credentials"] as [String: String]
         
-        postOpen(endPoint: "/v1/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { result in
+        postOpenAuthorize(endPoint: "/v1/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { result in
             
             DispatchQueue.global().async {
                 
@@ -165,7 +165,6 @@ extension RemoteRepositoryContext {
                 }
             }
         }
-        
     }
     
     //logout from the backend - invalidate token

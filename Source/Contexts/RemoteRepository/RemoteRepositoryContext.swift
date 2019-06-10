@@ -17,7 +17,7 @@ enum ContentType {
 }
 
 enum ApiType {
-    case OPEN, FlightOps
+    case OpenWithToken, OpenWithoutToken, FlightOps
 }
 
 class RemoteRepositoryContext {
@@ -54,7 +54,7 @@ class RemoteRepositoryContext {
     }
     
     func getOpen(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
-        get(endPoint: end, parameters: parameters, apiType: .OPEN, contentType: contentType, withSuccess: success, andFailure: failure)
+        get(endPoint: end, parameters: parameters, apiType: .OpenWithToken, contentType: contentType, withSuccess: success, andFailure: failure)
     }
     
     private func get(endPoint end: String?, parameters: [String: Any]?, apiType: ApiType, contentType: ContentType?,withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
@@ -67,7 +67,7 @@ class RemoteRepositoryContext {
             return
         }
         
-        let headers = getHeader(contentType: contentType)
+        let headers = getHeader(contentType: contentType, apiType: apiType)
         let encoding = getEncoding(contentType: contentType)
         let params = prepareData(data: parameters)
         
@@ -105,7 +105,11 @@ class RemoteRepositoryContext {
     }
     
     func postOpen(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
-        post(endPoint: end, parameters: parameters, apiType: .OPEN, contentType: contentType, withSuccess: success, andFailure: failure)
+        post(endPoint: end, parameters: parameters, apiType: .OpenWithToken, contentType: contentType, withSuccess: success, andFailure: failure)
+    }
+    
+    func postOpenAuthorize(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        post(endPoint: end, parameters: parameters, apiType: .OpenWithoutToken, contentType: contentType, withSuccess: success, andFailure: failure)
     }
     
     private func post(endPoint end: String?, parameters: [String: Any]?, apiType: ApiType, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
@@ -118,7 +122,7 @@ class RemoteRepositoryContext {
             return
         }
         
-        let headers = getHeader(contentType: contentType)
+        let headers = getHeader(contentType: contentType, apiType: apiType)
         let encoding = getEncoding(contentType: contentType)
         let params = prepareData(data: parameters)
 
@@ -159,7 +163,9 @@ class RemoteRepositoryContext {
         var serverAdd: String
         
         switch apiType {
-        case .OPEN:
+        case .OpenWithToken:
+            fallthrough
+        case . OpenWithoutToken:
             if let address = openServerAddress {
                 serverAdd = address
             } else {
@@ -190,17 +196,43 @@ class RemoteRepositoryContext {
         return serverAdd
     }
     
-    private func getHeader(contentType: ContentType?) -> HTTPHeaders {
+    private func getHeader(contentType: ContentType?, apiType: ApiType?) -> HTTPHeaders? {
         let content = contentType ?? ContentType.JSON
+        let api = apiType ?? ApiType.OpenWithToken
+        
         var headers: HTTPHeaders
         
-        switch content {
+        switch api {
+        case .OpenWithToken:
+            
+            guard let token = AppDelegate.sharedInstance.getAuthorizationOpenToken() else {
+                return nil
+            }
+            
+            switch content {
+            case .JSON:
+                headers = ["Accept" : "application/json",
+                           "Authorization" : "Bearer \(token)"]
+            case .XFORM:
+                headers = ["Content-Type" : "application/x-www-form-urlencoded",
+                           "Authorization" : "Bearer \(token)"]
+            }
+        case .OpenWithoutToken:
+            switch content {
             case .JSON:
                 headers = ["Content-Type" : "application/JSON"]
             case .XFORM:
                 headers = ["Content-Type" : "application/x-www-form-urlencoded"]
+            }
+        case .FlightOps:
+            switch content {
+            case .JSON:
+                headers = ["Content-Type" : "application/JSON"]
+            case .XFORM:
+                headers = ["Content-Type" : "application/x-www-form-urlencoded"]
+            }
         }
-        
+
         return headers
     }
     
