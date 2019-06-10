@@ -5,11 +5,20 @@
 	<key>LufaAPI</key>
 	<dict>
 		<key>secret</key>
+		<string>Pbj9ckPPHx</string>
+		<key>key</key>
+		<string>mu7qct8nqnvk7tpsywrcmgxg</string>
+		<key>serverAddress</key>
+		<string>https://oauth-test.lufthansa.com</string>
+	</dict>
+	<key>LufaOpenAPI</key>
+	<dict>
+		<key>secret</key>
 		<string>ZEYgkeDnQ5</string>
 		<key>key</key>
 		<string>jsjjxuj62dmt926s83hwfj3r</string>
 		<key>serverAddress</key>
-		<string>https://oauth-test.lufthansa.com</string>
+		<string>https://api.lufthansa.com/</string>
 	</dict>
 </dict>
 </plist>
