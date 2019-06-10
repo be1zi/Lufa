@@ -45,6 +45,7 @@ class HomeViewController: BaseViewController {
                 
                 LocalRepositoryContext.sharedInstance.clearDataBase()
                 AppDelegate.sharedInstance.removeAuthorizationToken()
+                AppDelegate.sharedInstance.removeAuthorizationOpenToken()
                 AppDelegate.sharedInstance.windowController?.presentAuthorizationController()
                 
                 self.progressPresenter?.hideProgress()
