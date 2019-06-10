@@ -13,6 +13,10 @@
         <attribute name="paxOnBoard" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="readinessNotification" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Crew" representedClassName="Crew" syncable="YES">
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="departureAirport" optional="YES" attributeType="String" syncable="YES"/>
@@ -102,5 +106,6 @@
         <element name="DutyEventAttributes" positionX="-9" positionY="135" width="128" height="90"/>
         <element name="DutyEventLink" positionX="0" positionY="144" width="128" height="90"/>
         <element name="Flight" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="Country" positionX="-9" positionY="135" width="128" height="75"/>
     </elements>
 </model>

@@ -18,9 +18,8 @@ extension RemoteRepositoryContext {
             
             DispatchQueue.global().async {
                 
-                if let response = response {
-                    LocalRepositoryContext.sharedInstance.parseAndSave(data: response, name: "Country")
-                }
+                let result = self.prepareData(response: response)
+                LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Country")
                 
                 DispatchQueue.main.async {
                     
@@ -38,5 +37,32 @@ extension RemoteRepositoryContext {
                 }
             }
         }
+    }
+}
+
+//MARK: Helpers
+extension RemoteRepositoryContext {
+    
+    func prepareData(response: [String : Any]?) -> [[String: Any]] {
+        
+        var result: [[String: Any]] = []
+        
+        if let response = response,
+            let data = response["CountryResource"] as? [String: Any],
+            let countries = data["Countries"] as? [String: Any],
+            let country = countries["Country"] as? [[String : Any]] {
+        
+            for element in country {
+                if let code = element["CountryCode"] as? String,
+                    let names = element["Names"] as? [String : Any],
+                    let name = names["Name"] as? [String: Any],
+                    let languageName = name["$"] as? String {
+                    
+                    result.append(["code" : code, "name" : languageName])
+                }
+            }
+        }
+        
+        return result
     }
 }
