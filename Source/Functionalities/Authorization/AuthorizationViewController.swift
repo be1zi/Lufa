@@ -41,6 +41,7 @@ class AuthorizationViewController: BaseViewController {
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {
         
+        /*
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
                 AppDelegate.sharedInstance.windowController?.presentHomeController()
@@ -49,6 +50,17 @@ class AuthorizationViewController: BaseViewController {
                 print("Error authorization: \(error?.localizedDescription ?? "empty message")")
                 self.progressPresenter?.hideProgress()
             }
+        })
+         */
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { result in
+                self.progressPresenter?.hideProgress()
+                AppDelegate.sharedInstance.windowController?.presentHomeController()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+                print("Error authorization open: \(error?.localizedDescription ?? "empty message")")
+            })
         })
     }
     

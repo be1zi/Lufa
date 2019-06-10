@@ -107,6 +107,67 @@ extension RemoteRepositoryContext {
         }
     }
     
+    func authorizeOpen(withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        
+        guard let clientId = ConfigurationManager.sharedInstance.openServerKey else {
+            print("ERROR authorizeOpen: clientKey not configured")
+            return
+        }
+        
+        guard let clientSecret = ConfigurationManager.sharedInstance.openServerSecret else {
+            print("ERROR authorizeOpen: clientSecret not configured")
+            return
+        }
+        
+        let params = ["client_id" : clientId,
+                      "client_secret" : clientSecret,
+                      "grant_type" : "client_credentials"] as [String: String]
+        
+        postOpen(endPoint: "/v1/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { result in
+            
+            DispatchQueue.global().async {
+                
+                guard let result = result else {
+                    
+                    DispatchQueue.main.async {
+                        if let failure = failure {
+                            failure(nil)
+                        }
+                    }
+                    
+                    return
+                }
+                
+                guard let token = result["access_token"] as? String else {
+                    
+                    DispatchQueue.main.async {
+                        if let failure = failure {
+                            failure(nil)
+                        }
+                    }
+                    
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    AppDelegate.sharedInstance.setAuthorizationOpenToken(token: token)
+
+                    if let success = success {
+                        success(nil)
+                    }
+                }
+            }
+            
+        }) { error in
+            DispatchQueue.main.async {
+                if let failure = failure {
+                    failure(error)
+                }
+            }
+        }
+        
+    }
+    
     //logout from the backend - invalidate token
     func logout(withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         

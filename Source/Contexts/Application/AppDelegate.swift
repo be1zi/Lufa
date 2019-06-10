@@ -87,5 +87,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getAuthorizationType() -> String? {
         return UserDefaults.standard.object(forKey: "token_type") as? String
     }
+    
+    func setAuthorizationOpenToken(token: String) {
+        UserDefaults.standard.set(token, forKey: "access_open_token")
+    }
+    
+    func removeAuthorizationOpenToken() {
+        UserDefaults.standard.removeObject(forKey: "access_open_token")
+    }
+    
+    func getAuthorizationOpenToken() -> String? {
+        return UserDefaults.standard.object(forKey: "access_open_token") as? String
+    }
 }
 
