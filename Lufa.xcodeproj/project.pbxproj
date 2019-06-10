@@ -30,6 +30,9 @@
 		3DCB50C622AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */; };
 		3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */; };
 		3DCB50CE22AE652D00C0AFF0 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */; };
+		3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CF22AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift */; };
+		3DCB50D322AE778100C0AFF0 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D122AE778100C0AFF0 /* City+CoreDataClass.swift */; };
+		3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D222AE778100C0AFF0 /* City+CoreDataProperties.swift */; };
 		3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AB2244DB84002B6A77 /* config.plist */; };
 		3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */; };
 		3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3B122452539002B6A77 /* BaseViewController.swift */; };
@@ -97,6 +100,9 @@
 		3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Country.swift"; sourceTree = "<group>"; };
 		3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DCB50CF22AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+City.swift"; sourceTree = "<group>"; };
+		3DCB50D122AE778100C0AFF0 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DCB50D222AE778100C0AFF0 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DD4A3AB2244DB84002B6A77 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		3DD4A3B122452539002B6A77 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 				3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */,
 				3DDDDB3C224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift */,
 				3DA47B7B22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift */,
+				3DCB50CF22AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift */,
 				3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */,
 				3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */,
 				3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */,
@@ -400,6 +407,8 @@
 			children = (
 				3DE0EE38229D211D009AD5D8 /* CheckIn+CoreDataClass.swift */,
 				3DE0EE39229D211D009AD5D8 /* CheckIn+CoreDataProperties.swift */,
+				3DCB50D122AE778100C0AFF0 /* City+CoreDataClass.swift */,
+				3DCB50D222AE778100C0AFF0 /* City+CoreDataProperties.swift */,
 				3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */,
 				3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */,
 				3DE0EE40229D211E009AD5D8 /* Crew+CoreDataClass.swift */,
@@ -627,6 +636,7 @@
 				3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */,
 				3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */,
 				3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */,
+				3DCB50D322AE778100C0AFF0 /* City+CoreDataClass.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
@@ -635,6 +645,8 @@
 				3DA6E99322560B7C00015999 /* String+Lufa.swift in Sources */,
 				3DE0EE54229D211E009AD5D8 /* Crew+CoreDataClass.swift in Sources */,
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
+				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
+				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
 				3DE0EE49229D211E009AD5D8 /* DutyEventLink+CoreDataProperties.swift in Sources */,

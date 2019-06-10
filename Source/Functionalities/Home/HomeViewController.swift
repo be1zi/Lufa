@@ -35,6 +35,18 @@ class HomeViewController: BaseViewController {
                 print("Error get countries")
             })
         })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllCities(withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+                
+                print("Success get Cities")
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+                
+                print("Error get cities")
+            })
+        })
     }
     
     //MARK: Action

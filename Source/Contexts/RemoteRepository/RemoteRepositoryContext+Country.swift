@@ -43,7 +43,7 @@ extension RemoteRepositoryContext {
 //MARK: Helpers
 extension RemoteRepositoryContext {
     
-    func prepareData(response: [String : Any]?) -> [[String: Any]] {
+    fileprivate func prepareData(response: [String : Any]?) -> [[String: Any]] {
         
         var result: [[String: Any]] = []
         
