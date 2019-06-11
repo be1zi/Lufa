@@ -40,9 +40,9 @@ class WindowController {
         presentViewControllerAsRoot(viewController: viewController)
     }
     
-    func presentHomeController() {
+    func presentMenuController() {
         
-        let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()?.children.first
+        let vc = UIStoryboard.init(name: "Menu", bundle: nil).instantiateInitialViewController()
         
         guard let viewController = vc else {
             return

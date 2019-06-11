@@ -87,6 +87,16 @@
         <attribute name="uri" optional="YES" attributeType="URI" syncable="YES"/>
         <relationship name="dutyEvent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DutyEvent" inverseName="dutyLinks" inverseEntity="DutyEvent" syncable="YES"/>
     </entity>
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="crewPosition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dutyCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pkNumber" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Flight" representedClassName="Flight" syncable="YES">
         <attribute name="aircraftSubtype" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
@@ -115,5 +125,6 @@
         <element name="Flight" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="Country" positionX="-9" positionY="135" width="128" height="75"/>
         <element name="City" positionX="0" positionY="144" width="128" height="120"/>
+        <element name="Employee" positionX="9" positionY="153" width="128" height="165"/>
     </elements>
 </model>

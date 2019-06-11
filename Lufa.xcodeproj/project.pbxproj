@@ -33,6 +33,15 @@
 		3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CF22AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift */; };
 		3DCB50D322AE778100C0AFF0 /* City+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D122AE778100C0AFF0 /* City+CoreDataClass.swift */; };
 		3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D222AE778100C0AFF0 /* City+CoreDataProperties.swift */; };
+		3DCB50D722AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D522AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift */; };
+		3DCB50D822AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D622AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift */; };
+		3DCB50DA22AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50D922AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift */; };
+		3DCB50E022AF84E800C0AFF0 /* MenuFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50DF22AF84E800C0AFF0 /* MenuFactory.swift */; };
+		3DCB50E422AF88CC00C0AFF0 /* MenuBaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50E322AF88CC00C0AFF0 /* MenuBaseItem.swift */; };
+		3DCB50E622AF88EF00C0AFF0 /* MenuHomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50E522AF88EF00C0AFF0 /* MenuHomeItem.swift */; };
+		3DCB50E822AF891800C0AFF0 /* MenuProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50E722AF891800C0AFF0 /* MenuProfileItem.swift */; };
+		3DCB50EA22AF899300C0AFF0 /* MenuTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50E922AF899300C0AFF0 /* MenuTapBarController.swift */; };
+		3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB50EB22AF89E600C0AFF0 /* Menu.storyboard */; };
 		3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AB2244DB84002B6A77 /* config.plist */; };
 		3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */; };
 		3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3B122452539002B6A77 /* BaseViewController.swift */; };
@@ -103,6 +112,15 @@
 		3DCB50CF22AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+City.swift"; sourceTree = "<group>"; };
 		3DCB50D122AE778100C0AFF0 /* City+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DCB50D222AE778100C0AFF0 /* City+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "City+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DCB50D522AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DCB50D622AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DCB50D922AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+Employee.swift"; sourceTree = "<group>"; };
+		3DCB50DF22AF84E800C0AFF0 /* MenuFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFactory.swift; sourceTree = "<group>"; };
+		3DCB50E322AF88CC00C0AFF0 /* MenuBaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBaseItem.swift; sourceTree = "<group>"; };
+		3DCB50E522AF88EF00C0AFF0 /* MenuHomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHomeItem.swift; sourceTree = "<group>"; };
+		3DCB50E722AF891800C0AFF0 /* MenuProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileItem.swift; sourceTree = "<group>"; };
+		3DCB50E922AF899300C0AFF0 /* MenuTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTapBarController.swift; sourceTree = "<group>"; };
+		3DCB50EB22AF89E600C0AFF0 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		3DD4A3AB2244DB84002B6A77 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		3DD4A3B122452539002B6A77 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +197,7 @@
 			children = (
 				3DA47B8022A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift */,
 				3DA47B8422AA534A0095FA85 /* LocalRepositoryContext+Crew.swift */,
+				3DCB50D922AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -329,6 +348,7 @@
 				3DABA409223B94DF00469FD1 /* Home */,
 				3DA6E9832255F6CE00015999 /* Language */,
 				3DABA407223B949600469FD1 /* Launch */,
+				3DCB50DB22AF83E300C0AFF0 /* Menu */,
 			);
 			path = Functionalities;
 			sourceTree = "<group>";
@@ -369,6 +389,51 @@
 				3DABA3EC223B90DE00469FD1 /* Home.storyboard */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		3DCB50DB22AF83E300C0AFF0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB50DD22AF848100C0AFF0 /* Factory */,
+				3DCB50DC22AF846100C0AFF0 /* Items */,
+				3DCB50DE22AF849700C0AFF0 /* TapBar */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		3DCB50DC22AF846100C0AFF0 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB50E122AF86EA00C0AFF0 /* Base */,
+				3DCB50E522AF88EF00C0AFF0 /* MenuHomeItem.swift */,
+				3DCB50E722AF891800C0AFF0 /* MenuProfileItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		3DCB50DD22AF848100C0AFF0 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB50DF22AF84E800C0AFF0 /* MenuFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		3DCB50DE22AF849700C0AFF0 /* TapBar */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB50E922AF899300C0AFF0 /* MenuTapBarController.swift */,
+				3DCB50EB22AF89E600C0AFF0 /* Menu.storyboard */,
+			);
+			path = TapBar;
+			sourceTree = "<group>";
+		};
+		3DCB50E122AF86EA00C0AFF0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB50E322AF88CC00C0AFF0 /* MenuBaseItem.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		3DD4A3AD2244E296002B6A77 /* Configuration */ = {
@@ -427,6 +492,8 @@
 				3DE0EE33229D211D009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift */,
 				3DE0EE34229D211D009AD5D8 /* DutyEventLink+CoreDataClass.swift */,
 				3DE0EE35229D211D009AD5D8 /* DutyEventLink+CoreDataProperties.swift */,
+				3DCB50D522AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift */,
+				3DCB50D622AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift */,
 				3DE0EE3E229D211D009AD5D8 /* Flight+CoreDataClass.swift */,
 				3DE0EE3F229D211D009AD5D8 /* Flight+CoreDataProperties.swift */,
 				3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */,
@@ -555,6 +622,7 @@
 				3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */,
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
 				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
+				3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */,
 				3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */,
 				3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
@@ -619,16 +687,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */,
+				3DCB50D822AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift in Sources */,
 				3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */,
 				3DE0EE44229D211E009AD5D8 /* DutyEvent+CoreDataClass.swift in Sources */,
 				3DA47B8122A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift in Sources */,
 				3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */,
 				3DE0EE50229D211E009AD5D8 /* DutyDay+CoreDataClass.swift in Sources */,
 				3DE0EE4A229D211E009AD5D8 /* CrewFlight+CoreDataClass.swift in Sources */,
+				3DCB50EA22AF899300C0AFF0 /* MenuTapBarController.swift in Sources */,
 				3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */,
+				3DCB50E422AF88CC00C0AFF0 /* MenuBaseItem.swift in Sources */,
+				3DCB50E022AF84E800C0AFF0 /* MenuFactory.swift in Sources */,
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
+				3DCB50D722AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift in Sources */,
 				3DCB50CE22AE652D00C0AFF0 /* Country+CoreDataProperties.swift in Sources */,
 				3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */,
+				3DCB50DA22AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift in Sources */,
+				3DCB50E622AF88EF00C0AFF0 /* MenuHomeItem.swift in Sources */,
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,
@@ -661,6 +736,7 @@
 				3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */,
 				3DA47B8322A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift in Sources */,
 				3DE0EE53229D211E009AD5D8 /* Flight+CoreDataProperties.swift in Sources */,
+				3DCB50E822AF891800C0AFF0 /* MenuProfileItem.swift in Sources */,
 				3DE0EE47229D211E009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift in Sources */,
 				3DE0EE4C229D211E009AD5D8 /* CheckIn+CoreDataClass.swift in Sources */,
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,

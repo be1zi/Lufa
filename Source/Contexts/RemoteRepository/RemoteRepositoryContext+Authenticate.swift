@@ -138,6 +138,9 @@ extension RemoteRepositoryContext {
                     return
                 }
                 
+                let data = self.prepareDataForUser()
+                LocalRepositoryContext.sharedInstance.parseAndSave(data: data, name: "Employee")
+                
                 guard let token = result["access_token"] as? String else {
                     
                     DispatchQueue.main.async {
@@ -239,5 +242,19 @@ extension RemoteRepositoryContext {
                 }
             }
         }
+    }
+    
+    fileprivate func prepareDataForUser() -> [String: Any] {
+        
+        let data: [String: Any] = ["pkNumber" : "064012K",
+                                   "firstName" : "SNOW",
+                                   "lastName" : "JON",
+                                   "crewPosition" : "PU",
+                                   "dutyCode" : "OD",
+                                   "email" : "john.snow@winterfell.com",
+                                   "phone" : "666999012",
+                                   "birthDate" : "05-11-1995Z"]
+        
+        return data
     }
 }

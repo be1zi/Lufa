@@ -56,7 +56,7 @@ class AuthorizationViewController: BaseViewController {
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { result in
                 self.progressPresenter?.hideProgress()
-                AppDelegate.sharedInstance.windowController?.presentHomeController()
+                AppDelegate.sharedInstance.windowController?.presentMenuController()
             }, andFailure: { error in
                 self.progressPresenter?.hideProgress()
                 print("Error authorization open: \(error?.localizedDescription ?? "empty message")")
