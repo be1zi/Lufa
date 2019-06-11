@@ -45,6 +45,8 @@
 		3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AB2244DB84002B6A77 /* config.plist */; };
 		3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */; };
 		3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3B122452539002B6A77 /* BaseViewController.swift */; };
+		3DD5696C22AF91EE00E43B38 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */; };
+		3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5696D22AF920700E43B38 /* Profile.storyboard */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
@@ -124,6 +126,8 @@
 		3DD4A3AB2244DB84002B6A77 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		3DD4A3AE2244E2AB002B6A77 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		3DD4A3B122452539002B6A77 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3DD5696D22AF920700E43B38 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +348,7 @@
 		3DABA405223B93E600469FD1 /* Functionalities */ = {
 			isa = PBXGroup;
 			children = (
+				3DD5696A22AF91D400E43B38 /* Profile */,
 				3DEA56F42251F4DC003A34D4 /* Authorization */,
 				3DABA409223B94DF00469FD1 /* Home */,
 				3DA6E9832255F6CE00015999 /* Language */,
@@ -465,6 +470,15 @@
 				3D34DC872253536700590FD2 /* ProgressPresenter.swift */,
 			);
 			path = ProgressPresenter;
+			sourceTree = "<group>";
+		};
+		3DD5696A22AF91D400E43B38 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */,
+				3DD5696D22AF920700E43B38 /* Profile.storyboard */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3DE0EE27229D203D009AD5D8 /* Model */ = {
@@ -620,6 +634,7 @@
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
 				3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */,
 				3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */,
+				3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */,
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
 				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
 				3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */,
@@ -707,6 +722,7 @@
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,
+				3DD5696C22AF91EE00E43B38 /* ProfileViewController.swift in Sources */,
 				3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */,
 				3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */,
 				3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */,

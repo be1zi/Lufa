@@ -10,15 +10,19 @@ import UIKit
 
 class MenuTapBarController: UITabBarController {
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()
-        
+        let profileVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateInitialViewController()
+
         if let viewController = vc {
             viewController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 1)
-            self.viewControllers = [viewController]
+            
+            if let profile = profileVC {
+                profileVC?.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 2)
+                self.viewControllers = [viewController, profile]
+            }
         }
     }
 }

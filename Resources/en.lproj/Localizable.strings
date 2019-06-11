@@ -21,5 +21,18 @@
 //Loading
 "loading.title" = "Loading";
 
-//Logout
-"logout.button.title" = "Logout";
+//Main
+"logout.title" = "Logout";
+"edit.title" = "Edit";
+
+//Profile
+"profile.personalData.title" = "Personal data";
+"profile.personalData.firstName.title" = "First name:";
+"profile.personalData.lastName.title" = "Last name:";
+"profile.personalData.birthDate.title" = "Birth date:";
+"profile.contactData.title" = "Contact data";
+"profile.contactData.email.title" = "Email:";
+"profile.contactData.phone.title" = "Phone:";
+"profile.jobData.title" = "Job data";
+"profile.jobData.position.title" = "Position:";
+"profile.jobData.duty.title" = "Duty:";
