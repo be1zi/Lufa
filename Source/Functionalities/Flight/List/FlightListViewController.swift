@@ -14,6 +14,21 @@ class FlightListViewController: BaseViewController {
     //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     var flights: [Flight] = []
+    
+    //MARK: Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        fetchData()
+    }
+    
+    //MARK: Data
+    func fetchData() {
+        
+        if let flights = LocalRepositoryContext.sharedInstance.getAllFlights() {
+            self.flights = flights
+        }
+    }
 }
 
 extension FlightListViewController: UITableViewDelegate {

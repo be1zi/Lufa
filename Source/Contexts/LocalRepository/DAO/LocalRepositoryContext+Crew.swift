@@ -19,4 +19,29 @@ extension LocalRepositoryContext {
         
         return self.executeFetch(fetchRequest: request).first as? Crew
     }
+    
+    func getFlightDesignatorForCrewMember(employeeID: String) -> [String]? {
+        
+        let result: [String]?
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Crew")
+        request.predicate = NSPredicate(format: "crewMembers.pkNumber = %@" , employeeID)
+
+        let fetchResult = self.executeFetch(fetchRequest: request) as? [Crew]
+        
+        if let fetchResult = fetchResult {
+            
+            result = []
+            
+            for element in fetchResult {
+                if let designator = element.flightDesignator {
+                    result?.append(designator)
+                }
+            }
+            
+            return result
+        }
+        
+        return nil
+    }
 }
