@@ -46,3 +46,14 @@ extension Employee {
         self.birthDate = self.addDateProperty(date: data["birthDate"])
     }
 }
+
+extension Employee {
+    
+    func fullName() -> String {
+        
+        let firstName = self.firstName ?? ""
+        let lastName = self.lastName ?? ""
+        
+        return "\(firstName) \(lastName)"
+    }
+}

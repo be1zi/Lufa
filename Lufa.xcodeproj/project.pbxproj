@@ -47,6 +47,10 @@
 		3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4A3B122452539002B6A77 /* BaseViewController.swift */; };
 		3DD5696C22AF91EE00E43B38 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */; };
 		3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5696D22AF920700E43B38 /* Profile.storyboard */; };
+		3DD5697422AF9FB700E43B38 /* FlightListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697322AF9FB700E43B38 /* FlightListViewController.swift */; };
+		3DD5697622AF9FF300E43B38 /* Flight.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5697522AF9FF300E43B38 /* Flight.storyboard */; };
+		3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697822AFA10D00E43B38 /* FlightTableViewCell.swift */; };
+		3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5697922AFA10D00E43B38 /* FlightTableViewCell.xib */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
@@ -128,6 +132,10 @@
 		3DD4A3B122452539002B6A77 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3DD5696D22AF920700E43B38 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		3DD5697322AF9FB700E43B38 /* FlightListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightListViewController.swift; sourceTree = "<group>"; };
+		3DD5697522AF9FF300E43B38 /* Flight.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Flight.storyboard; sourceTree = "<group>"; };
+		3DD5697822AFA10D00E43B38 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
+		3DD5697922AFA10D00E43B38 /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -348,12 +356,13 @@
 		3DABA405223B93E600469FD1 /* Functionalities */ = {
 			isa = PBXGroup;
 			children = (
-				3DD5696A22AF91D400E43B38 /* Profile */,
 				3DEA56F42251F4DC003A34D4 /* Authorization */,
+				3DD5696F22AF9F6600E43B38 /* Flight */,
 				3DABA409223B94DF00469FD1 /* Home */,
 				3DA6E9832255F6CE00015999 /* Language */,
 				3DABA407223B949600469FD1 /* Launch */,
 				3DCB50DB22AF83E300C0AFF0 /* Menu */,
+				3DD5696A22AF91D400E43B38 /* Profile */,
 			);
 			path = Functionalities;
 			sourceTree = "<group>";
@@ -479,6 +488,49 @@
 				3DD5696D22AF920700E43B38 /* Profile.storyboard */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		3DD5696F22AF9F6600E43B38 /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5697122AF9F9100E43B38 /* Details */,
+				3DD5697222AF9F9A00E43B38 /* Filters */,
+				3DD5697022AF9F8B00E43B38 /* List */,
+			);
+			path = Flight;
+			sourceTree = "<group>";
+		};
+		3DD5697022AF9F8B00E43B38 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5697722AFA0F100E43B38 /* Cell */,
+				3DD5697322AF9FB700E43B38 /* FlightListViewController.swift */,
+				3DD5697522AF9FF300E43B38 /* Flight.storyboard */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		3DD5697122AF9F9100E43B38 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		3DD5697222AF9F9A00E43B38 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		3DD5697722AFA0F100E43B38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5697822AFA10D00E43B38 /* FlightTableViewCell.swift */,
+				3DD5697922AFA10D00E43B38 /* FlightTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3DE0EE27229D203D009AD5D8 /* Model */ = {
@@ -634,9 +686,11 @@
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
 				3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */,
 				3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */,
+				3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */,
 				3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */,
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
 				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
+				3DD5697622AF9FF300E43B38 /* Flight.storyboard in Resources */,
 				3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */,
 				3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */,
 				3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */,
@@ -735,6 +789,7 @@
 				3DE0EE4D229D211E009AD5D8 /* CheckIn+CoreDataProperties.swift in Sources */,
 				3DA6E99322560B7C00015999 /* String+Lufa.swift in Sources */,
 				3DE0EE54229D211E009AD5D8 /* Crew+CoreDataClass.swift in Sources */,
+				3DD5697422AF9FB700E43B38 /* FlightListViewController.swift in Sources */,
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
@@ -749,6 +804,7 @@
 				3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */,
 				3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */,
 				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,
+				3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */,
 				3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */,
 				3DA47B8322A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift in Sources */,
 				3DE0EE53229D211E009AD5D8 /* Flight+CoreDataProperties.swift in Sources */,

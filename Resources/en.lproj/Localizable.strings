@@ -36,3 +36,13 @@
 "profile.jobData.title" = "Job data";
 "profile.jobData.position.title" = "Position:";
 "profile.jobData.duty.title" = "Duty:";
+
+//Home
+"home.welcome.title" = "Welcome back";
+
+//Flight list
+"flight.cell.airline.title" = "Airline:";
+"flight.cell.designator.title" = "Designator:";
+"flight.cell.departure.title" = "Departure:";
+"flight.cell.arrival.title" = "Arrival:";
+"flight.cell.date.title" = "Flight date:";

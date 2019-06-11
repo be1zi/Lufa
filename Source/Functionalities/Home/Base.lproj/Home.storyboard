@@ -17,10 +17,34 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55s-3z-Tjc">
+                                <rect key="frame" x="20" y="100" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Snow" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PN-4I-jpJ">
+                                <rect key="frame" x="70" y="131" width="285" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0PN-4I-jpJ" firstAttribute="top" secondItem="55s-3z-Tjc" secondAttribute="bottom" constant="10" id="BFn-0T-BBQ"/>
+                            <constraint firstItem="55s-3z-Tjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CIS-0O-vF1"/>
+                            <constraint firstItem="55s-3z-Tjc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="IRR-cy-Bfg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55s-3z-Tjc" secondAttribute="trailing" constant="20" id="c5D-xp-HeI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0PN-4I-jpJ" secondAttribute="trailing" constant="20" id="hRm-GE-GkX"/>
+                            <constraint firstItem="0PN-4I-jpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="n4l-ni-9VZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="dDZ-Fe-9Yq"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="0PN-4I-jpJ" id="cdR-kh-3P6"/>
+                        <outlet property="welcomeLabel" destination="55s-3z-Tjc" id="u4f-dU-fIu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

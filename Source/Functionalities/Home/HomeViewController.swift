@@ -9,11 +9,27 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
+    //MARK: Properties
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    var employee: Employee?
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getData()
+        loadData()
+        setData()
+    }
+    
+    //MARK: Appearance
+    override func shouldHideNavigationBar() -> Bool {
+        return true
+    }
+    
+    override func loadTranslations() {
+        welcomeLabel.text = "home.welcome.title".localized()
     }
     
     //MARK: Data
@@ -44,5 +60,16 @@ class HomeViewController: BaseViewController {
                 print("Error get cities")
             })
         })
+    }
+    
+    func loadData() {
+        employee = LocalRepositoryContext.sharedInstance.getEmployee()
+    }
+    
+    func setData() {
+        
+        if let employee = employee {
+            nameLabel.text = employee.fullName()
+        }
     }
 }

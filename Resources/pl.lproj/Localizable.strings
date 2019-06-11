@@ -37,3 +37,13 @@
 "profile.jobData.title" = "Dane o stanowisku";
 "profile.jobData.position.title" = "Pozycja:";
 "profile.jobData.duty.title" = "Obowiązki:";
+
+//Home
+"home.welcome.title" = "Witaj ponownie";
+
+//Flight list
+"flight.cell.airline.title" = "Linia:";
+"flight.cell.designator.title" = "Sygnatura:";
+"flight.cell.departure.title" = "Odlot:";
+"flight.cell.arrival.title" = "Przylot:";
+"flight.cell.date.title" = "Data odlotu:";
