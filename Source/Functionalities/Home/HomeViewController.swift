@@ -37,6 +37,38 @@ class HomeViewController: BaseViewController {
     func getData() {
         
         progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { Error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getAllCountries(withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
                 

@@ -10,7 +10,7 @@ import Foundation
 
 extension RemoteRepositoryContext {
     
-    func getCheckIn(params: [String: Any], withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+    func getCheckIn(params: [String: Any]?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
         get(endPoint: "v1/flight_operations/crew_services/COMMON_CHECK_IN_TIMES", parameters: params, contentType: .JSON , withSuccess: { response in
             
