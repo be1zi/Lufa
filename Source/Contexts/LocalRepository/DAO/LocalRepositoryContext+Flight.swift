@@ -35,16 +35,8 @@ extension LocalRepositoryContext {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Flight")
         request.predicate = NSPredicate(format: "flightDesignator IN %@", designators)
+        request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
         
         return self.executeFetch(fetchRequest: request) as? [Flight]
     }
-    
-//    func getEmployee() -> Employee? {
-//
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
-//        request.fetchLimit = 1
-//
-//        return self.executeFetch(fetchRequest: request).first as? Employee
-//    }
-    
 }
