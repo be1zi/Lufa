@@ -12,27 +12,26 @@ class FlightTableViewCell: UITableViewCell {
 
     //MARK: Properties
     //names
-    @IBOutlet weak var airlineTitleLabel: UILabel!
-    @IBOutlet weak var designatorTitleLabel: UILabel!
-    @IBOutlet weak var departureTitleLabel: UILabel!
-    @IBOutlet weak var arrivalTitleLabel: UILabel!
-    @IBOutlet weak var dateTitleLabel: UILabel!
+    @IBOutlet var airlineTitleLabel: UILabel!
+    @IBOutlet var designatorTitleLabel: UILabel!
+    @IBOutlet var departureTitleLabel: UILabel!
+    @IBOutlet var arrivalTitleLabel: UILabel!
+    @IBOutlet var dateTitleLabel: UILabel!
     
     //Values
-    @IBOutlet weak var airlineValueLabel: UILabel!
-    @IBOutlet weak var designatorValueLabel: UILabel!
-    @IBOutlet weak var departureValueLabel: UILabel!
-    @IBOutlet weak var arrivalValueLabel: UILabel!
-    @IBOutlet weak var dateValueLabel: UILabel!
+    @IBOutlet var airlineValueLabel: UILabel!
+    @IBOutlet var designatorValueLabel: UILabel!
+    @IBOutlet var departureValueLabel: UILabel!
+    @IBOutlet var arrivalValueLabel: UILabel!
+    @IBOutlet var dateValueLabel: UILabel!
     
     var flight: Flight?
     
     //MARK: Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         loadTranslations()
-        setData()
     }
     
     //MARK: Properties
@@ -46,8 +45,10 @@ class FlightTableViewCell: UITableViewCell {
     }
     
     //MARK: Data
-    func initWithData(flight: Flight) {
+    func loadWithData(flight: Flight) {
         self.flight = flight
+        
+        setData()
     }
     
     func setData() {

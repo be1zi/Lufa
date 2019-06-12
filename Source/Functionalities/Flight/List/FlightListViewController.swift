@@ -20,6 +20,19 @@ class FlightListViewController: BaseViewController {
         super.viewDidLoad()
         
         fetchData()
+        registerCells()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        fetchData()
+    }
+    
+    //MARK: - Configuration
+    func registerCells() {
+        self.tableView.register(UINib(nibName: "FlightTableViewCell", bundle: nil),
+                                forCellReuseIdentifier: "FlightTableViewCell")
     }
     
     //MARK: Data
@@ -27,6 +40,7 @@ class FlightListViewController: BaseViewController {
         
         if let flights = LocalRepositoryContext.sharedInstance.getAllFlights() {
             self.flights = flights
+            tableView.reloadData()
         }
     }
 }
@@ -46,8 +60,13 @@ extension FlightListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell
         
-        return cell
+        if let cell = cell {
+            cell.loadWithData(flight: flights[indexPath.row])
+            return cell
+        }
+        
+        return UITableViewCell()
     }
 }

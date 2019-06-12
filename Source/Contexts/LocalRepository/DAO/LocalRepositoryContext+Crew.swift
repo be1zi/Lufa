@@ -25,8 +25,8 @@ extension LocalRepositoryContext {
         let result: [String]?
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Crew")
-        request.predicate = NSPredicate(format: "crewMembers.pkNumber = %@" , employeeID)
-
+        request.predicate = NSPredicate(format: "SUBQUERY(crewMembers, $x, $x.pkNumber = %@).@count > 0", employeeID)
+        
         let fetchResult = self.executeFetch(fetchRequest: request) as? [Crew]
         
         if let fetchResult = fetchResult {
