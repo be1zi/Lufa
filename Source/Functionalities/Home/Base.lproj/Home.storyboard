@@ -28,15 +28,24 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masz dzis 5 lotow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VP-oJ-1lP">
+                                <rect key="frame" x="20" y="232" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.38823529410000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0PN-4I-jpJ" firstAttribute="top" secondItem="55s-3z-Tjc" secondAttribute="bottom" constant="10" id="BFn-0T-BBQ"/>
                             <constraint firstItem="55s-3z-Tjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CIS-0O-vF1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5VP-oJ-1lP" secondAttribute="trailing" constant="20" id="DvG-Jf-zk0"/>
                             <constraint firstItem="55s-3z-Tjc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="IRR-cy-Bfg"/>
+                            <constraint firstItem="5VP-oJ-1lP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S3f-f3-ii5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55s-3z-Tjc" secondAttribute="trailing" constant="20" id="c5D-xp-HeI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0PN-4I-jpJ" secondAttribute="trailing" constant="20" id="hRm-GE-GkX"/>
                             <constraint firstItem="0PN-4I-jpJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="n4l-ni-9VZ"/>
+                            <constraint firstItem="5VP-oJ-1lP" firstAttribute="top" secondItem="0PN-4I-jpJ" secondAttribute="bottom" constant="80" id="yye-GW-6Ql"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

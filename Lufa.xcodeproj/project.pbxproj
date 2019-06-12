@@ -52,6 +52,8 @@
 		3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697822AFA10D00E43B38 /* FlightTableViewCell.swift */; };
 		3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5697922AFA10D00E43B38 /* FlightTableViewCell.xib */; };
 		3DD5697D22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */; };
+		3DD5697F22B0CF5000E43B38 /* FlightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697E22B0CF5000E43B38 /* FlightDetailsViewController.swift */; };
+		3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
@@ -138,6 +140,8 @@
 		3DD5697822AFA10D00E43B38 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		3DD5697922AFA10D00E43B38 /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
 		3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+Flight.swift"; sourceTree = "<group>"; };
+		3DD5697E22B0CF5000E43B38 /* FlightDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsViewController.swift; sourceTree = "<group>"; };
+		3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightDetails.storyboard; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -516,6 +520,8 @@
 		3DD5697122AF9F9100E43B38 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				3DD5697E22B0CF5000E43B38 /* FlightDetailsViewController.swift */,
+				3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 				3DA6E9872255F74100015999 /* Language.storyboard in Resources */,
 				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
+				3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */,
 				3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */,
 				3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */,
 				3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */,
@@ -761,6 +768,7 @@
 				3DD4A3B222452539002B6A77 /* BaseViewController.swift in Sources */,
 				3DCB50D822AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift in Sources */,
 				3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */,
+				3DD5697F22B0CF5000E43B38 /* FlightDetailsViewController.swift in Sources */,
 				3DE0EE44229D211E009AD5D8 /* DutyEvent+CoreDataClass.swift in Sources */,
 				3DA47B8122A7BD530095FA85 /* LocalRepositoryContext+CheckIn.swift in Sources */,
 				3DD4A3AF2244E2AB002B6A77 /* ConfigurationManager.swift in Sources */,

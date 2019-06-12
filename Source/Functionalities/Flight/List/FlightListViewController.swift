@@ -48,7 +48,15 @@ class FlightListViewController: BaseViewController {
 extension FlightListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
+        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController()
+        //vc?.flight = flights[indexPath.row]
         
+        if let vc = vc {
+            //vc.flight = flights[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+            //self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
