@@ -54,6 +54,8 @@
 		3DD5697D22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */; };
 		3DD5697F22B0CF5000E43B38 /* FlightDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5697E22B0CF5000E43B38 /* FlightDetailsViewController.swift */; };
 		3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */; };
+		3DD5698622B2553B00E43B38 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */; };
+		3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
@@ -142,6 +144,8 @@
 		3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+Flight.swift"; sourceTree = "<group>"; };
 		3DD5697E22B0CF5000E43B38 /* FlightDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsViewController.swift; sourceTree = "<group>"; };
 		3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightDetails.storyboard; sourceTree = "<group>"; };
+		3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 		3DABA409223B94DF00469FD1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3DD5698222B254FB00E43B38 /* Cells */,
 				3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */,
 				3DABA3EC223B90DE00469FD1 /* Home.storyboard */,
 			);
@@ -540,6 +545,31 @@
 				3DD5697922AFA10D00E43B38 /* FlightTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3DD5698222B254FB00E43B38 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5698422B2551E00E43B38 /* CollectionView */,
+				3DD5698322B2550200E43B38 /* TableView */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3DD5698322B2550200E43B38 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */,
+				3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		3DD5698422B2551E00E43B38 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		3DE0EE27229D203D009AD5D8 /* Model */ = {
@@ -706,6 +736,7 @@
 				3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
 				3DE0EE61229D2385009AD5D8 /* crew_1.json in Resources */,
+				3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +819,7 @@
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,
+				3DD5698622B2553B00E43B38 /* HomeHeaderTableViewCell.swift in Sources */,
 				3DD5696C22AF91EE00E43B38 /* ProfileViewController.swift in Sources */,
 				3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */,
 				3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */,

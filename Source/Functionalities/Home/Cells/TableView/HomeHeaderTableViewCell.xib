@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="FW0-pM-cnu" customClass="HomeHeaderTableViewCell" customModule="Lufa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FW0-pM-cnu" id="Q4J-qc-Moa">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCo-a6-Wnw">
+                        <rect key="frame" x="20" y="10" width="335" height="21.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="You have ">
+                                <attributes>
+                                    <color key="NSBackgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" metaFont="system" size="18"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="3">
+                                <attributes>
+                                    <color key="NSBackgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="18" name="SFMono-Bold"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" flights today">
+                                <attributes>
+                                    <color key="NSBackgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" metaFont="system" size="18"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yCo-a6-Wnw" secondAttribute="bottom" constant="10" id="1R3-lK-0El"/>
+                    <constraint firstAttribute="trailing" secondItem="yCo-a6-Wnw" secondAttribute="trailing" constant="20" id="Bdp-Mm-yHR"/>
+                    <constraint firstItem="yCo-a6-Wnw" firstAttribute="top" secondItem="Q4J-qc-Moa" secondAttribute="top" constant="10" id="bgW-YT-aOq"/>
+                    <constraint firstItem="yCo-a6-Wnw" firstAttribute="leading" secondItem="Q4J-qc-Moa" secondAttribute="leading" constant="20" id="pb3-oF-9lz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="messageLabel" destination="yCo-a6-Wnw" id="9Ye-nt-hMw"/>
+            </connections>
+            <point key="canvasLocation" x="184.78260869565219" y="132.58928571428572"/>
+        </tableViewCell>
+    </objects>
+</document>

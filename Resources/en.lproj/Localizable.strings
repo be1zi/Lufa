@@ -39,6 +39,9 @@
 
 //Home
 "home.welcome.title" = "Welcome back";
+"home.flights.number1.title" = "You have %@ flights today";
+"home.flights.number2.title" = "You have %@ flights today";
+"home.flights.number3.title" = "You have %@ flight today";
 
 //Flight list
 "flight.cell.airline.title" = "Airline:";
@@ -46,3 +49,4 @@
 "flight.cell.departure.title" = "Departure:";
 "flight.cell.arrival.title" = "Arrival:";
 "flight.cell.date.title" = "Flight date:";
+

@@ -40,6 +40,9 @@
 
 //Home
 "home.welcome.title" = "Witaj ponownie";
+"home.flights.number1.title" = "Masz dziś %@ lotów";
+"home.flights.number2.title" = "Masz dziś %@ loty";
+"home.flights.number3.title" = "Masz dziś %@ lot";
 
 //Flight list
 "flight.cell.airline.title" = "Linia:";

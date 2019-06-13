@@ -12,10 +12,14 @@ import CoreData
 extension LocalRepositoryContext {
     
     func getAllFlights() -> [Flight]? {
-        return getFlights(limit: nil)
+        return getFlights(limit: nil, date: nil)
     }
     
-    func getFlights(limit: Int?) -> [Flight]? {
+    func getTodayFlights() -> [Flight]? {
+        return getFlights(limit: nil, date: Date.init())
+    }
+    
+    private func getFlights(limit: Int?, date: Date?) -> [Flight]? {
         
         let emp = getEmployee()
         
@@ -34,7 +38,18 @@ extension LocalRepositoryContext {
         }
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Flight")
-        request.predicate = NSPredicate(format: "flightDesignator IN %@", designators)
+        
+        if let date = date {
+            if let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: date),
+                let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date) {
+                request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
+            } else {
+                request.predicate = NSPredicate(format: "flightDesignator IN %@", designators)
+            }
+        } else {
+            request.predicate = NSPredicate(format: "flightDesignator IN %@", designators)
+        }
+        
         request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
         
         return self.executeFetch(fetchRequest: request) as? [Flight]
