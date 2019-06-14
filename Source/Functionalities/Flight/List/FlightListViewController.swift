@@ -35,6 +35,10 @@ class FlightListViewController: BaseViewController {
                                 forCellReuseIdentifier: "FlightTableViewCell")
     }
     
+    override func shouldHideNavigationBar() -> Bool {
+        return true
+    }
+    
     //MARK: Data
     func fetchData() {
         
@@ -49,11 +53,11 @@ extension FlightListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
      
-        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController()
-        //vc?.flight = flights[indexPath.row]
+        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
         
         if let vc = vc {
-            //vc.flight = flights[indexPath.row]
+            vc.flight = flights[indexPath.row]
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
