@@ -8,28 +8,39 @@
 
 import Foundation
 
+typealias ReturnValue = ([[String: Any]]?) -> Void
+
 extension RemoteRepositoryContext {
     
-    func getAllCities(withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+    func getAllCities(withOffset offset: Int, result: [[String: Any]], withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
         let language = LanguageManager.sharedInstance.currentLanguage
         
-        getOpen(endPoint: "v1/references/cities/?lang=\(language)", parameters: nil, contentType: .JSON, withSuccess: { response in
+        getOpen(endPoint: "v1/references/cities/?lang=\(language)&limit=100&offset=\(offset)", parameters: nil, contentType: .JSON, withSuccess: { response in
             
-            DispatchQueue.global().async {
+            var localResult = result
+            let res = self.prepareData(response: response)
+            let localOffset = offset + res.count
+
+            localResult.append(contentsOf: res)
+            
+            if res.count < 100 {
                 
-                let result = self.prepareData(response: response)
-                LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "City")
+                LocalRepositoryContext.sharedInstance.parseAndSave(data: localResult, name: "City")
                 
                 DispatchQueue.main.async {
                     if let success = success {
                         success(nil)
                     }
                 }
+            } else {
+                self.getAllCities(withOffset: localOffset,
+                                  result: localResult,
+                                  withSuccess: success,
+                                  andFailure: failure)
             }
             
         }) { error in
-            
             DispatchQueue.main.async {
                 
                 if let failure = failure {
@@ -54,7 +65,7 @@ extension RemoteRepositoryContext {
             for element in city {
                 
                 var singleCity: [String: Any] = [:]
-            
+                
                 if let code = element["CityCode"] as? String {
                     singleCity.updateValue(code, forKey: "code")
                 }
@@ -76,7 +87,7 @@ extension RemoteRepositoryContext {
                 if let names = element["Names"] as? [String: Any],
                     let name = names["Name"] as? [String: Any],
                     let cityName = name["$"] as? String {
-                        singleCity.updateValue(cityName, forKey: "name")
+                    singleCity.updateValue(cityName, forKey: "name")
                 }
                 
                 result.append(singleCity)

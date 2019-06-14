@@ -104,7 +104,7 @@ class HomeViewController: BaseViewController {
         })
         
         progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getAllCities(withSuccess: { _ in
+            RemoteRepositoryContext.sharedInstance.getAllCities(withOffset: 0, result: [], withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
                 
                 print("Success get Cities")
