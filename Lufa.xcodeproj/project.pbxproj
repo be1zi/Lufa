@@ -31,6 +31,7 @@
 		3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD82A522B28D2700131683 /* HomeFlightCollectionViewCell.xib */; };
 		3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */; };
 		3DAD82AA22B28DCD00131683 /* HomeFlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */; };
+		3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */; };
 		3DCB50C622AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */; };
 		3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */; };
 		3DCB50CE22AE652D00C0AFF0 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */; };
@@ -125,6 +126,7 @@
 		3DAD82A522B28D2700131683 /* HomeFlightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFlightCollectionViewCell.xib; sourceTree = "<group>"; };
 		3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlightsTableViewCell.swift; sourceTree = "<group>"; };
 		3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFlightsTableViewCell.xib; sourceTree = "<group>"; };
+		3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+City.swift"; sourceTree = "<group>"; };
 		3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Country.swift"; sourceTree = "<group>"; };
 		3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				3DA47B8422AA534A0095FA85 /* LocalRepositoryContext+Crew.swift */,
 				3DCB50D922AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift */,
 				3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */,
+				3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
+				3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
 				3DE0EE49229D211E009AD5D8 /* DutyEventLink+CoreDataProperties.swift in Sources */,

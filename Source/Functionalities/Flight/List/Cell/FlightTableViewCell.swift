@@ -26,6 +26,8 @@ class FlightTableViewCell: UITableViewCell {
     @IBOutlet var dateValueLabel: UILabel!
     
     var flight: Flight?
+    var arrivalCity: City?
+    var departureCity: City?
     
     //MARK: Lifecycle
     override func awakeFromNib() {
@@ -45,8 +47,10 @@ class FlightTableViewCell: UITableViewCell {
     }
     
     //MARK: Data
-    func loadWithData(flight: Flight) {
+    func loadWithData(flight: Flight, from: City?, to: City?) {
         self.flight = flight
+        self.departureCity = from
+        self.arrivalCity = to
         
         setData()
     }
@@ -56,8 +60,8 @@ class FlightTableViewCell: UITableViewCell {
         if let flight = flight {
             airlineValueLabel.text = flight.operatingAirline
             designatorValueLabel.text = flight.flightDesignator
-            departureValueLabel.text = flight.departureAirport
-            arrivalValueLabel.text = flight.arrivalAirport
+            departureValueLabel.text = departureCity?.name
+            arrivalValueLabel.text = arrivalCity?.name
             
             if let date = flight.flightDate {
                 dateValueLabel.text = DateFormatter.dateToString(date: date)

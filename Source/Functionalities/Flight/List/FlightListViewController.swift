@@ -67,10 +67,14 @@ extension FlightListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let data = flights[indexPath.row]
+        let from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: data.departureAirport)
+        let to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: data.arrivalAirport)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell
         
         if let cell = cell {
-            cell.loadWithData(flight: flights[indexPath.row])
+            cell.loadWithData(flight: data, from: from, to: to)
             return cell
         }
         
