@@ -51,6 +51,7 @@ class HomeViewController: BaseViewController {
     
     func registerCells() {
         self.tableView.register(UINib(nibName: "HomeHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeHeaderTableViewCell")
+        self.tableView.register(UINib(nibName: "HomeFlightsTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeFlightsTableViewCell")
     }
     
     //MARK: Data
@@ -155,6 +156,11 @@ extension HomeViewController: UITableViewDataSource {
         case HomeCellType.HEADER.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHeaderTableViewCell", for: indexPath) as? HomeHeaderTableViewCell {
                 cell.setCount(count: flights.count)
+                return cell
+            }
+        case HomeCellType.FLIGHTS.rawValue:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell {
+                cell.setFlights(withFlights: flights)
                 return cell
             }
         default:

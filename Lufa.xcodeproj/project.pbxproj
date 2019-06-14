@@ -27,6 +27,10 @@
 		3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */; };
 		3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F2223B90E100469FD1 /* Assets.xcassets */; };
 		3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DABA3F4223B90E100469FD1 /* Launch.storyboard */; };
+		3DAD82A322B28CF200131683 /* HomeFlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD82A222B28CF200131683 /* HomeFlightCollectionViewCell.swift */; };
+		3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD82A522B28D2700131683 /* HomeFlightCollectionViewCell.xib */; };
+		3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */; };
+		3DAD82AA22B28DCD00131683 /* HomeFlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */; };
 		3DCB50C622AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */; };
 		3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */; };
 		3DCB50CE22AE652D00C0AFF0 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */; };
@@ -117,6 +121,10 @@
 		3DABA3F2223B90E100469FD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DABA3F5223B90E100469FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
 		3DABA3F7223B90E100469FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DAD82A222B28CF200131683 /* HomeFlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlightCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DAD82A522B28D2700131683 /* HomeFlightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFlightCollectionViewCell.xib; sourceTree = "<group>"; };
+		3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlightsTableViewCell.swift; sourceTree = "<group>"; };
+		3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFlightsTableViewCell.xib; sourceTree = "<group>"; };
 		3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Country.swift"; sourceTree = "<group>"; };
 		3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -561,6 +569,8 @@
 			children = (
 				3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */,
 				3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */,
+				3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */,
+				3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -568,6 +578,8 @@
 		3DD5698422B2551E00E43B38 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				3DAD82A222B28CF200131683 /* HomeFlightCollectionViewCell.swift */,
+				3DAD82A522B28D2700131683 /* HomeFlightCollectionViewCell.xib */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -722,6 +734,7 @@
 			files = (
 				3DA6E9872255F74100015999 /* Language.storyboard in Resources */,
 				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,
+				3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */,
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
 				3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */,
 				3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */,
@@ -734,6 +747,7 @@
 				3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */,
 				3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */,
 				3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */,
+				3DAD82AA22B28DCD00131683 /* HomeFlightsTableViewCell.xib in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
 				3DE0EE61229D2385009AD5D8 /* crew_1.json in Resources */,
 				3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */,
@@ -816,6 +830,7 @@
 				3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */,
 				3DCB50DA22AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift in Sources */,
 				3DCB50E622AF88EF00C0AFF0 /* MenuHomeItem.swift in Sources */,
+				3DAD82A322B28CF200131683 /* HomeFlightCollectionViewCell.swift in Sources */,
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,
@@ -829,6 +844,7 @@
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
+				3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */,
 				3DCB50C622AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift in Sources */,
 				3DE0EE4D229D211E009AD5D8 /* CheckIn+CoreDataProperties.swift in Sources */,
 				3DA6E99322560B7C00015999 /* String+Lufa.swift in Sources */,
