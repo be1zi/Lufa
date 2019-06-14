@@ -138,6 +138,16 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.row {
+        case HomeCellType.FLIGHTS.rawValue:
+            return 450
+        default:
+            return UITableView.automaticDimension
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
