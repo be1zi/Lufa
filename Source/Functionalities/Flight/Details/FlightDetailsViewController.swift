@@ -13,6 +13,9 @@ enum FlightDetailsCellType: Int {
     case Header = 0
     case Title
     case SectionAirport
+    case Airport
+    case SectionSchedule
+    case Schedule
     case All
 }
 
@@ -44,6 +47,11 @@ class FlightDetailsViewController : BaseViewController {
                            forCellReuseIdentifier: "FlightDetailsTitleTableViewCell")
         tableView.register(UINib(nibName: "FlightDetailsSectionTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "FlightDetailsSectionTableViewCell")
+        tableView.register(UINib(nibName: "FlightDetailsAirportTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsAirportTableViewCell")
+        tableView.register(UINib(nibName: "FlightDetailsScheduleTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsScheduleTableViewCell")
+        
     }
 }
 
@@ -85,6 +93,32 @@ extension FlightDetailsViewController: UITableViewDataSource {
                 return cell
             }
             
+        case FlightDetailsCellType.Airport.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsAirportTableViewCell", for: indexPath) as? FlightDetailsAirportTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithData(flight: flight)
+                
+                return cell
+            }
+            
+        case FlightDetailsCellType.SectionSchedule.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsSectionTableViewCell", for: indexPath) as? FlightDetailsSectionTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithName(name: "flight.details.cell.section.time".localized())
+                
+                return cell
+            }
+            
+        case FlightDetailsCellType.Schedule.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsScheduleTableViewCell", for: indexPath) as? FlightDetailsScheduleTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithData(flight: flight)
+                
+                return cell
+            }
         default:
             return UITableViewCell()
         }

@@ -53,3 +53,8 @@
 
 //Flight Details
 "flight.details.cell.section.airport" = "Lot";
+"flight.details.cell.section.from" = "Odlot:";
+"flight.details.cell.section.to" = "Przylot:";
+"flight.details.cell.section.local" = "Krajowy";
+"flight.details.cell.section.international" = "Międzynarodowy";
+"flight.details.cell.section.time" = "Harmonogram";

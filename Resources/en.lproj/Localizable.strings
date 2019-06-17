@@ -52,3 +52,8 @@
 
 //Flight Details
 "flight.details.cell.section.airport" = "Airport";
+"flight.details.cell.section.from" = "Designator:";
+"flight.details.cell.section.to" = "Arrival:";
+"flight.details.cell.section.local" = "Local";
+"flight.details.cell.section.international" = "International";
+"flight.details.cell.section.time" = "Schedule";
