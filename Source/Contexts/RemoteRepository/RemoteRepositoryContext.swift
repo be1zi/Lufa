@@ -265,4 +265,9 @@ class RemoteRepositoryContext {
         
         return nil
     }
+    
+    //MARK: Network
+    func isReachable() -> Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
+    }
 }

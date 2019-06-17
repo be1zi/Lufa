@@ -34,6 +34,8 @@ extension NSManagedObject {
             } else if let result = DateFormatter.stringToDateTime(date: date) {
                 return result
             }
+        } else if let date = date as? Date {
+            return date
         }
         
         return nil

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57522B7616F00881E17 /* SynchroManager.swift */; };
+		3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */; };
+		3D25D57E22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57C22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift */; };
+		3D25D57F22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57D22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift */; };
+		3D25D58122B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D58022B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift */; };
 		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
@@ -99,6 +104,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D25D57522B7616F00881E17 /* SynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchroManager.swift; sourceTree = "<group>"; };
+		3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySynchroManager.swift; sourceTree = "<group>"; };
+		3D25D57C22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SynchroInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D25D57D22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SynchroInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D25D58022B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+SynchroInfo.swift"; sourceTree = "<group>"; };
 		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
@@ -232,6 +242,7 @@
 				3DCB50D922AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift */,
 				3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */,
 				3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */,
+				3D25D58022B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -371,6 +382,8 @@
 		3DABA404223B93D300469FD1 /* Synchronization */ = {
 			isa = PBXGroup;
 			children = (
+				3D25D57522B7616F00881E17 /* SynchroManager.swift */,
+				3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */,
 			);
 			path = Synchronization;
 			sourceTree = "<group>";
@@ -616,6 +629,8 @@
 				3DCB50D622AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift */,
 				3DE0EE3E229D211D009AD5D8 /* Flight+CoreDataClass.swift */,
 				3DE0EE3F229D211D009AD5D8 /* Flight+CoreDataProperties.swift */,
+				3D25D57C22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift */,
+				3D25D57D22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift */,
 				3DABA3EF223B90DE00469FD1 /* Lufa.xcdatamodeld */,
 			);
 			path = Model;
@@ -840,10 +855,12 @@
 				3DD5698622B2553B00E43B38 /* HomeHeaderTableViewCell.swift in Sources */,
 				3DD5696C22AF91EE00E43B38 /* ProfileViewController.swift in Sources */,
 				3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */,
+				3D25D57F22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift in Sources */,
 				3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */,
 				3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */,
 				3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */,
 				3DCB50D322AE778100C0AFF0 /* City+CoreDataClass.swift in Sources */,
+				3D25D58122B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
@@ -853,6 +870,7 @@
 				3DA6E99322560B7C00015999 /* String+Lufa.swift in Sources */,
 				3DE0EE54229D211E009AD5D8 /* Crew+CoreDataClass.swift in Sources */,
 				3DD5697422AF9FB700E43B38 /* FlightListViewController.swift in Sources */,
+				3D25D57E22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift in Sources */,
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
@@ -862,6 +880,7 @@
 				3DE0EE49229D211E009AD5D8 /* DutyEventLink+CoreDataProperties.swift in Sources */,
 				3DE0EE4B229D211E009AD5D8 /* CrewFlight+CoreDataProperties.swift in Sources */,
 				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
+				3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
 				3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */,
 				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
@@ -875,6 +894,7 @@
 				3DCB50E822AF891800C0AFF0 /* MenuProfileItem.swift in Sources */,
 				3DE0EE47229D211E009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift in Sources */,
 				3DE0EE4C229D211E009AD5D8 /* CheckIn+CoreDataClass.swift in Sources */,
+				3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */,
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,
 				3DE0EE26229D1ADC009AD5D8 /* LocalRepositoryContext.swift in Sources */,
 				3DE0EE46229D211E009AD5D8 /* DutyEventAttributes+CoreDataClass.swift in Sources */,
