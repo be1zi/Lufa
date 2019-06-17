@@ -1,5 +1,5 @@
 //
-//  CountrySynchroManager.swift
+//  CitySynchroManager.swift
 //  Lufa
 //
 //  Created by Konrad Belzowski on 17/06/2019.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class CountrySynchroManager: SynchroManager {
+class CitySynchroManager: SynchroManager {
     
     //MARK: Singleton
-    static let sharedInstance = CountrySynchroManager()
+    static let sharedInstance = CitySynchroManager()
     
     override func synchronizeWithCompletion(completion: SynchroCompletion?, forced: Bool) {
         
@@ -28,7 +28,7 @@ class CountrySynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCountries, object: String(describing: Country.self)) {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCities, object: "City") {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -40,7 +40,7 @@ class CountrySynchroManager: SynchroManager {
         let group: DispatchGroup = DispatchGroup()
         
         group.enter()
-        RemoteRepositoryContext.sharedInstance.getAllCountries(withSuccess: { _ in
+        RemoteRepositoryContext.sharedInstance.getAllCities(withOffset: 0, result: [], withSuccess: { _ in
             group.leave()
         }) { error in
             localError = error
@@ -53,7 +53,8 @@ class CountrySynchroManager: SynchroManager {
             let synchroResult = localError != nil ? SynchroResult.SynchroResultError : SynchroResult.SynchroResultOK
             
             if synchroResult == SynchroResult.SynchroResultOK {
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCountries, object: "Country")
+                
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCities, object: "City")
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

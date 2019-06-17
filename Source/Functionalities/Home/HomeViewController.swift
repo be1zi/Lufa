@@ -59,7 +59,11 @@ class HomeViewController: BaseViewController {
     func getData() {
         
         CountrySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, error in
-            print("Synchronize completed")
+            print("Synchronization complited: Countries")
+        }, forced: false)
+        
+        CitySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+            print("Synchronization complited: Cities")
         }, forced: false)
         
 //        progressPresenter?.presentProgress(withText: nil, completion: {

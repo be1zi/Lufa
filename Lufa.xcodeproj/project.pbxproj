@@ -12,6 +12,7 @@
 		3D25D57E22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57C22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift */; };
 		3D25D57F22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57D22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift */; };
 		3D25D58122B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D58022B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift */; };
+		3D25D58322B77F3500881E17 /* CitySynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D58222B77F3500881E17 /* CitySynchroManager.swift */; };
 		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
@@ -109,6 +110,7 @@
 		3D25D57C22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SynchroInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3D25D57D22B76C0000881E17 /* SynchroInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SynchroInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D25D58022B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+SynchroInfo.swift"; sourceTree = "<group>"; };
+		3D25D58222B77F3500881E17 /* CitySynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySynchroManager.swift; sourceTree = "<group>"; };
 		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			children = (
 				3D25D57522B7616F00881E17 /* SynchroManager.swift */,
 				3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */,
+				3D25D58222B77F3500881E17 /* CitySynchroManager.swift */,
 			);
 			path = Synchronization;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 				3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */,
 				3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */,
 				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,
+				3D25D58322B77F3500881E17 /* CitySynchroManager.swift in Sources */,
 				3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */,
 				3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */,
 				3DA47B8322A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift in Sources */,
