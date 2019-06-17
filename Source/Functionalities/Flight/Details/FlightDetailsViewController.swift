@@ -7,10 +7,88 @@
 //
 
 import Foundation
+import UIKit
+
+enum FlightDetailsCellType: Int {
+    case Header = 0
+    case Title
+    case SectionAirport
+    case All
+}
 
 class FlightDetailsViewController : BaseViewController {
     
     //MARK: Properties
+    @IBOutlet weak var tableView: UITableView!
+    
     var flight: Flight?
     
+    //MARK: Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        
+        tableView.tableFooterView = view
+        
+        registerCells()
+    }
+    
+    //MARK: Configurations
+    func registerCells() {
+        
+        tableView.register(UINib(nibName: "FlightDetailsHeaderTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsHeaderTableViewCell")
+        tableView.register(UINib(nibName: "FlightDetailsTitleTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsTitleTableViewCell")
+        tableView.register(UINib(nibName: "FlightDetailsSectionTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsSectionTableViewCell")
+    }
+}
+
+extension FlightDetailsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return FlightDetailsCellType.All.rawValue
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let flight = flight else {
+            return UITableViewCell()
+        }
+        
+        switch indexPath.row {
+        case FlightDetailsCellType.Header.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsHeaderTableViewCell", for: indexPath) as? FlightDetailsHeaderTableViewCell
+            
+            if let cell = cell {
+                return cell
+            }
+            
+        case FlightDetailsCellType.Title.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsTitleTableViewCell", for: indexPath) as? FlightDetailsTitleTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithData(flight: flight)
+                
+                return cell
+            }
+            
+        case FlightDetailsCellType.SectionAirport.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsSectionTableViewCell", for: indexPath) as? FlightDetailsSectionTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithName(name: "flight.details.cell.section.airport".localized())
+            
+                return cell
+            }
+            
+        default:
+            return UITableViewCell()
+        }
+        
+        return UITableViewCell()
+    }
 }

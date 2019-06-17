@@ -71,7 +71,7 @@ extension RemoteRepositoryContext {
                 }
                 
                 if let countryCode = element["CountryCode"] as? String {
-                    singleCity.updateValue(countryCode, forKey: "CountryCode")
+                    singleCity.updateValue(countryCode, forKey: "countryCode")
                 }
                 
                 if let position = element["Position"] as? [String: Any],

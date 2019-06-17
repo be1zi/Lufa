@@ -50,3 +50,5 @@
 "flight.cell.arrival.title" = "Arrival:";
 "flight.cell.date.title" = "Flight date:";
 
+//Flight Details
+"flight.details.cell.section.airport" = "Airport";

@@ -50,3 +50,6 @@
 "flight.cell.departure.title" = "Odlot:";
 "flight.cell.arrival.title" = "Przylot:";
 "flight.cell.date.title" = "Data odlotu:";
+
+//Flight Details
+"flight.details.cell.section.airport" = "Lot";
