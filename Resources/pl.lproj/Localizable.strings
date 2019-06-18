@@ -57,8 +57,12 @@
 
 //Flight Details
 "flight.details.cell.section.airport" = "Lot";
-"flight.details.cell.section.from" = "Odlot:";
-"flight.details.cell.section.to" = "Przylot:";
-"flight.details.cell.section.local" = "Krajowy";
-"flight.details.cell.section.international" = "Międzynarodowy";
+"flight.details.cell.airport.from" = "Odlot:";
+"flight.details.cell.airport.to" = "Przylot:";
+"flight.details.cell.airport.local" = "Krajowy";
+"flight.details.cell.airport.international" = "Międzynarodowy";
 "flight.details.cell.section.time" = "Harmonogram";
+"flight.details.cell.time.flightDate" = "Data lotu:";
+"flight.details.cell.time.flighttime" = "Czas lotu:";
+"flight.details.cell.time.timeOfDeparture" = "Godzina odlotu:";
+"flight.details.cell.time.timeOfArrival" = "Godzina lądowania:";

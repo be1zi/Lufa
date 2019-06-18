@@ -36,17 +36,29 @@ class FlightDetailsScheduleTableViewCell: UITableViewCell {
             return
         }
         
+        flightDateTitleLabel.text = "flight.details.cell.time.flightDate".localized()
+        flightTimeTitleLabel.text = "flight.details.cell.time.flighttime".localized()
+        departureTitleLabel.text = "flight.details.cell.time.timeOfDeparture".localized()
+        arrivalTittleLabel.text = "flight.details.cell.time.timeOfArrival".localized()
+        
         if let flightDate = data.flightDate {
             flightDateValueLabel.text = DateFormatter.dateToString(date: flightDate)
         } else {
             flightDateValueLabel.text = nil
         }
         
-        if let flightTime = data.flightTime {
-            flightTimeValueLabel.text = flightTime
+        if let departureTime = flight?.scheduledTimeOfDeparture {
+            departureValueLabel.text = DateFormatter.timeStringFromDate(date: departureTime)
         } else {
-            flightTimeValueLabel.text = nil
+            departureValueLabel.text = nil
         }
-
+        
+        if let arrivalTime = flight?.scheduledTimeOfArrival {
+            arrivalValueLabel.text = DateFormatter.timeStringFromDate(date: arrivalTime)
+        } else {
+            arrivalValueLabel.text = nil
+        }
+        
+        flightTimeValueLabel.text = Period.timeInterval(stringDate: flight?.flightTime)
     }
 }

@@ -56,8 +56,12 @@
 
 //Flight Details
 "flight.details.cell.section.airport" = "Airport";
-"flight.details.cell.section.from" = "Designator:";
-"flight.details.cell.section.to" = "Arrival:";
-"flight.details.cell.section.local" = "Local";
-"flight.details.cell.section.international" = "International";
+"flight.details.cell.airport.from" = "Designator:";
+"flight.details.cell.airport.to" = "Arrival:";
+"flight.details.cell.airport.local" = "Local";
+"flight.details.cell.airport.international" = "International";
 "flight.details.cell.section.time" = "Schedule";
+"flight.details.cell.time.flightDate" = "Flight date:";
+"flight.details.cell.time.flighttime" = "Flight time:";
+"flight.details.cell.time.timeOfDeparture" = "Time of departure:";
+"flight.details.cell.time.timeOfArrival" = "Time of arrival:";

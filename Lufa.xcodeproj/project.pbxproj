@@ -77,6 +77,7 @@
 		3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */; };
 		3DD5698622B2553B00E43B38 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */; };
 		3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */; };
+		3DD9B92922B8E2BB00E93AD0 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9B92822B8E2BB00E93AD0 /* Period.swift */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
@@ -188,6 +189,7 @@
 		3DD5698022B0CF8400E43B38 /* FlightDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightDetails.storyboard; sourceTree = "<group>"; };
 		3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		3DD9B92822B8E2BB00E93AD0 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				3DA6E995225610B100015999 /* LanguageManager.swift */,
+				3DD9B92822B8E2BB00E93AD0 /* Period.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -990,6 +993,7 @@
 				3DABA3E9223B90DE00469FD1 /* AppDelegate.swift in Sources */,
 				3DE0EE26229D1ADC009AD5D8 /* LocalRepositoryContext.swift in Sources */,
 				3DE0EE46229D211E009AD5D8 /* DutyEventAttributes+CoreDataClass.swift in Sources */,
+				3DD9B92922B8E2BB00E93AD0 /* Period.swift in Sources */,
 				3DE0EE45229D211E009AD5D8 /* DutyEvent+CoreDataProperties.swift in Sources */,
 				3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */,
 				3DE0EE74229FA621009AD5D8 /* UIColor+Lufa.swift in Sources */,

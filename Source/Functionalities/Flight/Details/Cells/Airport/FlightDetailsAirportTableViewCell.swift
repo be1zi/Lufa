@@ -46,24 +46,24 @@ class FlightDetailsAirportTableViewCell: UITableViewCell {
         
         if let from = from, let name = from.name {
             fromCountryCode = from.countryCode
-            fromLabel.text = "flight.details.cell.section.from".localized() + " \(name)"
+            fromLabel.text = "flight.details.cell.airport.from".localized() + " \(name)"
         } else {
             fromLabel.text = nil
         }
         
         if let to = to, let name = to.name {
             toCountryCode = to.countryCode
-            toLabel.text = "flight.details.cell.section.to".localized() + " \(name)"
+            toLabel.text = "flight.details.cell.airport.to".localized() + " \(name)"
         } else {
             toLabel.text = nil
         }
         
         if let fromCountry = fromCountryCode, let toCountry = toCountryCode {
             if fromCountry == toCountry {
-                typeLabel.text = "flight.details.cell.section.local".localized()
+                typeLabel.text = "flight.details.cell.airport.local".localized()
                 typeView.backgroundColor = UIColor.lufaCyanColor
             } else {
-                typeLabel.text = "flight.details.cell.section.international".localized()
+                typeLabel.text = "flight.details.cell.airport.international".localized()
                 typeView.backgroundColor = UIColor.lufaGreenColor
             }
         } else {
