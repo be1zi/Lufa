@@ -82,13 +82,13 @@ class HomeViewController: BaseViewController {
 //            })
 //        })
 //
-//        progressPresenter?.presentProgress(withText: nil, completion: {
-//            RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
-//                self.progressPresenter?.hideProgress()
-//            }, andFailure: { error in
-//                self.progressPresenter?.hideProgress()
-//            })
-//        })
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
 //
 //        progressPresenter?.presentProgress(withText: nil, completion: {
 //            RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
@@ -151,7 +151,7 @@ extension HomeViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case HomeCellType.FLIGHTS.rawValue:
-            return 450
+            return 310
         default:
             return UITableView.automaticDimension
         }

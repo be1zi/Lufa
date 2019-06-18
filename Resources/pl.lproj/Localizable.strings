@@ -43,6 +43,10 @@
 "home.flights.number1.title" = "Masz dziś %@ lotów";
 "home.flights.number2.title" = "Masz dziś %@ loty";
 "home.flights.number3.title" = "Masz dziś %@ lot";
+"home.flights.cell.from.title" = "Odlot:";
+"home.flights.cell.to.title" = "Przylot:";
+"home.flights.cell.flightNumber.title" = "Numer lotu:";
+"home.flights.cell.departure.title" = "Wylot:";
 
 //Flight list
 "flight.cell.airline.title" = "Linia:";

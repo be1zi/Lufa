@@ -11,6 +11,7 @@ import Foundation
 var DEFAULT_DISPLAY_DATE_FORMAT: String {get {return "dd-MM-yyyy"}}
 var DATE_FORMAT: String {get {return "yyyy-MM-ddZ"}}
 var DATE_TIME_FORMAT: String {get {return "yyyy-MM-dd'T'HH:mm:ssZ"}}
+var TIME_FORMAT: String {get {return "HH:mm"}}
 
 extension DateFormatter {
     
@@ -36,5 +37,13 @@ extension DateFormatter {
         dateFormatter.dateFormat = DATE_TIME_FORMAT
         
         return dateFormatter.date(from: date)
+    }
+    
+    static func timeStringFromDate(date: Date) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = TIME_FORMAT
+        
+        return dateFormatter.string(from: date)
     }
 }
