@@ -16,6 +16,8 @@ enum FlightDetailsCellType: Int {
     case Airport
     case SectionSchedule
     case Schedule
+    case SectionPlaces
+    case Places
     case All
 }
 
@@ -51,7 +53,8 @@ class FlightDetailsViewController : BaseViewController {
                            forCellReuseIdentifier: "FlightDetailsAirportTableViewCell")
         tableView.register(UINib(nibName: "FlightDetailsScheduleTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "FlightDetailsScheduleTableViewCell")
-        
+        tableView.register(UINib(nibName: "FlightDetailsPlaceTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsPlaceTableViewCell")
     }
 }
 
@@ -119,6 +122,25 @@ extension FlightDetailsViewController: UITableViewDataSource {
                 
                 return cell
             }
+            
+        case FlightDetailsCellType.SectionPlaces.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsSectionTableViewCell", for: indexPath) as? FlightDetailsSectionTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithName(name: "flight.details.cell.section.places".localized())
+                
+                return cell
+            }
+            
+        case FlightDetailsCellType.Places.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsPlaceTableViewCell", for: indexPath) as? FlightDetailsPlaceTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithData(flight: flight)
+                
+                return cell
+            }
+            
         default:
             return UITableViewCell()
         }

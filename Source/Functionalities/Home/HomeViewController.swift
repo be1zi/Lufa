@@ -66,22 +66,22 @@ class HomeViewController: BaseViewController {
             print("Synchronization complited: Cities")
         }, forced: false)
         
-//        progressPresenter?.presentProgress(withText: nil, completion: {
-//            RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in
-//                self.progressPresenter?.hideProgress()
-//            }, andFailure: { error in
-//                self.progressPresenter?.hideProgress()
-//            })
-//        })
-//
-//        progressPresenter?.presentProgress(withText: nil, completion: {
-//            RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
-//                self.progressPresenter?.hideProgress()
-//            }, andFailure: { error in
-//                self.progressPresenter?.hideProgress()
-//            })
-//        })
-//
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
@@ -89,39 +89,26 @@ class HomeViewController: BaseViewController {
                 self.progressPresenter?.hideProgress()
             })
         })
-//
-//        progressPresenter?.presentProgress(withText: nil, completion: {
-//            RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
-//                self.progressPresenter?.hideProgress()
-//            }, andFailure: { Error in
-//                self.progressPresenter?.hideProgress()
-//            })
-//        })
-//
-//        progressPresenter?.presentProgress(withText: nil, completion: {
-//            RemoteRepositoryContext.sharedInstance.getAllCountries(withSuccess: { _ in
-//                self.progressPresenter?.hideProgress()
-//
-//                print("Success get Countries")
-//
-//            }, andFailure: { error in
-//                self.progressPresenter?.hideProgress()
-//
-//                print("Error get countries")
-//            })
-//        })
-//
-//        progressPresenter?.presentProgress(withText: nil, completion: {
-//            RemoteRepositoryContext.sharedInstance.getAllCities(withOffset: 0, result: [], withSuccess: { _ in
-//                self.progressPresenter?.hideProgress()
-//
-//                print("Success get Cities")
-//            }, andFailure: { error in
-//                self.progressPresenter?.hideProgress()
-//
-//                print("Error get cities")
-//            })
-//        })
+
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+            }, andFailure: { Error in
+                self.progressPresenter?.hideProgress()
+            })
+        })
+
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.getAllCities(withOffset: 0, result: [], withSuccess: { _ in
+                self.progressPresenter?.hideProgress()
+
+                print("Success get Cities")
+            }, andFailure: { error in
+                self.progressPresenter?.hideProgress()
+
+                print("Error get cities")
+            })
+        })
     }
     
     func loadData() {

@@ -66,3 +66,8 @@
 "flight.details.cell.time.flighttime" = "Czas lotu:";
 "flight.details.cell.time.timeOfDeparture" = "Godzina odlotu:";
 "flight.details.cell.time.timeOfArrival" = "Godzina lądowania:";
+"flight.details.cell.section.places" = "Miejsca";
+"flight.details.cell.places.departure" = "Odlot";
+"flight.details.cell.places.arrival" = "Przylot";
+"flight.details.cell.places.gate" = "Bramka:";
+"flight.details.cell.places.position" = "Pozycja:";

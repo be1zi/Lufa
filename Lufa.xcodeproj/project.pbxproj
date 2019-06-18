@@ -78,6 +78,8 @@
 		3DD5698622B2553B00E43B38 /* HomeHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */; };
 		3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */; };
 		3DD9B92922B8E2BB00E93AD0 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9B92822B8E2BB00E93AD0 /* Period.swift */; };
+		3DD9B92C22B8ED7900E93AD0 /* FlightDetailsPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9B92B22B8ED7900E93AD0 /* FlightDetailsPlaceTableViewCell.swift */; };
+		3DD9B92E22B8EDAD00E93AD0 /* FlightDetailsPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DD9B92D22B8EDAD00E93AD0 /* FlightDetailsPlaceTableViewCell.xib */; };
 		3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */; };
 		3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */; };
 		3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */; };
@@ -190,6 +192,8 @@
 		3DD5698522B2553B00E43B38 /* HomeHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		3DD5698722B2555400E43B38 /* HomeHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		3DD9B92822B8E2BB00E93AD0 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		3DD9B92B22B8ED7900E93AD0 /* FlightDetailsPlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsPlaceTableViewCell.swift; sourceTree = "<group>"; };
+		3DD9B92D22B8EDAD00E93AD0 /* FlightDetailsPlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightDetailsPlaceTableViewCell.xib; sourceTree = "<group>"; };
 		3DDDDB36224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Crew.swift"; sourceTree = "<group>"; };
 		3DDDDB38224B8F54006BFCD1 /* RemoteRepositoryContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteRepositoryContext.swift; sourceTree = "<group>"; };
 		3DDDDB3A224E240E006BFCD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 		3D25D58422B78B0E00881E17 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3DD9B92A22B8ED5900E93AD0 /* Place */,
 				3D25D59922B79A4F00881E17 /* Schedule */,
 				3D25D59422B7942C00881E17 /* Airport */,
 				3D25D58F22B791CB00881E17 /* Section */,
@@ -684,6 +689,15 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		3DD9B92A22B8ED5900E93AD0 /* Place */ = {
+			isa = PBXGroup;
+			children = (
+				3DD9B92B22B8ED7900E93AD0 /* FlightDetailsPlaceTableViewCell.swift */,
+				3DD9B92D22B8EDAD00E93AD0 /* FlightDetailsPlaceTableViewCell.xib */,
+			);
+			path = Place;
+			sourceTree = "<group>";
+		};
 		3DE0EE27229D203D009AD5D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +861,7 @@
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
 				3D25D59D22B79AA200881E17 /* FlightDetailsScheduleTableViewCell.xib in Resources */,
 				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
+				3DD9B92E22B8EDAD00E93AD0 /* FlightDetailsPlaceTableViewCell.xib in Resources */,
 				3DD5697622AF9FF300E43B38 /* Flight.storyboard in Resources */,
 				3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */,
 				3D25D58922B78B5C00881E17 /* FlightDetailsHeaderTableViewCell.xib in Resources */,
@@ -937,6 +952,7 @@
 				3DD5697D22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift in Sources */,
 				3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */,
 				3DCB50DA22AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift in Sources */,
+				3DD9B92C22B8ED7900E93AD0 /* FlightDetailsPlaceTableViewCell.swift in Sources */,
 				3DCB50E622AF88EF00C0AFF0 /* MenuHomeItem.swift in Sources */,
 				3DAD82A322B28CF200131683 /* HomeFlightCollectionViewCell.swift in Sources */,
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,

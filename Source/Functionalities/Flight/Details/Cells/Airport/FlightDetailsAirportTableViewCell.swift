@@ -17,6 +17,9 @@ class FlightDetailsAirportTableViewCell: UITableViewCell {
     @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var typeLabel: UILabel!
     
+    @IBOutlet weak var fromValueLabel: UILabel!
+    @IBOutlet weak var toValueLabel: UILabel!
+    
     var flight: Flight?
     var from: City?
     var to: City?
@@ -37,25 +40,31 @@ class FlightDetailsAirportTableViewCell: UITableViewCell {
             toLabel.text = nil
             typeView.backgroundColor = UIColor.clear
             typeLabel.text = nil
+            fromValueLabel.text = nil
+            toValueLabel.text = nil
             
             return
         }
+        
+        fromLabel.text = "flight.details.cell.airport.from".localized()
+        toLabel.text = "flight.details.cell.airport.to".localized()
+
         
         var fromCountryCode: String?
         var toCountryCode: String?
         
         if let from = from, let name = from.name {
             fromCountryCode = from.countryCode
-            fromLabel.text = "flight.details.cell.airport.from".localized() + " \(name)"
+            fromValueLabel.text = name
         } else {
-            fromLabel.text = nil
+            fromValueLabel.text = nil
         }
         
         if let to = to, let name = to.name {
             toCountryCode = to.countryCode
-            toLabel.text = "flight.details.cell.airport.to".localized() + " \(name)"
+            toValueLabel.text = name
         } else {
-            toLabel.text = nil
+            toValueLabel.text = nil
         }
         
         if let fromCountry = fromCountryCode, let toCountry = toCountryCode {

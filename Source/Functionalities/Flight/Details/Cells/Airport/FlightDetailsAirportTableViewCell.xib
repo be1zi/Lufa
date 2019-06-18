@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXE-QF-3mc">
-                        <rect key="frame" x="20" y="10" width="457" height="21"/>
+                        <rect key="frame" x="20" y="10" width="228.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-do-fwl">
-                        <rect key="frame" x="20" y="36" width="457" height="21"/>
+                        <rect key="frame" x="20" y="36" width="228.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -48,23 +48,43 @@
                             <constraint firstItem="2he-lm-NWz" firstAttribute="top" secondItem="lhQ-hD-I5M" secondAttribute="top" constant="5" id="zad-HA-Whf"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-lU-mW2">
+                        <rect key="frame" x="258.5" y="10" width="228.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thp-Q9-YTR">
+                        <rect key="frame" x="258.5" y="36" width="228.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="lhQ-hD-I5M" firstAttribute="top" secondItem="VaH-do-fwl" secondAttribute="bottom" constant="10" id="BZQ-jU-4R6"/>
+                    <constraint firstItem="Thp-Q9-YTR" firstAttribute="leading" secondItem="VaH-do-fwl" secondAttribute="trailing" constant="10" id="MSp-XI-jCw"/>
                     <constraint firstItem="VaH-do-fwl" firstAttribute="leading" secondItem="Z47-a1-UfG" secondAttribute="leading" constant="20" id="Mxe-dP-P6y"/>
-                    <constraint firstAttribute="trailing" secondItem="dXE-QF-3mc" secondAttribute="trailing" constant="20" id="TUr-Cz-vVv"/>
+                    <constraint firstItem="ZoV-lU-mW2" firstAttribute="width" secondItem="dXE-QF-3mc" secondAttribute="width" id="Pq4-bG-CEn"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lhQ-hD-I5M" secondAttribute="trailing" constant="20" id="Vf7-BJ-9pj"/>
                     <constraint firstItem="dXE-QF-3mc" firstAttribute="top" secondItem="Z47-a1-UfG" secondAttribute="top" constant="10" id="Z6q-Kf-KIl"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lhQ-hD-I5M" secondAttribute="bottom" constant="10" id="aqE-Xe-68G"/>
-                    <constraint firstAttribute="trailing" secondItem="VaH-do-fwl" secondAttribute="trailing" constant="20" id="bmq-P4-A5O"/>
+                    <constraint firstAttribute="trailing" secondItem="ZoV-lU-mW2" secondAttribute="trailing" constant="10" id="dy7-tj-Y8k"/>
+                    <constraint firstItem="Thp-Q9-YTR" firstAttribute="centerY" secondItem="VaH-do-fwl" secondAttribute="centerY" id="hdc-fS-JRf"/>
+                    <constraint firstItem="ZoV-lU-mW2" firstAttribute="leading" secondItem="dXE-QF-3mc" secondAttribute="trailing" constant="10" id="k7J-dr-UOh"/>
+                    <constraint firstItem="ZoV-lU-mW2" firstAttribute="centerY" secondItem="dXE-QF-3mc" secondAttribute="centerY" id="l4L-lr-dVo"/>
                     <constraint firstItem="lhQ-hD-I5M" firstAttribute="leading" secondItem="Z47-a1-UfG" secondAttribute="leading" constant="20" id="peh-UW-mkk"/>
+                    <constraint firstAttribute="trailing" secondItem="Thp-Q9-YTR" secondAttribute="trailing" constant="10" id="qBZ-a9-OVl"/>
+                    <constraint firstItem="Thp-Q9-YTR" firstAttribute="width" secondItem="VaH-do-fwl" secondAttribute="width" id="r2z-I8-8zg"/>
                     <constraint firstItem="VaH-do-fwl" firstAttribute="top" secondItem="dXE-QF-3mc" secondAttribute="bottom" constant="5" id="wQe-vX-i6M"/>
                     <constraint firstItem="dXE-QF-3mc" firstAttribute="leading" secondItem="Z47-a1-UfG" secondAttribute="leading" constant="20" id="zcF-uD-wWn"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="fromLabel" destination="dXE-QF-3mc" id="SkX-0a-hYz"/>
+                <outlet property="fromValueLabel" destination="ZoV-lU-mW2" id="5d9-r2-eGG"/>
                 <outlet property="toLabel" destination="VaH-do-fwl" id="a06-wk-Yxx"/>
+                <outlet property="toValueLabel" destination="Thp-Q9-YTR" id="SoT-Fl-mT1"/>
                 <outlet property="typeLabel" destination="2he-lm-NWz" id="Lc9-r9-WFO"/>
                 <outlet property="typeView" destination="lhQ-hD-I5M" id="b3k-Ro-jmm"/>
             </connections>

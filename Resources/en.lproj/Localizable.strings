@@ -65,3 +65,8 @@
 "flight.details.cell.time.flighttime" = "Flight time:";
 "flight.details.cell.time.timeOfDeparture" = "Time of departure:";
 "flight.details.cell.time.timeOfArrival" = "Time of arrival:";
+"flight.details.cell.section.places" = "Places";
+"flight.details.cell.places.departure" = "Departure";
+"flight.details.cell.places.arrival" = "Arrival";
+"flight.details.cell.places.gate" = "Gate:";
+"flight.details.cell.places.position" = "Position:";

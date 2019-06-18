@@ -30,7 +30,6 @@ class Period {
         var tmp: String = ""
         
         for char in text.unicodeScalars {
-            print(char)
             
             if digits.contains(char) {
                 tmp.append(char.description)
