@@ -165,7 +165,7 @@ extension HomeViewController: UITableViewDataSource {
             }
         case HomeCellType.FLIGHTS.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell {
-                cell.setFlights(withFlights: flights)
+                cell.setData(withFlights: flights, andDelegate: self)
                 return cell
             }
         default:
@@ -173,5 +173,19 @@ extension HomeViewController: UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+}
+
+extension HomeViewController: HomeFlightsTableViewDelegate {
+    
+    func collectionViewElementSelected(atIndex index: IndexPath) {
+       
+        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
+        
+        if let vc = vc, let flights = flights {
+            vc.flight = flights[index.row]
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

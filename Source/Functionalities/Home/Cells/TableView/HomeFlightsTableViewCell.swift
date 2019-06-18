@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
+protocol HomeFlightsTableViewDelegate {
+    
+    func collectionViewElementSelected(atIndex index: IndexPath)
+}
+
 class HomeFlightsTableViewCell: UITableViewCell {
     
     //MARK: Properties
     @IBOutlet weak var collectionView: UICollectionView!
     
     var flights: [Flight] = []
+    var delegate: HomeFlightsTableViewDelegate?
     
     //MARK: Lifecycle
     override func awakeFromNib() {
@@ -28,8 +34,9 @@ class HomeFlightsTableViewCell: UITableViewCell {
     }
     
     //MARK: Data
-    func setFlights(withFlights: [Flight]) {
+    func setData(withFlights: [Flight], andDelegate: HomeFlightsTableViewDelegate) {
         flights = withFlights
+        delegate = andDelegate
         
         collectionView.reloadData()
     }
@@ -39,6 +46,9 @@ extension HomeFlightsTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if let delegate = delegate {
+            delegate.collectionViewElementSelected(atIndex: indexPath)
+        }
     }
 }
 
