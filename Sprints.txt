@@ -1,0 +1,25 @@
+Sprint (15.04 - 26.04):
+- logowanie użytkownika
+- pobieranie danych jego najbliższego lotu z API i zapis potrzebnych informacji do własnej bazy danych (linia, numer lotu, lotniska, czasy startu i lądowania, czas lotu, bramy startu i lądowania)
+- ekran do wyświetlania informacji o obsługiwanym locie
+- pobieranie odpowiednich danych z bazy i wyświetlanie ich użytkownikowi na przygotowanym ekranie
+- testy logowania oraz wyświetlania informacji o locie
+
+Sprint (29.04 - 10.05):
+- przygotowanie widoków do wyszukiwania obsługiwanych lotów i prezentacji listy znalezionych lotów
+- połączenie przez menu ekran z informacjami o locie oraz wyszukiwarkę lotów
+- implementacja backend wyszukiwarki lotów dla zalogowanego użytkownika
+- testy wyszukiwarki
+
+Sprint (13.05 - 24.05):
+- dodanie do widoku informacji o locie kontrolki mającej wyświetlać czasy i miejsca związane z odprawą dla obsługi lotu
+- pobieranie z API informacji o czasach i miejscach odpraw dla załogi i umieszczenie ich w bazie danych
+- pobieranie informacji o odprawach z bazy, ich obróbka i prezentacja na widoku
+- testy
+
+Sprint (27.05 - 07.06):
+- dodanie do widoku kontrolki z listą załogi i pozycjami jej członków
+- pobieranie z API infomracji o załodze i zapis w bazie danych
+- pobieranie z bazy informacji o załodze i prezentacja na kontrolce
+- testy nowej kontrolki
+- testy całościowe aplikacji
