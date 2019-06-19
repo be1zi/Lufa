@@ -144,6 +144,7 @@
                 <outlet property="departureLabel" destination="eHH-sU-QLO" id="rTp-Rl-bWs"/>
                 <outlet property="flightNumberLabel" destination="cak-3F-r25" id="Z5E-Lf-TqC"/>
                 <outlet property="flightTypeLabel" destination="V56-y4-Ims" id="zWR-AE-38y"/>
+                <outlet property="flightTypeView" destination="vVX-HS-8WJ" id="Wta-WQ-Kux"/>
                 <outlet property="fromLabel" destination="Awv-dw-QRV" id="wrU-aU-QNc"/>
                 <outlet property="toLabel" destination="oUp-3h-wvv" id="O7p-ld-zZi"/>
             </connections>

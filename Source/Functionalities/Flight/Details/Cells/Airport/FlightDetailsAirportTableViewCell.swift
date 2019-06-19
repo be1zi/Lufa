@@ -48,7 +48,6 @@ class FlightDetailsAirportTableViewCell: UITableViewCell {
         
         fromLabel.text = "flight.details.cell.airport.from".localized()
         toLabel.text = "flight.details.cell.airport.to".localized()
-
         
         var fromCountryCode: String?
         var toCountryCode: String?

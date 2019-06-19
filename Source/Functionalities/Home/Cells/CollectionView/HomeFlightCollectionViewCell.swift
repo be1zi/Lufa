@@ -13,6 +13,7 @@ class HomeFlightCollectionViewCell: UICollectionViewCell {
     
     //MARK: Properties
     @IBOutlet weak var flightTypeLabel: UILabel!
+    @IBOutlet weak var flightTypeView: UIView!
     @IBOutlet weak var flightNumberLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
@@ -34,12 +35,28 @@ class HomeFlightCollectionViewCell: UICollectionViewCell {
             departureLabel.text = nil
             toLabel.text = nil
             fromLabel.text = nil
+            flightTypeView.backgroundColor = UIColor.clear
             
             return
         }
         
         let from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.departureAirport)
         let to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.arrivalAirport)
+        
+        if let from = from, let to = to, let fromCountryCode = from.countryCode, let toCountryCode = to.countryCode {
+            
+            if fromCountryCode == toCountryCode {
+                flightTypeLabel.text = "flight.details.cell.airport.local".localized()
+                flightTypeView.backgroundColor = UIColor.lufaCyanColor
+            } else {
+                flightTypeLabel.text = "flight.details.cell.airport.international".localized()
+                flightTypeView.backgroundColor = UIColor.lufaGreenColor
+            }
+            
+        } else {
+            flightTypeLabel.text = nil
+            flightTypeView.backgroundColor = UIColor.clear
+        }
         
         toLabel.text = "home.flights.cell.to.title".localized() + " \(to?.name ?? "")"
         fromLabel.text = "home.flights.cell.from.title".localized() + " \(from?.name ?? "")"
