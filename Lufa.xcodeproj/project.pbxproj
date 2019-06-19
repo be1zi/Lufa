@@ -31,6 +31,7 @@
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3D64622F22BA2823009691FA /* FlightDetailsMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64622E22BA2823009691FA /* FlightDetailsMapTableViewCell.swift */; };
 		3D64623122BA285B009691FA /* FlightDetailsMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D64623022BA285B009691FA /* FlightDetailsMapTableViewCell.xib */; };
+		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
 		3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */; };
 		3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */; };
@@ -144,6 +145,7 @@
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3D64622E22BA2823009691FA /* FlightDetailsMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsMapTableViewCell.swift; sourceTree = "<group>"; };
 		3D64623022BA285B009691FA /* FlightDetailsMapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightDetailsMapTableViewCell.xib; sourceTree = "<group>"; };
+		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
 		3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Lufa.swift"; sourceTree = "<group>"; };
 		3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Lufa.swift"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				3D34DC85225351BE00590FD2 /* Button+Lufa.swift */,
 				3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */,
+				3D64623322BA3A1D009691FA /* UIView+Lufa.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -994,6 +997,7 @@
 				3DCB50D322AE778100C0AFF0 /* City+CoreDataClass.swift in Sources */,
 				3D25D58122B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
+				3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
 				3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */,

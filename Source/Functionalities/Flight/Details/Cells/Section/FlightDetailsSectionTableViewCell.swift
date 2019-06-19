@@ -16,5 +16,8 @@ class FlightDetailsSectionTableViewCell: UITableViewCell {
     
     func loadWithName(name: String) {
         nameLabel.text = name
+        
+        self.contentView.corner = self.contentView.frame.height / 2
+        self.contentView.clipsToBounds = true
     }
 }

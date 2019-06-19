@@ -31,22 +31,27 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhQ-hD-I5M">
-                        <rect key="frame" x="20" y="67" width="52" height="31"/>
+                        <rect key="frame" x="20" y="67" width="62" height="31"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2he-lm-NWz">
-                                <rect key="frame" x="5" y="5" width="42" height="21"/>
+                                <rect key="frame" x="10" y="5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="2he-lm-NWz" firstAttribute="leading" secondItem="lhQ-hD-I5M" secondAttribute="leading" constant="5" id="PqA-fp-AtB"/>
+                            <constraint firstItem="2he-lm-NWz" firstAttribute="leading" secondItem="lhQ-hD-I5M" secondAttribute="leading" constant="10" id="PqA-fp-AtB"/>
                             <constraint firstAttribute="bottom" secondItem="2he-lm-NWz" secondAttribute="bottom" constant="5" id="uMT-vu-HLI"/>
-                            <constraint firstAttribute="trailing" secondItem="2he-lm-NWz" secondAttribute="trailing" constant="5" id="wFk-at-XNf"/>
+                            <constraint firstAttribute="trailing" secondItem="2he-lm-NWz" secondAttribute="trailing" constant="10" id="wFk-at-XNf"/>
                             <constraint firstItem="2he-lm-NWz" firstAttribute="top" secondItem="lhQ-hD-I5M" secondAttribute="top" constant="5" id="zad-HA-Whf"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="corner">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-lU-mW2">
                         <rect key="frame" x="258.5" y="10" width="228.5" height="21"/>

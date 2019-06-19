@@ -25,10 +25,10 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEW-xe-a6e">
                                 <rect key="frame" x="10" y="10" width="280" height="290"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-SL-YGS" userLabel="contentView">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-SL-YGS" userLabel="contentView">
                                         <rect key="frame" x="0.0" y="10" width="280" height="270"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flightBackground" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-Fl-vPm">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flightBackground" translatesAutoresizingMaskIntoConstraints="NO" id="xiG-Fl-vPm">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="183"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xiG-Fl-vPm" secondAttribute="height" multiplier="678:443" id="GfQ-LX-bSs"/>
@@ -79,11 +79,11 @@
                                                     <constraint firstItem="cak-3F-r25" firstAttribute="leading" secondItem="Y7Y-4Q-aU1" secondAttribute="leading" id="t1R-Ru-ZOD"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVX-HS-8WJ">
-                                                <rect key="frame" x="174.5" y="0.0" width="105.5" height="31"/>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVX-HS-8WJ">
+                                                <rect key="frame" x="164.5" y="0.0" width="115.5" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="International" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V56-y4-Ims">
-                                                        <rect key="frame" x="5" y="5" width="95.5" height="21"/>
+                                                        <rect key="frame" x="10" y="5" width="95.5" height="21"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,8 +93,8 @@
                                                 <color key="backgroundColor" red="0.0" green="0.81176470590000005" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="V56-y4-Ims" firstAttribute="top" secondItem="vVX-HS-8WJ" secondAttribute="top" constant="5" id="L78-u2-wvr"/>
-                                                    <constraint firstItem="V56-y4-Ims" firstAttribute="leading" secondItem="vVX-HS-8WJ" secondAttribute="leading" constant="5" id="f5t-yE-6Ve"/>
-                                                    <constraint firstAttribute="trailing" secondItem="V56-y4-Ims" secondAttribute="trailing" constant="5" id="r0C-yo-Dyf"/>
+                                                    <constraint firstItem="V56-y4-Ims" firstAttribute="leading" secondItem="vVX-HS-8WJ" secondAttribute="leading" constant="10" id="f5t-yE-6Ve"/>
+                                                    <constraint firstAttribute="trailing" secondItem="V56-y4-Ims" secondAttribute="trailing" constant="10" id="r0C-yo-Dyf"/>
                                                     <constraint firstAttribute="bottom" secondItem="V56-y4-Ims" secondAttribute="bottom" constant="5" id="r14-jH-hq5"/>
                                                 </constraints>
                                             </view>
@@ -111,6 +111,11 @@
                                             <constraint firstItem="vVX-HS-8WJ" firstAttribute="top" secondItem="ehE-SL-YGS" secondAttribute="top" id="j71-UW-oO7"/>
                                             <constraint firstAttribute="trailing" secondItem="vVX-HS-8WJ" secondAttribute="trailing" id="tlX-Tl-qWt"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

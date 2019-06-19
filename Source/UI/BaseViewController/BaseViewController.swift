@@ -25,6 +25,12 @@ class BaseViewController : UIViewController {
         loadTranslations()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadConfigurations()
+    }
+    
     //MARK: Properties
     
     func loadConfigurations() {
