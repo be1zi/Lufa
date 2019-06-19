@@ -13,6 +13,8 @@ class ConfigurationManager {
     //MARK: Singleton
     static let sharedInstance = ConfigurationManager()
     
+    var googleMapsProvided: Bool = false
+    
     //MARK: Getters for config variables
     var serverAddress: String? {
         get {

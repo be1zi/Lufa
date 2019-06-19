@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Foundation
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         configureUserInterface()
+        configureGoogleMaps()
         
         return true
     }
@@ -67,6 +69,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         windowController?.presentLanguageController()
         window?.makeKeyAndVisible()
+    }
+    
+    func configureGoogleMaps() {
+        if !ConfigurationManager.sharedInstance.googleMapsProvided {
+            guard let key = ConfigurationManager.sharedInstance.googleApiKey else {
+                return
+            }
+            
+            GMSServices.provideAPIKey(key)
+            ConfigurationManager.sharedInstance.googleMapsProvided = true
+        }
     }
     
     //MARK: User defaults

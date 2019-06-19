@@ -53,7 +53,7 @@ class CountrySynchroManager: SynchroManager {
             let synchroResult = localError != nil ? SynchroResult.SynchroResultError : SynchroResult.SynchroResultOK
             
             if synchroResult == SynchroResult.SynchroResultOK {
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCountries, object: "Country")
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCountries, object: String(describing: Country.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

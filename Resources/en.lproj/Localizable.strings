@@ -70,3 +70,4 @@
 "flight.details.cell.places.arrival" = "Arrival";
 "flight.details.cell.places.gate" = "Gate:";
 "flight.details.cell.places.position" = "Position:";
+"flight.details.cell.section.location" = "Location";

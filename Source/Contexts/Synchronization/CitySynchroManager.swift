@@ -28,7 +28,7 @@ class CitySynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCities, object: "City") {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCities, object: String(describing: City.self)) {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -54,7 +54,7 @@ class CitySynchroManager: SynchroManager {
             
             if synchroResult == SynchroResult.SynchroResultOK {
                 
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCities, object: "City")
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCities, object: String(describing: City.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

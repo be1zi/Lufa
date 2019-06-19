@@ -18,6 +18,8 @@ enum FlightDetailsCellType: Int {
     case Schedule
     case SectionPlaces
     case Places
+    case SectionLocation
+    case Location
     case All
 }
 
@@ -55,6 +57,8 @@ class FlightDetailsViewController : BaseViewController {
                            forCellReuseIdentifier: "FlightDetailsScheduleTableViewCell")
         tableView.register(UINib(nibName: "FlightDetailsPlaceTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "FlightDetailsPlaceTableViewCell")
+        tableView.register(UINib(nibName: "FlightDetailsMapTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "FlightDetailsMapTableViewCell")
     }
 }
 
@@ -69,6 +73,10 @@ extension FlightDetailsViewController: UITableViewDataSource {
         guard let flight = flight else {
             return UITableViewCell()
         }
+        
+        let cityFrom = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.departureAirport)
+        let cityTo = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.arrivalAirport)
+        
         
         switch indexPath.row {
         case FlightDetailsCellType.Header.rawValue:
@@ -138,6 +146,23 @@ extension FlightDetailsViewController: UITableViewDataSource {
             if let cell = cell {
                 cell.loadWithData(flight: flight)
                 
+                return cell
+            }
+            
+        case FlightDetailsCellType.SectionLocation.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsSectionTableViewCell", for: indexPath) as? FlightDetailsSectionTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithName(name: "flight.details.cell.section.location".localized())
+                
+                return cell
+            }
+            
+        case FlightDetailsCellType.Location.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsMapTableViewCell", for: indexPath) as? FlightDetailsMapTableViewCell
+            
+            if let cell = cell {
+                cell.loadWithCity(from: cityFrom, to: cityTo)
                 return cell
             }
             

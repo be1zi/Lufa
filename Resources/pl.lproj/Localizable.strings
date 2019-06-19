@@ -71,3 +71,4 @@
 "flight.details.cell.places.arrival" = "Przylot";
 "flight.details.cell.places.gate" = "Bramka:";
 "flight.details.cell.places.position" = "Pozycja:";
+"flight.details.cell.section.location" = "Miejsca";
