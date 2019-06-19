@@ -20,5 +20,10 @@
 		<key>serverAddress</key>
 		<string>https://api.lufthansa.com/</string>
 	</dict>
+	<key>GoogleAPI</key>
+	<dict>
+		<key>key</key>
+		<string>AIzaSyDXaomuEnCoyM8W0MgZ9O1A6_Fnc-4_3g0</string>
+	</dict>
 </dict>
 </plist>

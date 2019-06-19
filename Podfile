@@ -5,5 +5,6 @@ target 'Lufa' do
 
   pod 'Alamofire', '5.0.0-beta.3'
   pod 'PKHUD', '~> 5.0'
+  pod 'GoogleMaps'
 
 end

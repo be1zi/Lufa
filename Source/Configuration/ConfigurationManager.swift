@@ -50,6 +50,12 @@ class ConfigurationManager {
         }
     }
     
+    var googleApiKey: String? {
+        get {
+            return getPropertyFromConfigFile(name: "key", withRoot: "GoogleAPI")
+        }
+    }
+    
     //MARK: Helpers
     
     private func loadConfiguration() -> Dictionary<String, Any>? {
