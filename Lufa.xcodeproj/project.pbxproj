@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,10 @@
 		3D25D59822B7946D00881E17 /* FlightDetailsAirportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D25D59722B7946D00881E17 /* FlightDetailsAirportTableViewCell.xib */; };
 		3D25D59B22B79A7100881E17 /* FlightDetailsScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D59A22B79A7100881E17 /* FlightDetailsScheduleTableViewCell.swift */; };
 		3D25D59D22B79AA200881E17 /* FlightDetailsScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D25D59C22B79AA200881E17 /* FlightDetailsScheduleTableViewCell.xib */; };
+		3D2EC7C122BA0B17005C4D64 /* flight_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7BD22BA0B17005C4D64 /* flight_1.json */; };
+		3D2EC7C222BA0B17005C4D64 /* duty_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7BE22BA0B17005C4D64 /* duty_1.json */; };
+		3D2EC7C322BA0B17005C4D64 /* check-in_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7BF22BA0B17005C4D64 /* check-in_1.json */; };
+		3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7C022BA0B17005C4D64 /* crew_1.json */; };
 		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
@@ -105,10 +109,6 @@
 		3DE0EE55229D211E009AD5D8 /* Crew+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE41229D211E009AD5D8 /* Crew+CoreDataProperties.swift */; };
 		3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE42229D211E009AD5D8 /* Duty+CoreDataClass.swift */; };
 		3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE43229D211E009AD5D8 /* Duty+CoreDataProperties.swift */; };
-		3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE59229D2385009AD5D8 /* flight_1.json */; };
-		3DE0EE61229D2385009AD5D8 /* crew_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5A229D2385009AD5D8 /* crew_1.json */; };
-		3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5B229D2385009AD5D8 /* check-in_1.json */; };
-		3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3DE0EE5E229D2385009AD5D8 /* duty_1.json */; };
 		3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE68229D26AE009AD5D8 /* JsonReader.swift */; };
 		3DE0EE74229FA621009AD5D8 /* UIColor+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */; };
 		3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */; };
@@ -134,6 +134,10 @@
 		3D25D59722B7946D00881E17 /* FlightDetailsAirportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightDetailsAirportTableViewCell.xib; sourceTree = "<group>"; };
 		3D25D59A22B79A7100881E17 /* FlightDetailsScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		3D25D59C22B79AA200881E17 /* FlightDetailsScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightDetailsScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		3D2EC7BD22BA0B17005C4D64 /* flight_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flight_1.json; sourceTree = "<group>"; };
+		3D2EC7BE22BA0B17005C4D64 /* duty_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duty_1.json; sourceTree = "<group>"; };
+		3D2EC7BF22BA0B17005C4D64 /* check-in_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-in_1.json"; sourceTree = "<group>"; };
+		3D2EC7C022BA0B17005C4D64 /* crew_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crew_1.json; sourceTree = "<group>"; };
 		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
@@ -219,10 +223,6 @@
 		3DE0EE41229D211E009AD5D8 /* Crew+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Crew+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DE0EE42229D211E009AD5D8 /* Duty+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duty+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DE0EE43229D211E009AD5D8 /* Duty+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Duty+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3DE0EE59229D2385009AD5D8 /* flight_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flight_1.json; path = ../../../Downloads/flight_1.json; sourceTree = "<group>"; };
-		3DE0EE5A229D2385009AD5D8 /* crew_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = crew_1.json; path = ../../../Downloads/crew_1.json; sourceTree = "<group>"; };
-		3DE0EE5B229D2385009AD5D8 /* check-in_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "check-in_1.json"; path = "../../../Downloads/check-in_1.json"; sourceTree = "<group>"; };
-		3DE0EE5E229D2385009AD5D8 /* duty_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = duty_1.json; path = ../../../Downloads/duty_1.json; sourceTree = "<group>"; };
 		3DE0EE68229D26AE009AD5D8 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Lufa.swift"; sourceTree = "<group>"; };
 		3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
@@ -737,10 +737,10 @@
 		3DE0EE58229D22D5009AD5D8 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				3DE0EE5B229D2385009AD5D8 /* check-in_1.json */,
-				3DE0EE5A229D2385009AD5D8 /* crew_1.json */,
-				3DE0EE5E229D2385009AD5D8 /* duty_1.json */,
-				3DE0EE59229D2385009AD5D8 /* flight_1.json */,
+				3D2EC7BF22BA0B17005C4D64 /* check-in_1.json */,
+				3D2EC7C022BA0B17005C4D64 /* crew_1.json */,
+				3D2EC7BE22BA0B17005C4D64 /* duty_1.json */,
+				3D2EC7BD22BA0B17005C4D64 /* flight_1.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -854,8 +854,6 @@
 				3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */,
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
 				3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */,
-				3DE0EE60229D2385009AD5D8 /* flight_1.json in Resources */,
-				3DE0EE65229D2385009AD5D8 /* duty_1.json in Resources */,
 				3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */,
 				3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */,
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
@@ -866,13 +864,15 @@
 				3DCB50EC22AF89E600C0AFF0 /* Menu.storyboard in Resources */,
 				3D25D58922B78B5C00881E17 /* FlightDetailsHeaderTableViewCell.xib in Resources */,
 				3DABA3F3223B90E100469FD1 /* Assets.xcassets in Resources */,
-				3DE0EE62229D2385009AD5D8 /* check-in_1.json in Resources */,
 				3DAD82AA22B28DCD00131683 /* HomeFlightsTableViewCell.xib in Resources */,
+				3D2EC7C322BA0B17005C4D64 /* check-in_1.json in Resources */,
+				3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */,
 				3D25D59322B7920B00881E17 /* FlightDetailsSectionTableViewCell.xib in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
 				3D25D59822B7946D00881E17 /* FlightDetailsAirportTableViewCell.xib in Resources */,
-				3DE0EE61229D2385009AD5D8 /* crew_1.json in Resources */,
 				3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */,
+				3D2EC7C222BA0B17005C4D64 /* duty_1.json in Resources */,
+				3D2EC7C122BA0B17005C4D64 /* flight_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

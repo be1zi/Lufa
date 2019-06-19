@@ -1,0 +1,132 @@
+{
+    "pkNumber": "123456A",
+    "fromDate": "2019-06-19Z",
+    "toDate": "2019-07-19Z",
+    "rosterDays": [{
+      "day": "2019-06-20Z",
+      "events": [{
+        "eventType": "flight",
+        "eventCategory": "flight",
+        "eventDetails": "LH100",
+        "wholeDay": false,
+        "startTime": "2019-06-20T10:00Z",
+        "startLocation": "FRA",
+        "startTimeZoneOffset": 60,
+        "endTime": "2019-06-20T14:00Z",
+        "endLocation": "LCY",
+        "endTimeZoneOffset": 0,
+        "eventAttributes": {
+          "rotationId": "123456",
+          "dayOfShift": 1
+        },
+        "_links": {
+          "flightInfo": {
+            "href": "./COMMON_FLIGHT_LEG_DETAILS?flightDate=2019-06-20Z&flightDesignator=LH100&departureAirport=FRA&arrivalAirport=LCY"
+          },
+          "crewList": {
+            "href": "./COMMON_CREWLIST?flightDesignator=LH100&flightDate=2019-06-20Z&departureAirport=FRA&arrivalAirport=LCY&accessCode=xh5nFs"
+          },
+          "checkInTimes": {
+            "href": "./COMMON_CHECK_IN_TIMES?flightDesignator=LH100&flightDate=2019-06-20Z&departureAirport=FRA&arrivalAirport=LCY&dutyType=OD&crewCategory=CAB"
+          },
+          "landingReport": {
+            "href": "./COMMON_LANDING_REPORT?flightDesignator=LH400&flightDate=02OCT16Z&departureAirport=FRA&arrivalAirport=JFK"
+          }
+        }
+      },
+      {
+        "eventType": "flight",
+        "eventCategory": "flight",
+        "eventDetails": "LH200",
+        "wholeDay": false,
+        "startTime": "2019-06-20T15:00Z",
+        "startLocation": "LCY",
+        "startTimeZoneOffset": 0,
+        "endTime": "2019-06-20T18:00Z",
+        "endLocation": "FRA",
+        "endTimeZoneOffset": 60,
+        "eventAttributes": {
+          "rotationId": "123456",
+          "dayOfShift": 1
+        },
+        "_links": {
+          "flightInfo": {
+            "href": "./COMMON_FLIGHT_LEG_DETAILS?flightDate=2019-06-20Z&flightDesignator=LH200&departureAirport=LCY&arrivalAirport=FRA"
+          },
+          "crewList": {
+            "href": "./COMMON_CREWLIST?flightDesignator=LH200&flightDate=2019-06-20Z&departureAirport=LCY&arrivalAirport=FRA&accessCode=xh5nFa"
+          },
+          "checkInTimes": {
+            "href": "./COMMON_CHECK_IN_TIMES?flightDesignator=LH200&flightDate=2019-06-20Z&departureAirport=LCY&arrivalAirport=FRA&dutyType=OD&crewCategory=CAB"
+          },
+          "landingReport": {
+            "href": "./COMMON_LANDING_REPORT?flightDesignator=LH400&flightDate=02OCT16Z&departureAirport=FRA&arrivalAirport=JFK"
+          }
+        }
+      }]
+    },
+    {
+        "day": "2019-06-23Z",
+        "events": [{
+          "eventType": "flight",
+          "eventCategory": "flight",
+          "eventDetails": "LH300",
+          "wholeDay": false,
+          "startTime": "2019-06-23T08:00Z",
+          "startLocation": "BER",
+          "startTimeZoneOffset": 60,
+          "endTime": "2019-06-23T12:00Z",
+          "endLocation": "WAW",
+          "endTimeZoneOffset": 60,
+          "eventAttributes": {
+            "rotationId": "123457",
+            "dayOfShift": 1
+          },
+          "_links": {
+            "flightInfo": {
+              "href": "./COMMON_FLIGHT_LEG_DETAILS?flightDate=2019-06-23Z&flightDesignator=LH300&departureAirport=BER&arrivalAirport=WAW"
+            },
+            "crewList": {
+              "href": "./COMMON_CREWLIST?flightDesignator=LH300&flightDate=2019-06-23Z&departureAirport=BER&arrivalAirport=WAW&accessCode=xh5nFd"
+            },
+            "checkInTimes": {
+              "href": "./COMMON_CHECK_IN_TIMES?flightDesignator=LH300&flightDate=2019-06-23Z&departureAirport=BER&arrivalAirport=WAW&dutyType=OD&crewCategory=CAB"
+            },
+            "landingReport": {
+              "href": "./COMMON_LANDING_REPORT?flightDesignator=LH400&flightDate=02OCT16Z&departureAirport=FRA&arrivalAirport=JFK"
+            }
+          }
+        },
+        {
+            "eventType": "flight",
+            "eventCategory": "flight",
+            "eventDetails": "LH300",
+            "wholeDay": false,
+            "startTime": "2019-06-23T14:00Z",
+            "startLocation": "WAW",
+            "startTimeZoneOffset": 60,
+            "endTime": "2019-06-23T17:00Z",
+            "endLocation": "BER",
+            "endTimeZoneOffset": 60,
+            "eventAttributes": {
+              "rotationId": "123457",
+              "dayOfShift": 1
+            },
+            "_links": {
+              "flightInfo": {
+                "href": "./COMMON_FLIGHT_LEG_DETAILS?flightDate=2019-06-23Z&flightDesignator=LH400&departureAirport=WAW&arrivalAirport=BER"
+              },
+              "crewList": {
+                "href": "./COMMON_CREWLIST?flightDesignator=LH400&flightDate=2019-06-23Z&departureAirport=WAW&arrivalAirport=BER&accessCode=xh5nFf"
+              },
+              "checkInTimes": {
+                "href": "./COMMON_CHECK_IN_TIMES?flightDesignator=LH400&flightDate=2019-06-23Z&departureAirport=WAW&arrivalAirport=BER&dutyType=OD&crewCategory=CAB"
+              },
+              "landingReport": {
+                "href": "./COMMON_LANDING_REPORT?flightDesignator=LH400&flightDate=02OCT16Z&departureAirport=FRA&arrivalAirport=JFK"
+              }
+            }
+          }]
+      }
+    ]
+  }

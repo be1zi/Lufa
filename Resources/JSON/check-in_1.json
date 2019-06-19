@@ -1,0 +1,13 @@
+{
+    "flightDesignator": "LH100",
+    "flightDate": "2019-06-20Z",
+    "departureAirport": "FRA",
+    "arrivalAirport": "LCY",
+    "briefingRoom": "B024",
+    "briefingBegin": "2019-06-20T10:30:00Z",
+    "crewAtSecurityCheck": "2019-06-20T10:50:00Z",
+    "crewBusDeparture": "2019-06-20T11:10:00Z",
+    "readinessNotification": "2019-06-20T11:20:00Z",
+    "boardingBegin": "2019-06-20T11:30:00Z",
+    "paxOnBoard": "2019-06-20T11:40:00Z"
+}

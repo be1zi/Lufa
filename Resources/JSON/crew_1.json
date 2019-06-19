@@ -1,0 +1,203 @@
+[
+    {
+        "flightDesignator": "LH100",
+        "flightDate": "2019-06-20Z",
+        "departureAirport": "FRA",
+        "arrivalAirport": "LCY",
+        "crewMembers": [
+          {
+            "pkNumber": "144470D",
+            "crewPosition": "CP",
+            "posPrefix": "",
+            "lastName": "BUSS",
+            "firstName": "CLAUS-DIETER",
+            "courseNumber": 0,
+            "dutyCode": "OD",
+            "exFlight": null,
+            "toFlight": {
+              "flightDesignator": "LH200",
+              "flightDate": "2019-06-20Z",
+              "legSequenceNo": 1,
+              "dutyCode": "OD"
+            }
+          },
+          {
+            "pkNumber": "064002K",
+            "crewPosition": "PU",
+            "posPrefix": "",
+            "lastName": "STEUDER",
+            "firstName": "JUERGEN",
+            "courseNumber": 0,
+            "dutyCode": "OD",
+            "exFlight": null,
+            "toFlight": {
+              "flightDesignator": "LH200",
+              "flightDate": "2019-06-20Z",
+              "legSequenceNo": 1,
+              "dutyCode": "OD"
+            }
+          },
+          {
+            "pkNumber": "064012K",
+            "crewPosition": "PU",
+            "posPrefix": "",
+            "lastName": "JON",
+            "firstName": "SNOW",
+            "courseNumber": 0,
+            "dutyCode": "OD",
+            "exFlight": null,
+            "toFlight": {
+              "flightDesignator": "LH200",
+              "flightDate": "2019-06-20Z",
+              "legSequenceNo": 1,
+              "dutyCode": "OD"
+            }
+          }
+        ]
+      },
+    {
+        "flightDesignator": "LH200",
+        "flightDate": "2019-06-20Z",
+        "departureAirport": "LCY",
+        "arrivalAirport": "FRA",
+        "crewMembers": [
+            {
+                "pkNumber": "144470D",
+                "crewPosition": "CP",
+                "posPrefix": "",
+                "lastName": "BUSS",
+                "firstName": "CLAUS-DIETER",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": null
+            },
+            {
+                "pkNumber": "064002K",
+                "crewPosition": "PU",
+                "posPrefix": "",
+                "lastName": "STEUDER",
+                "firstName": "JUERGEN",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": null
+            },
+            {
+                "pkNumber": "064012K",
+                "crewPosition": "PU",
+                "posPrefix": "",
+                "lastName": "JON",
+                "firstName": "SNOW",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": null
+            }
+        ]
+    },
+    {
+        "flightDesignator": "LH300",
+        "flightDate": "2019-06-23Z",
+        "departureAirport": "BER",
+        "arrivalAirport": "WAW",
+        "crewMembers": [
+            {
+                "pkNumber": "144470D",
+                "crewPosition": "CP",
+                "posPrefix": "",
+                "lastName": "BUSS",
+                "firstName": "CLAUS-DIETER",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": {
+                    "flightDesignator": "LH400",
+                    "flightDate": "2019-06-23Z",
+                    "legSequenceNo": 1,
+                    "dutyCode": "OD"
+                }
+            },
+            {
+                "pkNumber": "064002K",
+                "crewPosition": "PU",
+                "posPrefix": "",
+                "lastName": "STEUDER",
+                "firstName": "JUERGEN",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": {
+                    "flightDesignator": "LH400",
+                    "flightDate": "2019-06-23Z",
+                    "legSequenceNo": 1,
+                    "dutyCode": "OD"
+                }
+            },
+            {
+                "pkNumber": "064012K",
+                "crewPosition": "PU",
+                "posPrefix": "",
+                "lastName": "JON",
+                "firstName": "SNOW",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": {
+                    "flightDesignator": "LH400",
+                    "flightDate": "2019-06-23Z",
+                    "legSequenceNo": 1,
+                    "dutyCode": "OD"
+                }
+            }
+        ]
+    },
+    {
+        "flightDesignator": "LH700",
+        "flightDate": "2019-07-23Z",
+        "departureAirport": "WAW",
+        "arrivalAirport": "BER",
+        "crewMembers": [
+            {
+                "pkNumber": "064012K",
+                "crewPosition": "PU",
+                "posPrefix": "",
+                "lastName": "JON",
+                "firstName": "SNOW",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": {
+                    "flightDesignator": "LH200",
+                    "flightDate": "2019-06-20Z",
+                    "legSequenceNo": 1,
+                    "dutyCode": "OD"
+                }
+            }
+        ]
+    },
+    {
+        "flightDesignator": "LH550",
+        "flightDate": "2019-06-14Z",
+        "departureAirport": "KRA",
+        "arrivalAirport": "LON",
+        "crewMembers": [
+            {
+                "pkNumber": "064012K",
+                "crewPosition": "PU",
+                "posPrefix": "",
+                "lastName": "JON",
+                "firstName": "SNOW",
+                "courseNumber": 0,
+                "dutyCode": "OD",
+                "exFlight": null,
+                "toFlight": {
+                    "flightDesignator": "LH200",
+                    "flightDate": "2019-06-14Z",
+                    "legSequenceNo": 1,
+                    "dutyCode": "OD"
+                }
+            }
+        ]
+    }
+]
