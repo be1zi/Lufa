@@ -34,6 +34,9 @@ extension RemoteRepositoryContext {
                     }
                 }
             } else {
+                
+                sleep(1)
+
                 self.getAllCities(withOffset: localOffset,
                                   result: localResult,
                                   withSuccess: success,

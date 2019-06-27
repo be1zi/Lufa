@@ -58,17 +58,27 @@ class HomeViewController: BaseViewController {
     
     func getData() {
         
-        CountrySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, error in
-            print("Synchronization complited: Countries")
-        }, forced: false)
+        self.progressPresenter?.presentProgress(withText: nil, completion: {
+            CountrySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, error in
+                print("Synchronization complited: Countries")
+                self.progressPresenter?.hideProgress()
+            }, forced: false)
+        })
         
-        CitySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
-            print("Synchronization complited: Cities")
-        }, forced: false)
+        self.progressPresenter?.presentProgress(withText: nil, completion: {
+            CitySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+                print("Synchronization complited: Cities")
+                self.progressPresenter?.hideProgress()
+            }, forced: false)
+        })
         
-        FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
-            print("Synchronization complited: Flights")
-        }, forced: false)
+        self.progressPresenter?.presentProgress(withText: nil, completion: {
+            FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+                print("Synchronization complited: Flights")
+                self.progressPresenter?.hideProgress()
+            }, forced: false)
+        })
+
         
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in
