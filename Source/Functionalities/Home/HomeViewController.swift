@@ -66,6 +66,10 @@ class HomeViewController: BaseViewController {
             print("Synchronization complited: Cities")
         }, forced: false)
         
+        FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+            print("Synchronization complited: Flights")
+        }, forced: false)
+        
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
@@ -83,30 +87,10 @@ class HomeViewController: BaseViewController {
         })
 
         progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
-                self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-            })
-        })
-
-        progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
             }, andFailure: { Error in
                 self.progressPresenter?.hideProgress()
-            })
-        })
-
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getAllCities(withOffset: 0, result: [], withSuccess: { _ in
-                self.progressPresenter?.hideProgress()
-
-                print("Success get Cities")
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-
-                print("Error get cities")
             })
         })
     }

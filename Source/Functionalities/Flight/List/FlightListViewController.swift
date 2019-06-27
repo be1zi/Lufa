@@ -40,6 +40,17 @@ class FlightListViewController: BaseViewController {
     }
     
     //MARK: Data
+    override func synchronizeData() {
+        super.synchronizeData()
+        
+        self.progressPresenter?.presentProgress(withText: nil, completion: {
+            FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+                self.fetchData()
+                self.progressPresenter?.hideProgress()
+            }, forced: false)
+        })
+    }
+    
     func fetchData() {
         
         if let flights = LocalRepositoryContext.sharedInstance.getAllFlights() {

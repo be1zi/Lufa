@@ -18,6 +18,8 @@ extension LocalRepositoryContext {
             return 6 * 30 * 24 * 60 * 60 // every six months
         case .SynchroTypeCities:
             return 6 * 30 * 24 * 60 * 60
+        case .SynchroTypeFlights:
+            return 30 * 60
         }
     }
     

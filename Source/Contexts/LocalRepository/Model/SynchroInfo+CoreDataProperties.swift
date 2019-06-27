@@ -13,6 +13,7 @@ import CoreData
 enum SynchroType: Int {
     case SynchroTypeCountries
     case SynchroTypeCities
+    case SynchroTypeFlights
 }
 
 extension SynchroInfo {

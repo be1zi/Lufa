@@ -21,6 +21,7 @@ class BaseViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        synchronizeData()
         loadConfigurations()
         loadTranslations()
     }
@@ -28,6 +29,7 @@ class BaseViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        synchronizeData()
         loadConfigurations()
     }
     
@@ -49,5 +51,11 @@ class BaseViewController : UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
+    }
+    
+    //MARK: Data
+    
+    func synchronizeData() {
+        
     }
 }
