@@ -15,9 +15,9 @@ extension LocalRepositoryContext {
         
         switch synchroType {
         case .SynchroTypeCountries:
-            return 7 * 24 * 60 * 60 // once a week
+            return 6 * 30 * 24 * 60 * 60 // every six months
         case .SynchroTypeCities:
-            return 7 * 24 * 60 * 60
+            return 6 * 30 * 24 * 60 * 60
         }
     }
     
