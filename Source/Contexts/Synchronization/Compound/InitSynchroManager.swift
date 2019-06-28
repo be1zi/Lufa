@@ -15,6 +15,7 @@ class InitSynchroManager: CompoundSynchroManager {
     
     override init(withManagers: [SynchroManager]) {
         super.init(withManagers: [CountrySynchroManager.sharedInstance,
-                                  CitySynchroManager.sharedInstance])
+                                  CitySynchroManager.sharedInstance,
+                                  AirlineSynchroManager.sharedInstance])
     }
 }

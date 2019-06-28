@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Airline" representedClassName="Airline" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="codeICAO" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="CheckIn" representedClassName="CheckIn" syncable="YES">
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="boardingBegin" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -132,5 +137,6 @@
         <element name="Employee" positionX="9" positionY="153" width="128" height="165"/>
         <element name="Flight" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="SynchroInfo" positionX="-9" positionY="135" width="128" height="90"/>
+        <element name="Airline" positionX="-9" positionY="135" width="128" height="90"/>
     </elements>
 </model>
