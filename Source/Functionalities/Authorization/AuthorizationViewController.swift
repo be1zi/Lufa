@@ -41,22 +41,14 @@ class AuthorizationViewController: BaseViewController {
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {
         
-        /*
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.authorize(withSuccess: { result in
-                AppDelegate.sharedInstance.windowController?.presentHomeController()
-                self.progressPresenter?.hideProgress()
-            }) { error in
-                print("Error authorization: \(error?.localizedDescription ?? "empty message")")
-                self.progressPresenter?.hideProgress()
-            }
-        })
-         */
-        
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { result in
-                self.progressPresenter?.hideProgress()
-                AppDelegate.sharedInstance.windowController?.presentMenuController()
+                
+                InitSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+                    self.progressPresenter?.hideProgress()
+                    AppDelegate.sharedInstance.windowController?.presentMenuController()
+                }, forced: false)
+                
             }, andFailure: { error in
                 self.progressPresenter?.hideProgress()
                 print("Error authorization open: \(error?.localizedDescription ?? "empty message")")

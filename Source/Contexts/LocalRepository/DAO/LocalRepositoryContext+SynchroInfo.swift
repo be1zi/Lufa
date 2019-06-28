@@ -54,10 +54,10 @@ extension LocalRepositoryContext {
     }
     
     func notifyDidSynchronize(synchroType: SynchroType, object: String) {
-        
-        let data: [String : Any] = ["synchroType" : synchroType,
+                
+        let data: [String : Any] = ["synchroType" : synchroType.rawValue,
                                     "object" : object]
         
-        self.parseAndSave(data: data, name: "SynchroInfo")
+        self.saveSynchroInfo(data: data)
     }
 }

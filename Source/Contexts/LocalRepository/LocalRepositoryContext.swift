@@ -46,6 +46,42 @@ class LocalRepositoryContext {
     }
     
     //MAKR: - Save data
+    func saveSynchroInfo(data: [String: Any]) {
+        let context = LocalRepositoryContext.context
+        
+        guard let objectKey = data["object"] as? String else {
+            return
+        }
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "SynchroInfo", in: context) else {
+            return
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SynchroInfo")
+        request.predicate = NSPredicate(format: "object = %@", objectKey)
+        
+        var result = self.executeFetch(fetchRequest: request).first as? SynchroInfo
+        
+        if result == nil {
+            result = NSManagedObject(entity: entity, insertInto: context) as? SynchroInfo
+        }
+        
+        guard let object = result else {
+            print("Save synchro info error")
+            return
+        }
+        
+        object.serialize(data: data)
+        
+        DispatchQueue.main.async {
+            do {
+               try context.save()
+            } catch {
+                print("Save error: \(error.asAFError.debugDescription)")
+            }
+        }
+    }
+    
     func parseAndSave(data: [String: Any], name: String) {
         parseAndSave(data: [data], name: name)
     }
@@ -133,7 +169,7 @@ class LocalRepositoryContext {
                 try context.save()
                 print("Data saved successfully to \(name): added \(added), updated \(updated), deleted \(deleted)")
             } catch {
-                print("Save error: \(error.localizedDescription)")
+                print("Save error: \(error.asAFError.debugDescription)")
             }
         }
     }

@@ -38,6 +38,9 @@ extension SynchroInfo {
         
         self.lastSynchroDate = self.addDateProperty(date: Date.init())
         self.object = data["object"] as? String
-        self.synchroType = data["synchroType"] as? Int64 ?? 0
+        
+        if let typeNumber = data["synchroType"] as? NSNumber {
+            self.synchroType = Int64(exactly: typeNumber) ?? 0
+        }
     }
 }

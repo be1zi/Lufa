@@ -28,7 +28,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         registerCells()
-        getData()
+        //getData()
         loadData()
         setData()
     }
