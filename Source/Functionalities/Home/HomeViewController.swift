@@ -28,7 +28,6 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         registerCells()
-        //getData()
         loadData()
         setData()
     }
@@ -56,29 +55,16 @@ class HomeViewController: BaseViewController {
     
     //MARK: Data
     
-    func getData() {
-        
-        self.progressPresenter?.presentProgress(withText: nil, completion: {
-            CountrySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, error in
-                print("Synchronization complited: Countries")
-                self.progressPresenter?.hideProgress()
-            }, forced: false)
-        })
-        
-        self.progressPresenter?.presentProgress(withText: nil, completion: {
-            CitySynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
-                print("Synchronization complited: Cities")
-                self.progressPresenter?.hideProgress()
-            }, forced: false)
-        })
-        
+    override func synchronizeData() {
         self.progressPresenter?.presentProgress(withText: nil, completion: {
             FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
                 print("Synchronization complited: Flights")
                 self.progressPresenter?.hideProgress()
             }, forced: false)
         })
-
+    }
+    
+    func getData() {
         
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in

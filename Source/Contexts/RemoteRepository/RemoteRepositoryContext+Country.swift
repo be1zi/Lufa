@@ -10,24 +10,35 @@ import Foundation
 
 extension RemoteRepositoryContext {
     
-    func getAllCountries(withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+    func getAllCountries(withOffset offset: Int, result: [[String: Any]], withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
         let language = LanguageManager.sharedInstance.currentLanguage
         
-        getOpen(endPoint: "v1/references/countries/?lang=\(language)", parameters: nil, contentType: .JSON, withSuccess: { response in
+        getOpen(endPoint: "v1/references/countries/?lang=\(language)&limit=100&offset=\(offset)", parameters: nil, contentType: .JSON, withSuccess: { response in
             
-            DispatchQueue.global().async {
+            var localResult = result
+            let res = self.prepareData(response: response)
+            let localOffset = offset + res.count
                 
-                let result = self.prepareData(response: response)
-                LocalRepositoryContext.sharedInstance.parseAndSave(data: result, name: "Country")
+            localResult.append(contentsOf: res)
                 
-                DispatchQueue.main.async {
+            if res.count < 100 {
+                LocalRepositoryContext.sharedInstance.parseAndSave(data: localResult, name: "Country")
                     
+                DispatchQueue.main.async {
+                        
                     if let success = success {
                         success(nil)
                     }
                 }
-            }
+            } else {
+                sleep(1)
+
+                self.getAllCountries(withOffset: localOffset,
+                                     result: localResult,
+                                     withSuccess: success,
+                                     andFailure: failure)
+                }
         }) { error in
             
             DispatchQueue.main.async {

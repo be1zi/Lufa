@@ -40,7 +40,7 @@ class CountrySynchroManager: SynchroManager {
         let group: DispatchGroup = DispatchGroup()
         
         group.enter()
-        RemoteRepositoryContext.sharedInstance.getAllCountries(withSuccess: { _ in
+        RemoteRepositoryContext.sharedInstance.getAllCountries(withOffset: 0, result: [], withSuccess: { _ in
             group.leave()
         }) { error in
             localError = error
