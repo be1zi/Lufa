@@ -13,6 +13,7 @@ extension RemoteRepositoryContext {
     func getAllFlight(params: [String: Any]?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
         get(endPoint: "v1/flight_operations/crew_services/COMMON_FLIGHT_LEG_DETAILS", parameters: params, contentType: .JSON, withSuccess: { response in
+           
             DispatchQueue.global().async {
                 
                 if let response = response {

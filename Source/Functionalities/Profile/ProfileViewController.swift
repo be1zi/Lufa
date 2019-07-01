@@ -33,7 +33,6 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var positionValueLabel: UILabel!
     @IBOutlet weak var dutyValueLabel: UILabel!
     
-    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
     
     var employee: Employee?
@@ -66,7 +65,6 @@ class ProfileViewController: BaseViewController {
         positionTitleLabel.text = "profile.jobData.position.title".localized()
         dutyTitleLabel.text = "profile.jobData.duty.title".localized()
         
-        editButton.setTitle("edit.title".localized(), for: .normal)
         logoutButton.setTitle("logout.title".localized(), for: .normal)
     }
     
@@ -93,10 +91,7 @@ class ProfileViewController: BaseViewController {
         }
     }
     
-    //MARK: Actions
-    @IBAction func editButtonAction(_ sender: Any) {
-    
-    }
+    //MARK: Action
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         progressPresenter?.presentProgress(withText: nil, completion: {
