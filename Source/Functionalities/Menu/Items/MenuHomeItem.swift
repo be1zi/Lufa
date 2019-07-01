@@ -7,7 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class MenuHomeItem: MenuBaseItem {
     
+    override init() {
+        super.init()
+        
+        self.title = "Home"
+        self.image = UIImage(named: "menuHome")
+        self.storyboardName = "Home"
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }

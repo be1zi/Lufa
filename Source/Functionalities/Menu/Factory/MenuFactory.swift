@@ -13,6 +13,7 @@ class MenuFactory: NSObject {
     static func mainMenuItems() -> [MenuBaseItem] {
         
         return [MenuHomeItem(),
+                MenuFlightItem(),
                 MenuProfileItem()]
     }
 }

@@ -13,23 +13,36 @@ class MenuTapBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vc = UIStoryboard.init(name: "Home", bundle: nil).instantiateInitialViewController()
-        let profileVC = UIStoryboard.init(name: "Profile", bundle: nil).instantiateInitialViewController()
-        let flightVC = UIStoryboard.init(name: "Flight", bundle: nil).instantiateInitialViewController()
+        loadItems()
+        setStyle()
+    }
+    
+    func loadItems() {
+        let items = MenuFactory.mainMenuItems()
         
-        if let viewController = vc {
-            viewController.tabBarItem = UITabBarItem(title: "Home", image: nil, tag: 1)
-            self.viewControllers = [viewController]
+        for item in items {
+            
+            if item.storyboardName.count < 1 {
+                continue
+            }
+            
+            let vc = UIStoryboard.init(name: item.storyboardName, bundle: nil).instantiateInitialViewController()
+            
+            if let controller = vc {
+                controller.tabBarItem = item
+                
+                if let _ = self.viewControllers {
+                    self.viewControllers?.append(controller)
+                } else {
+                    self.viewControllers = [controller]
+                }
+            }
         }
-        
-        if let flight = flightVC {
-            flight.tabBarItem = UITabBarItem(title: "Flight", image: nil, tag: 3)
-            self.viewControllers?.append(flight)
-        }
-        
-        if let profile = profileVC {
-            profileVC?.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 2)
-            self.viewControllers?.append(profile)
-        }
+    }
+    
+    func setStyle() {
+        tabBar.tintColor = UIColor.lufaGreenColor
+        tabBar.barStyle = UIBarStyle.default
+        tabBar.isTranslucent = false
     }
 }

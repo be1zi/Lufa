@@ -30,6 +30,7 @@
 		3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7C022BA0B17005C4D64 /* crew_1.json */; };
 		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
+		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D64622F22BA2823009691FA /* FlightDetailsMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64622E22BA2823009691FA /* FlightDetailsMapTableViewCell.swift */; };
 		3D64623122BA285B009691FA /* FlightDetailsMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D64623022BA285B009691FA /* FlightDetailsMapTableViewCell.xib */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
@@ -151,6 +152,7 @@
 		3D2EC7C022BA0B17005C4D64 /* crew_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crew_1.json; sourceTree = "<group>"; };
 		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
+		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D64622E22BA2823009691FA /* FlightDetailsMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailsMapTableViewCell.swift; sourceTree = "<group>"; };
 		3D64623022BA285B009691FA /* FlightDetailsMapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightDetailsMapTableViewCell.xib; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				3DCB50E122AF86EA00C0AFF0 /* Base */,
+				3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */,
 				3DCB50E522AF88EF00C0AFF0 /* MenuHomeItem.swift */,
 				3DCB50E722AF891800C0AFF0 /* MenuProfileItem.swift */,
 			);
@@ -1047,6 +1050,7 @@
 				3DA6E99322560B7C00015999 /* String+Lufa.swift in Sources */,
 				3DE0EE54229D211E009AD5D8 /* Crew+CoreDataClass.swift in Sources */,
 				3DD5697422AF9FB700E43B38 /* FlightListViewController.swift in Sources */,
+				3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */,
 				3D25D57E22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift in Sources */,
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
