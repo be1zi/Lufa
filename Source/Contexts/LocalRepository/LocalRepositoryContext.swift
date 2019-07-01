@@ -152,9 +152,12 @@ class LocalRepositoryContext {
             if let key: String = singleData[primaryKey] as? String {
                 if !dataKeysToUpdate.contains(key) {
                     if let entity = NSEntityDescription.entity(forEntityName: name, in: context) {
-                        let object = NSManagedObject(entity: entity, insertInto: context)
                         
-                        object.serialize(data: singleData)
+                        DispatchQueue.main.async {
+                            let object = NSManagedObject(entity: entity, insertInto: context)
+                            object.serialize(data: singleData)
+                        }
+                        
                         added += 1
                     }
                 }

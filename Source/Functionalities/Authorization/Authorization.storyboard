@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClC-LX-pbe">
-                                <rect key="frame" x="20" y="100" width="374" height="30"/>
+                                <rect key="frame" x="20" y="90" width="374" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,24 +75,48 @@
                                     <action selector="changeLanguageAction:" destination="4Mp-Cl-meZ" eventType="touchUpInside" id="Iss-QN-oYo"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gez-T3-Sl8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQS-d9-N3x">
+                                <rect key="frame" x="0.0" y="727" width="414" height="169"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRp-gT-KBI">
+                                <rect key="frame" x="0.0" y="648" width="414" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="JRp-gT-KBI" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" id="33g-7j-aN0"/>
+                            <constraint firstItem="JRp-gT-KBI" firstAttribute="top" secondItem="xhD-ko-DOf" secondAttribute="bottom" id="3OD-Mh-Gc2"/>
+                            <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="JRp-gT-KBI" secondAttribute="trailing" id="4Ax-5L-PCK"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="xhD-ko-DOf" secondAttribute="trailing" constant="20" id="6MA-0j-rMz"/>
                             <constraint firstItem="xhD-ko-DOf" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" constant="20" id="8Jz-7x-KkM"/>
+                            <constraint firstItem="JRp-gT-KBI" firstAttribute="height" secondItem="jzH-7t-5a0" secondAttribute="width" multiplier="35:414" id="8TO-z4-2BN"/>
+                            <constraint firstItem="gez-T3-Sl8" firstAttribute="top" secondItem="jzH-7t-5a0" secondAttribute="top" id="DV0-kA-Wg3"/>
                             <constraint firstItem="3UL-02-iJS" firstAttribute="centerY" secondItem="jzH-7t-5a0" secondAttribute="centerY" id="E2c-1V-wmV"/>
-                            <constraint firstItem="ClC-LX-pbe" firstAttribute="top" secondItem="jzH-7t-5a0" secondAttribute="top" constant="100" id="HKi-Ey-Po5"/>
+                            <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="gez-T3-Sl8" secondAttribute="trailing" id="JPb-c9-1rT"/>
                             <constraint firstItem="3UL-02-iJS" firstAttribute="centerX" secondItem="jzH-7t-5a0" secondAttribute="centerX" id="M37-G5-XIY"/>
-                            <constraint firstItem="ufP-1h-wct" firstAttribute="top" secondItem="xhD-ko-DOf" secondAttribute="bottom" constant="35" id="UbU-GM-ZvQ"/>
+                            <constraint firstAttribute="bottom" secondItem="SQS-d9-N3x" secondAttribute="bottom" id="QXR-Lq-lgJ"/>
+                            <constraint firstItem="gez-T3-Sl8" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" id="RCS-nP-zqs"/>
+                            <constraint firstItem="SQS-d9-N3x" firstAttribute="height" secondItem="jzH-7t-5a0" secondAttribute="width" multiplier="169:414" id="Vou-af-5az"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="9F4-LG-MwV" secondAttribute="trailing" id="bDP-kv-UKV"/>
-                            <constraint firstAttribute="bottom" secondItem="ufP-1h-wct" secondAttribute="bottom" constant="169" id="cVU-tH-T02"/>
+                            <constraint firstItem="ufP-1h-wct" firstAttribute="top" secondItem="JRp-gT-KBI" secondAttribute="bottom" id="cj8-7A-B7M"/>
                             <constraint firstItem="9F4-LG-MwV" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" id="gWN-FS-Vnh"/>
+                            <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="SQS-d9-N3x" secondAttribute="trailing" id="h6o-Lx-zWi"/>
+                            <constraint firstItem="gez-T3-Sl8" firstAttribute="height" secondItem="jzH-7t-5a0" secondAttribute="width" multiplier="90:414" id="hK5-ld-tCq"/>
+                            <constraint firstItem="SQS-d9-N3x" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" id="jNX-aS-5Zb"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="ufP-1h-wct" secondAttribute="trailing" constant="20" id="jfo-QM-CAP"/>
                             <constraint firstAttribute="bottom" secondItem="9F4-LG-MwV" secondAttribute="bottom" id="mMV-Hp-bUY"/>
                             <constraint firstItem="ClC-LX-pbe" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" constant="20" id="nBd-o1-rbn"/>
                             <constraint firstItem="ufP-1h-wct" firstAttribute="leading" secondItem="n4C-41-mcm" secondAttribute="leading" constant="20" id="u20-Zi-aDa"/>
+                            <constraint firstItem="ClC-LX-pbe" firstAttribute="top" secondItem="gez-T3-Sl8" secondAttribute="bottom" id="u8k-cE-nwk"/>
                             <constraint firstItem="9F4-LG-MwV" firstAttribute="top" secondItem="jzH-7t-5a0" secondAttribute="top" id="v2q-Xz-hlk"/>
                             <constraint firstItem="n4C-41-mcm" firstAttribute="trailing" secondItem="ClC-LX-pbe" secondAttribute="trailing" constant="20" id="x9d-2w-tbN"/>
+                            <constraint firstItem="SQS-d9-N3x" firstAttribute="top" secondItem="ufP-1h-wct" secondAttribute="bottom" id="ymL-U9-dBd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n4C-41-mcm"/>
                     </view>
@@ -106,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NIJ-VV-R1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992.8" y="-4.0479760119940034"/>
+            <point key="canvasLocation" x="1992.753623188406" y="-4.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KhL-yB-6rb">
