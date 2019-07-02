@@ -44,7 +44,7 @@ class AuthorizationViewController: BaseViewController {
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { result in
                 
-                InitSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+                InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
                     self.progressPresenter?.hideProgress()
                     AppDelegate.sharedInstance.windowController?.presentMenuController()
                 }, forced: false)

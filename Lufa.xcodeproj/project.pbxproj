@@ -57,6 +57,8 @@
 		3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */; };
 		3DAD82AA22B28DCD00131683 /* HomeFlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */; };
 		3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */; };
+		3DB5F9A522CB552F00D4C007 /* CrewSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5F9A422CB552F00D4C007 /* CrewSynchroManager.swift */; };
+		3DB5F9AA22CB57F600D4C007 /* FlightCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5F9A922CB57F600D4C007 /* FlightCompoundSynchroManager.swift */; };
 		3DCB50C622AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */; };
 		3DCB50CD22AE652D00C0AFF0 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */; };
 		3DCB50CE22AE652D00C0AFF0 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */; };
@@ -120,7 +122,7 @@
 		3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEA56F72251F523003A34D4 /* Authorization.storyboard */; };
 		3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA57002251FBFC003A34D4 /* WindowController.swift */; };
 		3DF18B0422C5E2AC00AD10F5 /* CompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0322C5E2AC00AD10F5 /* CompoundSynchroManager.swift */; };
-		3DF18B0622C5E83F00AD10F5 /* InitSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0522C5E83F00AD10F5 /* InitSynchroManager.swift */; };
+		3DF18B0622C5E83F00AD10F5 /* InitCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0522C5E83F00AD10F5 /* InitCompoundSynchroManager.swift */; };
 		3DF18B0822C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0722C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift */; };
 		3DF18B0A22C600CD00AD10F5 /* AirlineSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0922C600CD00AD10F5 /* AirlineSynchroManager.swift */; };
 		3DF18B0D22C6019600AD10F5 /* Airline+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0B22C6019600AD10F5 /* Airline+CoreDataClass.swift */; };
@@ -182,6 +184,8 @@
 		3DAD82A722B28DC300131683 /* HomeFlightsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlightsTableViewCell.swift; sourceTree = "<group>"; };
 		3DAD82A922B28DCD00131683 /* HomeFlightsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFlightsTableViewCell.xib; sourceTree = "<group>"; };
 		3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+City.swift"; sourceTree = "<group>"; };
+		3DB5F9A422CB552F00D4C007 /* CrewSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewSynchroManager.swift; sourceTree = "<group>"; };
+		3DB5F9A922CB57F600D4C007 /* FlightCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3DCB50C522AE58CB00C0AFF0 /* RemoteRepositoryContext+Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Country.swift"; sourceTree = "<group>"; };
 		3DCB50CB22AE652D00C0AFF0 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DCB50CC22AE652D00C0AFF0 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -245,7 +249,7 @@
 		3DEA56F72251F523003A34D4 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		3DEA57002251FBFC003A34D4 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		3DF18B0322C5E2AC00AD10F5 /* CompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundSynchroManager.swift; sourceTree = "<group>"; };
-		3DF18B0522C5E83F00AD10F5 /* InitSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitSynchroManager.swift; sourceTree = "<group>"; };
+		3DF18B0522C5E83F00AD10F5 /* InitCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3DF18B0722C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Airlines.swift"; sourceTree = "<group>"; };
 		3DF18B0922C600CD00AD10F5 /* AirlineSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineSynchroManager.swift; sourceTree = "<group>"; };
 		3DF18B0B22C6019600AD10F5 /* Airline+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Airline+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -562,6 +566,22 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		3DB5F9A722CB57C200D4C007 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3DF18B0322C5E2AC00AD10F5 /* CompoundSynchroManager.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3DB5F9AB22CB586F00D4C007 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3D25D57522B7616F00881E17 /* SynchroManager.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		3DCB50DB22AF83E300C0AFF0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,11 +829,12 @@
 		3DF18B0122C5E27900AD10F5 /* Single */ = {
 			isa = PBXGroup;
 			children = (
-				3D25D57522B7616F00881E17 /* SynchroManager.swift */,
+				3DB5F9AB22CB586F00D4C007 /* Base */,
 				3DF18B0922C600CD00AD10F5 /* AirlineSynchroManager.swift */,
 				3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */,
 				3D25D58222B77F3500881E17 /* CitySynchroManager.swift */,
 				3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */,
+				3DB5F9A422CB552F00D4C007 /* CrewSynchroManager.swift */,
 			);
 			path = Single;
 			sourceTree = "<group>";
@@ -821,8 +842,9 @@
 		3DF18B0222C5E28A00AD10F5 /* Compound */ = {
 			isa = PBXGroup;
 			children = (
-				3DF18B0322C5E2AC00AD10F5 /* CompoundSynchroManager.swift */,
-				3DF18B0522C5E83F00AD10F5 /* InitSynchroManager.swift */,
+				3DB5F9A722CB57C200D4C007 /* Base */,
+				3DF18B0522C5E83F00AD10F5 /* InitCompoundSynchroManager.swift */,
+				3DB5F9A922CB57F600D4C007 /* FlightCompoundSynchroManager.swift */,
 			);
 			path = Compound;
 			sourceTree = "<group>";
@@ -1065,6 +1087,7 @@
 				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
 				3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
+				3DB5F9A522CB552F00D4C007 /* CrewSynchroManager.swift in Sources */,
 				3D64622F22BA2823009691FA /* FlightDetailsMapTableViewCell.swift in Sources */,
 				3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */,
 				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
@@ -1075,12 +1098,13 @@
 				3DF18B0822C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift in Sources */,
 				3DF18B0A22C600CD00AD10F5 /* AirlineSynchroManager.swift in Sources */,
 				3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */,
-				3DF18B0622C5E83F00AD10F5 /* InitSynchroManager.swift in Sources */,
+				3DF18B0622C5E83F00AD10F5 /* InitCompoundSynchroManager.swift in Sources */,
 				3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */,
 				3DA47B8322A7C4520095FA85 /* RemoteRepositoryContext+Flight.swift in Sources */,
 				3DE0EE53229D211E009AD5D8 /* Flight+CoreDataProperties.swift in Sources */,
 				3D25D59122B791EF00881E17 /* FlightDetailsSectionTableViewCell.swift in Sources */,
 				3DCB50E822AF891800C0AFF0 /* MenuProfileItem.swift in Sources */,
+				3DB5F9AA22CB57F600D4C007 /* FlightCompoundSynchroManager.swift in Sources */,
 				3DE0EE47229D211E009AD5D8 /* DutyEventAttributes+CoreDataProperties.swift in Sources */,
 				3DE0EE4C229D211E009AD5D8 /* CheckIn+CoreDataClass.swift in Sources */,
 				3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */,

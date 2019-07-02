@@ -15,6 +15,7 @@ enum SynchroType: Int {
     case SynchroTypeCities
     case SynchroTypeFlights
     case SynchroTypeAirline
+    case SynchroTypeCrew
 }
 
 extension SynchroInfo {

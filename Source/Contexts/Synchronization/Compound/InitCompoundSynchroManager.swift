@@ -8,10 +8,10 @@
 
 import Foundation
 
-class InitSynchroManager: CompoundSynchroManager {
+class InitCompoundSynchroManager: CompoundSynchroManager {
     
     //MARK: - Singleton
-    static var sharedInstance = InitSynchroManager(withManagers: [])
+    static var sharedInstance = InitCompoundSynchroManager(withManagers: [])
     
     override init(withManagers: [SynchroManager]) {
         super.init(withManagers: [CountrySynchroManager.sharedInstance,

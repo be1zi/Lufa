@@ -1,20 +1,19 @@
 //
-//  FlightSynchroManager.swift
+//  CrewSynchroManager.swift
 //  Lufa
 //
-//  Created by Konrad Belzowski on 27/06/2019.
+//  Created by Konrad Belzowski on 02/07/2019.
 //  Copyright © 2019 Konrad Belzowski. All rights reserved.
 //
 
 import Foundation
 
-class FlightSynchroManager: SynchroManager {
+class CrewSynchroManager: SynchroManager {
     
-    //MARK: Singleton
-    static let sharedInstance = FlightSynchroManager()
+    //MARK: - Singleton
+    static let sharedInstance = CrewSynchroManager()
     
     override func synchronizeWithCompletion(completion: SynchroCompletion?, forced: Bool) {
-        
         super.synchronizeWithCompletion(completion: completion, forced: forced)
         
         if synchroInProgress {
@@ -28,7 +27,7 @@ class FlightSynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeFlights, object: String(describing: Flight.self)) {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCrew, object: String(describing: Crew.self)) {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -40,7 +39,7 @@ class FlightSynchroManager: SynchroManager {
         let group: DispatchGroup = DispatchGroup()
         
         group.enter()
-        RemoteRepositoryContext.sharedInstance.getAllFlight(params: nil, withSuccess: { _ in
+        RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
             group.leave()
         }) { error in
             localError = error
@@ -53,8 +52,7 @@ class FlightSynchroManager: SynchroManager {
             let synchroResult: SynchroResult = localError != nil ? .SynchroResultError : .SynchroResultOK
             
             if synchroResult == SynchroResult.SynchroResultOK {
-                
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeFlights, object: String(describing: Flight.self))
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCrew, object: String(describing: Crew.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

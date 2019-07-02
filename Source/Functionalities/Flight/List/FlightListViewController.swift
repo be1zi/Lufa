@@ -44,7 +44,7 @@ class FlightListViewController: BaseViewController {
         super.synchronizeData()
         
         self.progressPresenter?.presentProgress(withText: nil, completion: {
-            FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+            FlightCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
                 self.fetchData()
                 self.progressPresenter?.hideProgress()
             }, forced: false)

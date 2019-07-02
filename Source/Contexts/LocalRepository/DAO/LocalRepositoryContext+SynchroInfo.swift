@@ -19,9 +19,11 @@ extension LocalRepositoryContext {
         case .SynchroTypeCities:
             return 6 * 30 * 24 * 60 * 60
         case .SynchroTypeFlights:
-            return 30 * 60
+            return 60 * 60
         case .SynchroTypeAirline:
             return 6 * 30 * 24 * 60 * 60
+        case .SynchroTypeCrew:
+            return 60 * 60
         }
     }
     
