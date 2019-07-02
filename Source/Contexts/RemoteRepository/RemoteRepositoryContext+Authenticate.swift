@@ -253,7 +253,7 @@ extension RemoteRepositoryContext {
                                    "dutyCode" : "OD",
                                    "email" : "john.snow@winterfell.com",
                                    "phone" : "666999012",
-                                   "birthDate" : "05-11-1995Z"]
+                                   "birthDate" : "1995-11-05Z"]
         
         return data
     }

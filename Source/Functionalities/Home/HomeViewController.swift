@@ -54,7 +54,6 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: Data
-    
     override func synchronizeData() {
         self.progressPresenter?.presentProgress(withText: nil, completion: {
             FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
