@@ -50,6 +50,10 @@ class ProfileViewController: BaseViewController {
         return true
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.default
+    }
+    
     override func loadTranslations() {
         
         personalDataLabel.text = "profile.personalData.title".localized()
