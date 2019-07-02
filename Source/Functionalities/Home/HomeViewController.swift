@@ -73,13 +73,6 @@ class HomeViewController: BaseViewController {
             })
         })
 
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.getAllCrew(withSuccess: { _ in
-                self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-            })
-        })
 
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in

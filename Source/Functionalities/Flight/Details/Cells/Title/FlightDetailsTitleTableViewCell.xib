@@ -19,23 +19,57 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lufthansa: LH200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcP-8B-LKl">
-                        <rect key="frame" x="20" y="20" width="335" height="29"/>
+                        <rect key="frame" x="20" y="20" width="191" height="29"/>
                         <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-qy-90w">
+                        <rect key="frame" x="268.5" y="14.5" width="86.5" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkP-Oc-Cgr">
+                                <rect key="frame" x="0.0" y="0.0" width="36.5" height="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" red="0.80784313725490198" green="0.86274509803921573" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mK2-Zf-TIA">
+                                <rect key="frame" x="46.5" y="0.0" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1wT-GZ-xhy"/>
+                                    <constraint firstAttribute="width" secondItem="mK2-Zf-TIA" secondAttribute="height" multiplier="1:1" id="NoQ-gW-jPe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mK2-Zf-TIA" secondAttribute="trailing" id="B3U-C9-jWV"/>
+                            <constraint firstItem="wkP-Oc-Cgr" firstAttribute="top" secondItem="MEG-qy-90w" secondAttribute="top" id="CWo-TY-Mx2"/>
+                            <constraint firstAttribute="bottom" secondItem="mK2-Zf-TIA" secondAttribute="bottom" id="M9K-m4-332"/>
+                            <constraint firstItem="mK2-Zf-TIA" firstAttribute="leading" secondItem="wkP-Oc-Cgr" secondAttribute="trailing" constant="10" id="N9h-Ht-Mxd"/>
+                            <constraint firstItem="mK2-Zf-TIA" firstAttribute="top" secondItem="MEG-qy-90w" secondAttribute="top" id="OES-Ft-vQE"/>
+                            <constraint firstItem="wkP-Oc-Cgr" firstAttribute="leading" secondItem="MEG-qy-90w" secondAttribute="leading" id="eeX-rI-9vc"/>
+                            <constraint firstAttribute="bottom" secondItem="wkP-Oc-Cgr" secondAttribute="bottom" id="iX6-Km-RVs"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="MEG-qy-90w" secondAttribute="trailing" constant="20" id="KVS-D4-tRI"/>
+                    <constraint firstItem="MEG-qy-90w" firstAttribute="centerY" secondItem="EcP-8B-LKl" secondAttribute="centerY" id="OGY-h3-23U"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EcP-8B-LKl" secondAttribute="bottom" priority="999" constant="20" id="OQp-MQ-69h"/>
-                    <constraint firstAttribute="trailing" secondItem="EcP-8B-LKl" secondAttribute="trailing" constant="20" id="WwV-9j-A1U"/>
+                    <constraint firstItem="MEG-qy-90w" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EcP-8B-LKl" secondAttribute="trailing" constant="20" id="blW-Ke-gvv"/>
                     <constraint firstItem="EcP-8B-LKl" firstAttribute="top" secondItem="niB-5d-rMn" secondAttribute="top" constant="20" id="fta-lA-M4o"/>
                     <constraint firstItem="EcP-8B-LKl" firstAttribute="leading" secondItem="niB-5d-rMn" secondAttribute="leading" constant="20" id="r0t-yx-Yw5"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="showOnMapView" destination="MEG-qy-90w" id="zQQ-Ku-LPh"/>
                 <outlet property="titleLabel" destination="EcP-8B-LKl" id="s6E-vw-pAN"/>
             </connections>
             <point key="canvasLocation" x="-74.400000000000006" y="98.050974512743636"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="mapIcon" width="138.46153259277344" height="138.46153259277344"/>
+    </resources>
 </document>

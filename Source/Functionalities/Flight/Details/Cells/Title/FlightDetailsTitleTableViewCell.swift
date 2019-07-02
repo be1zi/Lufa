@@ -9,15 +9,30 @@
 import Foundation
 import UIKit
 
+protocol FlightDetailsTitleCellDelegate {
+    
+    func showOnMapAction()
+}
+
 class FlightDetailsTitleTableViewCell: UITableViewCell {
     
     //MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var showOnMapView: UIView!
     
     var flight: Flight?
+    var delegate: FlightDetailsTitleCellDelegate?
     
-    func loadWithData(flight: Flight) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showOnMap))
+        showOnMapView.addGestureRecognizer(tap)
+    }
+    
+    func loadWithData(flight: Flight, delegate: FlightDetailsTitleCellDelegate?) {
         self.flight = flight
+        self.delegate = delegate
         
         setData()
     }
@@ -31,6 +46,14 @@ class FlightDetailsTitleTableViewCell: UITableViewCell {
         if let operatingAirline = data.operatingAirline,
             let flightDesignator = data.flightDesignator {
             titleLabel.text = "\(operatingAirline): \(flightDesignator)"
+        }
+    }
+    
+    //MARK: - Action
+    @objc func showOnMap() {
+
+        if let delegate = delegate {
+            delegate.showOnMapAction()
         }
     }
 }

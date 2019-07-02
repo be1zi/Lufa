@@ -39,6 +39,10 @@ class FlightListViewController: BaseViewController {
         return true
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.default
+    }
+    
     //MARK: Data
     override func synchronizeData() {
         super.synchronizeData()

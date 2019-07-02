@@ -18,8 +18,6 @@ enum FlightDetailsCellType: Int {
     case Schedule
     case SectionPlaces
     case Places
-    case SectionLocation
-    case Location
     case All
 }
 
@@ -57,8 +55,6 @@ class FlightDetailsViewController : BaseViewController {
                            forCellReuseIdentifier: "FlightDetailsScheduleTableViewCell")
         tableView.register(UINib(nibName: "FlightDetailsPlaceTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "FlightDetailsPlaceTableViewCell")
-        tableView.register(UINib(nibName: "FlightDetailsMapTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "FlightDetailsMapTableViewCell")
     }
 }
 
@@ -74,10 +70,6 @@ extension FlightDetailsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cityFrom = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.departureAirport)
-        let cityTo = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.arrivalAirport)
-        
-        
         switch indexPath.row {
         case FlightDetailsCellType.Header.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsHeaderTableViewCell", for: indexPath) as? FlightDetailsHeaderTableViewCell
@@ -90,7 +82,7 @@ extension FlightDetailsViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsTitleTableViewCell", for: indexPath) as? FlightDetailsTitleTableViewCell
             
             if let cell = cell {
-                cell.loadWithData(flight: flight)
+                cell.loadWithData(flight: flight, delegate: self)
                 
                 return cell
             }
@@ -149,27 +141,24 @@ extension FlightDetailsViewController: UITableViewDataSource {
                 return cell
             }
             
-        case FlightDetailsCellType.SectionLocation.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsSectionTableViewCell", for: indexPath) as? FlightDetailsSectionTableViewCell
-            
-            if let cell = cell {
-                cell.loadWithName(name: "flight.details.cell.section.location".localized())
-                
-                return cell
-            }
-            
-        case FlightDetailsCellType.Location.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "FlightDetailsMapTableViewCell", for: indexPath) as? FlightDetailsMapTableViewCell
-            
-            if let cell = cell {
-                cell.loadWithCity(from: cityFrom, to: cityTo)
-                return cell
-            }
-            
         default:
             return UITableViewCell()
         }
         
         return UITableViewCell()
+    }
+}
+
+extension FlightDetailsViewController: FlightDetailsTitleCellDelegate {
+    
+    func showOnMapAction() {
+        
+        let vc = UIStoryboard.init(name: "FlightDetailsMap", bundle: nil).instantiateInitialViewController()
+        
+        if let controller = vc as? FlightDetailsMapViewController {
+            controller.flight = flight
+            
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
