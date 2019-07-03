@@ -51,7 +51,7 @@ class ProfileViewController: BaseViewController {
     }
     
     override func navigationBarTitle() -> String? {
-        return "Profile"
+        return "profile.title".localized()
     }
     
     override func shouldHideBackButton() -> Bool {

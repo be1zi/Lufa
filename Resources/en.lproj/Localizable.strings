@@ -26,6 +26,7 @@
 "edit.title" = "Edit";
 
 //Profile
+"profile.title" = "Profile";
 "profile.personalData.title" = "Personal data";
 "profile.personalData.firstName.title" = "First name:";
 "profile.personalData.lastName.title" = "Last name:";
@@ -48,6 +49,7 @@
 "home.flights.cell.departure.title" = "Departure:";
 
 //Flight list
+"flight.list.title" = "Flights";
 "flight.cell.airline.title" = "Airline:";
 "flight.cell.designator.title" = "Designator:";
 "flight.cell.departure.title" = "Departure:";

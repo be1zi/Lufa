@@ -13,6 +13,7 @@
         <scene sceneID="1jr-ef-QK5">
             <objects>
                 <tabBarController id="fJ3-90-0OT" customClass="MenuTapBarController" customModule="Lufa" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="mNa-2p-l0X"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DAC-a2-FC6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,7 +22,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zv9-rl-ZbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-850" y="-45"/>
+            <point key="canvasLocation" x="-2185" y="7"/>
         </scene>
     </scenes>
 </document>

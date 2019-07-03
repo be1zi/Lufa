@@ -27,6 +27,7 @@
 "edit.title" = "Edytuj";
 
 //Profile
+"profile.title" = "Profil";
 "profile.personalData.title" = "Dane osobowe";
 "profile.personalData.firstName.title" = "Imię:";
 "profile.personalData.lastName.title" = "Nazwisko:";
@@ -49,6 +50,7 @@
 "home.flights.cell.departure.title" = "Wylot:";
 
 //Flight list
+"flight.list.title" = "Loty";
 "flight.cell.airline.title" = "Linia:";
 "flight.cell.designator.title" = "Sygnatura:";
 "flight.cell.departure.title" = "Odlot:";

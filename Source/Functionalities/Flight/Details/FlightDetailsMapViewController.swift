@@ -20,7 +20,7 @@ class FlightDetailsMapViewController: BaseViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         setData()
     }
     
@@ -58,13 +58,17 @@ class FlightDetailsMapViewController: BaseViewController {
         markerFrom.icon = UIImage(named: "markerA")
         markerFrom.setIconSize(scaledToSize: CGSize(width: 50, height: 50))
         markerFrom.map = map
-        
+
         let locationTo = CLLocationCoordinate2D(latitude: to.latitude, longitude: to.longitude)
         let markerTo = GMSMarker(position: locationTo)
         markerTo.title = "Arrival"
         markerTo.icon = UIImage(named: "markerB")
         markerTo.setIconSize(scaledToSize: CGSize(width: 50, height: 50))
         markerTo.map = map
+        
+        let bounds = GMSCoordinateBounds(coordinate: markerFrom.position, coordinate: markerTo.position)
+        let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
+        map.animate(with: update)
         
         mapView.addSubview(map)
     }
