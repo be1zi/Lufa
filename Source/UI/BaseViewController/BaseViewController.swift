@@ -39,13 +39,31 @@ class BaseViewController : UIViewController {
         
         let navigationBarHidden = shouldHideNavigationBar()
         self.navigationController?.setNavigationBarHidden(navigationBarHidden, animated: true)
+        
+        let backButton = UIBarButtonItem()
+        navigationItem.backBarButtonItem = backButton
+        
+        self.title = navigationBarTitle()
+        
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lufaGreenColor]
+        navigationController?.navigationBar.titleTextAttributes = attributes
+        
+        navigationController?.navigationItem.setHidesBackButton(shouldHideBackButton(), animated: false)
     }
     
     func loadTranslations() {
         
     }
     
+    func navigationBarTitle() -> String? {
+        return nil
+    }
+    
     func shouldHideNavigationBar() -> Bool {
+        return false
+    }
+    
+    func shouldHideBackButton() -> Bool {
         return false
     }
     

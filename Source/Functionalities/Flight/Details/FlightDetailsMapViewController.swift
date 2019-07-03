@@ -29,6 +29,10 @@ class FlightDetailsMapViewController: BaseViewController {
         return false
     }
     
+    override func navigationBarTitle() -> String? {
+        return "flight.details.map.title".localized()
+    }
+    
     //MARK: Data
     func setData() {
         

@@ -71,3 +71,6 @@
 "flight.details.cell.places.gate" = "Gate:";
 "flight.details.cell.places.position" = "Position:";
 "flight.details.cell.section.location" = "Location";
+"flight.details.title" = "Flight details";
+"flight.details.map.title" = "Flight map";
+

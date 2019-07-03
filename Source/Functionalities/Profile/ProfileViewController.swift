@@ -46,12 +46,16 @@ class ProfileViewController: BaseViewController {
     }
     
     //MARK: Appearance
-    override func shouldHideNavigationBar() -> Bool {
-        return true
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
+    }
+    
+    override func navigationBarTitle() -> String? {
+        return "Profile"
+    }
+    
+    override func shouldHideBackButton() -> Bool {
+        return true
     }
     
     override func loadTranslations() {

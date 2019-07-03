@@ -56,6 +56,10 @@ class FlightDetailsViewController : BaseViewController {
         tableView.register(UINib(nibName: "FlightDetailsPlaceTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "FlightDetailsPlaceTableViewCell")
     }
+    
+    override func navigationBarTitle() -> String? {
+        return "flight.details.title".localized()
+    }
 }
 
 extension FlightDetailsViewController: UITableViewDataSource {
