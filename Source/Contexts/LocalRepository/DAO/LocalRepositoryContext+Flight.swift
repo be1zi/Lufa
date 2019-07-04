@@ -44,10 +44,10 @@ extension LocalRepositoryContext {
                 let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date) {
                 request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
             } else {
-                request.predicate = NSPredicate(format: "flightDesignator IN %@", designators)
+                request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, Date.init()])
             }
         } else {
-            request.predicate = NSPredicate(format: "flightDesignator IN %@", designators)
+            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, Date.init()])
         }
         
         request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
