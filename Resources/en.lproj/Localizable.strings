@@ -43,6 +43,9 @@
 "profile.jobData.position.title" = "Position:";
 "profile.jobData.duty.title" = "Duty:";
 
+//Profile Edit
+"profile.edit.title" = "Profile edit";
+
 //Home
 "home.welcome.title" = "Welcome back";
 "home.flights.number1.title" = "You have %@ flights today";

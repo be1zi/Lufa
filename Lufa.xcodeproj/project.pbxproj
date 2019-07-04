@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */; };
 		3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */; };
+		3D03A47E22CDD30E001BAE56 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */; };
+		3D03A48022CDD320001BAE56 /* ProfileEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */; };
 		3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */; };
 		3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57522B7616F00881E17 /* SynchroManager.swift */; };
 		3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */; };
@@ -136,6 +138,8 @@
 /* Begin PBXFileReference section */
 		3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFiltersViewController.swift; sourceTree = "<group>"; };
 		3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightFilters.storyboard; sourceTree = "<group>"; };
+		3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileEdit.storyboard; sourceTree = "<group>"; };
 		3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57522B7616F00881E17 /* SynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySynchroManager.swift; sourceTree = "<group>"; };
@@ -277,6 +281,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D03A47B22CDD2D8001BAE56 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */,
+				3DD5696D22AF920700E43B38 /* Profile.storyboard */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		3D03A47C22CDD2F0001BAE56 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */,
+				3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		3D25D58422B78B0E00881E17 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,8 +689,8 @@
 		3DD5696A22AF91D400E43B38 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				3DD5696B22AF91EE00E43B38 /* ProfileViewController.swift */,
-				3DD5696D22AF920700E43B38 /* Profile.storyboard */,
+				3D03A47C22CDD2F0001BAE56 /* Edit */,
+				3D03A47B22CDD2D8001BAE56 /* Details */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -937,6 +959,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D03A48022CDD320001BAE56 /* ProfileEdit.storyboard in Resources */,
 				3DA6E9872255F74100015999 /* Language.storyboard in Resources */,
 				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,
 				3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */,
@@ -1075,6 +1098,7 @@
 				3DB5F9B322CB83EE00D4C007 /* GMSMarker+Lufa.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
 				3DF18B0422C5E2AC00AD10F5 /* CompoundSynchroManager.swift in Sources */,
+				3D03A47E22CDD30E001BAE56 /* ProfileEditViewController.swift in Sources */,
 				3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */,
 				3D25D58722B78B3100881E17 /* FlightDetailsHeaderTableViewCell.swift in Sources */,
 				3D25D59B22B79A7100881E17 /* FlightDetailsScheduleTableViewCell.swift in Sources */,

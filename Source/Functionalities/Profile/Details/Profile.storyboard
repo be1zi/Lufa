@@ -324,7 +324,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yfT-rW-8Pu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4se-uy-KUL"/>
+                    <navigationItem key="navigationItem" id="4se-uy-KUL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="editAccount" id="hwE-IO-BDO">
+                            <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="editAccountButtonAction:" destination="JJp-UQ-dwR" id="pFR-iR-5mh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="birthDateTitleLabel" destination="W8K-Of-Ytd" id="rg5-UZ-zKm"/>
                         <outlet property="birthDateValueLabel" destination="Fa8-Jr-iKU" id="fBa-y9-yJy"/>
@@ -369,4 +376,7 @@
             <point key="canvasLocation" x="134.78260869565219" y="37.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="editAccount" width="138.46153259277344" height="138.46153259277344"/>
+    </resources>
 </document>

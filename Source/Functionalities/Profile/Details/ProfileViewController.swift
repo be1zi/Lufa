@@ -118,4 +118,13 @@ class ProfileViewController: BaseViewController {
             })
         })
     }
+    
+    @IBAction func editAccountButtonAction(_ sender: Any) {
+        
+        let vc = UIStoryboard.init(name: "ProfileEdit", bundle: nil).instantiateInitialViewController()
+        
+        if let vc = vc {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
