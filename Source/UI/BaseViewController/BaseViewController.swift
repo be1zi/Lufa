@@ -47,6 +47,7 @@ class BaseViewController : UIViewController {
         
         let attributes = [NSAttributedString.Key.foregroundColor: UIColor.lufaGreenColor]
         navigationController?.navigationBar.titleTextAttributes = attributes
+        navigationController?.navigationBar.tintColor = UIColor.lufaGreenColor
         
         navigationController?.navigationItem.setHidesBackButton(shouldHideBackButton(), animated: false)
     }
