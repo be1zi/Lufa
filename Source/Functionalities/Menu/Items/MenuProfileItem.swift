@@ -14,7 +14,7 @@ class MenuProfileItem: MenuBaseItem {
     override init() {
         super.init()
         
-        self.title = "Profile"
+        self.title = "menu.item.profile.title".localized()
         self.image = UIImage(named: "menuProfile")
         self.storyboardName = "Profile"
     }

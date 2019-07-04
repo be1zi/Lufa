@@ -14,7 +14,7 @@ class MenuFlightItem: MenuBaseItem {
     override init() {
         super.init()
         
-        self.title = "Flight"
+        self.title = "menu.item.flight.title".localized()
         self.image = UIImage(named: "menuFlight")
         self.storyboardName = "Flight"
     }

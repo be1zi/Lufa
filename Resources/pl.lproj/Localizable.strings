@@ -26,6 +26,11 @@
 "logout.title" = "Wyloguj";
 "edit.title" = "Edytuj";
 
+//Menu
+"menu.item.flight.title" = "Loty";
+"menu.item.home.title" = "Home";
+"menu.item.profile.title" = "Profil";
+
 //Profile
 "profile.title" = "Profil";
 "profile.personalData.title" = "Dane osobowe";

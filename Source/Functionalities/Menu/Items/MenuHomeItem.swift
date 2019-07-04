@@ -14,7 +14,7 @@ class MenuHomeItem: MenuBaseItem {
     override init() {
         super.init()
         
-        self.title = "Home"
+        self.title = "menu.item.home.title".localized()
         self.image = UIImage(named: "menuHome")
         self.storyboardName = "Home"
     }
