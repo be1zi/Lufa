@@ -62,6 +62,16 @@ class FlightListViewController: BaseViewController {
             tableView.reloadData()
         }
     }
+    
+    //MARK: Action
+    @IBAction func filterButtonAction(_ sender: Any) {
+
+        let vc = UIStoryboard.init(name: "FlightFilters", bundle: nil).instantiateInitialViewController()
+        
+        if let vc = vc {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension FlightListViewController: UITableViewDelegate {

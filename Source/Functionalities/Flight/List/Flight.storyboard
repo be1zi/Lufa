@@ -36,7 +36,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tFW-Yr-g2q"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oWK-zq-eE8"/>
+                    <navigationItem key="navigationItem" id="oWK-zq-eE8">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="uqc-DR-RUg">
+                            <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterButtonAction:" destination="6KT-Yo-7Y6" id="9oT-ht-b1T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="HGT-Cv-CFr" id="Sto-o6-uIa"/>
                     </connections>
@@ -48,7 +55,6 @@
         <!--Navigation Controller-->
         <scene sceneID="xNG-kH-fHT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4IW-kt-T4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yq4-Em-CS0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xWm-ot-XW5">
@@ -60,8 +66,12 @@
                         <segue destination="6KT-Yo-7Y6" kind="relationship" relationship="rootViewController" id="VRR-rS-Wbc"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4IW-kt-T4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="72.799999999999997" y="79.610194902548727"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter" width="138.46153259277344" height="138.46153259277344"/>
+    </resources>
 </document>

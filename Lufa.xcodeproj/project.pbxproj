@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */; };
+		3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */; };
 		3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */; };
 		3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57522B7616F00881E17 /* SynchroManager.swift */; };
 		3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */; };
@@ -132,6 +134,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFiltersViewController.swift; sourceTree = "<group>"; };
+		3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightFilters.storyboard; sourceTree = "<group>"; };
 		3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57522B7616F00881E17 /* SynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySynchroManager.swift; sourceTree = "<group>"; };
@@ -704,6 +708,8 @@
 		3DD5697222AF9F9A00E43B38 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */,
+				3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */,
 			);
 			path = Filters;
 			sourceTree = "<group>";
@@ -933,6 +939,7 @@
 			files = (
 				3DA6E9872255F74100015999 /* Language.storyboard in Resources */,
 				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,
+				3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */,
 				3D25D58E22B78EEF00881E17 /* FlightDetailsTitleTableViewCell.xib in Resources */,
 				3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */,
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
@@ -1080,6 +1087,7 @@
 				3D25D57E22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift in Sources */,
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
+				3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
 				3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */,

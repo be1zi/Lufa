@@ -76,3 +76,6 @@
 "flight.details.cell.section.location" = "Miejsca";
 "flight.details.title" = "Detale lotu";
 "flight.details.map.title" = "Mapa lotu";
+
+//Flight Filters
+"flight.filters.title" = "Filtry";
