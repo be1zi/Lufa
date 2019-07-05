@@ -46,8 +46,11 @@ extension RemoteRepositoryContext {
             }
         }) { error in
             DispatchQueue.main.async {
-                if let failure = failure {
-                    failure(error)
+//                if let failure = failure {
+//                    failure(error)
+//                }
+                if let success = success {
+                    success(nil)
                 }
             }
         }

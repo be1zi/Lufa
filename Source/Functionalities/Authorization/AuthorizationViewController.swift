@@ -71,9 +71,9 @@ class AuthorizationViewController: BaseViewController {
                     InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, _ in
                         self.progressPresenter?.hideProgress()
                         
-                        if result != SynchroResult.SynchroResultError {
+                        //if result != SynchroResult.SynchroResultError {
                             AppDelegate.sharedInstance.windowController?.presentMenuController()
-                        }
+                        //}
                         
                     }, forced: false)
                     

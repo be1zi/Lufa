@@ -56,4 +56,12 @@ extension Employee {
         
         return "\(firstName) \(lastName)"
     }
+    
+    func autoSynchronizationEnabled() -> Bool {
+        return true
+    }
+    
+    func notificationsEnabled() -> Bool {
+        return true
+    }
 }

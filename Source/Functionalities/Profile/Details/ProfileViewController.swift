@@ -23,6 +23,9 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var jobDataTitleLabel: UILabel!
     @IBOutlet weak var positionTitleLabel: UILabel!
     @IBOutlet weak var dutyTitleLabel: UILabel!
+    @IBOutlet weak var permissionsTitleLabel: UILabel!
+    @IBOutlet weak var autoSynchronizationTitleLabel: UILabel!
+    @IBOutlet weak var notificationsTitleLabel: UILabel!
     
     //Values
     @IBOutlet weak var firstNameValueLabel: UILabel!
@@ -32,6 +35,8 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var phoneValueLabel: UILabel!
     @IBOutlet weak var positionValueLabel: UILabel!
     @IBOutlet weak var dutyValueLabel: UILabel!
+    @IBOutlet weak var autoSynchronizationCheckbox: UIImageView!
+    @IBOutlet weak var notificationsCheckbox: UIImageView!
     
     @IBOutlet weak var logoutButton: UIButton!
     
@@ -73,6 +78,10 @@ class ProfileViewController: BaseViewController {
         positionTitleLabel.text = "profile.jobData.position.title".localized()
         dutyTitleLabel.text = "profile.jobData.duty.title".localized()
         
+        permissionsTitleLabel.text = "profile.permissions.title".localized()
+        autoSynchronizationTitleLabel.text = "profile.permissions.autoSynchronization.title".localized()
+        notificationsTitleLabel.text = "profile.permissions.notifications.title".localized()
+        
         logoutButton.setTitle("logout.title".localized(), for: .normal)
     }
     
@@ -82,20 +91,37 @@ class ProfileViewController: BaseViewController {
     
     func setData() {
         
-        if let employee = employee {
-            firstNameValueLabel.text = employee.firstName
-            lastNameValueLabel.text = employee.lastName
+        guard let employee = employee else {
+            return
+        }
+        
+        firstNameValueLabel.text = employee.firstName
+        lastNameValueLabel.text = employee.lastName
             
-            if let birthDate = employee.birthDate {
-                birthDateValueLabel.text = DateFormatter.dateToString(date: birthDate)
-            } else {
-                birthDateValueLabel.text = nil
-            }
+        if let birthDate = employee.birthDate {
+            birthDateValueLabel.text = DateFormatter.dateToString(date: birthDate)
+        } else {
+            birthDateValueLabel.text = nil
+        }
             
-            emailValueLabel.text = employee.email
-            phoneValueLabel.text = employee.phone
-            positionValueLabel.text = employee.crewPosition
-            dutyValueLabel.text = employee.dutyCode
+        emailValueLabel.text = employee.email
+        phoneValueLabel.text = employee.phone
+        positionValueLabel.text = employee.crewPosition
+        dutyValueLabel.text = employee.dutyCode
+        
+        let checked = UIImage(named: "checkedCheckbox")
+        let unchecked = UIImage(named: "uncheckedCheckbox")
+        
+        if employee.autoSynchronizationEnabled() {
+            autoSynchronizationCheckbox.image = checked
+        } else {
+            autoSynchronizationCheckbox.image = unchecked
+        }
+        
+        if employee.notificationsEnabled() {
+            notificationsCheckbox.image = checked
+        } else {
+            notificationsCheckbox.image = unchecked
         }
     }
     

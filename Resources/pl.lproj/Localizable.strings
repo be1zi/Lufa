@@ -43,6 +43,9 @@
 "profile.jobData.title" = "Dane o stanowisku";
 "profile.jobData.position.title" = "Pozycja:";
 "profile.jobData.duty.title" = "Obowiązki:";
+"profile.permissions.title" = "Zezwolenia";
+"profile.permissions.autoSynchronization.title" = "Automatyczna synchronizacja";
+"profile.permissions.notifications.title" = "Powiadomienia";
 
 //Profile Edit
 "profile.edit.title" = "Edycja profilu";
