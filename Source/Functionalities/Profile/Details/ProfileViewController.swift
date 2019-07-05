@@ -35,8 +35,8 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var phoneValueLabel: UILabel!
     @IBOutlet weak var positionValueLabel: UILabel!
     @IBOutlet weak var dutyValueLabel: UILabel!
-    @IBOutlet weak var autoSynchronizationCheckbox: UIImageView!
-    @IBOutlet weak var notificationsCheckbox: UIImageView!
+    @IBOutlet weak var autoSynchronizationCheckbox: Checkbox!
+    @IBOutlet weak var notificationsCheckbox: Checkbox!
     
     @IBOutlet weak var logoutButton: UIButton!
     
@@ -46,6 +46,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
         loadData()
         setData()
     }
@@ -85,6 +86,11 @@ class ProfileViewController: BaseViewController {
         logoutButton.setTitle("logout.title".localized(), for: .normal)
     }
     
+    func configure() {
+        autoSynchronizationCheckbox.isUserInteractionEnabled = false
+        notificationsCheckbox.isUserInteractionEnabled = false
+    }
+    
     func loadData() {
         employee = LocalRepositoryContext.sharedInstance.getEmployee()
     }
@@ -109,20 +115,8 @@ class ProfileViewController: BaseViewController {
         positionValueLabel.text = employee.crewPosition
         dutyValueLabel.text = employee.dutyCode
         
-        let checked = UIImage(named: "checkedCheckbox")
-        let unchecked = UIImage(named: "uncheckedCheckbox")
-        
-        if employee.autoSynchronizationEnabled() {
-            autoSynchronizationCheckbox.image = checked
-        } else {
-            autoSynchronizationCheckbox.image = unchecked
-        }
-        
-        if employee.notificationsEnabled() {
-            notificationsCheckbox.image = checked
-        } else {
-            notificationsCheckbox.image = unchecked
-        }
+        autoSynchronizationCheckbox.checked = employee.autoSynchronizationEnabled()
+        notificationsCheckbox.checked = employee.notificationsEnabled()
     }
     
     //MARK: Action

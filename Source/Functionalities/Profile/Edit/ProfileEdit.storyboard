@@ -242,22 +242,23 @@
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="u6I-Hm-qz0">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpo-g9-Sl0" customClass="Checkbox" customModule="Lufa" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="30.5" width="50" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="3QC-J0-Tgq"/>
-                                                            <constraint firstAttribute="width" secondItem="u6I-Hm-qz0" secondAttribute="height" multiplier="1:1" id="jqk-Pi-xQA"/>
+                                                            <constraint firstAttribute="width" secondItem="Fpo-g9-Sl0" secondAttribute="height" multiplier="1:1" id="7Mf-7O-nV6"/>
+                                                            <constraint firstAttribute="height" constant="50" id="fsG-hs-x9i"/>
                                                         </constraints>
-                                                    </imageView>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="jWO-i2-GES" firstAttribute="top" secondItem="hcV-2i-3AV" secondAttribute="top" id="DAS-De-P8I"/>
-                                                    <constraint firstItem="u6I-Hm-qz0" firstAttribute="top" secondItem="jWO-i2-GES" secondAttribute="bottom" constant="10" id="DQ6-aB-S0O"/>
                                                     <constraint firstAttribute="trailing" secondItem="jWO-i2-GES" secondAttribute="trailing" id="Fs0-3K-oQb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Fpo-g9-Sl0" secondAttribute="bottom" id="HLC-zz-o2t"/>
                                                     <constraint firstItem="jWO-i2-GES" firstAttribute="leading" secondItem="hcV-2i-3AV" secondAttribute="leading" id="RjE-Oz-Oal"/>
-                                                    <constraint firstAttribute="bottom" secondItem="u6I-Hm-qz0" secondAttribute="bottom" id="Wrz-w2-bOL"/>
-                                                    <constraint firstItem="u6I-Hm-qz0" firstAttribute="leading" secondItem="hcV-2i-3AV" secondAttribute="leading" id="eDA-kT-DA3"/>
+                                                    <constraint firstItem="Fpo-g9-Sl0" firstAttribute="top" secondItem="jWO-i2-GES" secondAttribute="bottom" constant="10" id="eOa-sQ-OT7"/>
+                                                    <constraint firstItem="Fpo-g9-Sl0" firstAttribute="leading" secondItem="hcV-2i-3AV" secondAttribute="leading" id="jtI-QJ-yof"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-G3-eNu">
@@ -268,22 +269,23 @@
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheckedCheckbox" translatesAutoresizingMaskIntoConstraints="NO" id="Qqb-SZ-yl1">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwq-ks-on9" customClass="Checkbox" customModule="Lufa" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="31" width="50" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="sGK-4k-Pjz"/>
-                                                            <constraint firstAttribute="width" secondItem="Qqb-SZ-yl1" secondAttribute="height" multiplier="1:1" id="xrH-Hm-Jgb"/>
+                                                            <constraint firstAttribute="height" constant="50" id="OgG-ar-Zcd"/>
+                                                            <constraint firstAttribute="width" secondItem="Jwq-ks-on9" secondAttribute="height" multiplier="1:1" id="kgt-d7-HDE"/>
                                                         </constraints>
-                                                    </imageView>
+                                                        <state key="normal" title="Button"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Qqb-SZ-yl1" firstAttribute="top" secondItem="7fe-Ve-CR6" secondAttribute="bottom" constant="10" id="Ahl-XR-EJL"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Qqb-SZ-yl1" secondAttribute="bottom" id="JEH-lQ-Wpg"/>
+                                                    <constraint firstItem="Jwq-ks-on9" firstAttribute="top" secondItem="7fe-Ve-CR6" secondAttribute="bottom" constant="10" id="G0i-Bb-Qdz"/>
                                                     <constraint firstAttribute="trailing" secondItem="7fe-Ve-CR6" secondAttribute="trailing" id="Jin-wA-Pnc"/>
+                                                    <constraint firstItem="Jwq-ks-on9" firstAttribute="leading" secondItem="cBc-G3-eNu" secondAttribute="leading" id="Kuo-8B-L9D"/>
                                                     <constraint firstItem="7fe-Ve-CR6" firstAttribute="leading" secondItem="cBc-G3-eNu" secondAttribute="leading" id="O9a-nq-EaV"/>
                                                     <constraint firstItem="7fe-Ve-CR6" firstAttribute="top" secondItem="cBc-G3-eNu" secondAttribute="top" id="dBD-Rf-FNV"/>
-                                                    <constraint firstItem="Qqb-SZ-yl1" firstAttribute="leading" secondItem="cBc-G3-eNu" secondAttribute="leading" id="wrG-aK-SKU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Jwq-ks-on9" secondAttribute="bottom" id="jbC-gJ-o3a"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -371,7 +373,8 @@
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
-                        <outlet property="birthDateErrorLabel" destination="mfx-gi-vu9" id="w6y-qN-7ch"/>
+                        <outlet property="autoSynchronizationButton" destination="Fpo-g9-Sl0" id="H45-Bh-ORu"/>
+                        <outlet property="birthDateErrorLabel" destination="Jrn-RK-uEo" id="cWC-pw-Gb6"/>
                         <outlet property="birthDateTitleLabel" destination="UGC-PP-axb" id="Szk-dg-BQL"/>
                         <outlet property="confirmEmailErrorLabel" destination="QiX-O7-dnR" id="DIm-TG-YcA"/>
                         <outlet property="confirmEmailTextfield" destination="uWc-2O-Qjb" id="tQb-Aa-rBL"/>
@@ -385,6 +388,7 @@
                         <outlet property="lastNameErrorLabel" destination="ez2-dC-6qH" id="kw3-2a-fAB"/>
                         <outlet property="lastNameTextfield" destination="nD9-oN-wVf" id="6V0-dk-OLC"/>
                         <outlet property="lastNameTitleLabel" destination="1FV-mC-QV5" id="UDg-js-rNo"/>
+                        <outlet property="notificationsButton" destination="Jwq-ks-on9" id="IhO-GB-KZJ"/>
                         <outlet property="phoneNumberErrorLabel" destination="qII-mC-vMm" id="hEl-fA-q76"/>
                         <outlet property="phoneNumberTextfield" destination="wIn-vH-ucs" id="YhD-8q-HpQ"/>
                         <outlet property="phoneNumberTitleLabel" destination="4mW-ed-zWn" id="pW4-LQ-t1I"/>
@@ -395,8 +399,4 @@
             <point key="canvasLocation" x="0.80000000000000004" y="160.11994002998503"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checkedCheckbox" width="138.46153259277344" height="138.46153259277344"/>
-        <image name="uncheckedCheckbox" width="138.46153259277344" height="138.46153259277344"/>
-    </resources>
 </document>

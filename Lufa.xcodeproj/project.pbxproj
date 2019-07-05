@@ -12,6 +12,7 @@
 		3D03A47E22CDD30E001BAE56 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */; };
 		3D03A48022CDD320001BAE56 /* ProfileEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */; };
 		3D03A48222CDFC09001BAE56 /* Notification+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A48122CDFC08001BAE56 /* Notification+Lufa.swift */; };
+		3D03A48522CF5513001BAE56 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A48422CF5513001BAE56 /* Checkbox.swift */; };
 		3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */; };
 		3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57522B7616F00881E17 /* SynchroManager.swift */; };
 		3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */; };
@@ -142,6 +143,7 @@
 		3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileEdit.storyboard; sourceTree = "<group>"; };
 		3D03A48122CDFC08001BAE56 /* Notification+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Lufa.swift"; sourceTree = "<group>"; };
+		3D03A48422CF5513001BAE56 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57522B7616F00881E17 /* SynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySynchroManager.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 				3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		3D03A48322CF54FF001BAE56 /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				3D03A48422CF5513001BAE56 /* Checkbox.swift */,
+			);
+			path = Checkbox;
 			sourceTree = "<group>";
 		};
 		3D25D58422B78B0E00881E17 /* Cells */ = {
@@ -551,6 +561,7 @@
 		3DABA406223B940400469FD1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3D03A48322CF54FF001BAE56 /* Checkbox */,
 				3DB5F9B122CB83C800D4C007 /* Google */,
 				3D34DC83225351A800590FD2 /* UIKit */,
 				3DEA56FF2251FBE9003A34D4 /* WindowController */,
@@ -1151,6 +1162,7 @@
 				3DE0EE26229D1ADC009AD5D8 /* LocalRepositoryContext.swift in Sources */,
 				3DE0EE46229D211E009AD5D8 /* DutyEventAttributes+CoreDataClass.swift in Sources */,
 				3DD9B92922B8E2BB00E93AD0 /* Period.swift in Sources */,
+				3D03A48522CF5513001BAE56 /* Checkbox.swift in Sources */,
 				3DE0EE45229D211E009AD5D8 /* DutyEvent+CoreDataProperties.swift in Sources */,
 				3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */,
 				3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */,

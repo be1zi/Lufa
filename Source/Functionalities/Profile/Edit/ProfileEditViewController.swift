@@ -18,7 +18,7 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var lastNameTitleLabel: UILabel!
     @IBOutlet weak var lastNameErrorLabel: UILabel!
     @IBOutlet weak var birthDateTitleLabel: UILabel!
-    @IBOutlet weak var birthDateErrorLabel: NSLayoutConstraint!
+    @IBOutlet weak var birthDateErrorLabel: UILabel!
     @IBOutlet weak var emailTitleLabel: UILabel!
     @IBOutlet weak var emailErrorLabel: UILabel!
     @IBOutlet weak var confirmEmailTitleLabel: UILabel!
@@ -33,7 +33,9 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var confirmEmailTextfield: UITextField!
     @IBOutlet weak var phoneNumberTextfield: UITextField!
-    @IBOutlet weak var button: UIButton!
+    
+    @IBOutlet weak var autoSynchronizationButton: Checkbox!
+    @IBOutlet weak var notificationsButton: Checkbox!
     
     //MARK: - Appearance
     override func navigationBarTitle() -> String? {
