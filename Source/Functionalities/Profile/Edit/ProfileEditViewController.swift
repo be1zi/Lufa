@@ -37,8 +37,24 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var autoSynchronizationButton: Checkbox!
     @IBOutlet weak var notificationsButton: Checkbox!
     
+    //MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        clearErrors()
+    }
+    
     //MARK: - Appearance
     override func navigationBarTitle() -> String? {
         return "profile.edit.title".localized()
+    }
+    
+    func clearErrors() {
+        firstNameErrorLabel.text = nil
+        lastNameErrorLabel.text = nil
+        birthDateErrorLabel.text = nil
+        emailErrorLabel.text = nil
+        confirmEmailErrorLabel.text = nil
+        phoneNumberErrorLabel.text = nil
     }
 }
