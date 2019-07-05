@@ -112,5 +112,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func getAuthorizationOpenToken() -> String? {
         return UserDefaults.standard.object(forKey: "access_open_token") as? String
     }
+    
+    //MARK: - URL
+    func openURL(address: String) {
+        
+        let url = URL(string: address)
+        
+        if let url = url, UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let message = url.host?.removingPercentEncoding
+        
+        guard message == "authorizeCallback" else {
+            return false
+        }
+        
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+            return false
+        }
+        
+        let code = components.queryItems?.first(where: {$0.name == "code"})?.value
+        
+        if let code = code {
+            NotificationCenter.default.post(name: .authenticateDidFinish, object: code)
+        }
+        
+        return true
+    }
 }
+
 

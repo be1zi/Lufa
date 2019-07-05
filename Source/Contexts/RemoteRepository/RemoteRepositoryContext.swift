@@ -17,7 +17,7 @@ enum ContentType {
 }
 
 enum ApiType {
-    case OpenWithToken, OpenWithoutToken, FlightOps
+    case OpenWithToken, OpenWithoutToken, FlightOpsWithToken, FlightOpsWithoutToken
 }
 
 class RemoteRepositoryContext {
@@ -50,7 +50,7 @@ class RemoteRepositoryContext {
     //MARK: Http methods
     
     func get(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
-        get(endPoint: end, parameters: parameters, apiType: .FlightOps, contentType: contentType, withSuccess: success, andFailure: failure)
+        get(endPoint: end, parameters: parameters, apiType: .FlightOpsWithToken, contentType: contentType, withSuccess: success, andFailure: failure)
     }
     
     func getOpen(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
@@ -100,8 +100,12 @@ class RemoteRepositoryContext {
         }
     }
     
+    func postAuthenticate(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+        post(endPoint: end, parameters: parameters, apiType: .FlightOpsWithoutToken, contentType: contentType, withSuccess: success, andFailure: failure)
+    }
+    
     func post(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
-        post(endPoint: end, parameters: parameters, apiType: .FlightOps, contentType: contentType, withSuccess: success, andFailure: failure)
+        post(endPoint: end, parameters: parameters, apiType: .FlightOpsWithToken, contentType: contentType, withSuccess: success, andFailure: failure)
     }
     
     func postOpen(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
@@ -133,9 +137,18 @@ class RemoteRepositoryContext {
                    headers: headers)
             .validate()
             .responseJSON { response in
+                
                 guard response.result.isSuccess else {
                 
                     print("ERROR request POST from: \(address), message: \(response.error?.localizedDescription ?? "empty message")")
+                    
+                    if let data = response.data {
+                        print(String(data: data, encoding: String.Encoding.utf8) ?? "")
+                    }
+                    
+//                    if let data = response.request?.httpBody {
+//                        print(String(data: data, encoding: String.Encoding.utf8) ?? "")
+//                    }
                     
                     if let failure = failure {
                         failure(response.error)
@@ -157,8 +170,7 @@ class RemoteRepositoryContext {
     }
     
     //MARK: Helper
-    
-    private func prepareAddress(endPoint: String?, apiType: ApiType) -> String? {
+    func prepareAddress(endPoint: String?, apiType: ApiType) -> String? {
         
         var serverAdd: String
         
@@ -171,7 +183,9 @@ class RemoteRepositoryContext {
             } else {
                 return nil
             }
-        case .FlightOps:
+        case .FlightOpsWithToken:
+            fallthrough
+        case .FlightOpsWithoutToken:
             if let address = serverAddress {
                 serverAdd = address
             } else {
@@ -224,12 +238,35 @@ class RemoteRepositoryContext {
             case .XFORM:
                 headers = ["Content-Type" : "application/x-www-form-urlencoded"]
             }
-        case .FlightOps:
+        case .FlightOpsWithToken:
             switch content {
             case .JSON:
                 headers = ["Content-Type" : "application/JSON"]
             case .XFORM:
                 headers = ["Content-Type" : "application/x-www-form-urlencoded"]
+            }
+        case .FlightOpsWithoutToken:
+            switch content {
+            case .JSON:
+                headers = [:]
+            case .XFORM:
+                
+                guard let clientID = ConfigurationManager.sharedInstance.serverKey else {
+                    return nil
+                }
+                
+                guard let clientSecret = ConfigurationManager.sharedInstance.serverSecret else {
+                    return nil
+                }
+                
+                let credentials = "\(clientID):\(clientSecret)".data(using: .utf8)?.base64EncodedString()
+                
+                guard let cred = credentials else {
+                    return nil
+                }
+                
+                headers = ["Authorization" : cred,
+                           "Content-Type" : "application/x-www-form-urlencoded"]
             }
         }
 

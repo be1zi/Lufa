@@ -15,6 +15,17 @@ class AuthorizationViewController: BaseViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
     
+    //MARK: Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        registerForNotifications()
+    }
+    
+    deinit {
+        removeFromNotifications()
+    }
+    
     //MARK: Properties
     
     override func loadTranslations() {
@@ -40,23 +51,50 @@ class AuthorizationViewController: BaseViewController {
     //MARK: Actions
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {
-        
-        progressPresenter?.presentProgress(withText: nil, completion: {
-            RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { result in
-                
-                InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
-                    self.progressPresenter?.hideProgress()
-                    AppDelegate.sharedInstance.windowController?.presentMenuController()
-                }, forced: false)
-                
-            }, andFailure: { error in
-                self.progressPresenter?.hideProgress()
-                print("Error authorization open: \(error?.localizedDescription ?? "empty message")")
-            })
-        })
+        RemoteRepositoryContext.sharedInstance.authorize()
     }
     
     @IBAction func changeLanguageAction(_ sender: Any) {
         AppDelegate.sharedInstance.windowController?.presentLanguageController()
+    }
+    
+    @objc func shouldAuthenticate(_ notification: Notification) {
+
+        guard let code = notification.object as? String else {
+            return
+        }
+        
+        progressPresenter?.presentProgress(withText: nil, completion: {
+            RemoteRepositoryContext.sharedInstance.authenticate(withCode: code, success: { _ in
+                RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { _ in
+                    
+                    InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, _ in
+                        self.progressPresenter?.hideProgress()
+                        
+                        if result != SynchroResult.SynchroResultError {
+                            AppDelegate.sharedInstance.windowController?.presentMenuController()
+                        }
+                        
+                    }, forced: false)
+                    
+                }, andFailure: { error in
+                    self.progressPresenter?.hideProgress()
+                    print("Error authorization open: \(error?.localizedDescription ?? "empty message")")
+                })
+            }, failure: { error in
+                self.progressPresenter?.hideProgress()
+                print("Error authenticate: \(error?.localizedDescription ?? "empty message")")
+            })
+        })
+
+    }
+    
+    //MARK: Notifications
+    func registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(shouldAuthenticate(_:)), name: .authenticateDidFinish, object: nil)
+    }
+    
+    func removeFromNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .authenticateDidFinish, object: nil)
     }
 }

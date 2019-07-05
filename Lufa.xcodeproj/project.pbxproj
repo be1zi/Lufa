@@ -11,6 +11,7 @@
 		3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */; };
 		3D03A47E22CDD30E001BAE56 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */; };
 		3D03A48022CDD320001BAE56 /* ProfileEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */; };
+		3D03A48222CDFC09001BAE56 /* Notification+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A48122CDFC08001BAE56 /* Notification+Lufa.swift */; };
 		3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */; };
 		3D25D57622B7616F00881E17 /* SynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57522B7616F00881E17 /* SynchroManager.swift */; };
 		3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */; };
@@ -140,6 +141,7 @@
 		3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightFilters.storyboard; sourceTree = "<group>"; };
 		3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		3D03A47F22CDD320001BAE56 /* ProfileEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileEdit.storyboard; sourceTree = "<group>"; };
+		3D03A48122CDFC08001BAE56 /* Notification+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Lufa.swift"; sourceTree = "<group>"; };
 		3D0FE95722C4B26600748D4E /* FlightSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57522B7616F00881E17 /* SynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchroManager.swift; sourceTree = "<group>"; };
 		3D25D57A22B7660100881E17 /* CountrySynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySynchroManager.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				3DA6E99222560B7C00015999 /* String+Lufa.swift */,
 				3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */,
+				3D03A48122CDFC08001BAE56 /* Notification+Lufa.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1080,6 +1083,7 @@
 				3DCB50E622AF88EF00C0AFF0 /* MenuHomeItem.swift in Sources */,
 				3DF18B0D22C6019600AD10F5 /* Airline+CoreDataClass.swift in Sources */,
 				3DAD82A322B28CF200131683 /* HomeFlightCollectionViewCell.swift in Sources */,
+				3D03A48222CDFC09001BAE56 /* Notification+Lufa.swift in Sources */,
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,

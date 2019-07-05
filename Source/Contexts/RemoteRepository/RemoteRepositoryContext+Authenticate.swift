@@ -7,9 +7,51 @@
 //
 
 import Foundation
+import UIKit
 
 extension RemoteRepositoryContext {
     
+    func authorize() {
+        
+        guard let clientID = ConfigurationManager.sharedInstance.serverKey else {
+            return
+        }
+        
+        let address = self.prepareAddress(endPoint: "lhcrew/oauth/authorize?response_type=code&scope=https://mock.cms.fra.dlh.de/publicCrewApiDev&client_id=\(clientID)&redirect_uri=Lufa://authorizeCallback/&code_challenge=123456789123456789123456789123456789123456789&code_challenge_method=S256&state=abc123xyz", apiType: .FlightOpsWithToken)
+        
+        if let address = address {
+            AppDelegate.sharedInstance.openURL(address: address)
+        }
+    }
+    
+    func authenticate(withCode code: String, success: RemoteRepositorySuccess?, failure: RemoteRepositoryFailure?) {
+        
+        guard let clientID = ConfigurationManager.sharedInstance.serverKey else {
+            print("ERROR authenticate: clientKey not configured")
+            return
+        }
+        
+        let params = ["grant_type": "authorization_code",
+                      "client_id" : clientID,
+                      "redirect_uri" : "Lufa://authorizeCallback/",
+                      "code" : code,
+                      "code_verifier" : "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"]
+        
+        postAuthenticate(endPoint: "lhcrew/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { response in
+            
+            DispatchQueue.main.async {
+                if let success = success {
+                    success(nil)
+                }
+            }
+        }) { error in
+            DispatchQueue.main.async {
+                if let failure = failure {
+                    failure(error)
+                }
+            }
+        }
+    }
     
     func authorizeOpen(withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
