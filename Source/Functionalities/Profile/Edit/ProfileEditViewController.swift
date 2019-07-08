@@ -115,12 +115,27 @@ class ProfileEditViewController: BaseViewController {
         notificationsCheckbox.checked = employee.notificationsEnabled()
     }
     
+    func validateData() -> Bool {
+        return true
+    }
+    
+    func saveData() {
+        
+    }
+    
     //MARK:- Actions
     @IBAction func saveAction(_ sender: Any) {
-    
+        self.view.endEditing(true)
+        
+        if validateData() {
+            saveData()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancelAction(_ sender: Any) {
+        
+        self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
 }
