@@ -348,6 +348,9 @@
                                                 <color key="value" red="0.1897911659" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="saveAction:" destination="TQQ-C0-6g6" eventType="touchUpInside" id="wl9-0X-CvP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -374,6 +377,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="autoSynchronizationButton" destination="Fpo-g9-Sl0" id="H45-Bh-ORu"/>
+                        <outlet property="autoSynchronizationTitleLabel" destination="jWO-i2-GES" id="ZHT-4V-68K"/>
                         <outlet property="birthDateErrorLabel" destination="Jrn-RK-uEo" id="cWC-pw-Gb6"/>
                         <outlet property="birthDateTitleLabel" destination="UGC-PP-axb" id="Szk-dg-BQL"/>
                         <outlet property="confirmEmailErrorLabel" destination="QiX-O7-dnR" id="DIm-TG-YcA"/>
@@ -389,9 +393,11 @@
                         <outlet property="lastNameTextfield" destination="nD9-oN-wVf" id="6V0-dk-OLC"/>
                         <outlet property="lastNameTitleLabel" destination="1FV-mC-QV5" id="UDg-js-rNo"/>
                         <outlet property="notificationsButton" destination="Jwq-ks-on9" id="IhO-GB-KZJ"/>
+                        <outlet property="notificationsTitleLabel" destination="7fe-Ve-CR6" id="EAO-Oe-nmR"/>
                         <outlet property="phoneNumberErrorLabel" destination="qII-mC-vMm" id="hEl-fA-q76"/>
                         <outlet property="phoneNumberTextfield" destination="wIn-vH-ucs" id="YhD-8q-HpQ"/>
                         <outlet property="phoneNumberTitleLabel" destination="4mW-ed-zWn" id="pW4-LQ-t1I"/>
+                        <outlet property="saveButton" destination="PoX-14-deD" id="Fz2-Rr-dId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLi-dO-OLx" userLabel="First Responder" sceneMemberID="firstResponder"/>

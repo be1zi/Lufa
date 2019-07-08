@@ -14,7 +14,6 @@
 "authorization.button.changeLanguage.en" = "EN";
 
 //Language
-"language.title" = "LufaAirHarm";
 "language.message" = "Witamy w aplikacji Lufa. Proszę wybrać język.";
 "language.button.polish" = "Polski";
 "language.button.english" = "Angielski";
@@ -25,6 +24,7 @@
 //Main
 "logout.title" = "Wyloguj";
 "edit.title" = "Edytuj";
+"save.title" = "Zapisz";
 
 //Menu
 "menu.item.flight.title" = "Loty";
@@ -39,16 +39,17 @@
 "profile.personalData.birthDate.title" = "Data urodzenia:";
 "profile.contactData.title" = "Dane kontaktowe";
 "profile.contactData.email.title" = "Email:";
-"profile.contactData.phone.title" = "Telefon:";
+"profile.contactData.phone.title" = "Numer telefonu:";
 "profile.jobData.title" = "Dane o stanowisku";
 "profile.jobData.position.title" = "Pozycja:";
 "profile.jobData.duty.title" = "Obowiązki:";
 "profile.permissions.title" = "Zezwolenia";
-"profile.permissions.autoSynchronization.title" = "Automatyczna synchronizacja";
-"profile.permissions.notifications.title" = "Powiadomienia";
+"profile.permissions.autoSynchronization.title" = "Automatyczna synchronizacja:";
+"profile.permissions.notifications.title" = "Powiadomienia:";
 
 //Profile Edit
 "profile.edit.title" = "Edycja profilu";
+"profile.edit.email.confirm.title" = "Potwierdź email:";
 
 //Home
 "home.welcome.title" = "Witaj ponownie";

@@ -24,6 +24,7 @@
 //Main
 "logout.title" = "Logout";
 "edit.title" = "Edit";
+"save.title" = "Save";
 
 //Menu
 "menu.item.flight.title" = "Flights";
@@ -38,16 +39,17 @@
 "profile.personalData.birthDate.title" = "Birth date:";
 "profile.contactData.title" = "Contact data";
 "profile.contactData.email.title" = "Email:";
-"profile.contactData.phone.title" = "Phone:";
+"profile.contactData.phone.title" = "Phone number:";
 "profile.jobData.title" = "Job data";
 "profile.jobData.position.title" = "Position:";
 "profile.jobData.duty.title" = "Duty:";
 "profile.permissions.title" = "Permissions";
-"profile.permissions.autoSynchronization.title" = "Auto synchronization";
-"profile.permissions.notifications.title" = "Notifications";
+"profile.permissions.autoSynchronization.title" = "Auto synchronization:";
+"profile.permissions.notifications.title" = "Notifications:";
 
 //Profile Edit
 "profile.edit.title" = "Profile edit";
+"profile.edit.email.confirm.title" = "Confirm email:";
 
 //Home
 "home.welcome.title" = "Welcome back";

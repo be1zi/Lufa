@@ -25,6 +25,8 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var confirmEmailErrorLabel: UILabel!
     @IBOutlet weak var phoneNumberTitleLabel: UILabel!
     @IBOutlet weak var phoneNumberErrorLabel: UILabel!
+    @IBOutlet weak var autoSynchronizationTitleLabel: UILabel!
+    @IBOutlet weak var notificationsTitleLabel: UILabel!
     
     //Value
     @IBOutlet weak var firstNameTextfield: UITextField!
@@ -36,6 +38,8 @@ class ProfileEditViewController: BaseViewController {
     
     @IBOutlet weak var autoSynchronizationButton: Checkbox!
     @IBOutlet weak var notificationsButton: Checkbox!
+    
+    @IBOutlet weak var saveButton: UIButton!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -49,6 +53,20 @@ class ProfileEditViewController: BaseViewController {
         return "profile.edit.title".localized()
     }
     
+    override func loadTranslations() {
+        
+        firstNameTitleLabel.text = "profile.personalData.firstName.title".localized()
+        lastNameTitleLabel.text = "profile.personalData.lastName.title".localized()
+        birthDateTitleLabel.text = "profile.personalData.birthDate.title".localized()
+        emailTitleLabel.text = "profile.contactData.email.title".localized()
+        confirmEmailTitleLabel.text = "profile.edit.email.confirm.title".localized()
+        phoneNumberTitleLabel.text = "profile.contactData.phone.title".localized()
+        autoSynchronizationTitleLabel.text = "profile.permissions.autoSynchronization.title".localized()
+        notificationsTitleLabel.text = "profile.permissions.notifications.title".localized()
+        
+        saveButton.setTitle("save.title".localized(), for: .normal)
+    }
+    
     func clearErrors() {
         firstNameErrorLabel.text = nil
         lastNameErrorLabel.text = nil
@@ -56,5 +74,9 @@ class ProfileEditViewController: BaseViewController {
         emailErrorLabel.text = nil
         confirmEmailErrorLabel.text = nil
         phoneNumberErrorLabel.text = nil
+    }
+    
+    @IBAction func saveAction(_ sender: Any) {
+    
     }
 }
