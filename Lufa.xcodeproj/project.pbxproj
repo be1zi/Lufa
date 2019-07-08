@@ -34,7 +34,7 @@
 		3D2EC7C222BA0B17005C4D64 /* duty_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7BE22BA0B17005C4D64 /* duty_1.json */; };
 		3D2EC7C322BA0B17005C4D64 /* check-in_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7BF22BA0B17005C4D64 /* check-in_1.json */; };
 		3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7C022BA0B17005C4D64 /* crew_1.json */; };
-		3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* Button+Lufa.swift */; };
+		3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
@@ -165,7 +165,7 @@
 		3D2EC7BE22BA0B17005C4D64 /* duty_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = duty_1.json; sourceTree = "<group>"; };
 		3D2EC7BF22BA0B17005C4D64 /* check-in_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-in_1.json"; sourceTree = "<group>"; };
 		3D2EC7C022BA0B17005C4D64 /* crew_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crew_1.json; sourceTree = "<group>"; };
-		3D34DC85225351BE00590FD2 /* Button+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Lufa.swift"; sourceTree = "<group>"; };
+		3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		3D34DC83225351A800590FD2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				3D34DC85225351BE00590FD2 /* Button+Lufa.swift */,
+				3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */,
 				3DE0EE73229FA621009AD5D8 /* UIColor+Lufa.swift */,
 				3D64623322BA3A1D009691FA /* UIView+Lufa.swift */,
 			);
@@ -1129,7 +1129,7 @@
 				3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
 				3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */,
-				3D34DC86225351BE00590FD2 /* Button+Lufa.swift in Sources */,
+				3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */,
 				3DF18B0E22C6019600AD10F5 /* Airline+CoreDataProperties.swift in Sources */,
 				3DABA3F1223B90DE00469FD1 /* Lufa.xcdatamodeld in Sources */,
 				3DE0EE49229D211E009AD5D8 /* DutyEventLink+CoreDataProperties.swift in Sources */,

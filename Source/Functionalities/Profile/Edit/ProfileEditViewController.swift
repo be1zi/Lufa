@@ -42,6 +42,8 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     var employee: Employee?
     
     //MARK: - Lifecycle
@@ -56,6 +58,10 @@ class ProfileEditViewController: BaseViewController {
     //MARK: - Appearance
     override func navigationBarTitle() -> String? {
         return "profile.edit.title".localized()
+    }
+    
+    override func constraintToBottom() -> NSLayoutConstraint? {
+        return bottomConstraint
     }
     
     override func loadTranslations() {

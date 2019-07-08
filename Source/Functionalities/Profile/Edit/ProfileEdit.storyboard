@@ -408,6 +408,7 @@
                         <outlet property="autoSynchronizationTitleLabel" destination="jWO-i2-GES" id="ZHT-4V-68K"/>
                         <outlet property="birthDateErrorLabel" destination="Jrn-RK-uEo" id="cWC-pw-Gb6"/>
                         <outlet property="birthDateTitleLabel" destination="UGC-PP-axb" id="Szk-dg-BQL"/>
+                        <outlet property="bottomConstraint" destination="Sgc-p1-OAk" id="aTg-Fb-N79"/>
                         <outlet property="cancelButton" destination="LP2-br-j5c" id="5aW-c9-kF6"/>
                         <outlet property="confirmEmailErrorLabel" destination="QiX-O7-dnR" id="DIm-TG-YcA"/>
                         <outlet property="confirmEmailTextfield" destination="uWc-2O-Qjb" id="tQb-Aa-rBL"/>

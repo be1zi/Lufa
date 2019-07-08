@@ -1,5 +1,5 @@
 //
-//  Button+Lufa.swift
+//  UIButton+Lufa.swift
 //  Lufa
 //
 //  Created by Konrad Belzowski on 02/04/2019.
