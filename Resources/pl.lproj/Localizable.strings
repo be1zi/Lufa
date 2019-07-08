@@ -25,6 +25,7 @@
 "logout.title" = "Wyloguj";
 "edit.title" = "Edytuj";
 "save.title" = "Zapisz";
+"cancel.title" = "Anuluj";
 
 //Menu
 "menu.item.flight.title" = "Loty";

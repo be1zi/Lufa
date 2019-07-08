@@ -144,7 +144,7 @@ class ProfileViewController: BaseViewController {
         let vc = UIStoryboard.init(name: "ProfileEdit", bundle: nil).instantiateInitialViewController()
         
         if let vc = vc {
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
 }

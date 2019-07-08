@@ -40,6 +40,7 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var notificationsButton: Checkbox!
     
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -65,6 +66,7 @@ class ProfileEditViewController: BaseViewController {
         notificationsTitleLabel.text = "profile.permissions.notifications.title".localized()
         
         saveButton.setTitle("save.title".localized(), for: .normal)
+        cancelButton.setTitle("cancel.title".localized(), for: .normal)
     }
     
     func clearErrors() {
@@ -76,7 +78,12 @@ class ProfileEditViewController: BaseViewController {
         phoneNumberErrorLabel.text = nil
     }
     
+    //MARK:- Actions
     @IBAction func saveAction(_ sender: Any) {
     
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

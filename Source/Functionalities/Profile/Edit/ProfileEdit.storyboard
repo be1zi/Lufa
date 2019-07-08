@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQQ-C0-6g6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ilj-dt-zAF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="TQQ-C0-6g6" customClass="ProfileEditViewController" customModule="Lufa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2H4-P1-glA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJV-tm-ilP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="886"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="888"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0tq-3v-mMz">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="829.5"/>
@@ -328,7 +328,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yt-3r-IDL">
-                                <rect key="frame" x="0.0" y="906" width="375" height="94"/>
+                                <rect key="frame" x="0.0" y="952" width="375" height="148"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoX-14-deD">
                                         <rect key="frame" x="20" y="25" width="335" height="44"/>
@@ -352,12 +352,39 @@
                                             <action selector="saveAction:" destination="TQQ-C0-6g6" eventType="touchUpInside" id="wl9-0X-CvP"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP2-br-j5c">
+                                        <rect key="frame" x="20" y="79" width="335" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Oqt-8V-n7k"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelAction:" destination="TQQ-C0-6g6" eventType="touchUpInside" id="qv9-yF-2e9"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="PoX-14-deD" firstAttribute="leading" secondItem="3Yt-3r-IDL" secondAttribute="leading" constant="20" id="4l7-Wx-OWu"/>
                                     <constraint firstAttribute="trailing" secondItem="PoX-14-deD" secondAttribute="trailing" constant="20" id="4zy-5E-FHc"/>
-                                    <constraint firstAttribute="bottom" secondItem="PoX-14-deD" secondAttribute="bottom" constant="25" id="eBQ-qJ-JqN"/>
+                                    <constraint firstItem="LP2-br-j5c" firstAttribute="leading" secondItem="3Yt-3r-IDL" secondAttribute="leading" constant="20" id="Ksd-x0-z1X"/>
+                                    <constraint firstAttribute="bottom" secondItem="LP2-br-j5c" secondAttribute="bottom" constant="25" id="Nf9-Y5-Rhq"/>
+                                    <constraint firstAttribute="trailing" secondItem="LP2-br-j5c" secondAttribute="trailing" constant="20" id="bd6-D1-y2h"/>
+                                    <constraint firstItem="LP2-br-j5c" firstAttribute="top" secondItem="PoX-14-deD" secondAttribute="bottom" constant="10" id="nFn-6f-toD"/>
                                     <constraint firstItem="PoX-14-deD" firstAttribute="top" secondItem="3Yt-3r-IDL" secondAttribute="top" constant="25" id="psq-Y0-9Nh"/>
                                 </constraints>
                             </view>
@@ -374,12 +401,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mjw-OJ-fT7"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <navigationItem key="navigationItem" id="cqf-TF-SD0"/>
+                    <size key="freeformSize" width="375" height="1100"/>
                     <connections>
                         <outlet property="autoSynchronizationButton" destination="Fpo-g9-Sl0" id="H45-Bh-ORu"/>
                         <outlet property="autoSynchronizationTitleLabel" destination="jWO-i2-GES" id="ZHT-4V-68K"/>
                         <outlet property="birthDateErrorLabel" destination="Jrn-RK-uEo" id="cWC-pw-Gb6"/>
                         <outlet property="birthDateTitleLabel" destination="UGC-PP-axb" id="Szk-dg-BQL"/>
+                        <outlet property="cancelButton" destination="LP2-br-j5c" id="5aW-c9-kF6"/>
                         <outlet property="confirmEmailErrorLabel" destination="QiX-O7-dnR" id="DIm-TG-YcA"/>
                         <outlet property="confirmEmailTextfield" destination="uWc-2O-Qjb" id="tQb-Aa-rBL"/>
                         <outlet property="confirmEmailTitleLabel" destination="RfY-ax-F3y" id="Ne8-Vc-50v"/>
@@ -402,7 +431,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLi-dO-OLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.80000000000000004" y="160.11994002998503"/>
+            <point key="canvasLocation" x="940" y="160.11994002998503"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r0M-Uv-iDL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ilj-dt-zAF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4nA-gw-USH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TQQ-C0-6g6" kind="relationship" relationship="rootViewController" id="TUI-6t-tl2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQw-Ze-P2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.80000000000000004" y="159.67016491754123"/>
         </scene>
     </scenes>
 </document>
