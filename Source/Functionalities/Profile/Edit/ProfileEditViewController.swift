@@ -36,17 +36,21 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var confirmEmailTextfield: UITextField!
     @IBOutlet weak var phoneNumberTextfield: UITextField!
     
-    @IBOutlet weak var autoSynchronizationButton: Checkbox!
-    @IBOutlet weak var notificationsButton: Checkbox!
+    @IBOutlet weak var autoSynchronizationCheckbox: Checkbox!
+    @IBOutlet weak var notificationsCheckbox: Checkbox!
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    var employee: Employee?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         clearErrors()
+        loadData()
+        setData()
     }
     
     //MARK: - Appearance
@@ -83,6 +87,26 @@ class ProfileEditViewController: BaseViewController {
         emailErrorLabel.text = nil
         confirmEmailErrorLabel.text = nil
         phoneNumberErrorLabel.text = nil
+    }
+    
+    //MARK: - Data
+    func loadData() {
+        employee = LocalRepositoryContext.sharedInstance.getEmployee()
+    }
+    
+    func setData() {
+        
+        guard let employee = employee else {
+            return
+        }
+        
+        firstNameTextfield.text = employee.firstName
+        lastNameTextfield.text = employee.lastName
+        emailTextfield.text = employee.email
+        phoneNumberTextfield.text = employee.phone
+        
+        autoSynchronizationCheckbox.checked = employee.autoSynchronizationEnabled()
+        notificationsCheckbox.checked = employee.notificationsEnabled()
     }
     
     //MARK:- Actions

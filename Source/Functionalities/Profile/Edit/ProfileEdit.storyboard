@@ -404,7 +404,7 @@
                     <navigationItem key="navigationItem" id="cqf-TF-SD0"/>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
-                        <outlet property="autoSynchronizationButton" destination="Fpo-g9-Sl0" id="H45-Bh-ORu"/>
+                        <outlet property="autoSynchronizationCheckbox" destination="Fpo-g9-Sl0" id="71y-M8-MlK"/>
                         <outlet property="autoSynchronizationTitleLabel" destination="jWO-i2-GES" id="ZHT-4V-68K"/>
                         <outlet property="birthDateErrorLabel" destination="Jrn-RK-uEo" id="cWC-pw-Gb6"/>
                         <outlet property="birthDateTitleLabel" destination="UGC-PP-axb" id="Szk-dg-BQL"/>
@@ -421,7 +421,7 @@
                         <outlet property="lastNameErrorLabel" destination="ez2-dC-6qH" id="kw3-2a-fAB"/>
                         <outlet property="lastNameTextfield" destination="nD9-oN-wVf" id="6V0-dk-OLC"/>
                         <outlet property="lastNameTitleLabel" destination="1FV-mC-QV5" id="UDg-js-rNo"/>
-                        <outlet property="notificationsButton" destination="Jwq-ks-on9" id="IhO-GB-KZJ"/>
+                        <outlet property="notificationsCheckbox" destination="Jwq-ks-on9" id="pYg-7B-CJB"/>
                         <outlet property="notificationsTitleLabel" destination="7fe-Ve-CR6" id="EAO-Oe-nmR"/>
                         <outlet property="phoneNumberErrorLabel" destination="qII-mC-vMm" id="hEl-fA-q76"/>
                         <outlet property="phoneNumberTextfield" destination="wIn-vH-ucs" id="YhD-8q-HpQ"/>
