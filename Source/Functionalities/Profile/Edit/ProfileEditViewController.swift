@@ -65,6 +65,13 @@ class ProfileEditViewController: BaseViewController {
         autoSynchronizationTitleLabel.text = "profile.permissions.autoSynchronization.title".localized()
         notificationsTitleLabel.text = "profile.permissions.notifications.title".localized()
         
+        firstNameTextfield.placeholder = "profile.edit.firstName.placeholder".localized()
+        lastNameTextfield.placeholder = "profile.edit.lastName.placeholder".localized()
+        //birthdate placeholder
+        emailTextfield.placeholder = "profile.edit.email.placeholder".localized()
+        confirmEmailTextfield.placeholder = "profile.edit.email.placeholder".localized()
+        phoneNumberTextfield.placeholder = "profile.edit.phone.placeholder".localized()
+        
         saveButton.setTitle("save.title".localized(), for: .normal)
         cancelButton.setTitle("cancel.title".localized(), for: .normal)
     }

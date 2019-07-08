@@ -51,6 +51,10 @@
 //Profile Edit
 "profile.edit.title" = "Edycja profilu";
 "profile.edit.email.confirm.title" = "Potwierdź email:";
+"profile.edit.firstName.placeholder" = "Imię";
+"profile.edit.lastName.placeholder" = "Nazwisko";
+"profile.edit.email.placeholder" = "email@test.com";
+"profile.edit.phone.placeholder" = "123-456-789";
 
 //Home
 "home.welcome.title" = "Witaj ponownie";
