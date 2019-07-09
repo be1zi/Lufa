@@ -87,8 +87,10 @@ extension RemoteRepositoryContext {
                     return
                 }
                 
-                let data = self.prepareDataForUser()
-                LocalRepositoryContext.sharedInstance.parseAndSave(data: data, name: "Employee")
+                if LocalRepositoryContext.sharedInstance.getEmployee() == nil {
+                    let data = self.prepareDataForUser()
+                    LocalRepositoryContext.sharedInstance.parseAndSave(data: data, name: "Employee")
+                }
                 
                 guard let token = result["access_token"] as? String else {
                     
@@ -196,8 +198,8 @@ extension RemoteRepositoryContext {
     fileprivate func prepareDataForUser() -> [String: Any] {
         
         let data: [String: Any] = ["pkNumber" : "064012K",
-                                   "firstName" : "SNOW",
-                                   "lastName" : "JON",
+                                   "firstName" : "Jon",
+                                   "lastName" : "Snow",
                                    "crewPosition" : "PU",
                                    "dutyCode" : "OD",
                                    "email" : "john.snow@winterfell.com",

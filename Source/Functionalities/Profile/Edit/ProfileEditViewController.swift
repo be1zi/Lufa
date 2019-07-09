@@ -206,7 +206,31 @@ class ProfileEditViewController: BaseViewController {
     }
     
     func saveData() {
+        let data = prepareData()
+        let permissions = preparePermissions()
         
+        LocalRepositoryContext.sharedInstance.updateEmployee(withData: data, permissions: permissions)
+    }
+    
+    func prepareData() -> [String: Any] {
+        var data: [String: Any] = [:]
+    
+        data["firstName"] = firstNameTextfield.text
+        data["lastName"] = lastNameTextfield.text
+        data["email"] = emailTextfield.text
+        
+        return data
+    }
+    
+    func preparePermissions() -> [[String: Any]] {
+        var permissions: [[String: Any]] = []
+        
+        permissions.append(["name" : PermissionType.AutoSynchronization.rawValue,
+                            "value" : autoSynchronizationCheckbox.checked])
+        permissions.append(["name" : PermissionType.Notifications.rawValue,
+                            "value" : notificationsCheckbox.checked])
+        
+        return permissions
     }
     
     //MARK:- Actions
@@ -254,6 +278,23 @@ extension ProfileEditViewController: UITextFieldDelegate {
             } else {
                 return false
             }
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == firstNameTextfield {
+            lastNameTextfield.becomeFirstResponder()
+        } else if textField == lastNameTextfield {
+            emailTextfield.becomeFirstResponder()
+        } else if textField == emailTextfield {
+            confirmEmailTextfield.becomeFirstResponder()
+        } else if textField == confirmEmailTextfield {
+            phoneNumberTextfield.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
         }
         
         return true

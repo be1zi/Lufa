@@ -18,4 +18,63 @@ extension LocalRepositoryContext {
         
         return self.executeFetch(fetchRequest: request).first as? Employee
     }
+    
+    func updateEmployee(withData data: [String: Any], permissions: [[String: Any]]) {
+        
+        let context = LocalRepositoryContext.context
+        
+        guard let employee = getEmployee() else {
+            return
+        }
+        
+        if let firstName = data["firstName"] as? String {
+            employee.firstName = firstName
+        }
+        
+        if let lastName = data["lastName"] as? String {
+            employee.lastName = lastName
+        }
+        
+        if let birthDate = data["birthDate"] as? Date {
+            employee.birthDate = birthDate
+        }
+        
+        if let email = data["email"] as? String {
+            employee.email = email
+        }
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "EmployeePermission", in: context) else {
+            return
+        }
+        
+        for item in permissions {
+        
+            if let type = item["name"] as? String,
+                let value = item["value"] as? Bool {
+                
+                if type == PermissionType.AutoSynchronization.rawValue {
+                    
+                    if let autoSynchronize = LocalRepositoryContext.sharedInstance.getPermission(withName: .AutoSynchronization) {
+                        autoSynchronize.value = value
+                    } else {
+                        let object = NSManagedObject(entity: entity, insertInto: context) as? EmployeePermission
+                        object?.name = type
+                        object?.value = value
+                    }
+                    
+                } else if type == PermissionType.Notifications.rawValue {
+                    
+                    if let notifications = LocalRepositoryContext.sharedInstance.getPermission(withName: .Notifications) {
+                        notifications.value = value
+                    } else {
+                        let object = NSManagedObject(entity: entity, insertInto: context) as? EmployeePermission
+                        object?.name = type
+                        object?.value = value
+                    }
+                }
+            }
+        }
+        
+        self.executeUpdate()
+    }
 }

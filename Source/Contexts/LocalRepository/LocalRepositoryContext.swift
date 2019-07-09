@@ -329,6 +329,17 @@ class LocalRepositoryContext {
         }
     }
     
+    func executeUpdate() {
+        
+        let context = LocalRepositoryContext.context
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error update: \(error.localizedDescription)")
+        }
+    }
+    
     //MARK: - Delete Data
     func clearDataBase() {
         

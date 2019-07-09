@@ -51,6 +51,13 @@ class ProfileViewController: BaseViewController {
         setData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        
+        loadData()
+        setData()
+    }
+    
     //MARK: Appearance
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
