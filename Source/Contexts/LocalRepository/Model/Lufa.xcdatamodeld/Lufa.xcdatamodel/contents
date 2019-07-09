@@ -102,6 +102,10 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pkNumber" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="EmployeePermission" representedClassName="EmployeePermission" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="Flight" representedClassName="Flight" syncable="YES">
         <attribute name="aircraftSubtype" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="arrivalAirport" optional="YES" attributeType="String" syncable="YES"/>
@@ -123,6 +127,7 @@
         <attribute name="synchroType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Airline" positionX="-9" positionY="135" width="128" height="90"/>
         <element name="CheckIn" positionX="9" positionY="153" width="128" height="210"/>
         <element name="City" positionX="0" positionY="144" width="128" height="120"/>
         <element name="Country" positionX="-9" positionY="135" width="128" height="75"/>
@@ -137,6 +142,6 @@
         <element name="Employee" positionX="9" positionY="153" width="128" height="165"/>
         <element name="Flight" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="SynchroInfo" positionX="-9" positionY="135" width="128" height="90"/>
-        <element name="Airline" positionX="-9" positionY="135" width="128" height="90"/>
+        <element name="EmployeePermission" positionX="-9" positionY="135" width="128" height="75"/>
     </elements>
 </model>

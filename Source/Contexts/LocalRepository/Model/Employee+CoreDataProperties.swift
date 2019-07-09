@@ -58,10 +58,24 @@ extension Employee {
     }
     
     func autoSynchronizationEnabled() -> Bool {
-        return true
+        
+        let perm = LocalRepositoryContext.sharedInstance.getPermission(withName: .AutoSynchronization)
+        
+        guard let permission = perm else {
+            return true
+        }
+        
+        return permission.value
     }
     
     func notificationsEnabled() -> Bool {
-        return false
+        
+        let perm = LocalRepositoryContext.sharedInstance.getPermission(withName: .Notifications)
+        
+        guard let permission = perm else {
+            return true
+        }
+        
+        return permission.value
     }
 }

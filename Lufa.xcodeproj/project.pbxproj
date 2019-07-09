@@ -38,6 +38,9 @@
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
+		3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */; };
+		3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */; };
+		3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
 		3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */; };
 		3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */; };
@@ -169,6 +172,9 @@
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
+		3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+EmployeePermission.swift"; sourceTree = "<group>"; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
 		3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Lufa.swift"; sourceTree = "<group>"; };
 		3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Lufa.swift"; sourceTree = "<group>"; };
@@ -394,6 +400,7 @@
 				3DAD82AB22B3A95C00131683 /* LocalRepositoryContext+City.swift */,
 				3DA47B8422AA534A0095FA85 /* LocalRepositoryContext+Crew.swift */,
 				3DCB50D922AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift */,
+				3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */,
 				3DD5697C22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift */,
 				3D25D58022B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift */,
 			);
@@ -826,6 +833,8 @@
 				3DE0EE35229D211D009AD5D8 /* DutyEventLink+CoreDataProperties.swift */,
 				3DCB50D522AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift */,
 				3DCB50D622AF7E2B00C0AFF0 /* Employee+CoreDataProperties.swift */,
+				3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */,
+				3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */,
 				3DE0EE3E229D211D009AD5D8 /* Flight+CoreDataClass.swift */,
 				3DE0EE3F229D211D009AD5D8 /* Flight+CoreDataProperties.swift */,
 				3D25D57C22B76C0000881E17 /* SynchroInfo+CoreDataClass.swift */,
@@ -1096,6 +1105,7 @@
 				3DAD82A322B28CF200131683 /* HomeFlightCollectionViewCell.swift in Sources */,
 				3D03A48222CDFC09001BAE56 /* Notification+Lufa.swift in Sources */,
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
+				3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
 				3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */,
 				3DD5698622B2553B00E43B38 /* HomeHeaderTableViewCell.swift in Sources */,
@@ -1108,6 +1118,7 @@
 				3DCB50D322AE778100C0AFF0 /* City+CoreDataClass.swift in Sources */,
 				3D25D58122B76CFC00881E17 /* LocalRepositoryContext+SynchroInfo.swift in Sources */,
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
+				3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */,
 				3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
 				3DB5F9B322CB83EE00D4C007 /* GMSMarker+Lufa.swift in Sources */,
@@ -1167,6 +1178,7 @@
 				3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */,
 				3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */,
 				3DE0EE74229FA621009AD5D8 /* UIColor+Lufa.swift in Sources */,
+				3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */,
 				3DB5F9AE22CB59C700D4C007 /* FlightDetailsMapViewController.swift in Sources */,
 				3DA6E996225610B100015999 /* LanguageManager.swift in Sources */,
 			);
