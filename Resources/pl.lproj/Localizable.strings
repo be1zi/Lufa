@@ -55,6 +55,9 @@
 "profile.edit.lastName.placeholder" = "Nazwisko";
 "profile.edit.email.placeholder" = "email@test.com";
 "profile.edit.phone.placeholder" = "123-456-789";
+"profile.edit.error.required.title" = "Field is required.";
+"profile.edit.error.email.notTheSame.title" = "Adresy email nie są takie same.";
+"profile.edit.error.email.wrong.title" = "Niepoprawny adres email.";
 
 //Home
 "home.welcome.title" = "Witaj ponownie";

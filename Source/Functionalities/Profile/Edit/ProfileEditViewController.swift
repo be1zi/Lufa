@@ -45,6 +45,9 @@ class ProfileEditViewController: BaseViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var employee: Employee?
+    var requiredErrorMessage: String?
+    var emailNotTheSameErrorMessage: String?
+    var wrongEmailPatternErrorMessage: String?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -53,6 +56,7 @@ class ProfileEditViewController: BaseViewController {
         clearErrors()
         loadData()
         setData()
+        setDelegates()
     }
     
     //MARK: - Appearance
@@ -82,6 +86,10 @@ class ProfileEditViewController: BaseViewController {
         confirmEmailTextfield.placeholder = "profile.edit.email.placeholder".localized()
         phoneNumberTextfield.placeholder = "profile.edit.phone.placeholder".localized()
         
+        requiredErrorMessage = "profile.edit.error.required.title".localized()
+        emailNotTheSameErrorMessage = "profile.edit.error.email.notTheSame.title".localized()
+        wrongEmailPatternErrorMessage = "profile.edit.error.email.wrong.title".localized()
+        
         saveButton.setTitle("save.title".localized(), for: .normal)
         cancelButton.setTitle("cancel.title".localized(), for: .normal)
     }
@@ -93,6 +101,15 @@ class ProfileEditViewController: BaseViewController {
         emailErrorLabel.text = nil
         confirmEmailErrorLabel.text = nil
         phoneNumberErrorLabel.text = nil
+    }
+    
+    func setDelegates() {
+        firstNameTextfield.delegate = self
+        lastNameTextfield.delegate = self
+        //birthdate
+        emailTextfield.delegate = self
+        confirmEmailTextfield.delegate = self
+        phoneNumberTextfield.delegate = self
     }
     
     //MARK: - Data
@@ -116,7 +133,76 @@ class ProfileEditViewController: BaseViewController {
     }
     
     func validateData() -> Bool {
-        return true
+        
+        var allValidate = true
+        
+        if !checkIfEmptyTextField(textfield: firstNameTextfield,
+                                  errorLabel: firstNameErrorLabel,
+                                  errorMessage: requiredErrorMessage) {
+            allValidate = false
+        }
+        
+        if !checkIfEmptyTextField(textfield: lastNameTextfield,
+                                  errorLabel: lastNameErrorLabel,
+                                  errorMessage: requiredErrorMessage) {
+            allValidate = false
+        }
+        
+        if !checkIfEmptyTextField(textfield: emailTextfield,
+                                  errorLabel: emailErrorLabel,
+                                  errorMessage: requiredErrorMessage) {
+            allValidate = false
+        } else if !validateEmail() {
+            allValidate = false
+        }
+        
+        if !checkIfEmptyTextField(textfield: phoneNumberTextfield,
+                                  errorLabel: phoneNumberErrorLabel,
+                                  errorMessage: requiredErrorMessage) {
+            allValidate = false
+        }
+        
+        return allValidate
+    }
+    
+    func checkIfEmptyTextField(textfield: UITextField, errorLabel: UILabel, errorMessage: String?) -> Bool {
+        
+        var result: Bool = true
+        
+        if let text = textfield.text {
+            if text.isEmpty {
+                errorLabel.text = errorMessage
+                result = false
+            }
+        } else {
+            errorLabel.text = errorMessage
+            result = false
+        }
+        
+        return result
+    }
+    
+    func validateEmail() -> Bool {
+    
+        let currentEmail = employee?.email
+        
+        if emailTextfield.text == currentEmail ||
+            
+            emailTextfield.text == confirmEmailTextfield.text {
+            return true
+        
+        } else if !Regex.isValidEmail(email: emailTextfield.text) {
+            
+            emailErrorLabel.text = wrongEmailPatternErrorMessage
+            return false
+        
+        } else {
+            
+            emailErrorLabel.text = emailNotTheSameErrorMessage
+            confirmEmailErrorLabel.text = emailNotTheSameErrorMessage
+            return false
+        
+        }
     }
     
     func saveData() {
@@ -137,5 +223,39 @@ class ProfileEditViewController: BaseViewController {
         
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfileEditViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let digits = NSCharacterSet.decimalDigits
+        let letters = NSCharacterSet.letters
+        
+        if range.length == 1 {
+            return true
+        }
+        
+        if textField == firstNameTextfield || textField == lastNameTextfield {
+            if !letters.isSuperset(of: CharacterSet(charactersIn: string)) {
+                return false
+            }
+        }
+        
+        if textField == phoneNumberTextfield {
+            if !digits.isSuperset(of: CharacterSet(charactersIn: string)) {
+                return false
+            }
+            
+            if let text = textField.text,
+                text.count < Constants.PHONE_NUMBER_LENGTH {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        return true
     }
 }

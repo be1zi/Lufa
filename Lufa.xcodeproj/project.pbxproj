@@ -41,6 +41,8 @@
 		3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */; };
 		3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */; };
 		3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */; };
+		3DA3E7BB22D4770A0089425E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7BA22D4770A0089425E /* Constants.swift */; };
+		3DA3E7BD22D47CCA0089425E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7BC22D47CCA0089425E /* Regex.swift */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
 		3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */; };
 		3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */; };
@@ -175,6 +177,8 @@
 		3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+EmployeePermission.swift"; sourceTree = "<group>"; };
+		3DA3E7BA22D4770A0089425E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3DA3E7BC22D47CCA0089425E /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
 		3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Lufa.swift"; sourceTree = "<group>"; };
 		3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Lufa.swift"; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 			children = (
 				3DA6E995225610B100015999 /* LanguageManager.swift */,
 				3DD9B92822B8E2BB00E93AD0 /* Period.swift */,
+				3DA3E7BC22D47CCA0089425E /* Regex.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				3DE0EE58229D22D5009AD5D8 /* JSON */,
 				3DABA3F2223B90E100469FD1 /* Assets.xcassets */,
 				3DA6E98E22560AF600015999 /* Localizable.strings */,
+				3DA3E7BA22D4770A0089425E /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1104,6 +1110,7 @@
 				3DF18B0D22C6019600AD10F5 /* Airline+CoreDataClass.swift in Sources */,
 				3DAD82A322B28CF200131683 /* HomeFlightCollectionViewCell.swift in Sources */,
 				3D03A48222CDFC09001BAE56 /* Notification+Lufa.swift in Sources */,
+				3DA3E7BD22D47CCA0089425E /* Regex.swift in Sources */,
 				3DA47B8522AA534B0095FA85 /* LocalRepositoryContext+Crew.swift in Sources */,
 				3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */,
 				3DDDDB3B224E240E006BFCD1 /* HomeViewController.swift in Sources */,
@@ -1177,6 +1184,7 @@
 				3DE0EE45229D211E009AD5D8 /* DutyEvent+CoreDataProperties.swift in Sources */,
 				3DE0EE48229D211E009AD5D8 /* DutyEventLink+CoreDataClass.swift in Sources */,
 				3D0FE95822C4B26600748D4E /* FlightSynchroManager.swift in Sources */,
+				3DA3E7BB22D4770A0089425E /* Constants.swift in Sources */,
 				3DE0EE74229FA621009AD5D8 /* UIColor+Lufa.swift in Sources */,
 				3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */,
 				3DB5F9AE22CB59C700D4C007 /* FlightDetailsMapViewController.swift in Sources */,
