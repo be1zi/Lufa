@@ -395,6 +395,12 @@
                         <viewLayoutGuide key="safeArea" id="yfT-rW-8Pu"/>
                     </view>
                     <navigationItem key="navigationItem" id="4se-uy-KUL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="synchronizeData" id="hAE-kx-blg">
+                            <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="synchronizeButtonAction:" destination="JJp-UQ-dwR" id="uVp-O8-M2h"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="editAccount" id="hwE-IO-BDO">
                             <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -453,5 +459,6 @@
     </scenes>
     <resources>
         <image name="editAccount" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="synchronizeData" width="138.46153259277344" height="138.46153259277344"/>
     </resources>
 </document>

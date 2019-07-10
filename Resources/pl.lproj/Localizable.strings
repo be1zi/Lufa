@@ -99,3 +99,14 @@
 
 //Flight Filters
 "flight.filters.title" = "Filtry";
+
+//Synchronization
+"synchronization.title" = "Aktualizuj dane";
+"synchronization.cell.airline.title" = "Linie lotnicze";
+"synchronization.cell.cities.title" = "Miasta";
+"synchronization.cell.countries.title" = "Państwa";
+"synchronization.cell.crew.title" = "Członkowie załogi";
+"synchronization.cell.flights.title" = "Loty";
+"synchronization.header.all.title" = "Wszystkie";
+"synchronization.header.general.title" = "Ogólne";
+"synchronization.header.specific.title" = "Specyficzne";

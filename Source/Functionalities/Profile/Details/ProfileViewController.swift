@@ -154,4 +154,13 @@ class ProfileViewController: BaseViewController {
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func synchronizeButtonAction(_ sender: Any) {
+    
+        let vc = UIStoryboard.init(name: "Synchronization", bundle: nil).instantiateInitialViewController()
+        
+        if let vc = vc {
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
+    }
 }

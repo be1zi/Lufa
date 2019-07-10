@@ -43,6 +43,13 @@
 		3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */; };
 		3DA3E7BB22D4770A0089425E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7BA22D4770A0089425E /* Constants.swift */; };
 		3DA3E7BD22D47CCA0089425E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7BC22D47CCA0089425E /* Regex.swift */; };
+		3DA3E7C022D4C06B0089425E /* SynchronizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7BF22D4C06B0089425E /* SynchronizationViewController.swift */; };
+		3DA3E7C222D4C0890089425E /* Synchronization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA3E7C122D4C0890089425E /* Synchronization.storyboard */; };
+		3DA3E7C822D4C42C0089425E /* SynchronizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7C722D4C42C0089425E /* SynchronizationTableViewCell.swift */; };
+		3DA3E7CA22D4C4530089425E /* SynchronizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA3E7C922D4C4530089425E /* SynchronizationTableViewCell.xib */; };
+		3DA3E7CC22D4C47B0089425E /* SynchronizationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7CB22D4C47B0089425E /* SynchronizationFactory.swift */; };
+		3DA3E7CE22D5E1A50089425E /* SynchronizationTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7CD22D5E1A50089425E /* SynchronizationTableViewHeader.swift */; };
+		3DA3E7D022D5E1C20089425E /* SynchronizationTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DA3E7CF22D5E1C20089425E /* SynchronizationTableViewHeader.xib */; };
 		3DA47B7422A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */; };
 		3DA47B7622A501370095FA85 /* DateFormatter+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */; };
 		3DA47B7A22A524310095FA85 /* NSManagedObject+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */; };
@@ -179,6 +186,13 @@
 		3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+EmployeePermission.swift"; sourceTree = "<group>"; };
 		3DA3E7BA22D4770A0089425E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3DA3E7BC22D47CCA0089425E /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		3DA3E7BF22D4C06B0089425E /* SynchronizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationViewController.swift; sourceTree = "<group>"; };
+		3DA3E7C122D4C0890089425E /* Synchronization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Synchronization.storyboard; sourceTree = "<group>"; };
+		3DA3E7C722D4C42C0089425E /* SynchronizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationTableViewCell.swift; sourceTree = "<group>"; };
+		3DA3E7C922D4C4530089425E /* SynchronizationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SynchronizationTableViewCell.xib; sourceTree = "<group>"; };
+		3DA3E7CB22D4C47B0089425E /* SynchronizationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationFactory.swift; sourceTree = "<group>"; };
+		3DA3E7CD22D5E1A50089425E /* SynchronizationTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationTableViewHeader.swift; sourceTree = "<group>"; };
+		3DA3E7CF22D5E1C20089425E /* SynchronizationTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SynchronizationTableViewHeader.xib; sourceTree = "<group>"; };
 		3DA47B7322A4EF470095FA85 /* RemoteRepositoryContext+Duty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Duty.swift"; sourceTree = "<group>"; };
 		3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Lufa.swift"; sourceTree = "<group>"; };
 		3DA47B7922A524310095FA85 /* NSManagedObject+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Lufa.swift"; sourceTree = "<group>"; };
@@ -387,6 +401,36 @@
 				3D64623322BA3A1D009691FA /* UIView+Lufa.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3DA3E7BE22D4C0220089425E /* Synchronization */ = {
+			isa = PBXGroup;
+			children = (
+				3DA3E7C422D4C4000089425E /* Factory */,
+				3DA3E7C322D4C2850089425E /* Cell */,
+				3DA3E7BF22D4C06B0089425E /* SynchronizationViewController.swift */,
+				3DA3E7C122D4C0890089425E /* Synchronization.storyboard */,
+			);
+			path = Synchronization;
+			sourceTree = "<group>";
+		};
+		3DA3E7C322D4C2850089425E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3DA3E7C722D4C42C0089425E /* SynchronizationTableViewCell.swift */,
+				3DA3E7C922D4C4530089425E /* SynchronizationTableViewCell.xib */,
+				3DA3E7CD22D5E1A50089425E /* SynchronizationTableViewHeader.swift */,
+				3DA3E7CF22D5E1C20089425E /* SynchronizationTableViewHeader.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3DA3E7C422D4C4000089425E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				3DA3E7CB22D4C47B0089425E /* SynchronizationFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		3DA47B7822A5241C0095FA85 /* CoreData */ = {
@@ -716,6 +760,7 @@
 		3DD5696A22AF91D400E43B38 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				3DA3E7BE22D4C0220089425E /* Synchronization */,
 				3D03A47C22CDD2F0001BAE56 /* Edit */,
 				3D03A47B22CDD2D8001BAE56 /* Details */,
 			);
@@ -996,6 +1041,7 @@
 				3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */,
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
 				3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */,
+				3DA3E7CA22D4C4530089425E /* SynchronizationTableViewCell.xib in Resources */,
 				3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */,
 				3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */,
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
@@ -1010,11 +1056,13 @@
 				3DAD82AA22B28DCD00131683 /* HomeFlightsTableViewCell.xib in Resources */,
 				3D2EC7C322BA0B17005C4D64 /* check-in_1.json in Resources */,
 				3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */,
+				3DA3E7D022D5E1C20089425E /* SynchronizationTableViewHeader.xib in Resources */,
 				3D25D59322B7920B00881E17 /* FlightDetailsSectionTableViewCell.xib in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
 				3D25D59822B7946D00881E17 /* FlightDetailsAirportTableViewCell.xib in Resources */,
 				3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */,
 				3D2EC7C222BA0B17005C4D64 /* duty_1.json in Resources */,
+				3DA3E7C222D4C0890089425E /* Synchronization.storyboard in Resources */,
 				3D2EC7C122BA0B17005C4D64 /* flight_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1103,6 +1151,7 @@
 				3DCB50D722AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift in Sources */,
 				3DCB50CE22AE652D00C0AFF0 /* Country+CoreDataProperties.swift in Sources */,
 				3DD5697D22AFADBB00E43B38 /* LocalRepositoryContext+Flight.swift in Sources */,
+				3DA3E7C022D4C06B0089425E /* SynchronizationViewController.swift in Sources */,
 				3DE0EE69229D26AE009AD5D8 /* JsonReader.swift in Sources */,
 				3DCB50DA22AF814700C0AFF0 /* LocalRepositoryContext+Employee.swift in Sources */,
 				3DD9B92C22B8ED7900E93AD0 /* FlightDetailsPlaceTableViewCell.swift in Sources */,
@@ -1145,6 +1194,7 @@
 				3DE0EE4F229D211E009AD5D8 /* CrewMember+CoreDataProperties.swift in Sources */,
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
 				3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */,
+				3DA3E7CE22D5E1A50089425E /* SynchronizationTableViewHeader.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
 				3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */,
@@ -1164,6 +1214,8 @@
 				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,
 				3D25D58322B77F3500881E17 /* CitySynchroManager.swift in Sources */,
 				3DF18B0822C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift in Sources */,
+				3DA3E7CC22D4C47B0089425E /* SynchronizationFactory.swift in Sources */,
+				3DA3E7C822D4C42C0089425E /* SynchronizationTableViewCell.swift in Sources */,
 				3DF18B0A22C600CD00AD10F5 /* AirlineSynchroManager.swift in Sources */,
 				3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */,
 				3DF18B0622C5E83F00AD10F5 /* InitCompoundSynchroManager.swift in Sources */,

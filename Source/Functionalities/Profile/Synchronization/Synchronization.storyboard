@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uc6-ZP-IZ0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Synchronization View Controller-->
+        <scene sceneID="KeR-dY-d06">
+            <objects>
+                <viewController id="rLE-aH-35n" customClass="SynchronizationViewController" customModule="Lufa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5H5-H8-NET">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Gc-9G-xmM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rLE-aH-35n" id="gSA-e4-RSM"/>
+                                    <outlet property="delegate" destination="rLE-aH-35n" id="WBq-SW-EVD"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-Dh-kVT">
+                                <rect key="frame" x="0.0" y="519" width="375" height="148"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SM-xN-4Yc">
+                                        <rect key="frame" x="20" y="25" width="335" height="44"/>
+                                        <color key="backgroundColor" red="0.0" green="0.81176470588235294" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="GO4-Xj-sl6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="synchronizeAction:" destination="rLE-aH-35n" eventType="touchUpInside" id="9bV-OG-bHg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmb-IF-yGG">
+                                        <rect key="frame" x="20" y="79" width="335" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="mgE-ym-Mqg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cancelAction:" destination="rLE-aH-35n" eventType="touchUpInside" id="TCD-9B-DGF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zmb-IF-yGG" secondAttribute="trailing" constant="20" id="9Or-q5-Gpj"/>
+                                    <constraint firstAttribute="trailing" secondItem="8SM-xN-4Yc" secondAttribute="trailing" constant="20" id="AN2-Us-RxP"/>
+                                    <constraint firstItem="zmb-IF-yGG" firstAttribute="top" secondItem="8SM-xN-4Yc" secondAttribute="bottom" constant="10" id="Bjd-kM-lSc"/>
+                                    <constraint firstItem="8SM-xN-4Yc" firstAttribute="top" secondItem="7xH-Dh-kVT" secondAttribute="top" constant="25" id="Lhd-fK-g7g"/>
+                                    <constraint firstAttribute="bottom" secondItem="zmb-IF-yGG" secondAttribute="bottom" constant="25" id="Ln3-uR-cZ9"/>
+                                    <constraint firstItem="zmb-IF-yGG" firstAttribute="leading" secondItem="7xH-Dh-kVT" secondAttribute="leading" constant="20" id="Nsx-nW-WaM"/>
+                                    <constraint firstItem="8SM-xN-4Yc" firstAttribute="leading" secondItem="7xH-Dh-kVT" secondAttribute="leading" constant="20" id="z0w-e5-fKg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XdG-i5-UEH" firstAttribute="trailing" secondItem="7xH-Dh-kVT" secondAttribute="trailing" id="AtG-MF-QaD"/>
+                            <constraint firstItem="0Gc-9G-xmM" firstAttribute="leading" secondItem="XdG-i5-UEH" secondAttribute="leading" id="E4V-Oa-0lO"/>
+                            <constraint firstItem="7xH-Dh-kVT" firstAttribute="leading" secondItem="XdG-i5-UEH" secondAttribute="leading" id="VIX-UF-JyI"/>
+                            <constraint firstItem="7xH-Dh-kVT" firstAttribute="top" secondItem="0Gc-9G-xmM" secondAttribute="bottom" id="gdW-uc-Ulg"/>
+                            <constraint firstItem="XdG-i5-UEH" firstAttribute="trailing" secondItem="0Gc-9G-xmM" secondAttribute="trailing" id="rVD-bl-bfp"/>
+                            <constraint firstItem="XdG-i5-UEH" firstAttribute="bottom" secondItem="7xH-Dh-kVT" secondAttribute="bottom" id="vwv-fs-o1f"/>
+                            <constraint firstItem="0Gc-9G-xmM" firstAttribute="top" secondItem="XdG-i5-UEH" secondAttribute="top" id="yVc-Sf-kbU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XdG-i5-UEH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dGU-i9-3Wh"/>
+                    <connections>
+                        <outlet property="cancelButton" destination="zmb-IF-yGG" id="4aZ-ri-l4z"/>
+                        <outlet property="synchronizeButton" destination="8SM-xN-4Yc" id="i0e-Jy-cuX"/>
+                        <outlet property="tableView" destination="0Gc-9G-xmM" id="jNr-dZ-2Qf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coB-ok-QCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160.8" y="106.59670164917542"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HXS-JU-gub">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uc6-ZP-IZ0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="akR-pj-ThS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rLE-aH-35n" kind="relationship" relationship="rootViewController" id="dM3-eZ-fFo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKJ-KB-TNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.59999999999999" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>
