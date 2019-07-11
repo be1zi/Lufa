@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     
     static let authenticateDidFinish = Notification.Name("authenticateDidFinish")
+    static let checkboxChangeState = Notification.Name("checkboxChangeState")
 }

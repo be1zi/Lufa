@@ -80,5 +80,7 @@ class Checkbox: UIButton  {
     @objc private func tapAction() {
         let newState: CheckboxState = checked ? .deselected : .selected
         changeState(newState: newState)
+        
+        NotificationCenter.default.post(name: .checkboxChangeState, object: newState)
     }
 }

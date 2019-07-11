@@ -40,6 +40,8 @@ class SynchronizationViewController: BaseViewController {
         tableView.register(UINib(nibName: "SynchronizationTableViewHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "SynchronizationTableViewHeader")
         tableView.register(UINib(nibName: "SynchronizationTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "SynchronizationTableViewCell")
+        
+        tableView.tableFooterView = UIView()
     }
     
     func loadData() {
@@ -50,6 +52,11 @@ class SynchronizationViewController: BaseViewController {
     //MARK: - Appearance
     override func navigationBarTitle() -> String? {
         return "synchronization.title".localized()
+    }
+    
+    override func loadTranslations() {
+        cancelButton.setTitle("cancel.title".localized(), for: .normal)
+        synchronizeButton.setTitle("synchronization.synchronize.button.title".localized(), for: .normal)
     }
     
     //MARK: - Actions
@@ -64,25 +71,6 @@ class SynchronizationViewController: BaseViewController {
 
 extension SynchronizationViewController: UITableViewDelegate {
     
-}
-
-extension SynchronizationViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return SynchronizationSectionType.All.rawValue
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case SynchronizationSectionType.General.rawValue:
-            return generalCellsTypes.count
-        case SynchronizationSectionType.Specific.rawValue:
-            return specificCellsTypes.count
-        default:
-            return 0
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -92,7 +80,7 @@ extension SynchronizationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-     
+        
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SynchronizationTableViewHeader") as? SynchronizationTableViewHeader else {
             return nil
         }
@@ -112,8 +100,26 @@ extension SynchronizationViewController: UITableViewDataSource {
         }
         
         header.load(title: title, withDelegate: self, type: type)
-                
+        
         return header
+    }
+}
+
+extension SynchronizationViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return SynchronizationSectionType.All.rawValue
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case SynchronizationSectionType.General.rawValue:
+            return generalCellsTypes.count
+        case SynchronizationSectionType.Specific.rawValue:
+            return specificCellsTypes.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -142,14 +148,14 @@ extension SynchronizationViewController: UITableViewDataSource {
 }
 
 extension SynchronizationViewController: SynchronizationTableViewHeaderDelegate {
-
-    func allChecked(type: SynchronizationSectionType) {
+    
+    func allCheckboxChangeState(newState: Bool, type: SynchronizationSectionType) {
         
         switch type {
         case .General:
-            allGeneralChecked = true
+            allGeneralChecked = newState
         case .Specific:
-            allSpecificChecked = true
+            allSpecificChecked = newState
         default:
             return
         }

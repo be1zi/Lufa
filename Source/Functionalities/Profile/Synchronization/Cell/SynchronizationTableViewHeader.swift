@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol SynchronizationTableViewHeaderDelegate {
-    func allChecked(type: SynchronizationSectionType)
+    func allCheckboxChangeState(newState: Bool, type: SynchronizationSectionType)
 }
 
 class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
@@ -29,6 +29,11 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
         
         setAppearance()
         loadTranslations()
+        registerForNotification()
+    }
+    
+    deinit {
+        unregisterFromNotification()
     }
     
     func load(title: String, withDelegate: SynchronizationTableViewHeaderDelegate, type: SynchronizationSectionType) {
@@ -49,8 +54,17 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
         allLabel.text = "synchronization.header.all.title".localized()
     }
     
+    //MARK: - Notification
+    func registerForNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(allCheckboxAction(_:)), name: .checkboxChangeState, object: nil)
+    }
+    
+    func unregisterFromNotification() {
+        NotificationCenter.default.removeObserver(self, name: .checkboxChangeState, object: nil)
+    }
+    
     //MARK: - Action
-    @IBAction func allCheckboxAction(_ sender: Any) {
-        delegate?.allChecked(type: sectionType)
+    @objc func allCheckboxAction(_ notification: Notification) {
+        delegate?.allCheckboxChangeState(newState: allCheckbox.checked, type: sectionType)
     }
 }
