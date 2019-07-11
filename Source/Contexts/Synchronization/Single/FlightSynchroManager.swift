@@ -28,7 +28,7 @@ class FlightSynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeFlights, object: String(describing: Flight.self)) {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .Flights, object: String(describing: Flight.self)) {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -54,7 +54,7 @@ class FlightSynchroManager: SynchroManager {
             
             if synchroResult == SynchroResult.SynchroResultOK {
                 
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeFlights, object: String(describing: Flight.self))
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .Flights, object: String(describing: Flight.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

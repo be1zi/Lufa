@@ -37,6 +37,7 @@
 		3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
+		3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
 		3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */; };
 		3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */; };
@@ -180,6 +181,7 @@
 		3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
+		3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
 		3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -950,6 +952,7 @@
 				3DB5F9A722CB57C200D4C007 /* Base */,
 				3DF18B0522C5E83F00AD10F5 /* InitCompoundSynchroManager.swift */,
 				3DB5F9A922CB57F600D4C007 /* FlightCompoundSynchroManager.swift */,
+				3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */,
 			);
 			path = Compound;
 			sourceTree = "<group>";
@@ -1207,6 +1210,7 @@
 				3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
 				3DB5F9A522CB552F00D4C007 /* CrewSynchroManager.swift in Sources */,
+				3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */,
 				3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */,
 				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
 				3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */,

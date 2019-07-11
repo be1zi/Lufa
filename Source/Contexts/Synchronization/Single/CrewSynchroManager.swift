@@ -27,7 +27,7 @@ class CrewSynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCrew, object: String(describing: Crew.self)) {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .Crew, object: String(describing: Crew.self)) {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -52,7 +52,7 @@ class CrewSynchroManager: SynchroManager {
             let synchroResult: SynchroResult = localError != nil ? .SynchroResultError : .SynchroResultOK
             
             if synchroResult == SynchroResult.SynchroResultOK {
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCrew, object: String(describing: Crew.self))
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .Crew, object: String(describing: Crew.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

@@ -24,6 +24,8 @@ class SynchronizationViewController: BaseViewController {
     
     var generalCellsTypes: [SynchroType] = []
     var specificCellsTypes: [SynchroType] = []
+    var checkedGeneralTypes: [SynchroType] = []
+    var checkedSpecificTypes: [SynchroType] = []
     var allGeneralChecked: Bool = false
     var allSpecificChecked: Bool = false
     
@@ -44,9 +46,20 @@ class SynchronizationViewController: BaseViewController {
         tableView.tableFooterView = UIView()
     }
     
+    //MARK: - Data
     func loadData() {
         generalCellsTypes = SynchronizationFactory.getGeneralCellsTypesArray()
         specificCellsTypes = SynchronizationFactory.getSpecificCellsTypesArray()
+    }
+    
+    func prepareToSynchronize() -> [SynchroType] {
+        
+        var arr: [SynchroType] = []
+        
+        arr.append(contentsOf: checkedGeneralTypes)
+        arr.append(contentsOf: checkedSpecificTypes)
+        
+        return arr
     }
     
     //MARK: - Appearance
@@ -62,6 +75,21 @@ class SynchronizationViewController: BaseViewController {
     //MARK: - Actions
     @IBAction func synchronizeAction(_ sender: Any) {
     
+        let data = prepareToSynchronize()
+        
+        guard data.count > 0 else {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        progressPresenter?.presentProgress(withText: "synchronization.synchronize.title".localized(), completion: {
+            
+            CustomeCompoundSynchroManager.sharedInstance.loadWithManagers(types: data)
+            CustomeCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
+                self.progressPresenter?.hideProgress()
+                self.dismiss(animated: true, completion: nil)
+            }, forced: true)
+        })
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -76,7 +104,7 @@ extension SynchronizationViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 200
+        return 80
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -130,36 +158,84 @@ extension SynchronizationViewController: UITableViewDataSource {
         
         var title: String = ""
         var checked: Bool  = false
+        var section: SynchronizationSectionType = .All
+        var synchro: SynchroType = .All
         
         switch indexPath.section {
         case SynchronizationSectionType.General.rawValue:
-            title = SynchronizationFactory.getTitleForCell(withType: generalCellsTypes[indexPath.row])
             checked = allGeneralChecked
+            section = .General
+            synchro = generalCellsTypes[indexPath.row]
+            title = SynchronizationFactory.getTitleForCell(withType: synchro)
         case SynchronizationSectionType.Specific.rawValue:
-            title = SynchronizationFactory.getTitleForCell(withType: specificCellsTypes[indexPath.row])
             checked = allSpecificChecked
+            section = .Specific
+            synchro = specificCellsTypes[indexPath.row]
+            title = SynchronizationFactory.getTitleForCell(withType: synchro)
         default:
             title = ""
         }
         
-        cell.load(title: title, on: checked)
+        cell.load(title: title, on: checked, withDelegate: self, section: section, synchro: synchro)
         return cell
     }
 }
 
-extension SynchronizationViewController: SynchronizationTableViewHeaderDelegate {
+extension SynchronizationViewController: SynchronizationDelegate {
     
     func allCheckboxChangeState(newState: Bool, type: SynchronizationSectionType) {
         
         switch type {
         case .General:
             allGeneralChecked = newState
+            
+            if newState == true {
+                checkedGeneralTypes = generalCellsTypes
+            } else {
+                checkedGeneralTypes = []
+            }
         case .Specific:
             allSpecificChecked = newState
+            
+            if newState == true {
+                checkedSpecificTypes = specificCellsTypes
+            } else {
+                checkedSpecificTypes = []
+            }
         default:
             return
         }
         
         tableView.reloadData()
+    }
+    
+    func checkboxChangeState(newState: Bool, section: SynchronizationSectionType, type: SynchroType) {
+        
+        switch section {
+        case .General:
+            if newState == true {
+                if !checkedGeneralTypes.contains(type) {
+                    checkedGeneralTypes.append(type)
+                }
+            } else {
+                if checkedGeneralTypes.contains(type),
+                    let index = checkedGeneralTypes.firstIndex(of: type) {
+                    checkedGeneralTypes.remove(at: index)
+                }
+            }
+        case .Specific:
+            if newState == true {
+                if !checkedSpecificTypes.contains(type) {
+                    checkedSpecificTypes.append(type)
+                }
+            } else {
+                if checkedSpecificTypes.contains(type),
+                    let index = checkedSpecificTypes.firstIndex(of: type) {
+                    checkedSpecificTypes.remove(at: index)
+                }
+            }
+        default:
+            return
+        }
     }
 }

@@ -14,16 +14,18 @@ extension LocalRepositoryContext {
     private func timeIntervalForSynchroType(synchroType: SynchroType) -> TimeInterval {
         
         switch synchroType {
-        case .SynchroTypeCountries:
+        case .Countries:
             return 6 * 30 * 24 * 60 * 60 // every six months
-        case .SynchroTypeCities:
+        case .Cities:
             return 6 * 30 * 24 * 60 * 60
-        case .SynchroTypeFlights:
+        case .Flights:
             return 60 * 60
-        case .SynchroTypeAirline:
+        case .Airline:
             return 6 * 30 * 24 * 60 * 60
-        case .SynchroTypeCrew:
+        case .Crew:
             return 60 * 60
+        default:
+            return 24 * 60 * 60
         }
     }
     

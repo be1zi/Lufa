@@ -28,7 +28,7 @@ class CountrySynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeCountries, object: String(describing: Country.self)) {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .Countries, object: String(describing: Country.self)) {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -53,7 +53,7 @@ class CountrySynchroManager: SynchroManager {
             let synchroResult = localError != nil ? SynchroResult.SynchroResultError : SynchroResult.SynchroResultOK
             
             if synchroResult == SynchroResult.SynchroResultOK {
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeCountries, object: String(describing: Country.self))
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .Countries, object: String(describing: Country.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

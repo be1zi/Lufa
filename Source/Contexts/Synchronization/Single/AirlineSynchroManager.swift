@@ -28,7 +28,7 @@ class AirlineSynchroManager: SynchroManager {
                 return
             }
             
-            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .SynchroTypeAirline, object: String(describing: Airline.self)) {
+            if !LocalRepositoryContext.sharedInstance.shouldSynchronize(synchroType: .Airline, object: String(describing: Airline.self)) {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
@@ -54,7 +54,7 @@ class AirlineSynchroManager: SynchroManager {
             
             if synchroResult == .SynchroResultOK {
                 
-                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .SynchroTypeAirline, object: String(describing: Airline.self))
+                LocalRepositoryContext.sharedInstance.notifyDidSynchronize(synchroType: .Airline, object: String(describing: Airline.self))
             }
             
             self.notifyCompletionsWithResult(result: synchroResult, error: localError)

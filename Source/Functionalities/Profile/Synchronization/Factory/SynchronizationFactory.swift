@@ -8,14 +8,19 @@
 
 import Foundation
 
+protocol SynchronizationDelegate {
+    func allCheckboxChangeState(newState: Bool, type: SynchronizationSectionType)
+    func checkboxChangeState(newState: Bool, section: SynchronizationSectionType, type: SynchroType)
+}
+
 class SynchronizationFactory {
 
     static func getGeneralCellsTypesArray() -> [SynchroType] {
         var array: [SynchroType] = []
         
-        array.append(.SynchroTypeAirline)
-        array.append(.SynchroTypeCities)
-        array.append(.SynchroTypeCountries)
+        array.append(.Airline)
+        array.append(.Cities)
+        array.append(.Countries)
 
         return array
     }
@@ -23,8 +28,8 @@ class SynchronizationFactory {
     static func getSpecificCellsTypesArray() -> [SynchroType] {
         var array: [SynchroType] = []
         
-        array.append(.SynchroTypeCrew)
-        array.append(.SynchroTypeFlights)
+        array.append(.Crew)
+        array.append(.Flights)
         
         return array
     }
@@ -32,16 +37,18 @@ class SynchronizationFactory {
     static func getTitleForCell(withType type: SynchroType) -> String {
 
         switch type {
-        case .SynchroTypeAirline:
+        case .Airline:
             return "synchronization.cell.airline.title".localized()
-        case .SynchroTypeCities:
+        case .Cities:
             return "synchronization.cell.cities.title".localized()
-        case .SynchroTypeCountries:
+        case .Countries:
             return "synchronization.cell.countries.title".localized()
-        case .SynchroTypeCrew:
+        case .Crew:
             return "synchronization.cell.crew.title".localized()
-        case .SynchroTypeFlights:
+        case .Flights:
             return "synchronization.cell.flights.title".localized()
+        default:
+            return ""
         }
     }
     

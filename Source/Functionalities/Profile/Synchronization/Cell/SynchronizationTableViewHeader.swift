@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-protocol SynchronizationTableViewHeaderDelegate {
-    func allCheckboxChangeState(newState: Bool, type: SynchronizationSectionType)
-}
-
 class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
   
     //MARK: - Properties
@@ -20,7 +16,7 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
     @IBOutlet weak var allLabel: UILabel!
     @IBOutlet weak var allCheckbox: Checkbox!
     
-    var delegate: SynchronizationTableViewHeaderDelegate?
+    var delegate: SynchronizationDelegate?
     var sectionType: SynchronizationSectionType = .All
     
     //MARK: - Lifecycle
@@ -36,7 +32,7 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
         unregisterFromNotification()
     }
     
-    func load(title: String, withDelegate: SynchronizationTableViewHeaderDelegate, type: SynchronizationSectionType) {
+    func load(title: String, withDelegate: SynchronizationDelegate, type: SynchronizationSectionType) {
         titleLabel.text = title
         delegate = withDelegate
         sectionType = type

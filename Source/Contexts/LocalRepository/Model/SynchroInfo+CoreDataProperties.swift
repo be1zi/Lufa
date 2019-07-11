@@ -11,11 +11,12 @@ import Foundation
 import CoreData
 
 enum SynchroType: Int {
-    case SynchroTypeCountries
-    case SynchroTypeCities
-    case SynchroTypeFlights
-    case SynchroTypeAirline
-    case SynchroTypeCrew
+    case Countries
+    case Cities
+    case Flights
+    case Airline
+    case Crew
+    case All
 }
 
 extension SynchroInfo {
