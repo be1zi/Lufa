@@ -32,6 +32,12 @@ class CitySynchroManager: SynchroManager {
                 self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
                 return
             }
+            
+            if let employee = LocalRepositoryContext.sharedInstance.getEmployee(),
+                !employee.autoSynchronizationEnabled() {
+                self.notifyCompletionsWithResult(result: .SynchroResultSkipped, error: nil)
+                return
+            }
         }
         
         self.synchroInProgress = true
