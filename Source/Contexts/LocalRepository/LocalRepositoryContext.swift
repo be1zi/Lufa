@@ -366,20 +366,42 @@ class LocalRepositoryContext {
     
     func clearEmptyRelationship() {
         
-        let records: [String: String] = ["CrewMember" : "crew"]
+        let records: [String: Any] = ["CrewMember" : "crew",
+                                         "CrewFlight" : ["exFlight", "toFlight"],
+                                         "DutyDay" : "duty",
+                                         "DutyEvent" : "dutyDay",
+                                         "DutyEventAttributes" : "dutyEvent",
+                                         "DutyEventLink" : "dutyEvent"];
         
         for record in records {
             self.deleteRowsWithoutRelations(entityName: record.key, invertRelationsName: record.value)
         }
     }
     
-    func deleteRowsWithoutRelations(entityName: String, invertRelationsName invert: String) {
+    func deleteRowsWithoutRelations(entityName: String, invertRelationsName invert: Any) {
         
         let context = LocalRepositoryContext.context
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        request.predicate = NSPredicate(format: "\(invert) = null")
+        
+        var predicateFormat: String = ""
+        
+        if let array = invert as? [String] {
             
+            for item in array {
+                predicateFormat.append(contentsOf: "\(item) = null")
+                
+                if item != array.last {
+                    predicateFormat.append(contentsOf: " or ")
+                }
+            }
+            
+            request.predicate = NSPredicate(format: predicateFormat)
+            
+        } else {
+            request.predicate = NSPredicate(format: "\(invert) = null")
+        }
+        
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
         
         do {
