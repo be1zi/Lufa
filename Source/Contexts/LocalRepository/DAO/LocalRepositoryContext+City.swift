@@ -20,6 +20,6 @@ extension LocalRepositoryContext {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "City")
         request.predicate = NSPredicate(format: "code = %@", shortCut)
         
-        return self.executeFetch(fetchRequest: request).first as? City
+        return self.executeFetch(fetchRequest: request).first?.unmanagedCopy() as? City
     }
 }

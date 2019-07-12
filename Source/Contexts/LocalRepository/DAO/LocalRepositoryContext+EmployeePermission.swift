@@ -22,6 +22,6 @@ extension LocalRepositoryContext {
         request.predicate = NSPredicate(format: "name = %@", name.rawValue)
         request.fetchLimit = 1
         
-        return self.executeFetch(fetchRequest: request).first as? EmployeePermission
+        return self.executeFetch(fetchRequest: request).first?.unmanagedCopy() as? EmployeePermission
     }
 }

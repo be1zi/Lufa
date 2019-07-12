@@ -15,6 +15,6 @@ extension LocalRepositoryContext {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CheckIn")
         
-        return self.executeFetch(fetchRequest: request) as? [CheckIn]
+        return self.executeFetch(fetchRequest: request).unmanagedCopy() as? [CheckIn]
     }
 }

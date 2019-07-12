@@ -52,6 +52,6 @@ extension LocalRepositoryContext {
         
         request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
         
-        return self.executeFetch(fetchRequest: request) as? [Flight]
+        return self.executeFetch(fetchRequest: request).unmanagedCopy() as? [Flight]
     }
 }

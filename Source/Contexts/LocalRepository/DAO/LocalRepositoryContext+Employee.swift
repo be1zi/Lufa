@@ -16,7 +16,7 @@ extension LocalRepositoryContext {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
         request.fetchLimit = 1
         
-        return self.executeFetch(fetchRequest: request).first as? Employee
+        return self.executeFetch(fetchRequest: request).first?.unmanagedCopy() as? Employee
     }
     
     func updateEmployee(withData data: [String: Any], permissions: [[String: Any]]) {

@@ -17,7 +17,7 @@ extension LocalRepositoryContext {
         request.predicate = NSPredicate(format: "flightDesignator = %@" , flightDesignator)
         request.fetchLimit = 1
         
-        return self.executeFetch(fetchRequest: request).first as? Crew
+        return self.executeFetch(fetchRequest: request).first?.unmanagedCopy() as? Crew
     }
     
     func getFlightDesignatorForCrewMember(employeeID: String) -> [String]? {

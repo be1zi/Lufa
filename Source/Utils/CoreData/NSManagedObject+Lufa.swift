@@ -40,4 +40,23 @@ extension NSManagedObject {
         
         return nil
     }
+    
+    func unmanagedCopy() -> NSManagedObject {
+        
+        let copy = NSManagedObject(entity: self.entity, insertInto: nil)
+        
+        let attributesKeys = self.entity.attributesByName.keys
+        
+        var keys: [String] = []
+        
+        for key in attributesKeys {
+            keys.append(key)
+        }
+        
+        let dict = self.dictionaryWithValues(forKeys: keys)
+        
+        copy.serialize(data: dict)
+        
+        return copy
+    }
 }
