@@ -63,13 +63,23 @@ class FlightListViewController: BaseViewController {
         }
     }
     
-    //MARK: Action
+    //MARK: Actions
     @IBAction func filterButtonAction(_ sender: Any) {
 
         let vc = UIStoryboard.init(name: "FlightFilters", bundle: nil).instantiateInitialViewController()
         
         if let vc = vc {
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func searchButtonAction(_ sender: Any) {
+    
+        let vc = UIStoryboard.init(name: "Search", bundle: nil).instantiateInitialViewController()
+        
+        if let vc = vc, let child = vc.children.first as? SearchViewController {
+            child.delegate = self
+            self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
 }
@@ -109,4 +119,8 @@ extension FlightListViewController: UITableViewDataSource {
         
         return UITableViewCell()
     }
+}
+
+extension FlightListViewController: SearchDelegate {
+    
 }

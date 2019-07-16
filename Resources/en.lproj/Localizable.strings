@@ -112,3 +112,7 @@
 "synchronization.header.specific.title" = "Specific";
 "synchronization.synchronize.button.title" = "Synchronize";
 "synchronization.synchronize.title" = "Synchronization";
+
+//Search
+"search.title" = "Search";
+"search.placeholder" = "Enter text...";

@@ -40,6 +40,10 @@
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
+		3D6C374222DDBF1E00651BEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C374122DDBF1E00651BEF /* SearchViewController.swift */; };
+		3D6C374422DDBF4900651BEF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C374322DDBF4900651BEF /* Search.storyboard */; };
+		3D6C374722DDFDEB00651BEF /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */; };
+		3D6C374922DDFDF900651BEF /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */; };
 		3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */; };
 		3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */; };
 		3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */; };
@@ -185,6 +189,10 @@
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
+		3D6C374122DDBF1E00651BEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3D6C374322DDBF4900651BEF /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+EmployeePermission.swift"; sourceTree = "<group>"; };
@@ -407,6 +415,25 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		3D6C374022DDBEF700651BEF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C374522DDFDDB00651BEF /* Cell */,
+				3D6C374122DDBF1E00651BEF /* SearchViewController.swift */,
+				3D6C374322DDBF4900651BEF /* Search.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		3D6C374522DDFDDB00651BEF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */,
+				3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		3DA3E7BE22D4C0220089425E /* Synchronization */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +643,7 @@
 				3DABA407223B949600469FD1 /* Launch */,
 				3DCB50DB22AF83E300C0AFF0 /* Menu */,
 				3DD5696A22AF91D400E43B38 /* Profile */,
+				3D6C374022DDBEF700651BEF /* Search */,
 			);
 			path = Functionalities;
 			sourceTree = "<group>";
@@ -1044,6 +1072,7 @@
 				3DD4A3AC2244DB84002B6A77 /* config.plist in Resources */,
 				3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */,
 				3D25D58E22B78EEF00881E17 /* FlightDetailsTitleTableViewCell.xib in Resources */,
+				3D6C374922DDFDF900651BEF /* SearchTableViewCell.xib in Resources */,
 				3DAD82A622B28D2700131683 /* HomeFlightCollectionViewCell.xib in Resources */,
 				3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */,
 				3DD5698122B0CF8400E43B38 /* FlightDetails.storyboard in Resources */,
@@ -1069,6 +1098,7 @@
 				3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */,
 				3D2EC7C222BA0B17005C4D64 /* duty_1.json in Resources */,
 				3DA3E7C222D4C0890089425E /* Synchronization.storyboard in Resources */,
+				3D6C374422DDBF4900651BEF /* Search.storyboard in Resources */,
 				3D2EC7C122BA0B17005C4D64 /* flight_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1152,6 +1182,7 @@
 				3DCB50EA22AF899300C0AFF0 /* MenuTapBarController.swift in Sources */,
 				3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */,
 				3DCB50E422AF88CC00C0AFF0 /* MenuBaseItem.swift in Sources */,
+				3D6C374722DDFDEB00651BEF /* SearchTableViewCell.swift in Sources */,
 				3DCB50E022AF84E800C0AFF0 /* MenuFactory.swift in Sources */,
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
 				3DCB50D722AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift in Sources */,
@@ -1202,6 +1233,7 @@
 				3DCB50D022AE750D00C0AFF0 /* RemoteRepositoryContext+City.swift in Sources */,
 				3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */,
 				3DA3E7CE22D5E1A50089425E /* SynchronizationTableViewHeader.swift in Sources */,
+				3D6C374222DDBF1E00651BEF /* SearchViewController.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
 				3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */,

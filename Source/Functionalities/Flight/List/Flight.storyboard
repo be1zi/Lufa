@@ -37,6 +37,12 @@
                         <viewLayoutGuide key="safeArea" id="tFW-Yr-g2q"/>
                     </view>
                     <navigationItem key="navigationItem" id="oWK-zq-eE8">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="search" id="7Cn-JU-Ulv">
+                            <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="searchButtonAction:" destination="6KT-Yo-7Y6" id="7lx-Zg-DGz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="filter" id="uqc-DR-RUg">
                             <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -73,5 +79,6 @@
     </scenes>
     <resources>
         <image name="filter" width="138.46153259277344" height="138.46153259277344"/>
+        <image name="search" width="50" height="50"/>
     </resources>
 </document>
