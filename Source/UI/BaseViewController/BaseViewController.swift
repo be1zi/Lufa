@@ -89,10 +89,6 @@ class BaseViewController : UIViewController {
         
     }
     
-    //MAKR: Scroll View
-    
-    
-    
     //MARK: Keyboard
     
     private func registerForKeyboardEvents() {
@@ -103,6 +99,8 @@ class BaseViewController : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisappearNotification(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(keyboardHide))
+        tap.cancelsTouchesInView = false
+        
         self.view.addGestureRecognizer(tap)
     }
     
