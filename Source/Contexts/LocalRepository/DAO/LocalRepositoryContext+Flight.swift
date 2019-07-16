@@ -22,6 +22,7 @@ extension LocalRepositoryContext {
     private func getFlights(limit: Int?, date: Date?) -> [Flight]? {
         
         let emp = getEmployee()
+        var localDate = Date.init()
         
         guard let employee = emp else {
             return nil
@@ -40,14 +41,18 @@ extension LocalRepositoryContext {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Flight")
         
         if let date = date {
-            if let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: date),
-                let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: date) {
-                request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
-            } else {
-                request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, Date.init()])
-            }
+            localDate = date
+        }
+        
+        guard let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: localDate),
+            let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: localDate) else {
+            return nil
+        }
+        
+        if let _ = date {
+            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
         } else {
-            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, Date.init()])
+            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, startDate])
         }
         
         request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
