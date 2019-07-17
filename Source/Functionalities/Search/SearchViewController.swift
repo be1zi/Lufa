@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol SearchDelegate {
-    
+    func searchControllerNeedsFetchRequestForLastViewedData() -> NSFetchRequest<NSFetchRequestResult>?
+    func searchControllerNeedsFetchRequestWithText(text: String) -> NSFetchRequest<NSFetchRequestResult>?
+    func searchControllerNeedsName(forObject: NSManagedObject) -> String?
 }
 
 class SearchViewController: BaseViewController {
@@ -23,8 +26,8 @@ class SearchViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
-    var data: [Any] = []
     var delegate: SearchDelegate?
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -54,7 +57,28 @@ class SearchViewController: BaseViewController {
     
     //MARK: - Data
     func reloadData() {
+        guard let delegate = delegate else {
+            return
+        }
         
+        var fetchRequest: NSFetchRequest<NSFetchRequestResult>?
+        
+        if let typedText = searchTextField.text, typedText.count > 0 {
+            fetchRequest = delegate.searchControllerNeedsFetchRequestWithText(text: typedText)
+        } else {
+            fetchRequest = delegate.searchControllerNeedsFetchRequestForLastViewedData()
+        }
+        
+        if let request = fetchRequest {
+            fetchedResultsController = NSFetchedResultsController(fetchRequest: request,
+                                                                  managedObjectContext: LocalRepositoryContext.context,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: nil)
+            fetchedResultsController?.delegate = self
+            try? fetchedResultsController?.performFetch()
+        }
+        
+        tableView.reloadData()
     }
     
     //MAKR: - Actions
@@ -69,6 +93,10 @@ class SearchViewController: BaseViewController {
         
         reloadData()
     }
+    
+    @IBAction func textFieldValueChanged(_ sender: Any) {
+        reloadData()
+    }
 }
 
 extension SearchViewController: UITableViewDelegate {
@@ -81,11 +109,66 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard let object = fetchedResultsController?.object(at: indexPath) as? NSManagedObject, let delegate = delegate else {
+            return UITableViewCell()
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as? SearchTableViewCell
+        let name = delegate.searchControllerNeedsName(forObject: object) ?? ""
+        let typedText = searchTextField.text ?? ""
+        let type: SearchImageType = typedText.count > 0 ? .search : .clock
+        
+        if let cellUnwrapped = cell {
+            cellUnwrapped.load(withName: name, typedText: typedText, imageType: type)
+           
+            return cellUnwrapped
+        }
+        
         return UITableViewCell()
+    }
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    
+}
+
+extension SearchViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        
+        guard let index = indexPath else {
+            return
+        }
+        
+        let newIndex = newIndexPath ?? IndexPath(row: 0, section: 0)
+        
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [index], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [index], with: .fade)
+        case .move:
+            tableView.deleteRows(at: [index], with: .fade)
+            tableView.insertRows(at: [newIndex], with: .fade)
+        case .update:
+            tableView.reloadRows(at: [index], with: .fade)
+        }
     }
 }

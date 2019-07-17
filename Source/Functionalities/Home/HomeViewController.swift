@@ -6,6 +6,7 @@
 //  Copyright © 2019 Konrad Belzowski. All rights reserved.
 //
 import UIKit
+import CoreData
 
 enum HomeCellType: Int {
     case HEADER
@@ -21,7 +22,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var employee: Employee?
-    var flights: [Flight]?
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -85,7 +86,15 @@ class HomeViewController: BaseViewController {
     
     func loadData() {
         employee = LocalRepositoryContext.sharedInstance.getEmployee()
-        flights = LocalRepositoryContext.sharedInstance.getTodayFlights()
+        
+        guard let request = LocalRepositoryContext.sharedInstance.getTodayFlights() else {
+            return
+        }
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: LocalRepositoryContext.context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        fetchedResultsController?.delegate = self
+        try? fetchedResultsController?.performFetch()
     }
     
     func setData() {
@@ -94,9 +103,7 @@ class HomeViewController: BaseViewController {
             nameLabel.text = employee.fullName()
         }
         
-        if let _ = flights {
-            tableView.reloadData()
-        }
+        tableView.reloadData()
     }
 }
 
@@ -125,19 +132,19 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let flights = flights else {
+        guard let objects = fetchedResultsController?.fetchedObjects as? [Flight] else {
             return UITableViewCell()
         }
         
         switch indexPath.row {
         case HomeCellType.HEADER.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHeaderTableViewCell", for: indexPath) as? HomeHeaderTableViewCell {
-                cell.setCount(count: flights.count)
+                cell.setCount(count: objects.count)
                 return cell
             }
         case HomeCellType.FLIGHTS.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell {
-                cell.setData(withFlights: flights, andDelegate: self)
+                cell.setData(withFlights: objects, andDelegate: self)
                 return cell
             }
         default:
@@ -154,10 +161,46 @@ extension HomeViewController: HomeFlightsTableViewDelegate {
        
         let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
         
-        if let vc = vc, let flights = flights {
-            vc.flight = flights[index.row]
+        if let vc = vc, let object = fetchedResultsController?.object(at: index) as? Flight {
+            vc.flight = object
             
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+extension HomeViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        
+        guard let index = indexPath else {
+            return
+        }
+        
+        let newIndex = newIndexPath ?? IndexPath(row: 0, section: 0)
+        
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [index], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [index], with: .fade)
+        case .move:
+            tableView.deleteRows(at: [index], with: .fade)
+            tableView.insertRows(at: [newIndex], with: .fade)
+        case .update:
+            tableView.reloadRows(at: [index], with: .fade)
         }
     }
 }

@@ -8,12 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class FlightListViewController: BaseViewController {
     
     //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
-    var flights: [Flight] = []
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -57,10 +58,18 @@ class FlightListViewController: BaseViewController {
     
     func fetchData() {
         
-        if let flights = LocalRepositoryContext.sharedInstance.getAllFlights() {
-            self.flights = flights
-            tableView.reloadData()
+        guard let request = LocalRepositoryContext.sharedInstance.getAllFlights() else {
+            return
         }
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: request,
+                                                              managedObjectContext: LocalRepositoryContext.context,
+                                                              sectionNameKeyPath: nil,
+                                                              cacheName: nil)
+        fetchedResultsController?.delegate = self
+        try? fetchedResultsController?.performFetch()
+        
+        tableView.reloadData()
     }
     
     //MARK: Actions
@@ -90,8 +99,8 @@ extension FlightListViewController: UITableViewDelegate {
      
         let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
         
-        if let vc = vc {
-            vc.flight = flights[indexPath.row]
+        if let vc = vc, let flight = fetchedResultsController?.object(at: indexPath) as? Flight {
+            vc.flight = flight
             
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -101,19 +110,22 @@ extension FlightListViewController: UITableViewDelegate {
 extension FlightListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flights.count
+        return fetchedResultsController?.fetchedObjects?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let data = flights[indexPath.row]
-        let from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: data.departureAirport)
-        let to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: data.arrivalAirport)
+        guard let object = fetchedResultsController?.object(at: indexPath) as? Flight else {
+            return UITableViewCell()
+        }
+        
+        let from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: object.departureAirport)
+        let to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: object.arrivalAirport)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell
         
         if let cell = cell {
-            cell.loadWithData(flight: data, from: from, to: to)
+            cell.loadWithData(flight: object, from: from, to: to)
             return cell
         }
         
@@ -123,4 +135,55 @@ extension FlightListViewController: UITableViewDataSource {
 
 extension FlightListViewController: SearchDelegate {
     
+    func searchControllerNeedsFetchRequestForLastViewedData() -> NSFetchRequest<NSFetchRequestResult>? {
+        return LocalRepositoryContext.sharedInstance.requestForLastViewedFlights()
+    }
+    
+    func searchControllerNeedsFetchRequestWithText(text: String) -> NSFetchRequest<NSFetchRequestResult>? {
+        return LocalRepositoryContext.sharedInstance.requestForFlight(withText: text)
+    }
+    
+    func searchControllerNeedsName(forObject: NSManagedObject) -> String? {
+        if let object = forObject as? Flight {
+            return object.flightDesignator
+        } else {
+            return nil
+        }
+    }
+}
+
+extension FlightListViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        
+        guard let index = indexPath else {
+            return
+        }
+        
+        let newIndex = newIndexPath ?? IndexPath(row: 0, section: 0)
+        
+        switch type {
+        case .insert:
+            tableView.insertRows(at: [index], with: .fade)
+        case .delete:
+            tableView.deleteRows(at: [index], with: .fade)
+        case .move:
+            tableView.deleteRows(at: [index], with: .fade)
+            tableView.insertRows(at: [newIndex], with: .fade)
+        case .update:
+            tableView.reloadRows(at: [index], with: .fade)
+        }
+    }
 }

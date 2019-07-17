@@ -28,7 +28,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIl-lS-3qz">
                         <rect key="frame" x="50" y="61" width="305" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -42,6 +42,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="iconImageView" destination="XOt-Dx-whq" id="ICu-dt-311"/>
                 <outlet property="nameLabel" destination="QIl-lS-3qz" id="QTS-Vp-LP4"/>
             </connections>
             <point key="canvasLocation" x="-47.200000000000003" y="66.566716641679164"/>

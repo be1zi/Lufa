@@ -44,4 +44,8 @@ extension UIColor {
     static var lufaGreenColor: UIColor {
         return UIColor.colorWithHex(color: "#CEDC00", alpha: nil)
     }
+    
+    static var lufaGreyColor: UIColor {
+        return UIColor.colorWithHex(color: "#8A8A8A", alpha: nil)
+    }
 }

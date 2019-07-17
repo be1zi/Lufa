@@ -29,6 +29,7 @@ extension Flight {
     @NSManaged public var arrivalGate: String?
     @NSManaged public var arrivalPosition: String?
     @NSManaged public var flightTime: String?
+    @NSManaged public var lastViewed: Bool
 
 }
 

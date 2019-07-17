@@ -23,6 +23,11 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldValueChanged:" destination="vc5-MQ-g3J" eventType="valueChanged" id="hGQ-Od-E8B"/>
+                                    <action selector="textFieldValueChanged:" destination="vc5-MQ-g3J" eventType="editingChanged" id="w7j-0d-4Jj"/>
+                                    <outlet property="delegate" destination="vc5-MQ-g3J" id="pLP-t0-v3M"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-TY-gkR">
                                 <rect key="frame" x="20" y="124" width="335" height="2"/>

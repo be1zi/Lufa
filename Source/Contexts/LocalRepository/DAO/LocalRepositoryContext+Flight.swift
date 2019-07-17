@@ -11,15 +11,43 @@ import CoreData
 
 extension LocalRepositoryContext {
     
-    func getAllFlights() -> [Flight]? {
-        return getFlights(limit: nil, date: nil)
+    func requestForLastViewedFlights() -> NSFetchRequest<NSFetchRequestResult>? {
+        
+        let request = getAllFlights()
+        
+        guard let format = request?.predicate?.predicateFormat else {
+            return request
+        }
+
+        let predicate = NSPredicate(format: "\(format) and lastViewed = %d", true)
+        request?.predicate = predicate
+        
+        return request
     }
     
-    func getTodayFlights() -> [Flight]? {
-        return getFlights(limit: nil, date: Date.init())
+    func requestForFlight(withText text: String?) -> NSFetchRequest<NSFetchRequestResult>? {
+        
+        let request = getAllFlights()
+        
+        guard let format = request?.predicate?.predicateFormat, let text = text else {
+            return request
+        }
+        
+        let predicate = NSPredicate(format: "\(format) and flightDesignator CONTAINS[CD] %@", text)
+        request?.predicate = predicate
+        
+        return request
     }
     
-    private func getFlights(limit: Int?, date: Date?) -> [Flight]? {
+    func getAllFlights() -> NSFetchRequest<NSFetchRequestResult>? {
+        return getFlights(date: nil)
+    }
+    
+    func getTodayFlights() -> NSFetchRequest<NSFetchRequestResult>? {
+        return getFlights(date: Date.init())
+    }
+    
+    private func getFlights(date: Date?) -> NSFetchRequest<NSFetchRequestResult>? {
         
         let emp = getEmployee()
         var localDate = Date.init()
@@ -57,6 +85,6 @@ extension LocalRepositoryContext {
         
         request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
         
-        return self.executeFetch(fetchRequest: request).unmanagedCopy() as? [Flight]
+        return request
     }
 }
