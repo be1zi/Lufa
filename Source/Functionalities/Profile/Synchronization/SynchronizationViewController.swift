@@ -17,7 +17,7 @@ enum SynchronizationSectionType: Int {
 
 class SynchronizationViewController: BaseViewController {
     
-    //MARK: - Properties
+    // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var synchronizeButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -29,7 +29,7 @@ class SynchronizationViewController: BaseViewController {
     var allGeneralChecked: Bool = false
     var allSpecificChecked: Bool = false
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -46,7 +46,7 @@ class SynchronizationViewController: BaseViewController {
         tableView.tableFooterView = UIView()
     }
     
-    //MARK: - Data
+    // MARK: - Data
     func loadData() {
         generalCellsTypes = SynchronizationFactory.getGeneralCellsTypesArray()
         specificCellsTypes = SynchronizationFactory.getSpecificCellsTypesArray()
@@ -62,7 +62,7 @@ class SynchronizationViewController: BaseViewController {
         return arr
     }
     
-    //MARK: - Appearance
+    // MARK: - Appearance
     override func navigationBarTitle() -> String? {
         return "synchronization.title".localized()
     }
@@ -72,7 +72,7 @@ class SynchronizationViewController: BaseViewController {
         synchronizeButton.setTitle("synchronization.synchronize.button.title".localized(), for: .normal)
     }
     
-    //MARK: - Actions
+    // MARK: - Actions
     @IBAction func synchronizeAction(_ sender: Any) {
     
         let data = prepareToSynchronize()

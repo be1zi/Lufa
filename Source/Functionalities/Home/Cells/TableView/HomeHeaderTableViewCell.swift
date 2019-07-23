@@ -11,7 +11,7 @@ import UIKit
 
 class HomeHeaderTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var messageLabel: UILabel!
     
     func setCount(count: Int) {
@@ -21,7 +21,7 @@ class HomeHeaderTableViewCell: UITableViewCell {
         switch count {
         case 1:
             format = "home.flights.number3.title".localized()
-        case 2,3,4:
+        case 2, 3, 4:
             format = "home.flights.number2.title".localized()
         default:
             format = "home.flights.number1.title".localized()

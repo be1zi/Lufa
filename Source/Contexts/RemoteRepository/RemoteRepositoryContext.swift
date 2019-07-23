@@ -25,10 +25,10 @@ class RemoteRepositoryContext {
     let serverAddress: String?
     let openServerAddress: String?
     
-    //MARK: Singleton
+    // MARK: Singleton
     static let sharedInstance = RemoteRepositoryContext()
     
-    //MARK: Constructor
+    // MARK: Constructor
     init() {
         
         guard let address = ConfigurationManager.sharedInstance.serverAddress else {
@@ -47,7 +47,7 @@ class RemoteRepositoryContext {
         self.openServerAddress = openAddress
     }
     
-    //MARK: Http methods
+    // MARK: Http methods
     
     func get(endPoint end: String?, parameters: [String: Any]?, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         get(endPoint: end, parameters: parameters, apiType: .FlightOpsWithToken, contentType: contentType, withSuccess: success, andFailure: failure)
@@ -57,7 +57,7 @@ class RemoteRepositoryContext {
         get(endPoint: end, parameters: parameters, apiType: .OpenWithToken, contentType: contentType, withSuccess: success, andFailure: failure)
     }
     
-    private func get(endPoint end: String?, parameters: [String: Any]?, apiType: ApiType, contentType: ContentType?,withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
+    private func get(endPoint end: String?, parameters: [String: Any]?, apiType: ApiType, contentType: ContentType?, withSuccess success: RemoteRepositorySuccess?, andFailure failure: RemoteRepositoryFailure?) {
         
         guard let address = prepareAddress(endPoint: end, apiType: apiType) else {
             return
@@ -169,23 +169,19 @@ class RemoteRepositoryContext {
         }
     }
     
-    //MARK: Helper
+    // MARK: Helper
     func prepareAddress(endPoint: String?, apiType: ApiType) -> String? {
         
         var serverAdd: String
         
         switch apiType {
-        case .OpenWithToken:
-            fallthrough
-        case . OpenWithoutToken:
+        case .OpenWithoutToken, .OpenWithToken:
             if let address = openServerAddress {
                 serverAdd = address
             } else {
                 return nil
             }
-        case .FlightOpsWithToken:
-            fallthrough
-        case .FlightOpsWithoutToken:
+        case .FlightOpsWithoutToken, .FlightOpsWithToken:
             if let address = serverAddress {
                 serverAdd = address
             } else {
@@ -225,25 +221,25 @@ class RemoteRepositoryContext {
             
             switch content {
             case .JSON:
-                headers = ["Accept" : "application/json",
-                           "Authorization" : "Bearer \(token)"]
+                headers = ["Accept": "application/json",
+                           "Authorization": "Bearer \(token)"]
             case .XFORM:
-                headers = ["Content-Type" : "application/x-www-form-urlencoded",
-                           "Authorization" : "Bearer \(token)"]
+                headers = ["Content-Type": "application/x-www-form-urlencoded",
+                           "Authorization": "Bearer \(token)"]
             }
         case .OpenWithoutToken:
             switch content {
             case .JSON:
-                headers = ["Content-Type" : "application/JSON"]
+                headers = ["Content-Type": "application/JSON"]
             case .XFORM:
-                headers = ["Content-Type" : "application/x-www-form-urlencoded"]
+                headers = ["Content-Type": "application/x-www-form-urlencoded"]
             }
         case .FlightOpsWithToken:
             switch content {
             case .JSON:
-                headers = ["Content-Type" : "application/JSON"]
+                headers = ["Content-Type": "application/JSON"]
             case .XFORM:
-                headers = ["Content-Type" : "application/x-www-form-urlencoded"]
+                headers = ["Content-Type": "application/x-www-form-urlencoded"]
             }
         case .FlightOpsWithoutToken:
             switch content {
@@ -265,8 +261,8 @@ class RemoteRepositoryContext {
                     return nil
                 }
                 
-                headers = ["Authorization" : cred,
-                           "Content-Type" : "application/x-www-form-urlencoded"]
+                headers = ["Authorization": cred,
+                           "Content-Type": "application/x-www-form-urlencoded"]
             }
         }
 
@@ -278,10 +274,10 @@ class RemoteRepositoryContext {
         var encoder: ParameterEncoding
         
         switch content {
-            case .JSON:
-                encoder = JSONEncoding.default
-            case .XFORM:
-                encoder = URLEncoding()
+        case .JSON:
+            encoder = JSONEncoding.default
+        case .XFORM:
+            encoder = URLEncoding()
         }
         
         return encoder
@@ -291,9 +287,9 @@ class RemoteRepositoryContext {
         
         if var data = data {
             
-            for object in data {
-                if object.value is Date {
-                    data[object.key] = DateFormatter.dateToString(date: object.value as! Date)
+            for object in data where object.value is Date {
+                if let date = object.value as? Date {
+                    data[object.key] = DateFormatter.dateToString(date: date)
                 }
             }
             
@@ -303,7 +299,7 @@ class RemoteRepositoryContext {
         return nil
     }
     
-    //MARK: Network
+    // MARK: Network
     func isReachable() -> Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
     }

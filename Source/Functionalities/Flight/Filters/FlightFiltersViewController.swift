@@ -10,7 +10,7 @@ import Foundation
 
 class FlightFiltersViewController: BaseViewController {
     
-    //MARK: Appearance
+    // MARK: Appearance
     override func navigationBarTitle() -> String? {
         return "flight.filters.title".localized()
     }

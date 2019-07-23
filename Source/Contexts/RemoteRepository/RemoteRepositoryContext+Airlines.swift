@@ -36,7 +36,10 @@ extension RemoteRepositoryContext {
                 } else {
                     sleep(1)
                     
-                    self.getAllAirlines(withOffset: localOffset, result: localResult, withSuccess: success, andFailure: failure)
+                    self.getAllAirlines(withOffset: localOffset,
+                                        result: localResult,
+                                        withSuccess: success,
+                                        andFailure: failure)
                 }
             }
         }) { error in
@@ -51,7 +54,7 @@ extension RemoteRepositoryContext {
     }
 }
 
-//MARK: - Helper
+// MARK: - Helper
 extension RemoteRepositoryContext {
     
     fileprivate func prepareData(response: [String: Any]?) -> [[String: Any]] {
@@ -71,7 +74,7 @@ extension RemoteRepositoryContext {
                     let name = names["Name"] as? [String: Any],
                     let airlineName = name["$"] as? String {
                     
-                    result.append(["code" : code, "codeICAO" : codeICAO, "name" : airlineName])
+                    result.append(["code": code, "codeICAO": codeICAO, "name": airlineName])
                 }
             }
         }

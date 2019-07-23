@@ -10,7 +10,7 @@ import Foundation
 
 class CountrySynchroManager: SynchroManager {
     
-    //MARK: Singleton
+    // MARK: Singleton
     static let sharedInstance = CountrySynchroManager()
     
     override func synchronizeWithCompletion(completion: SynchroCompletion?, forced: Bool) {

@@ -21,7 +21,7 @@ class LocalRepositoryContext {
     var persistentContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "Lufa")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
@@ -194,7 +194,7 @@ class LocalRepositoryContext {
 
         if let tmp = data as? [String: Any] {
             for object in tmp {
-                newData.append([object.key : object.value])
+                newData.append([object.key: object.value])
             }
         } else {
             if let data = data as? [[String: Any]] {
@@ -223,7 +223,7 @@ class LocalRepositoryContext {
         
         // klucze obiektów w bazie
         for singleObject in set {
-            if let key = singleObject.value(forKey: primaryKey) as? String{
+            if let key = singleObject.value(forKey: primaryKey) as? String {
                 oldDataKeys.append(key)
             }
         }
@@ -289,7 +289,13 @@ class LocalRepositoryContext {
                 empty += 1
             }
             
-            print("Data saved One To One for entity: \(entityName): added \(added), updated \(updated), deleted \(deleted), empty \(empty)")
+            print("""
+                Data saved One To One for entity: \(entityName):
+                added \(added),
+                updated \(updated),
+                deleted \(deleted),
+                empty \(empty)
+                """)
 
             return nil
         }
@@ -311,7 +317,7 @@ class LocalRepositoryContext {
         return result
     }
     
-    //MARK: - Fetch
+    // MARK: - Fetch
     func executeFetch(fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> [NSManagedObject] {
         
         var result: [NSManagedObject]? = []
@@ -340,13 +346,12 @@ class LocalRepositoryContext {
         }
     }
     
-    //MARK: - Delete Data
+    // MARK: - Delete Data
     func clearDataBase() {
         
         let context = LocalRepositoryContext.context
         
-        let entityNames = LocalRepositoryContext.sharedInstance.persistentContainer.managedObjectModel.entities.map(
-        { (entity) -> String in
+        let entityNames = LocalRepositoryContext.sharedInstance.persistentContainer.managedObjectModel.entities.map({(entity) -> String in
             return entity.name ?? ""
         })
         
@@ -366,12 +371,12 @@ class LocalRepositoryContext {
     
     func clearEmptyRelationship() {
         
-        let records: [String: Any] = ["CrewMember" : "crew",
-                                         "CrewFlight" : ["exFlight", "toFlight"],
-                                         "DutyDay" : "duty",
-                                         "DutyEvent" : "dutyDay",
-                                         "DutyEventAttributes" : "dutyEvent",
-                                         "DutyEventLink" : "dutyEvent"];
+        let records: [String: Any] = ["CrewMember": "crew",
+                                         "CrewFlight": ["exFlight", "toFlight"],
+                                         "DutyDay": "duty",
+                                         "DutyEvent": "dutyDay",
+                                         "DutyEventAttributes": "dutyEvent",
+                                         "DutyEventLink": "dutyEvent"]
         
         for record in records {
             self.deleteRowsWithoutRelations(entityName: record.key, invertRelationsName: record.value)

@@ -12,19 +12,19 @@ import GoogleMaps
 
 class FlightDetailsMapViewController: BaseViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var mapView: UIView!
 
     var flight: Flight?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setData()
     }
     
-    //MARK: Appearance
+    // MARK: Appearance
     override func shouldHideNavigationBar() -> Bool {
         return false
     }
@@ -33,7 +33,7 @@ class FlightDetailsMapViewController: BaseViewController {
         return "flight.details.map.title".localized()
     }
     
-    //MARK: Data
+    // MARK: Data
     func setData() {
         
         guard let flight = flight else {

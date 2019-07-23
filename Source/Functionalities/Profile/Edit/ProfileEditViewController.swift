@@ -11,7 +11,7 @@ import UIKit
 
 class ProfileEditViewController: BaseViewController {
     
-    //MARK:- Properties
+    // MARK: Properties
     //Title
     @IBOutlet weak var firstNameTitleLabel: UILabel!
     @IBOutlet weak var firstNameErrorLabel: UILabel!
@@ -49,7 +49,7 @@ class ProfileEditViewController: BaseViewController {
     var emailNotTheSameErrorMessage: String?
     var wrongEmailPatternErrorMessage: String?
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +59,7 @@ class ProfileEditViewController: BaseViewController {
         setDelegates()
     }
     
-    //MARK: - Appearance
+    // MARK: - Appearance
     override func navigationBarTitle() -> String? {
         return "profile.edit.title".localized()
     }
@@ -112,7 +112,7 @@ class ProfileEditViewController: BaseViewController {
         phoneNumberTextfield.delegate = self
     }
     
-    //MARK: - Data
+    // MARK: - Data
     func loadData() {
         employee = LocalRepositoryContext.sharedInstance.getEmployee()
     }
@@ -225,15 +225,15 @@ class ProfileEditViewController: BaseViewController {
     func preparePermissions() -> [[String: Any]] {
         var permissions: [[String: Any]] = []
         
-        permissions.append(["name" : PermissionType.AutoSynchronization.rawValue,
-                            "value" : autoSynchronizationCheckbox.checked])
-        permissions.append(["name" : PermissionType.Notifications.rawValue,
-                            "value" : notificationsCheckbox.checked])
+        permissions.append(["name": PermissionType.AutoSynchronization.rawValue,
+                            "value": autoSynchronizationCheckbox.checked])
+        permissions.append(["name": PermissionType.Notifications.rawValue,
+                            "value": notificationsCheckbox.checked])
         
         return permissions
     }
     
-    //MARK:- Actions
+    // MARK: Actions
     @IBAction func saveAction(_ sender: Any) {
         self.view.endEditing(true)
         

@@ -10,7 +10,7 @@ import Foundation
 
 class FlightSynchroManager: SynchroManager {
     
-    //MARK: Singleton
+    // MARK: Singleton
     static let sharedInstance = FlightSynchroManager()
     
     override func synchronizeWithCompletion(completion: SynchroCompletion?, forced: Bool) {

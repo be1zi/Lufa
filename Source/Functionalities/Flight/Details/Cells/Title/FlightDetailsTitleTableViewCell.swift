@@ -16,7 +16,7 @@ protocol FlightDetailsTitleCellDelegate {
 
 class FlightDetailsTitleTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var showOnMapView: UIView!
     
@@ -49,7 +49,7 @@ class FlightDetailsTitleTableViewCell: UITableViewCell {
         }
     }
     
-    //MARK: - Action
+    // MARK: - Action
     @objc func showOnMap() {
 
         if let delegate = delegate {

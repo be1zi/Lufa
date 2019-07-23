@@ -60,7 +60,7 @@ class CompoundSynchroManager: SynchroManager {
         group.notify(queue: DispatchQueue.main) {
             self.synchroInProgress = false
             
-            var result:SynchroResult = .SynchroResultOK
+            var result: SynchroResult = .SynchroResultOK
             if allSkipped {
                 result = .SynchroResultSkipped
             } else if localError != nil {

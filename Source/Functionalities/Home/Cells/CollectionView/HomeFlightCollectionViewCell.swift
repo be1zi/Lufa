@@ -11,7 +11,7 @@ import UIKit
 
 class HomeFlightCollectionViewCell: UICollectionViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var flightTypeLabel: UILabel!
     @IBOutlet weak var flightTypeView: UIView!
     @IBOutlet weak var flightNumberLabel: UILabel!

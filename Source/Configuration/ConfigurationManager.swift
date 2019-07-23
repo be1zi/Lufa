@@ -10,62 +10,48 @@ import Foundation
 
 class ConfigurationManager {
     
-    //MARK: Singleton
+    // MARK: Singleton
     static let sharedInstance = ConfigurationManager()
     
     var googleMapsProvided: Bool = false
     
-    //MARK: Getters for config variables
+    // MARK: Getters for config variables
     var serverAddress: String? {
-        get {
-            return getPropertyFromConfigFile(name: "serverAddress", withRoot: "LufaAPI")
-        }
+        return getPropertyFromConfigFile(name: "serverAddress", withRoot: "LufaAPI")
     }
     
     var serverKey: String? {
-        get {
-            return getPropertyFromConfigFile(name: "key", withRoot: "LufaAPI")
-        }
+        return getPropertyFromConfigFile(name: "key", withRoot: "LufaAPI")
     }
     
     var serverSecret: String? {
-        get {
-            return getPropertyFromConfigFile(name: "secret", withRoot: "LufaAPI")
-        }
+        return getPropertyFromConfigFile(name: "secret", withRoot: "LufaAPI")
     }
     
     var openServerAddress: String? {
-        get {
-            return getPropertyFromConfigFile(name: "serverAddress", withRoot: "LufaOpenAPI")
-        }
+        return getPropertyFromConfigFile(name: "serverAddress", withRoot: "LufaOpenAPI")
     }
     
     var openServerKey: String? {
-        get {
-            return getPropertyFromConfigFile(name: "key", withRoot: "LufaOpenAPI")
-        }
+        return getPropertyFromConfigFile(name: "key", withRoot: "LufaOpenAPI")
     }
     
     var openServerSecret: String? {
-        get {
-            return getPropertyFromConfigFile(name: "secret", withRoot: "LufaOpenAPI")
-        }
+        return getPropertyFromConfigFile(name: "secret", withRoot: "LufaOpenAPI")
     }
     
     var googleApiKey: String? {
-        get {
-            return getPropertyFromConfigFile(name: "key", withRoot: "GoogleAPI")
-        }
+        return getPropertyFromConfigFile(name: "key", withRoot: "GoogleAPI")
     }
     
-    //MARK: Helpers
+    // MARK: Helpers
     
-    private func loadConfiguration() -> Dictionary<String, Any>? {
+    private func loadConfiguration() -> [String: Any]? {
         
         let fileURL = Bundle.main.url(forResource: "config", withExtension: "plist")
         
         let fileData: Data
-        let dict: Dictionary<String, Any>
+        let dict: [String: Any]?
         
         guard let url = fileURL else {
             return nil
@@ -79,7 +65,7 @@ class ConfigurationManager {
         }
         
         do {
-            dict = try PropertyListSerialization.propertyList(from: fileData, format: nil) as! [String: Any]
+            dict = try PropertyListSerialization.propertyList(from: fileData, format: nil) as? [String: Any]
         } catch _ {
             return nil
         }
@@ -94,7 +80,9 @@ class ConfigurationManager {
             return nil
         }
         
-        let api: Dictionary<String, Any> = dictWrapped[root] as! Dictionary<String, Any>
+        guard let api = dictWrapped[root] as? [String: Any] else {
+            return nil
+        }
         
         guard let result = api[name] as? String else {
             return nil

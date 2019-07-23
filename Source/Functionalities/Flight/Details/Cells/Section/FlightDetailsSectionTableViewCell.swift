@@ -11,7 +11,7 @@ import UIKit
 
 class FlightDetailsSectionTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     
     func loadWithName(name: String) {

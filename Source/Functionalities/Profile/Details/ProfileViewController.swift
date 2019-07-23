@@ -11,7 +11,7 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     //Names
     @IBOutlet weak var personalDataLabel: UILabel!
     @IBOutlet weak var firstNameTitleLabel: UILabel!
@@ -42,7 +42,7 @@ class ProfileViewController: BaseViewController {
     
     var employee: Employee?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,7 +58,7 @@ class ProfileViewController: BaseViewController {
         setData()
     }
     
-    //MARK: Appearance
+    // MARK: Appearance
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.default
     }
@@ -126,7 +126,7 @@ class ProfileViewController: BaseViewController {
         notificationsCheckbox.checked = employee.notificationsEnabled()
     }
     
-    //MARK: Action
+    // MARK: Action
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         progressPresenter?.presentProgress(withText: nil, completion: {

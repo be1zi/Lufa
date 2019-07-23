@@ -29,13 +29,13 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
     
-    //MARK: - Lifecycle
+    // MARK: Lifecycle
     func load(withName name: String, typedText text: String, imageType: SearchImageType) {
         nameLabel.attributedText = attributedString(withName: name, typedText: text)
         iconImageView.image = imageType.image()
     }
     
-    //MARK: - Helper
+    // MARK: Helper
     func attributedString(withName name: String, typedText text: String) -> NSAttributedString {
         
         let range = (name.uppercased() as NSString).range(of: text.uppercased())

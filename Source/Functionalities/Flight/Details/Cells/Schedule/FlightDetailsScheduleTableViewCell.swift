@@ -11,7 +11,7 @@ import UIKit
 
 class FlightDetailsScheduleTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var flightDateTitleLabel: UILabel!
     @IBOutlet weak var flightTimeTitleLabel: UILabel!
     @IBOutlet weak var departureTitleLabel: UILabel!

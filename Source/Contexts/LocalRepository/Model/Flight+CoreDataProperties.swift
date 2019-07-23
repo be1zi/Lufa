@@ -40,7 +40,7 @@ extension Flight {
         return "flightDesignator"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.flightDesignator = data["flightDesignator"] as? String
         self.operatingAirline = data["operatingAirline"] as? String

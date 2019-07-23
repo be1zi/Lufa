@@ -16,7 +16,7 @@ enum HomeCellType: Int {
 
 class HomeViewController: BaseViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -24,7 +24,7 @@ class HomeViewController: BaseViewController {
     var employee: Employee?
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +40,7 @@ class HomeViewController: BaseViewController {
         setData()
     }
     
-    //MARK: Appearance
+    // MARK: Appearance
     override func shouldHideNavigationBar() -> Bool {
         return true
     }
@@ -54,7 +54,7 @@ class HomeViewController: BaseViewController {
         self.tableView.register(UINib(nibName: "HomeFlightsTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeFlightsTableViewCell")
     }
     
-    //MARK: Data
+    // MARK: Data
     override func synchronizeData() {
         self.progressPresenter?.presentProgress(withText: nil, completion: {
             FlightSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
@@ -69,16 +69,15 @@ class HomeViewController: BaseViewController {
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getCheckIn(params: nil, withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
-            }, andFailure: { error in
+            }, andFailure: { _ in
                 self.progressPresenter?.hideProgress()
             })
         })
 
-
         progressPresenter?.presentProgress(withText: nil, completion: {
             RemoteRepositoryContext.sharedInstance.getEventsWithPeriodOfTime(from: Date.init(), to: nil, withSuccess: { _ in
                 self.progressPresenter?.hideProgress()
-            }, andFailure: { Error in
+            }, andFailure: { _ in
                 self.progressPresenter?.hideProgress()
             })
         })

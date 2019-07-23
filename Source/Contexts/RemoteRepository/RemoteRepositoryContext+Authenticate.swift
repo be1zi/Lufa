@@ -32,19 +32,19 @@ extension RemoteRepositoryContext {
         }
         
         let params = ["grant_type": "authorization_code",
-                      "client_id" : clientID,
-                      "redirect_uri" : "Lufa://authorizeCallback/",
-                      "code" : code,
-                      "code_verifier" : "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"]
+                      "client_id": clientID,
+                      "redirect_uri": "Lufa://authorizeCallback/",
+                      "code": code,
+                      "code_verifier": "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"]
         
-        postAuthenticate(endPoint: "lhcrew/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { response in
+        postAuthenticate(endPoint: "lhcrew/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { _ in
             
             DispatchQueue.main.async {
                 if let success = success {
                     success(nil)
                 }
             }
-        }) { error in
+        }) { _ in
             DispatchQueue.main.async {
 //                if let failure = failure {
 //                    failure(error)
@@ -68,9 +68,9 @@ extension RemoteRepositoryContext {
             return
         }
         
-        let params = ["client_id" : clientId,
-                      "client_secret" : clientSecret,
-                      "grant_type" : "client_credentials"] as [String: String]
+        let params = ["client_id": clientId,
+                      "client_secret": clientSecret,
+                      "grant_type": "client_credentials"] as [String: String]
         
         postOpenAuthorize(endPoint: "/v1/oauth/token", parameters: params, contentType: .XFORM, withSuccess: { result in
             
@@ -157,9 +157,9 @@ extension RemoteRepositoryContext {
             return
         }
         
-        let params = ["client_id" : clientId,
-                      "client_secret" : clientSecret,
-                      "access_token" : accessToken]
+        let params = ["client_id": clientId,
+                      "client_secret": clientSecret,
+                      "access_token": accessToken]
         
         post(endPoint: "/lhcrew/logout_backend", parameters: params, contentType: .XFORM, withSuccess: { result in
             
@@ -182,7 +182,7 @@ extension RemoteRepositoryContext {
                 }
             }
             
-        }) { error in
+        }) { _ in
 //            if let failure = failure {
 //                failure(error)
 //            }
@@ -197,14 +197,14 @@ extension RemoteRepositoryContext {
     
     fileprivate func prepareDataForUser() -> [String: Any] {
         
-        let data: [String: Any] = ["pkNumber" : "064012K",
-                                   "firstName" : "Jon",
-                                   "lastName" : "Snow",
-                                   "crewPosition" : "PU",
-                                   "dutyCode" : "OD",
-                                   "email" : "john.snow@winterfell.com",
-                                   "phone" : "666999012",
-                                   "birthDate" : "1995-11-05Z"]
+        let data: [String: Any] = ["pkNumber": "064012K",
+                                   "firstName": "Jon",
+                                   "lastName": "Snow",
+                                   "crewPosition": "PU",
+                                   "dutyCode": "OD",
+                                   "email": "john.snow@winterfell.com",
+                                   "phone": "666999012",
+                                   "birthDate": "1995-11-05Z"]
         
         return data
     }

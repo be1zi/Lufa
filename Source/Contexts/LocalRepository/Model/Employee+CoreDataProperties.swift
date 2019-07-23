@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Employee {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Employee> {
@@ -34,7 +33,7 @@ extension Employee {
         return "pkNumber"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.pkNumber = data["pkNumber"] as? String
         self.firstName = data["firstName"] as? String

@@ -10,7 +10,7 @@ import Foundation
 
 class CrewSynchroManager: SynchroManager {
     
-    //MARK: - Singleton
+    // MARK: - Singleton
     static let sharedInstance = CrewSynchroManager()
     
     override func synchronizeWithCompletion(completion: SynchroCompletion?, forced: Bool) {

@@ -18,7 +18,7 @@ extension UIColor {
             colorString.remove(at: colorString.startIndex)
         }
         
-        var rgbValue:UInt32 = 0
+        var rgbValue: UInt32 = 0
         Scanner(string: colorString).scanHexInt32(&rgbValue)
         
         var a: CGFloat = 1.0
@@ -33,11 +33,11 @@ extension UIColor {
                        alpha: a)
     }
     
-    static var lufaCyanColor : UIColor {
+    static var lufaCyanColor: UIColor {
         return UIColor.colorWithHex(color: "#00cfd1", alpha: nil)
     }
     
-    static var lufaWhiteColor : UIColor {
+    static var lufaWhiteColor: UIColor {
         return UIColor.colorWithHex(color: "#ffffff", alpha: 0.25)
     }
     

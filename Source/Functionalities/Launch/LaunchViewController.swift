@@ -14,4 +14,3 @@ class LaunchViewController: BaseViewController {
         super.viewDidLoad()
     }
 }
-

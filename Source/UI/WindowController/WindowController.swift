@@ -13,7 +13,7 @@ class WindowController {
     
     var window: UIWindow
     
-    //MARK: Constructor
+    // MARK: Constructor
     init(window: UIWindow) {
         self.window = window
     }

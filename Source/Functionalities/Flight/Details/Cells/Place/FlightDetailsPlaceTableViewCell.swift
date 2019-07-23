@@ -11,7 +11,7 @@ import UIKit
 
 class FlightDetailsPlaceTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var departureGateTitleLabel: UILabel!
     @IBOutlet weak var departurePositionTitleLabel: UILabel!
     @IBOutlet weak var arrivalGateTitleLabel: UILabel!

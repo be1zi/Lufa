@@ -51,25 +51,25 @@ extension RemoteRepositoryContext {
     }
 }
 
-//MARK: Helpers
+// MARK: Helpers
 extension RemoteRepositoryContext {
     
-    fileprivate func prepareData(response: [String : Any]?) -> [[String: Any]] {
+    fileprivate func prepareData(response: [String: Any]?) -> [[String: Any]] {
         
         var result: [[String: Any]] = []
         
         if let response = response,
             let data = response["CountryResource"] as? [String: Any],
             let countries = data["Countries"] as? [String: Any],
-            let country = countries["Country"] as? [[String : Any]] {
+            let country = countries["Country"] as? [[String: Any]] {
         
             for element in country {
                 if let code = element["CountryCode"] as? String,
-                    let names = element["Names"] as? [String : Any],
+                    let names = element["Names"] as? [String: Any],
                     let name = names["Name"] as? [String: Any],
                     let languageName = name["$"] as? String {
                     
-                    result.append(["code" : code, "name" : languageName])
+                    result.append(["code": code, "name": languageName])
                 }
             }
         }

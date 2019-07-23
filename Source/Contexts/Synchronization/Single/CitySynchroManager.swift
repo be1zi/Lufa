@@ -10,7 +10,7 @@ import Foundation
 
 class CitySynchroManager: SynchroManager {
     
-    //MARK: Singleton
+    // MARK: Singleton
     static let sharedInstance = CitySynchroManager()
     
     override func synchronizeWithCompletion(completion: SynchroCompletion?, forced: Bool) {

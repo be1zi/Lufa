@@ -11,7 +11,7 @@ import UIKit
 
 class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
   
-    //MARK: - Properties
+    // MARK: - Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var allLabel: UILabel!
     @IBOutlet weak var allCheckbox: Checkbox!
@@ -19,7 +19,7 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
     var delegate: SynchronizationDelegate?
     var sectionType: SynchronizationSectionType = .All
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -38,7 +38,7 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
         sectionType = type
     }
     
-    //MARK: - Appearance
+    // MARK: - Appearance
     func setAppearance() {
         let background = UIView()
         background.backgroundColor = UIColor.lightGray
@@ -50,7 +50,7 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
         allLabel.text = "synchronization.header.all.title".localized()
     }
     
-    //MARK: - Notification
+    // MARK: - Notification
     func registerForNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(allCheckboxAction(_:)), name: .checkboxChangeState, object: nil)
     }
@@ -59,7 +59,7 @@ class SynchronizationTableViewHeader: UITableViewHeaderFooterView {
         NotificationCenter.default.removeObserver(self, name: .checkboxChangeState, object: nil)
     }
     
-    //MARK: - Action
+    // MARK: - Action
     @objc func allCheckboxAction(_ notification: Notification) {
         delegate?.allCheckboxChangeState(newState: allCheckbox.checked, type: sectionType)
     }

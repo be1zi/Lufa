@@ -70,7 +70,7 @@ extension DutyEvent {
         return "eventDetails"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.eventType = data["eventType"] as? String
         self.eventCategory = data["eventCategory"] as? String

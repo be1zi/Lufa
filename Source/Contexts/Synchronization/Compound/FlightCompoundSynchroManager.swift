@@ -10,7 +10,7 @@ import Foundation
 
 class FlightCompoundSynchroManager: CompoundSynchroManager {
     
-    //MARK: - Singleton
+    // MARK: - Singleton
     static let sharedInstance = FlightCompoundSynchroManager(withManagers: [])
     
     override init(withManagers: [SynchroManager]) {

@@ -14,7 +14,7 @@ extension LocalRepositoryContext {
     func getCrewForFlight(flightDesignator: String) -> Crew? {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Crew")
-        request.predicate = NSPredicate(format: "flightDesignator = %@" , flightDesignator)
+        request.predicate = NSPredicate(format: "flightDesignator = %@", flightDesignator)
         request.fetchLimit = 1
         
         return self.executeFetch(fetchRequest: request).first?.unmanagedCopy() as? Crew
@@ -22,7 +22,7 @@ extension LocalRepositoryContext {
     
     func getFlightDesignatorForCrewMember(employeeID: String) -> [String]? {
         
-        let result: [String]?
+        var result: [String]?
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Crew")
         request.predicate = NSPredicate(format: "SUBQUERY(crewMembers, $x, $x.pkNumber = %@).@count > 0", employeeID)

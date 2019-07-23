@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D005B8F22E717D2006362C4 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3D005B8E22E717D2006362C4 /* .swiftlint.yml */; };
 		3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */; };
 		3D03A47A22CDCEE9001BAE56 /* FlightFilters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */; };
 		3D03A47E22CDD30E001BAE56 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */; };
@@ -156,6 +157,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D005B8E22E717D2006362C4 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .swiftlint.yml; path = Resources/.swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFiltersViewController.swift; sourceTree = "<group>"; };
 		3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightFilters.storyboard; sourceTree = "<group>"; };
 		3D03A47D22CDD30E001BAE56 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				3DABA3F2223B90E100469FD1 /* Assets.xcassets */,
 				3DA6E98E22560AF600015999 /* Localizable.strings */,
 				3DA3E7BA22D4770A0089425E /* Constants.swift */,
+				3D005B8E22E717D2006362C4 /* .swiftlint.yml */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1018,6 +1021,7 @@
 				3DABA3E3223B90DE00469FD1 /* Resources */,
 				045331BB0D5CC41B80630C74 /* [CP] Embed Pods Frameworks */,
 				A6A49705C1CD2883FD65F047 /* [CP] Copy Pods Resources */,
+				3D005B8D22E71458006362C4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1093,6 +1097,7 @@
 				3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */,
 				3DA3E7D022D5E1C20089425E /* SynchronizationTableViewHeader.xib in Resources */,
 				3D25D59322B7920B00881E17 /* FlightDetailsSectionTableViewCell.xib in Resources */,
+				3D005B8F22E717D2006362C4 /* .swiftlint.yml in Resources */,
 				3DABA3EE223B90DE00469FD1 /* Home.storyboard in Resources */,
 				3D25D59822B7946D00881E17 /* FlightDetailsAirportTableViewCell.xib in Resources */,
 				3DD5698822B2555400E43B38 /* HomeHeaderTableViewCell.xib in Resources */,
@@ -1122,6 +1127,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lufa/Pods-Lufa-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3D005B8D22E71458006362C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config \"${SRCROOT}/Resources/.swiftlint.yml\" --path \"${SRCROOT}\"\n";
 		};
 		9AAA07765E7DD5742DDA9207 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

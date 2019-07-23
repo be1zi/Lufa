@@ -19,7 +19,7 @@ extension NSManagedObject {
     }
     
     func addOneToManyRelationship(data: Any?, set: Set<NSManagedObject>, forEntityName name: String) -> Set<NSManagedObject> {
-        return LocalRepositoryContext.sharedInstance.addOneToManyRelationship(data:data, inSet: set, forEntityName: name)
+        return LocalRepositoryContext.sharedInstance.addOneToManyRelationship(data: data, inSet: set, forEntityName: name)
     }
     
     func addOneToOneRelationship(data: Any?, forEntityName name: String, forProperty property: NSManagedObject?) -> NSManagedObject? {

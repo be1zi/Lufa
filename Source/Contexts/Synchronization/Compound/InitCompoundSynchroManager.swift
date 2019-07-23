@@ -10,7 +10,7 @@ import Foundation
 
 class InitCompoundSynchroManager: CompoundSynchroManager {
     
-    //MARK: - Singleton
+    // MARK: - Singleton
     static var sharedInstance = InitCompoundSynchroManager(withManagers: [])
     
     override init(withManagers: [SynchroManager]) {

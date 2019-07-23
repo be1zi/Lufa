@@ -18,7 +18,7 @@ protocol SearchDelegate {
 
 class SearchViewController: BaseViewController {
     
-    //MARK: - Properties
+    // MARK: Properties
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var clearButton: UIBarButtonItem!
     @IBOutlet weak var searchTextField: UITextField!
@@ -29,7 +29,7 @@ class SearchViewController: BaseViewController {
     var delegate: SearchDelegate?
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
-    //MARK: - Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -46,7 +46,7 @@ class SearchViewController: BaseViewController {
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
     }
     
-    //MARK: - Appearance
+    // MARK: Appearance
     override func navigationBarTitle() -> String? {
         return "search.title".localized()
     }
@@ -55,7 +55,7 @@ class SearchViewController: BaseViewController {
         return bottomConstraint
     }
     
-    //MARK: - Data
+    // MARK: Data
     func reloadData() {
         guard let delegate = delegate else {
             return

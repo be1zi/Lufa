@@ -15,7 +15,7 @@ class LanguageViewController: BaseViewController {
     @IBOutlet weak var polishButton: UIButton!
     @IBOutlet weak var englishButton: UIButton!
     
-    //MARK: Initialize
+    // MARK: Initialize
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +47,7 @@ class LanguageViewController: BaseViewController {
         }
     }
     
-    //MARK: Actions
+    // MARK: Actions
     
     @IBAction func polishButtonAction(_ sender: UIButton) {
         LanguageManager.sharedInstance.currentLanguage = LANGUAGE_PL

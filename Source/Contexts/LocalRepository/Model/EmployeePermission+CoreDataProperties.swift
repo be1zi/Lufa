@@ -20,14 +20,14 @@ extension EmployeePermission {
     @NSManaged public var value: Bool
 }
 
-//MARK: ManagedObject override
+// MARK: ManagedObject override
 extension EmployeePermission {
     
     override func primaryKey() -> String? {
         return "name"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         self.name = data["name"] as? String
         
         if let value = data["value"] as? Bool {

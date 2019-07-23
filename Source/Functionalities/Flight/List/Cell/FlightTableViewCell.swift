@@ -10,7 +10,7 @@ import UIKit
 
 class FlightTableViewCell: UITableViewCell {
 
-    //MARK: Properties
+    // MARK: Properties
     //names
     @IBOutlet var airlineTitleLabel: UILabel!
     @IBOutlet var designatorTitleLabel: UILabel!
@@ -29,14 +29,14 @@ class FlightTableViewCell: UITableViewCell {
     var arrivalCity: City?
     var departureCity: City?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
 
         loadTranslations()
     }
     
-    //MARK: Properties
+    // MARK: Properties
     func loadTranslations() {
         
         airlineTitleLabel.text = "flight.cell.airline.title".localized()
@@ -46,7 +46,7 @@ class FlightTableViewCell: UITableViewCell {
         dateTitleLabel.text = "flight.cell.date.title".localized()
     }
     
-    //MARK: Data
+    // MARK: Data
     func loadWithData(flight: Flight, from: City?, to: City?) {
         self.flight = flight
         self.departureCity = from

@@ -31,7 +31,7 @@ class MenuTapBarController: UITabBarController {
             if let controller = vc {
                 controller.tabBarItem = item
                 
-                if let _ = self.viewControllers {
+                if self.viewControllers != nil {
                     self.viewControllers?.append(controller)
                 } else {
                     self.viewControllers = [controller]

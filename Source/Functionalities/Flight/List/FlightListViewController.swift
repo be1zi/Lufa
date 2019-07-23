@@ -12,11 +12,11 @@ import CoreData
 
 class FlightListViewController: BaseViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +30,7 @@ class FlightListViewController: BaseViewController {
         fetchData()
     }
     
-    //MARK: - Configuration
+    // MARK: - Configuration
     func registerCells() {
         self.tableView.register(UINib(nibName: "FlightTableViewCell", bundle: nil),
                                 forCellReuseIdentifier: "FlightTableViewCell")
@@ -44,7 +44,7 @@ class FlightListViewController: BaseViewController {
         return "flight.list.title".localized()
     }
     
-    //MARK: Data
+    // MARK: Data
     override func synchronizeData() {
         super.synchronizeData()
         
@@ -72,7 +72,7 @@ class FlightListViewController: BaseViewController {
         tableView.reloadData()
     }
     
-    //MARK: Actions
+    // MARK: Actions
     @IBAction func filterButtonAction(_ sender: Any) {
 
         let vc = UIStoryboard.init(name: "FlightFilters", bundle: nil).instantiateInitialViewController()

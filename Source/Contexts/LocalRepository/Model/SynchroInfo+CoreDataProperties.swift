@@ -37,7 +37,7 @@ extension SynchroInfo {
         return "object"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.lastSynchroDate = self.addDateProperty(date: Date.init())
         self.object = data["object"] as? String

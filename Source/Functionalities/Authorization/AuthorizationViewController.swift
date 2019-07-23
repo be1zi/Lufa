@@ -15,7 +15,7 @@ class AuthorizationViewController: BaseViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +26,7 @@ class AuthorizationViewController: BaseViewController {
         removeFromNotifications()
     }
     
-    //MARK: Properties
+    // MARK: Properties
     
     override func loadTranslations() {
         super.loadTranslations()
@@ -48,7 +48,7 @@ class AuthorizationViewController: BaseViewController {
         return true
     }
     
-    //MARK: Actions
+    // MARK: Actions
     
     @IBAction func authorizeButtonAction(_ sender: UIButton) {
         RemoteRepositoryContext.sharedInstance.authorize()
@@ -68,7 +68,7 @@ class AuthorizationViewController: BaseViewController {
             RemoteRepositoryContext.sharedInstance.authenticate(withCode: code, success: { _ in
                 RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { _ in
                     
-                    InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { result, _ in
+                    InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
                         self.progressPresenter?.hideProgress()
                         
                         //if result != SynchroResult.SynchroResultError {
@@ -89,7 +89,7 @@ class AuthorizationViewController: BaseViewController {
 
     }
     
-    //MARK: Notifications
+    // MARK: Notifications
     func registerForNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(shouldAuthenticate(_:)), name: .authenticateDidFinish, object: nil)
     }

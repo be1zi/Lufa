@@ -21,14 +21,14 @@ enum FlightDetailsCellType: Int {
     case All
 }
 
-class FlightDetailsViewController : BaseViewController {
+class FlightDetailsViewController: BaseViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     
     var flight: Flight?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -40,7 +40,7 @@ class FlightDetailsViewController : BaseViewController {
         registerCells()
     }
     
-    //MARK: Configurations
+    // MARK: Configurations
     func registerCells() {
         
         tableView.register(UINib(nibName: "FlightDetailsHeaderTableViewCell", bundle: nil),

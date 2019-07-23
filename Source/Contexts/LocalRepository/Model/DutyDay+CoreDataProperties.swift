@@ -44,7 +44,7 @@ extension DutyDay {
         return "day"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.day = self.addDateProperty(date: data["day"])
         self.dutyEvents = self.addOneToManyRelationship(data: data["events"], set: self.dutyEvents, forEntityName: "DutyEvent")

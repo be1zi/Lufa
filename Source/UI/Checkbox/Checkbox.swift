@@ -13,7 +13,7 @@ enum CheckboxState {
     case selected, deselected
 }
 
-class Checkbox: UIButton  {
+class Checkbox: UIButton {
     
     private static let checkedImage: UIImage? = {
         UIImage(named: "checkedCheckbox")
@@ -24,7 +24,7 @@ class Checkbox: UIButton  {
     }()
     
     var checked: Bool {
-        get{
+        get {
             return self.backgroundImage(for: .normal) == Checkbox.checkedImage
         }
         set {
@@ -32,7 +32,7 @@ class Checkbox: UIButton  {
         }
     }
         
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -76,7 +76,7 @@ class Checkbox: UIButton  {
         }
     }
 
-    //MARK: - Action
+    // MARK: - Action
     @objc private func tapAction() {
         let newState: CheckboxState = checked ? .deselected : .selected
         changeState(newState: newState)

@@ -11,7 +11,7 @@ import UIKit
 
 class SynchronizationTableViewCell: UITableViewCell {
     
-    //MARK: - Properties
+    // MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchButton: UISwitch!
     
@@ -19,7 +19,7 @@ class SynchronizationTableViewCell: UITableViewCell {
     var sectionType: SynchronizationSectionType?
     var synchroType: SynchroType?
     
-    //MARK: - Lifecycle
+    // MARK: Lifecycle
     func load(title: String, on: Bool, withDelegate: SynchronizationDelegate, section: SynchronizationSectionType?, synchro: SynchroType?) {
         titleLabel.text = title
         switchButton.isOn = on
@@ -28,7 +28,7 @@ class SynchronizationTableViewCell: UITableViewCell {
         synchroType = synchro
     }
     
-    //MARK: - Action
+    // MARK: Action
     @IBAction func switchValueChanged(_ sender: Any) {
         delegate?.checkboxChangeState(newState: switchButton.isOn, section: sectionType!, type: synchroType!)
     }

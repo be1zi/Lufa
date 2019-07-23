@@ -11,7 +11,7 @@ import UIKit
 
 class FlightDetailsAirportTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var typeView: UIView!
@@ -35,7 +35,7 @@ class FlightDetailsAirportTableViewCell: UITableViewCell {
     
     func setData() {
         
-        guard let _ = self.flight else {
+        guard flight != nil else {
             fromLabel.text = nil
             toLabel.text = nil
             typeView.backgroundColor = UIColor.clear

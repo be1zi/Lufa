@@ -29,7 +29,7 @@ class ProgressPresenter {
             if self?.viewController.viewIfLoaded == nil {
                 
                 if let completion = completion {
-                    completion();
+                    completion()
                 }
                 
                 return
@@ -40,7 +40,7 @@ class ProgressPresenter {
             HUD.show(HUDContentType.labeledProgress(title: text, subtitle: nil))
             
             if let completion = completion {
-                completion();
+                completion()
             }
         }
     }

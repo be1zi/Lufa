@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BaseViewController : UIViewController {
+class BaseViewController: UIViewController {
     
-    //MARK: Variables
+    // MARK: Variables
     
     lazy var progressPresenter: ProgressPresenter? = {
         return ProgressPresenter.init(viewVontroller: self)
@@ -18,7 +18,7 @@ class BaseViewController : UIViewController {
     
     private var keyboardHeight: CGFloat = 0
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class BaseViewController : UIViewController {
         unregisterFromKeyboardEvents()
     }
     
-    //MARK: Properties
+    // MARK: Properties
     
     func loadConfigurations() {
         
@@ -83,16 +83,16 @@ class BaseViewController : UIViewController {
         return nil
     }
     
-    //MARK: Data
+    // MARK: Data
     
     func synchronizeData() {
         
     }
     
-    //MARK: Keyboard
+    // MARK: Keyboard
     
     private func registerForKeyboardEvents() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppearNotification(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppearNotification(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidAppearNotification(_:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappearNotification(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)

@@ -13,7 +13,7 @@ extension Array {
     
     func unmanagedCopy() -> [NSManagedObject] {
         
-        guard count > 0, let _ = first as? NSManagedObject else {
+        guard count > 0, first as? NSManagedObject != nil else {
             return []
         }
         

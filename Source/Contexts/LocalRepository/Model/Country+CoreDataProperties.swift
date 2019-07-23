@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-
 extension Country {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Country> {
@@ -28,7 +27,7 @@ extension Country {
         return "code"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.code = data["code"] as? String
         self.name = data["name"] as? String

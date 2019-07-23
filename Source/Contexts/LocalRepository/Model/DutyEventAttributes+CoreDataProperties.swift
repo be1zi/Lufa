@@ -28,7 +28,7 @@ extension DutyEventAttributes {
         return key
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.key = data.keys.first
         

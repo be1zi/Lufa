@@ -22,9 +22,9 @@ extension RemoteRepositoryContext {
             endDate = Date.init(timeIntervalSinceNow: TIME_INTERVAL)
         }
         
-        let params: [String: Any] = ["fromDate" : from,
-                                     "toDate" : endDate]
-        get(endPoint: "v1/flight_operations/crew_services/COMMON_DUTY_EVENTS", parameters: params, contentType: .JSON , withSuccess: { response in
+        let params: [String: Any] = ["fromDate": from,
+                                     "toDate": endDate]
+        get(endPoint: "v1/flight_operations/crew_services/COMMON_DUTY_EVENTS", parameters: params, contentType: .JSON, withSuccess: { response in
             
             DispatchQueue.global().async {
                 

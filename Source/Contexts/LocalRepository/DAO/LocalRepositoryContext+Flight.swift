@@ -77,7 +77,7 @@ extension LocalRepositoryContext {
             return nil
         }
         
-        if let _ = date {
+        if date != nil {
             request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
         } else {
             request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, startDate])

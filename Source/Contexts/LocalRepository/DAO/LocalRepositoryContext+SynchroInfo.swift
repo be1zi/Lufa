@@ -61,8 +61,8 @@ extension LocalRepositoryContext {
     
     func notifyDidSynchronize(synchroType: SynchroType, object: String) {
                 
-        let data: [String : Any] = ["synchroType" : synchroType.rawValue,
-                                    "object" : object]
+        let data: [String: Any] = ["synchroType": synchroType.rawValue,
+                                    "object": object]
         
         self.saveSynchroInfo(data: data)
     }

@@ -16,13 +16,13 @@ protocol HomeFlightsTableViewDelegate {
 
 class HomeFlightsTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var collectionView: UICollectionView!
     
     var flights: [Flight] = []
     var delegate: HomeFlightsTableViewDelegate?
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,7 +33,7 @@ class HomeFlightsTableViewCell: UITableViewCell {
                                 forCellWithReuseIdentifier: "HomeFlightCollectionViewCell")
     }
     
-    //MARK: Data
+    // MARK: Data
     func setData(withFlights: [Flight], andDelegate: HomeFlightsTableViewDelegate) {
         flights = withFlights
         delegate = andDelegate

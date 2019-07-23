@@ -32,7 +32,7 @@ extension CrewFlight {
         return "flightDesignator"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.flightDesignator = data["flightDesignator"] as? String
         self.flightDate = self.addDateProperty(date: data["flightDate"])

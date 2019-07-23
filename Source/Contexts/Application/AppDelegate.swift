@@ -14,7 +14,7 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    static var sharedInstance: AppDelegate  {
+    static var sharedInstance: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
     
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         LocalRepositoryContext.sharedInstance.saveContext()
     }
     
-    //MARK: Configurations
+    // MARK: Configurations
     func configureUserInterface() {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    //MARK: User defaults
+    // MARK: User defaults
     func setAuthorizationToken(token: String, type: String) {
         UserDefaults.standard.set(type, forKey: "token_type")
         UserDefaults.standard.set(token, forKey: "access_token")
@@ -113,7 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UserDefaults.standard.object(forKey: "access_open_token") as? String
     }
     
-    //MARK: - URL
+    // MARK: - URL
     func openURL(address: String) {
         
         let url = URL(string: address)
@@ -123,7 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         
         let message = url.host?.removingPercentEncoding
         
@@ -144,5 +144,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
-

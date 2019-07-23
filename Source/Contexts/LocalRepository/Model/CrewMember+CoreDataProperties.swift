@@ -36,7 +36,7 @@ extension CrewMember {
         return "pkNumber"
     }
     
-    override func serialize(data: [String : Any]) {
+    override func serialize(data: [String: Any]) {
         
         self.pkNumber = data["pkNumber"] as? String
         self.crewPosition = data["crewPosition"] as? String
