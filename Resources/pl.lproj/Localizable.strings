@@ -99,6 +99,7 @@
 
 //Flight Filters
 "flight.filters.title" = "Filtry";
+"fligth.filters.reset" = "Wyczyść";
 
 //Synchronization
 "synchronization.title" = "Aktualizuj dane";

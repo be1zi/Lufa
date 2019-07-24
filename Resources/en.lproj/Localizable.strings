@@ -99,6 +99,7 @@
 
 //Flight Filters
 "flight.filters.title" = "Filters";
+"fligth.filters.reset" = "Reset";
 
 //Synchronization
 "synchronization.title" = "Synchronize data";

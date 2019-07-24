@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YhG-ex-knp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YhG-ex-knp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fDb-ke-bDc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="q3G-ZX-WIl"/>
+                    <navigationItem key="navigationItem" id="q3G-ZX-WIl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Aos-Nf-azL">
+                            <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="uea-wE-HD3" id="n1d-0D-ey3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="vmI-Tm-hJw">
+                            <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="resetButtonAction:" destination="uea-wE-HD3" id="Y6C-UI-5bP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="Aos-Nf-azL" id="0KS-5R-ELo"/>
+                        <outlet property="resetButton" destination="vmI-Tm-hJw" id="EwO-hr-XwT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hj9-LB-qYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
