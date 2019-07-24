@@ -75,7 +75,7 @@ class SearchViewController: BaseViewController {
                                                                   sectionNameKeyPath: nil,
                                                                   cacheName: nil)
             fetchedResultsController?.delegate = self
-            try? fetchedResultsController?.performFetch()
+            ((try? fetchedResultsController?.performFetch()) as ()??)
         }
         
         tableView.reloadData()
@@ -169,6 +169,8 @@ extension SearchViewController: NSFetchedResultsControllerDelegate {
             tableView.insertRows(at: [newIndex], with: .fade)
         case .update:
             tableView.reloadRows(at: [index], with: .fade)
+        @unknown default:
+            return
         }
     }
 }

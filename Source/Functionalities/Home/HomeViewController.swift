@@ -93,7 +93,7 @@ class HomeViewController: BaseViewController {
         fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: LocalRepositoryContext.context, sectionNameKeyPath: nil, cacheName: nil)
         
         fetchedResultsController?.delegate = self
-        try? fetchedResultsController?.performFetch()
+        ((try? fetchedResultsController?.performFetch()) as ()??)
     }
     
     func setData() {
@@ -200,6 +200,8 @@ extension HomeViewController: NSFetchedResultsControllerDelegate {
             tableView.insertRows(at: [newIndex], with: .fade)
         case .update:
             tableView.reloadRows(at: [index], with: .fade)
+        @unknown default:
+            return
         }
     }
 }
