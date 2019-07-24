@@ -19,8 +19,9 @@ extension LocalRepositoryContext {
             return request
         }
 
-        let predicate = NSPredicate(format: "\(format) and lastViewed = %d", true)
+        let predicate = NSPredicate(format: "\(format) and lastViewed != nil")
         request?.predicate = predicate
+        request?.sortDescriptors = [NSSortDescriptor.init(key: "lastViewed", ascending: false)]
         
         return request
     }
@@ -37,6 +38,22 @@ extension LocalRepositoryContext {
         request?.predicate = predicate
         
         return request
+    }
+    
+    func setFlightAsViewed(key: String?) {
+        
+        guard let key = key else {
+            return
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Flight")
+        request.predicate = NSPredicate(format: "flightDesignator = %@", key)
+        
+        if let flight = self.executeFetch(fetchRequest: request).first as? Flight {
+            flight.lastViewed = Date.init()
+            
+            self.executeUpdate()
+        }
     }
     
     func getAllFlights() -> NSFetchRequest<NSFetchRequestResult>? {

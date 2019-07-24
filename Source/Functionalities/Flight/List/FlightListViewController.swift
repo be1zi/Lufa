@@ -102,6 +102,8 @@ extension FlightListViewController: UITableViewDelegate {
         if let vc = vc, let flight = fetchedResultsController?.object(at: indexPath) as? Flight {
             vc.flight = flight
             
+            LocalRepositoryContext.sharedInstance.setFlightAsViewed(key: flight.flightDesignator)
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -148,6 +150,13 @@ extension FlightListViewController: SearchDelegate {
             return object.flightDesignator
         } else {
             return nil
+        }
+    }
+    
+    func searchControllerNeedsSetAsViewed(objectKey: Any?) {
+        
+        if let key = objectKey as? String {
+            LocalRepositoryContext.sharedInstance.setFlightAsViewed(key: key)
         }
     }
 }

@@ -215,7 +215,7 @@ class RemoteRepositoryContext {
         switch api {
         case .OpenWithToken:
             
-            guard let token = AppDelegate.sharedInstance.getAuthorizationOpenToken() else {
+            guard let token = AppDelegate.getAuthorizationOpenToken() else {
                 return nil
             }
             

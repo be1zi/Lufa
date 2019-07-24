@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Airline" representedClassName="Airline" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="codeICAO" optional="YES" attributeType="String" syncable="YES"/>
@@ -117,7 +117,7 @@
         <attribute name="flightDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flightDesignator" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flightTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastViewed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lastViewed" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="operatingAirline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scheduledTimeOfArrival" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="scheduledTimeOfDeparture" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

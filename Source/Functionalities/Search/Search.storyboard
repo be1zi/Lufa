@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LbW-n8-NSs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LbW-n8-NSs">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8y-86-RXc">
-                                <rect key="frame" x="20" y="89" width="335" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8y-86-RXc">
+                                <rect key="frame" x="20" y="89" width="335" height="21"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="textFieldValueChanged:" destination="vc5-MQ-g3J" eventType="valueChanged" id="hGQ-Od-E8B"/>
@@ -30,15 +30,16 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-TY-gkR">
-                                <rect key="frame" x="20" y="124" width="335" height="2"/>
+                                <rect key="frame" x="20" y="111" width="335" height="2"/>
                                 <color key="backgroundColor" red="0.0" green="0.81176470588235294" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="VoW-OP-Qdt"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="971-vt-iud">
-                                <rect key="frame" x="0.0" y="136" width="375" height="531"/>
+                                <rect key="frame" x="0.0" y="123" width="375" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vc5-MQ-g3J" id="1dy-Zh-zhd"/>
                                     <outlet property="delegate" destination="vc5-MQ-g3J" id="1Cg-RI-LqJ"/>
@@ -53,7 +54,7 @@
                             <constraint firstItem="971-vt-iud" firstAttribute="top" secondItem="mgj-TY-gkR" secondAttribute="bottom" constant="10" id="SAg-hE-ynP"/>
                             <constraint firstItem="C1Z-GS-Xsk" firstAttribute="trailing" secondItem="x8y-86-RXc" secondAttribute="trailing" constant="20" id="UV9-bf-2Al"/>
                             <constraint firstItem="mgj-TY-gkR" firstAttribute="width" secondItem="x8y-86-RXc" secondAttribute="width" id="aay-At-Ka4"/>
-                            <constraint firstItem="mgj-TY-gkR" firstAttribute="top" secondItem="x8y-86-RXc" secondAttribute="bottom" constant="5" id="eLV-s9-gQC"/>
+                            <constraint firstItem="mgj-TY-gkR" firstAttribute="top" secondItem="x8y-86-RXc" secondAttribute="bottom" constant="1" id="eLV-s9-gQC"/>
                             <constraint firstItem="971-vt-iud" firstAttribute="leading" secondItem="C1Z-GS-Xsk" secondAttribute="leading" id="h5z-9R-eZK"/>
                             <constraint firstItem="C1Z-GS-Xsk" firstAttribute="bottom" secondItem="971-vt-iud" secondAttribute="bottom" id="hZh-Ki-vuT"/>
                             <constraint firstItem="x8y-86-RXc" firstAttribute="leading" secondItem="C1Z-GS-Xsk" secondAttribute="leading" constant="20" id="pn8-6M-scW"/>

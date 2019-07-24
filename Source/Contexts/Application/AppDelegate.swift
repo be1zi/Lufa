@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.removeObject(forKey: "access_open_token")
     }
     
-    func getAuthorizationOpenToken() -> String? {
+    static func getAuthorizationOpenToken() -> String? {
         return UserDefaults.standard.object(forKey: "access_open_token") as? String
     }
     

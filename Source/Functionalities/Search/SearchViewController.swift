@@ -14,6 +14,11 @@ protocol SearchDelegate {
     func searchControllerNeedsFetchRequestForLastViewedData() -> NSFetchRequest<NSFetchRequestResult>?
     func searchControllerNeedsFetchRequestWithText(text: String) -> NSFetchRequest<NSFetchRequestResult>?
     func searchControllerNeedsName(forObject: NSManagedObject) -> String?
+    func searchControllerNeedsSetAsViewed(objectKey: Any?)
+}
+
+enum TextFieldState {
+    case focus, none
 }
 
 class SearchViewController: BaseViewController {
@@ -44,6 +49,15 @@ class SearchViewController: BaseViewController {
         
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
+    }
+    
+    func setStyle(state: TextFieldState) {
+        
+        if state == .focus {
+            textFieldIndicator.backgroundColor = UIColor.lufaCyanColor
+        } else {
+            textFieldIndicator.backgroundColor = UIColor.lufaGreyColor
+        }
     }
     
     // MARK: Appearance
@@ -102,7 +116,7 @@ class SearchViewController: BaseViewController {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        delegate?.searchControllerNeedsSetAsViewed(objectKey: fetchedResultsController?.object(at: indexPath))
     }
 }
 
@@ -135,6 +149,13 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        setStyle(state: .focus)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        setStyle(state: .none)
+    }
 }
 
 extension SearchViewController: NSFetchedResultsControllerDelegate {
