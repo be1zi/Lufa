@@ -46,4 +46,19 @@ extension UIButton {
             layer.backgroundColor = UIColor.lufaWhiteColor.cgColor
         }
     }
+    
+    func setSelectedWithBorder(selected: Bool) {
+        isSelected = selected
+        
+        if selected {
+            layer.backgroundColor = UIColor.lufaCyanColor.cgColor
+            layer.borderWidth = 0
+            setTitleColor(UIColor.white, for: .normal)
+        } else {
+            layer.backgroundColor = UIColor.white.cgColor
+            layer.borderWidth = 2
+            layer.borderColor = UIColor.lufaCyanColor.cgColor
+            setTitleColor(UIColor.lufaCyanColor, for: .normal)
+        }
+    }
 }

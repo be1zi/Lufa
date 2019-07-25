@@ -77,7 +77,8 @@ class FlightListViewController: BaseViewController {
 
         let vc = UIStoryboard.init(name: "FlightFilters", bundle: nil).instantiateInitialViewController()
         
-        if let vc = vc {
+        if let vc = vc, let child = vc.children.first as? FlightFiltersViewController {
+            child.delegate = self
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
@@ -196,5 +197,16 @@ extension FlightListViewController: NSFetchedResultsControllerDelegate {
         @unknown default:
             return
         }
+    }
+}
+
+extension FlightListViewController: FlightFiltersDelegate {
+    
+    func shouldFilterWithItems(_ items: [FlightFilterItem]?) {
+        
+        guard let items = items else {
+            return
+        }
+        
     }
 }

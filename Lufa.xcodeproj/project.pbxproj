@@ -147,6 +147,7 @@
 		3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */; };
 		3DEA56F82251F523003A34D4 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEA56F72251F523003A34D4 /* Authorization.storyboard */; };
 		3DEA57012251FBFC003A34D4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEA57002251FBFC003A34D4 /* WindowController.swift */; };
+		3DEC835922E9A2E900FEB459 /* FlightFilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEC835822E9A2E900FEB459 /* FlightFilterItem.swift */; };
 		3DF18B0422C5E2AC00AD10F5 /* CompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0322C5E2AC00AD10F5 /* CompoundSynchroManager.swift */; };
 		3DF18B0622C5E83F00AD10F5 /* InitCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0522C5E83F00AD10F5 /* InitCompoundSynchroManager.swift */; };
 		3DF18B0822C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF18B0722C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift */; };
@@ -300,6 +301,7 @@
 		3DEA56F52251F4FA003A34D4 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3DEA56F72251F523003A34D4 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		3DEA57002251FBFC003A34D4 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		3DEC835822E9A2E900FEB459 /* FlightFilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightFilterItem.swift; sourceTree = "<group>"; };
 		3DF18B0322C5E2AC00AD10F5 /* CompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3DF18B0522C5E83F00AD10F5 /* InitCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3DF18B0722C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteRepositoryContext+Airlines.swift"; sourceTree = "<group>"; };
@@ -838,6 +840,7 @@
 		3DD5697222AF9F9A00E43B38 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
+				3DEC835822E9A2E900FEB459 /* FlightFilterItem.swift */,
 				3D03A47722CDCE74001BAE56 /* FlightFiltersViewController.swift */,
 				3D03A47922CDCEE9001BAE56 /* FlightFilters.storyboard */,
 			);
@@ -1272,6 +1275,7 @@
 				3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */,
 				3DA6E9852255F71900015999 /* LanguageViewController.swift in Sources */,
 				3DE0EE51229D211E009AD5D8 /* DutyDay+CoreDataProperties.swift in Sources */,
+				3DEC835922E9A2E900FEB459 /* FlightFilterItem.swift in Sources */,
 				3DA47B7C22A78E380095FA85 /* RemoteRepositoryContext+CheckIn.swift in Sources */,
 				3DE0EE56229D211E009AD5D8 /* Duty+CoreDataClass.swift in Sources */,
 				3DE0EE52229D211E009AD5D8 /* Flight+CoreDataClass.swift in Sources */,

@@ -7,5 +7,6 @@ target 'Lufa' do
   pod 'PKHUD', '~> 5.0'
   pod 'GoogleMaps'
   pod 'SwiftLint'
-  
+  pod 'TTRangeSlider'
+
 end

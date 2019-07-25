@@ -26,6 +26,12 @@
 "edit.title" = "Edit";
 "save.title" = "Save";
 "cancel.title" = "Cancel";
+"apply.title" = "Apply";
+"from.time.title" = "From:";
+"to.time.title" = "To:";
+"from.place.title" = "Departure:";
+"to.place.title" = "Arrival:";
+"all.title" = "All";
 
 //Menu
 "menu.item.flight.title" = "Flights";
@@ -100,6 +106,12 @@
 //Flight Filters
 "flight.filters.title" = "Filters";
 "fligth.filters.reset" = "Reset";
+"flight.filters.date.title" = "Date:";
+"flight.filters.place.title" = "Place:";
+"flight.filters.type.title" = "Type:";
+"flight.filters.type.local.title" = "Local";
+"flight.filters.type.international.title" = "International";
+"flight.filters.travel.title" = "Travel time:";
 
 //Synchronization
 "synchronization.title" = "Synchronize data";

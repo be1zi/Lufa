@@ -26,6 +26,12 @@
 "edit.title" = "Edytuj";
 "save.title" = "Zapisz";
 "cancel.title" = "Anuluj";
+"apply.title" = "Zastosuj";
+"from.time.title" = "Od:";
+"to.time.title" = "Do:";
+"from.place.title" = "Odlot:";
+"to.place.title" = "Przylot";
+"all.title" = "Wszystkie";
 
 //Menu
 "menu.item.flight.title" = "Loty";
@@ -100,6 +106,12 @@
 //Flight Filters
 "flight.filters.title" = "Filtry";
 "fligth.filters.reset" = "Wyczyść";
+"flight.filters.date.title" = "Data:";
+"flight.filters.place.title" = "Miejsce:";
+"flight.filters.type.title" = "Typ:";
+"flight.filters.type.local.title" = "Krajowe";
+"flight.filters.type.international.title" = "Międzynarodowe";
+"flight.filters.travel.title" = "Czas lotu:";
 
 //Synchronization
 "synchronization.title" = "Aktualizuj dane";
