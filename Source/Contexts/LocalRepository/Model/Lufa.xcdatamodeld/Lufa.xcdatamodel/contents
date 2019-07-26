@@ -116,7 +116,7 @@
         <attribute name="departurePosition" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="flightDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flightDesignator" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="flightTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flightTime" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastViewed" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="operatingAirline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="scheduledTimeOfArrival" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

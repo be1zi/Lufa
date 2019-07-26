@@ -40,8 +40,8 @@ class FlightDetailsMapViewController: BaseViewController {
             return
         }
         
-        let cityFrom = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.departureAirport)
-        let cityTo = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.arrivalAirport)
+        let cityFrom = LocalRepositoryContext.sharedInstance.getCity(shortCut: flight.departureAirport)
+        let cityTo = LocalRepositoryContext.sharedInstance.getCity(shortCut: flight.arrivalAirport)
 
         guard let from = cityFrom, let to = cityTo else {
             return

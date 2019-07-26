@@ -40,6 +40,100 @@ extension LocalRepositoryContext {
         return request
     }
     
+    func requestForFlight(withFilters items: [FlightFilterItem]?) -> NSFetchRequest<NSFetchRequestResult>? {
+        
+        let request = getAllFlights()
+        
+        guard let items = items,
+            let format = request?.predicate?.predicateFormat else {
+            return request
+        }
+        
+        var predicatesArray = [String]()
+        var extendedFormat = ""
+        
+        for item in items {
+            
+            switch item.type {
+            case .date:
+                if let value = item.values[.min] {
+                    predicatesArray.append("flightDate >= \(value)")
+                }
+                
+                if let value = item.values[.max] {
+                    predicatesArray.append("flightDate <= \(value)")
+                }
+            case .place:
+                if let value = item.values[.min] {
+                    predicatesArray.append("departureAirport = \(value)")
+                }
+                
+                if let value = item.values[.max] {
+                    predicatesArray.append("arrivalAirport = \(value)")
+                }
+            case .travelTime:
+                if let min = item.values[.min] as? Float, let max = item.values[.max] as? Float {
+                    predicatesArray.append("flightTime >= \(min * 60 * 1000) and flightTime <= \(max * 60 * 1000)")
+                }
+            case .type:
+                continue
+            case .unknown:
+                continue
+            }
+        }
+        
+        for (index, item) in predicatesArray.enumerated() {
+            
+            extendedFormat += item
+            
+            if index != (predicatesArray.count - 1) {
+                extendedFormat += " and "
+            }
+        }
+        
+        if extendedFormat.count > 0 {
+            let predicate = NSPredicate(format: "\(format) and \(extendedFormat)")
+            request?.predicate = predicate
+        }
+        
+        guard let req = request else {
+            return request
+        }
+        
+        let result = self.executeFetch(fetchRequest: req) as? [Flight]
+        
+        guard var res = result else {
+            return req
+        }
+        
+        for item in items {
+            if item.type != .type {
+                continue
+            }
+            
+            if let value = item.values[.value] as? String {
+                if value == "flight.filters.type.local.title" {
+                    res = res.filter {
+                        LocalRepositoryContext.sharedInstance.isCitiesInSameCountry(cityACode: $0.departureAirport, cityBCode: $0.arrivalAirport)
+                    }
+                } else if value == "flight.filters.type.international.title" {
+                    res = res.filter {
+                        !LocalRepositoryContext.sharedInstance.isCitiesInSameCountry(cityACode: $0.departureAirport, cityBCode: $0.arrivalAirport)
+                    }
+                }
+                break
+            }
+        }
+        
+        let flightDesignators = res.map { $0.flightDesignator }
+       
+        if let currentPredicateFormat = req.predicate?.predicateFormat {
+            req.predicate = NSPredicate(format: "\(currentPredicateFormat) and flightDesignator IN %@", flightDesignators)
+        }
+        
+        return req
+    }
+    
     func setFlightAsViewed(key: String?) {
         
         guard let key = key else {

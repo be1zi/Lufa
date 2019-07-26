@@ -15,6 +15,7 @@ class FlightListViewController: BaseViewController {
     // MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var filters: [FlightFilterItem]?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -58,7 +59,7 @@ class FlightListViewController: BaseViewController {
     
     func fetchData() {
         
-        guard let request = LocalRepositoryContext.sharedInstance.getAllFlights() else {
+        guard let request = LocalRepositoryContext.sharedInstance.requestForFlight(withFilters: filters) else {
             return
         }
         
@@ -79,6 +80,7 @@ class FlightListViewController: BaseViewController {
         
         if let vc = vc, let child = vc.children.first as? FlightFiltersViewController {
             child.delegate = self
+            child.filters = filters
             self.navigationController?.present(vc, animated: true, completion: nil)
         }
     }
@@ -122,8 +124,8 @@ extension FlightListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: object.departureAirport)
-        let to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: object.arrivalAirport)
+        let from = LocalRepositoryContext.sharedInstance.getCity(shortCut: object.departureAirport)
+        let to = LocalRepositoryContext.sharedInstance.getCity(shortCut: object.arrivalAirport)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell
         
@@ -203,10 +205,8 @@ extension FlightListViewController: NSFetchedResultsControllerDelegate {
 extension FlightListViewController: FlightFiltersDelegate {
     
     func shouldFilterWithItems(_ items: [FlightFilterItem]?) {
+        filters = items
         
-        guard let items = items else {
-            return
-        }
-        
+        fetchData()
     }
 }

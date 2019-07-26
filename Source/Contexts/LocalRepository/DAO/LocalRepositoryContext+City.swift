@@ -11,7 +11,7 @@ import CoreData
 
 extension LocalRepositoryContext {
     
-    func getCityName(shortCut: String?) -> City? {
+    func getCity(shortCut: String?) -> City? {
         
         guard let shortCut = shortCut else {
             return nil
@@ -21,5 +21,22 @@ extension LocalRepositoryContext {
         request.predicate = NSPredicate(format: "code = %@", shortCut)
         
         return self.executeFetch(fetchRequest: request).first?.unmanagedCopy() as? City
+    }
+    
+    func isCitiesInSameCountry(cityACode: String?, cityBCode: String?) -> Bool {
+        
+        guard let cityACode = cityACode, let cityBCode = cityBCode else {
+            return false
+        }
+    
+        guard let cityA = getCity(shortCut: cityACode), let cityB = getCity(shortCut: cityBCode) else {
+            return false
+        }
+        
+        guard let countryA = cityA.countryCode, let countryB = cityB.countryCode else {
+            return false
+        }
+        
+        return countryA == countryB
     }
 }

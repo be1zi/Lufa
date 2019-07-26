@@ -10,7 +10,7 @@ import Foundation
 
 class Period {
     
-    static func timeInterval(stringDate: String?) -> String? {
+    static func timeInterval(stringDate: String?) -> (hours: Int?, minutes: Int?, seconds: Int? )? {
         
         var hours: String = ""
         var minutes: String = ""
@@ -54,6 +54,21 @@ class Period {
             }
         }
                 
-        return "\(hours):\(minutes):\(seconds)"
+        return (Int(hours), Int(minutes), Int(seconds))
+    }
+    
+    static func timeIntervalMiliseconds(stringDate: String?) -> TimeInterval? {
+        
+        guard let (hours, minutes, seconds) = timeInterval(stringDate: stringDate) else {
+            return nil
+        }
+        
+        var time = 0
+        time += (hours ?? 0) * 60 * 60
+        time += (minutes ?? 0) * 60
+        time += seconds ?? 0
+        time *= 1000
+        
+        return TimeInterval(exactly: time)
     }
 }

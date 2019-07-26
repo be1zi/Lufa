@@ -40,8 +40,8 @@ class HomeFlightCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        let from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.departureAirport)
-        let to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.arrivalAirport)
+        let from = LocalRepositoryContext.sharedInstance.getCity(shortCut: flight.departureAirport)
+        let to = LocalRepositoryContext.sharedInstance.getCity(shortCut: flight.arrivalAirport)
         
         if let from = from, let to = to, let fromCountryCode = from.countryCode, let toCountryCode = to.countryCode {
             

@@ -28,7 +28,7 @@ extension Flight {
     @NSManaged public var departurePosition: String?
     @NSManaged public var arrivalGate: String?
     @NSManaged public var arrivalPosition: String?
-    @NSManaged public var flightTime: String?
+    @NSManaged public var flightTime: Int32
     @NSManaged public var lastViewed: Date?
 
 }
@@ -54,6 +54,9 @@ extension Flight {
         self.departurePosition = data["departurePosition"] as? String
         self.arrivalGate = data["arrivalGate"] as? String
         self.arrivalPosition = data["arrivalPosition"] as? String
-        self.flightTime = data["flightTime"] as? String
+        
+        if let time = data["flightTime"] as? String {
+            self.flightTime = Int32(Period.timeIntervalMiliseconds(stringDate: time) ?? 0)
+        }
     }
 }

@@ -48,12 +48,14 @@ class FlightFiltersViewController: BaseViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var delegate: FlightFiltersDelegate?
+    var filters: [FlightFilterItem]?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setDefaultsProperties()
+        setFilters()
     }
     
     // MARK: Properties
@@ -86,6 +88,43 @@ class FlightFiltersViewController: BaseViewController {
         travelLabel.text = "flight.filters.travel.title".localized()
     }
     
+    func setFilters() {
+        
+        guard let items = filters else {
+            return
+        }
+        
+        for item in items {
+            
+            switch item.type {
+            case .date:
+                continue
+            case .place:
+                continue
+            case .travelTime:
+                if let value = item.values[.min] as? Float {
+                    rangeSlider.selectedMinimum = value
+                }
+                
+                if let value = item.values[.max] as? Float {
+                    rangeSlider.selectedMaximum = value
+                }
+            case .type:
+                if let value = item.values[.value] as? String {
+                    if value == "flight.filters.type.local.title" {
+                        selectType(sender: typeLocalButton)
+                    } else if value == "flight.filters.type.international.title" {
+                        selectType(sender: typeInternationalButton)
+                    } else {
+                        selectType(sender: typeAllButton)
+                    }
+                }
+            case .unknown:
+                continue
+            }
+        }
+    }
+    
     func setDefaultsProperties() {
         setColors()
         clearFields()
@@ -108,8 +147,8 @@ class FlightFiltersViewController: BaseViewController {
     }
     
     func setDefaultSliderValues() {
-        rangeSlider.selectedMinimum = 0
-        rangeSlider.selectedMaximum = 300
+        rangeSlider.selectedMinimum = rangeSlider.minValue
+        rangeSlider.selectedMaximum = rangeSlider.maxValue
     }
     
     func setType(_ all: Bool = true, _ local: Bool = false, _ international: Bool = false) {
@@ -118,7 +157,7 @@ class FlightFiltersViewController: BaseViewController {
         typeInternationalButton.setSelectedWithBorder(selected: international)
     }
     
-    func selectType(sender: Any) {
+    func selectType(sender: Any?) {
         
         guard let sender = sender as? UIButton else {
             return
@@ -225,6 +264,8 @@ class FlightFiltersViewController: BaseViewController {
         
         let items = createItems()
         delegate?.shouldFilterWithItems(items)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func typeButtonAction(_ sender: Any) {

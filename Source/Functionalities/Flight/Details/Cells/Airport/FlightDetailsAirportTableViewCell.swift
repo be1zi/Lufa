@@ -27,8 +27,8 @@ class FlightDetailsAirportTableViewCell: UITableViewCell {
     func loadWithData(flight: Flight) {
         self.flight = flight
         
-        from = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.departureAirport)
-        to = LocalRepositoryContext.sharedInstance.getCityName(shortCut: flight.arrivalAirport)
+        from = LocalRepositoryContext.sharedInstance.getCity(shortCut: flight.departureAirport)
+        to = LocalRepositoryContext.sharedInstance.getCity(shortCut: flight.arrivalAirport)
         
         setData()
     }
