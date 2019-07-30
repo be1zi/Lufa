@@ -37,6 +37,7 @@
 		3D2EC7C422BA0B17005C4D64 /* crew_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3D2EC7C022BA0B17005C4D64 /* crew_1.json */; };
 		3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */; };
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
+		3D38138522F01990006B24BD /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38138422F01990006B24BD /* DatePicker.swift */; };
 		3D43A5F022D8A2DD00EA33CF /* Array+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */; };
@@ -188,6 +189,7 @@
 		3D2EC7C022BA0B17005C4D64 /* crew_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crew_1.json; sourceTree = "<group>"; };
 		3D34DC85225351BE00590FD2 /* UIButton+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Lufa.swift"; sourceTree = "<group>"; };
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
+		3D38138422F01990006B24BD /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Lufa.swift"; sourceTree = "<group>"; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCompoundSynchroManager.swift; sourceTree = "<group>"; };
@@ -419,6 +421,15 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		3D38138322F0196F006B24BD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D88B53E22F019100093D23B /* DatePicker */,
+				3D03A48322CF54FF001BAE56 /* Checkbox */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3D6C374022DDBEF700651BEF /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +447,14 @@
 				3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3D88B53E22F019100093D23B /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3D38138422F01990006B24BD /* DatePicker.swift */,
+			);
+			path = DatePicker;
 			sourceTree = "<group>";
 		};
 		3DA3E7BE22D4C0220089425E /* Synchronization */ = {
@@ -656,9 +675,9 @@
 		3DABA406223B940400469FD1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				3D03A48322CF54FF001BAE56 /* Checkbox */,
-				3DB5F9B122CB83C800D4C007 /* Google */,
 				3D34DC83225351A800590FD2 /* UIKit */,
+				3D38138322F0196F006B24BD /* Views */,
+				3DB5F9B122CB83C800D4C007 /* Google */,
 				3DEA56FF2251FBE9003A34D4 /* WindowController */,
 				3DD4A3B4224525CA002B6A77 /* ProgressPresenter */,
 				3DD4A3B3224525B6002B6A77 /* NoDataPresenter */,
@@ -1260,6 +1279,7 @@
 				3D03A47822CDCE74001BAE56 /* FlightFiltersViewController.swift in Sources */,
 				3DA3E7CE22D5E1A50089425E /* SynchronizationTableViewHeader.swift in Sources */,
 				3D6C374222DDBF1E00651BEF /* SearchViewController.swift in Sources */,
+				3D38138522F01990006B24BD /* DatePicker.swift in Sources */,
 				3DCB50D422AE778100C0AFF0 /* City+CoreDataProperties.swift in Sources */,
 				3DAD82AC22B3A95C00131683 /* LocalRepositoryContext+City.swift in Sources */,
 				3D34DC86225351BE00590FD2 /* UIButton+Lufa.swift in Sources */,

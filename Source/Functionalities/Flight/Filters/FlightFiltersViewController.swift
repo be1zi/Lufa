@@ -24,18 +24,12 @@ class FlightFiltersViewController: BaseViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
-    @IBOutlet weak var fromValueLabel: UILabel!
-    @IBOutlet weak var fromValueIndicatorView: UIView!
-    @IBOutlet weak var toValueLabel: UILabel!
-    @IBOutlet weak var toValueIndicatorView: UIView!
+    @IBOutlet weak var fromDatePicker: DatePicker!
+    @IBOutlet weak var toDatePicker: DatePicker!
     
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var placeFromLabel: UILabel!
     @IBOutlet weak var placeToLabel: UILabel!
-    @IBOutlet weak var placeFromValueLabel: UILabel!
-    @IBOutlet weak var placeFromValueIndicatorView: UIView!
-    @IBOutlet weak var placeToValueLabel: UILabel!
-    @IBOutlet weak var placeToValueIndicatorView: UIView!
     
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var typeAllButton: UIButton!
@@ -126,24 +120,14 @@ class FlightFiltersViewController: BaseViewController {
     }
     
     func setDefaultsProperties() {
-        setColors()
         clearFields()
         setDefaultSliderValues()
         setType()
     }
     
-    func setColors() {
-        fromValueIndicatorView.backgroundColor = UIColor.lufaGreyColor
-        toValueIndicatorView.backgroundColor = UIColor.lufaGreyColor
-        placeFromValueIndicatorView.backgroundColor = UIColor.lufaGreyColor
-        placeToValueIndicatorView.backgroundColor = UIColor.lufaGreyColor
-    }
-    
     func clearFields() {
-        toValueLabel.text = nil
-        fromValueLabel.text = nil
-        placeFromValueLabel.text = nil
-        placeToValueLabel.text = nil
+        toDatePicker.text = nil
+        fromDatePicker.text = nil
     }
     
     func setDefaultSliderValues() {
@@ -198,12 +182,12 @@ class FlightFiltersViewController: BaseViewController {
     func createDateItem() -> FlightFilterItem? {
         let item = FlightFilterItem(type: .date)
         
-        if let text = fromValueLabel.text {
-            item.addValue(value: text, key: .min)
+        if let date = fromDatePicker.date {
+            item.addValue(value: date, key: .min)
         }
         
-        if let text = toValueLabel.text {
-            item.addValue(value: text, key: .max)
+        if let date = toDatePicker.date {
+            item.addValue(value: date, key: .max)
         }
         
         return item.isEmpty() ? nil : item
@@ -212,13 +196,13 @@ class FlightFiltersViewController: BaseViewController {
     func createPlaceItem() -> FlightFilterItem? {
         let item = FlightFilterItem(type: .place)
         
-        if let text = placeFromValueLabel.text {
-            item.addValue(value: text, key: .min)
-        }
-        
-        if let text = placeToValueLabel.text {
-            item.addValue(value: text, key: .max)
-        }
+//        if let text = placeFromValueLabel.text {
+//            item.addValue(value: text, key: .min)
+//        }
+//
+//        if let text = placeToValueLabel.text {
+//            item.addValue(value: text, key: .max)
+//        }
         
         return item.isEmpty() ? nil : item
     }

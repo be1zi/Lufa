@@ -102,7 +102,10 @@ extension FlightListViewController: UITableViewDelegate {
      
         let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
         
-        if let vc = vc, let flight = fetchedResultsController?.object(at: indexPath) as? Flight {
+        if let vc = vc,
+            let object = fetchedResultsController?.object(at: indexPath) as? NSManagedObject,
+            let flight = object.unmanagedCopy() as? Flight {
+            
             vc.flight = flight
             
             LocalRepositoryContext.sharedInstance.setFlightAsViewed(key: flight.flightDesignator)
@@ -120,17 +123,21 @@ extension FlightListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let object = fetchedResultsController?.object(at: indexPath) as? Flight else {
+        guard let object = fetchedResultsController?.object(at: indexPath) as? NSManagedObject else {
             return UITableViewCell()
         }
         
-        let from = LocalRepositoryContext.sharedInstance.getCity(shortCut: object.departureAirport)
-        let to = LocalRepositoryContext.sharedInstance.getCity(shortCut: object.arrivalAirport)
+        guard let obj = object.unmanagedCopy() as? Flight else {
+            return UITableViewCell()
+        }
+        
+        let from = LocalRepositoryContext.sharedInstance.getCity(shortCut: obj.departureAirport)
+        let to = LocalRepositoryContext.sharedInstance.getCity(shortCut: obj.arrivalAirport)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FlightTableViewCell", for: indexPath) as? FlightTableViewCell
         
         if let cell = cell {
-            cell.loadWithData(flight: object, from: from, to: to)
+            cell.loadWithData(flight: obj, from: from, to: to)
             return cell
         }
         

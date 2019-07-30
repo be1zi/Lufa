@@ -42,10 +42,26 @@ extension LocalRepositoryContext {
     
     func requestForFlight(withFilters items: [FlightFilterItem]?) -> NSFetchRequest<NSFetchRequestResult>? {
         
-        let request = getAllFlights()
+        var from: Date?
+        var to: Date?
         
-        guard let items = items,
-            let format = request?.predicate?.predicateFormat else {
+        guard let items = items else {
+            return getAllFlights()
+        }
+        
+        for item in items where item.type == .date {
+            if let min = item.values[.min] as? Date {
+                from = min
+            }
+            
+            if let max = item.values[.max] as? Date {
+                to = max
+            }
+        }
+        
+        let request = getFlights(dateFrom: from, dateTo: to)
+        
+        guard let format = request?.predicate?.predicateFormat else {
             return request
         }
         
@@ -56,13 +72,7 @@ extension LocalRepositoryContext {
             
             switch item.type {
             case .date:
-                if let value = item.values[.min] {
-                    predicatesArray.append("flightDate >= \(value)")
-                }
-                
-                if let value = item.values[.max] {
-                    predicatesArray.append("flightDate <= \(value)")
-                }
+                continue
             case .place:
                 if let value = item.values[.min] {
                     predicatesArray.append("departureAirport = \(value)")
@@ -151,17 +161,18 @@ extension LocalRepositoryContext {
     }
     
     func getAllFlights() -> NSFetchRequest<NSFetchRequestResult>? {
-        return getFlights(date: nil)
+        return getFlights(dateFrom: Date.init())
     }
     
     func getTodayFlights() -> NSFetchRequest<NSFetchRequestResult>? {
-        return getFlights(date: Date.init())
+        return getFlights(dateFrom: Date.init(), dateTo: Date.init())
     }
     
-    private func getFlights(date: Date?) -> NSFetchRequest<NSFetchRequestResult>? {
+    private func getFlights(dateFrom: Date? = nil, dateTo: Date? = nil) -> NSFetchRequest<NSFetchRequestResult>? {
         
         let emp = getEmployee()
-        var localDate = Date.init()
+        var localDateFrom = Date.init()
+        var localDateTo = Date.init()
         
         guard let employee = emp else {
             return nil
@@ -179,19 +190,25 @@ extension LocalRepositoryContext {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Flight")
         
-        if let date = date {
-            localDate = date
+        if let dateFrom = dateFrom {
+            localDateFrom = dateFrom
         }
         
-        guard let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: localDate),
-            let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: localDate) else {
+        if let dateTo = dateTo {
+            localDateTo = dateTo
+        }
+        
+        guard let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: localDateFrom),
+            let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: localDateTo) else {
             return nil
         }
         
-        if date != nil {
+        if dateFrom != nil && dateTo != nil {
             request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
-        } else {
+        } else if dateFrom != nil {
             request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, startDate])
+        } else if dateTo != nil {
+            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate <= %@", argumentArray: [designators, endDate])
         }
         
         request.sortDescriptors = [NSSortDescriptor.init(key: "flightDate", ascending: true)]
