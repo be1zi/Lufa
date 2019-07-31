@@ -14,7 +14,15 @@ class DatePicker: UITextField {
     let datePicker = UIDatePicker()
     let editIndicatorView = UIView()
     let clearButton = UIButton()
-    var date: Date?
+    var showIndicator: Bool = true
+    var date: Date? {
+        willSet {
+            if let value = newValue {
+                datePicker.date = value
+                text = DateFormatter.dateToString(date: value)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +32,7 @@ class DatePicker: UITextField {
         setClearButtonStyle()
     }
     
-    func setupPicker() {
+    private func setupPicker() {
         datePicker.datePickerMode = .date
         
         inputView = datePicker
@@ -32,13 +40,14 @@ class DatePicker: UITextField {
         date = nil
     }
     
-    func setupView() {
-        borderStyle = .none
+    private func setupView() {
         tintColor = UIColor.lufaGreenColor
         
-        editIndicatorView.backgroundColor = UIColor.lufaGreyColor
-        self.addSubview(editIndicatorView)
-
+        if showIndicator {
+            editIndicatorView.backgroundColor = UIColor.lufaGreyColor
+            self.addSubview(editIndicatorView)
+        }
+        
         clearButton.setImage(UIImage(named: "cancel"), for: .normal)
         clearButton.addTarget(self, action: #selector(shouldClear), for: .touchUpInside)
         rightView = clearButton
@@ -47,15 +56,16 @@ class DatePicker: UITextField {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-                
-        editIndicatorView.frame = CGRect.init(x: self.frame.origin.x, y: self.frame.maxY, width: self.frame.size.width, height: 2)
+        
+        if showIndicator {
+            editIndicatorView.frame = CGRect.init(x: 0, y: self.bounds.height, width: self.bounds.width, height: 2)
+        }
         
         let clearButtonSize = self.frame.size.height
-        clearButton.frame = CGRect.init(x: self.frame.maxX - clearButtonSize - 5, y: self.frame.origin.y, width: clearButtonSize, height: clearButtonSize)
-        clearButton.center.y = self.center.y
+        clearButton.frame = CGRect.init(x: self.frame.maxX - clearButtonSize - 5, y: self.bounds.height/2 - clearButtonSize/2, width: clearButtonSize, height: clearButtonSize)
     }
     
-    func setClearButtonStyle() {
+    private func setClearButtonStyle() {
         
         guard let value = text else {
             clearButton.isHidden = true
@@ -70,7 +80,7 @@ class DatePicker: UITextField {
         }
     }
     
-    @objc func shouldClear() {
+    @objc private func shouldClear() {
         text = nil
         date = nil
         

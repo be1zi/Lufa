@@ -70,7 +70,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aO1-QK-B2K">
                                                         <rect key="frame" x="0.0" y="23" width="162.5" height="35"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dQ-JE-4ID" customClass="DatePicker" customModule="Lufa" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2dQ-JE-4ID" customClass="DatePicker" customModule="Lufa" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="35" id="voD-Ei-OJH"/>
@@ -91,7 +91,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Piw-6f-KBq">
                                                         <rect key="frame" x="172.5" y="23" width="162.5" height="35"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-rK-05E" customClass="DatePicker" customModule="Lufa" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-rK-05E" customClass="DatePicker" customModule="Lufa" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

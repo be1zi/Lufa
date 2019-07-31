@@ -61,6 +61,7 @@
 "profile.edit.lastName.placeholder" = "Last name";
 "profile.edit.email.placeholder" = "email@test.com";
 "profile.edit.phone.placeholder" = "123-456-789";
+"profile.edit.birthdate.placeholder" = "01-01-2000";
 "profile.edit.error.required.title" = "Field is required.";
 "profile.edit.error.email.notTheSame.title" = "Email addresses are not the same.";
 "profile.edit.error.email.wrong.title" = "Incorrect email address.";

@@ -31,7 +31,7 @@ class ProfileEditViewController: BaseViewController {
     //Value
     @IBOutlet weak var firstNameTextfield: UITextField!
     @IBOutlet weak var lastNameTextfield: UITextField!
-    //bitrh date
+    @IBOutlet weak var birthDateDatePicker: DatePicker!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var confirmEmailTextfield: UITextField!
     @IBOutlet weak var phoneNumberTextfield: UITextField!
@@ -57,6 +57,7 @@ class ProfileEditViewController: BaseViewController {
         loadData()
         setData()
         setDelegates()
+        setConfigurations()
     }
     
     // MARK: - Appearance
@@ -81,7 +82,7 @@ class ProfileEditViewController: BaseViewController {
         
         firstNameTextfield.placeholder = "profile.edit.firstName.placeholder".localized()
         lastNameTextfield.placeholder = "profile.edit.lastName.placeholder".localized()
-        //birthdate placeholder
+        birthDateDatePicker.placeholder = "profile.edit.birthdate.placeholder".localized()
         emailTextfield.placeholder = "profile.edit.email.placeholder".localized()
         confirmEmailTextfield.placeholder = "profile.edit.email.placeholder".localized()
         phoneNumberTextfield.placeholder = "profile.edit.phone.placeholder".localized()
@@ -106,10 +107,13 @@ class ProfileEditViewController: BaseViewController {
     func setDelegates() {
         firstNameTextfield.delegate = self
         lastNameTextfield.delegate = self
-        //birthdate
         emailTextfield.delegate = self
         confirmEmailTextfield.delegate = self
         phoneNumberTextfield.delegate = self
+    }
+    
+    func setConfigurations() {
+        birthDateDatePicker.showIndicator = false
     }
     
     // MARK: - Data
@@ -127,6 +131,7 @@ class ProfileEditViewController: BaseViewController {
         lastNameTextfield.text = employee.lastName
         emailTextfield.text = employee.email
         phoneNumberTextfield.text = employee.phone
+        birthDateDatePicker.date = employee.birthDate
         
         autoSynchronizationCheckbox.checked = employee.autoSynchronizationEnabled()
         notificationsCheckbox.checked = employee.notificationsEnabled()
@@ -218,6 +223,7 @@ class ProfileEditViewController: BaseViewController {
         data["firstName"] = firstNameTextfield.text
         data["lastName"] = lastNameTextfield.text
         data["email"] = emailTextfield.text
+        data["birthDate"] = birthDateDatePicker.date
         
         return data
     }

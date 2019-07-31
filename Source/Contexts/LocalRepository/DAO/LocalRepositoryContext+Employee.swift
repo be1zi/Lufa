@@ -23,7 +23,10 @@ extension LocalRepositoryContext {
         
         let context = LocalRepositoryContext.context
         
-        guard let employee = getEmployee() else {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")        
+        let emp = self.executeFetch(fetchRequest: request).first as? Employee
+        
+        guard let employee = emp else {
             return
         }
         
