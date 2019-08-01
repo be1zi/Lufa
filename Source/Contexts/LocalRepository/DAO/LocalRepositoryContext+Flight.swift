@@ -170,6 +170,10 @@ extension LocalRepositoryContext {
         return getFlights(dateFrom: Date.init(), dateTo: Date.init())
     }
     
+    func getElseInWeekFlights() -> NSFetchRequest<NSFetchRequestResult>? {
+        return getTodayFlights()
+    }
+    
     private func getFlights(dateFrom: Date? = nil, dateTo: Date? = nil) -> NSFetchRequest<NSFetchRequestResult>? {
         
         let emp = getEmployee()

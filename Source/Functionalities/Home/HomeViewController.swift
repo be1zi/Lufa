@@ -9,9 +9,11 @@ import UIKit
 import CoreData
 
 enum HomeCellType: Int {
-    case HEADER
-    case FLIGHTS
-    case ALL
+    case TodaysHeader
+    case Todays
+    case ElseHeader
+    case Else
+    case All
 }
 
 class HomeViewController: BaseViewController {
@@ -22,7 +24,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var employee: Employee?
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var todaysFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var elseFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -86,14 +89,19 @@ class HomeViewController: BaseViewController {
     func loadData() {
         employee = LocalRepositoryContext.sharedInstance.getEmployee()
         
-        guard let request = LocalRepositoryContext.sharedInstance.getTodayFlights() else {
+        guard let todayRequest = LocalRepositoryContext.sharedInstance.getTodayFlights(),
+            let elseRequest = LocalRepositoryContext.sharedInstance.getElseInWeekFlights() else {
             return
         }
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: LocalRepositoryContext.context, sectionNameKeyPath: nil, cacheName: nil)
+        todaysFetchedResultsController = NSFetchedResultsController(fetchRequest: todayRequest, managedObjectContext: LocalRepositoryContext.context, sectionNameKeyPath: nil, cacheName: nil)
+        elseFetchedResultsController = NSFetchedResultsController(fetchRequest: elseRequest, managedObjectContext: LocalRepositoryContext.context, sectionNameKeyPath: nil, cacheName: nil)
         
-        fetchedResultsController?.delegate = self
-        ((try? fetchedResultsController?.performFetch()) as ()??)
+        todaysFetchedResultsController?.delegate = self
+        elseFetchedResultsController?.delegate = self
+        
+        ((try? todaysFetchedResultsController?.performFetch()) as ()??)
+        ((try? elseFetchedResultsController?.performFetch()) as ()??)
     }
     
     func setData() {
@@ -115,7 +123,9 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.row {
-        case HomeCellType.FLIGHTS.rawValue:
+        case HomeCellType.Todays.rawValue:
+            return 310
+        case HomeCellType.Else.rawValue:
             return 310
         default:
             return UITableView.automaticDimension
@@ -126,24 +136,49 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return HomeCellType.ALL.rawValue
+        return HomeCellType.All.rawValue
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let objects = fetchedResultsController?.fetchedObjects as? [Flight] else {
-            return UITableViewCell()
+        var objects: [Flight]?
+        
+        switch indexPath.row {
+        case HomeCellType.TodaysHeader.rawValue:
+            fallthrough
+        case HomeCellType.Todays.rawValue:
+            objects = todaysFetchedResultsController?.fetchedObjects as? [Flight]
+        case HomeCellType.ElseHeader.rawValue:
+            fallthrough
+        case HomeCellType.Else.rawValue:
+            objects = elseFetchedResultsController?.fetchedObjects as? [Flight]
+        default:
+            objects = []
         }
         
         switch indexPath.row {
-        case HomeCellType.HEADER.rawValue:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHeaderTableViewCell", for: indexPath) as? HomeHeaderTableViewCell {
-                cell.setCount(count: objects.count)
+        case HomeCellType.TodaysHeader.rawValue:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHeaderTableViewCell", for: indexPath) as? HomeHeaderTableViewCell,
+                let flights = objects {
+                cell.setData(count: flights.count, type: .TodaysHeader)
                 return cell
             }
-        case HomeCellType.FLIGHTS.rawValue:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell {
-                cell.setData(withFlights: objects, andDelegate: self)
+        case HomeCellType.ElseHeader.rawValue:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeHeaderTableViewCell", for: indexPath) as? HomeHeaderTableViewCell,
+                let flights = objects {
+                cell.setData(count: flights.count, type: .ElseHeader)
+                return cell
+            }
+        case HomeCellType.Todays.rawValue:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell,
+                let flights = objects {
+                cell.setData(withFlights: flights, andDelegate: self)
+                return cell
+            }
+        case HomeCellType.Else.rawValue:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell,
+                let flights = objects {
+                cell.setData(withFlights: flights, andDelegate: self)
                 return cell
             }
         default:
@@ -158,13 +193,13 @@ extension HomeViewController: HomeFlightsTableViewDelegate {
     
     func collectionViewElementSelected(atIndex index: IndexPath) {
        
-        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
-        
-        if let vc = vc, let object = fetchedResultsController?.object(at: index) as? Flight {
-            vc.flight = object
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+//        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
+//
+//        if let vc = vc, let object = fetchedResultsController?.object(at: index) as? Flight {
+//            vc.flight = object
+//
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
     }
 }
 

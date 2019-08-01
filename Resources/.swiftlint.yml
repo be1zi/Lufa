@@ -10,6 +10,7 @@ disabled_rules:
 - class_delegate_protocol
 - force_cast
 - large_tuple
+- no_fallthrough_only
 
 file_length:
 - 1100

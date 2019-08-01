@@ -14,17 +14,24 @@ class HomeHeaderTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var messageLabel: UILabel!
     
-    func setCount(count: Int) {
+    func setData(count: Int, type: HomeCellType) {
         
         var format: String = ""
         
-        switch count {
-        case 1:
-            format = "home.flights.number3.title".localized()
-        case 2, 3, 4:
-            format = "home.flights.number2.title".localized()
+        switch type {
+        case .TodaysHeader:
+            switch count {
+            case 1:
+                format = "home.flights.number3.title".localized()
+            case 2, 3, 4:
+                format = "home.flights.number2.title".localized()
+            default:
+                format = "home.flights.number1.title".localized()
+            }
+        case .ElseHeader:
+            format = "home.flights.more.title".localized()
         default:
-            format = "home.flights.number1.title".localized()
+            format = "%@"
         }
         
         let text = String.init(format: format, arguments: [count.description])

@@ -71,6 +71,7 @@
 "home.flights.number1.title" = "You have %@ flights today";
 "home.flights.number2.title" = "You have %@ flights today";
 "home.flights.number3.title" = "You have %@ flight today";
+"home.flights.more.title" = "and %@ more to the end of the week";
 "home.flights.cell.from.title" = "From:";
 "home.flights.cell.to.title" = "To:";
 "home.flights.cell.flightNumber.title" = "Flight number:";
