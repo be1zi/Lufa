@@ -36,7 +36,7 @@ extension LocalRepositoryContext {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SynchroInfo")
         request.predicate = NSPredicate(format: "synchroType = %@ && object = %@", argumentArray: [synchroType.rawValue, object])
         
-        let result = self.executeFetch(fetchRequest: request)
+        let result = self.executeFetch(fetchRequest: request).unmanagedCopy()
         
         if !(result.count > 0) {
             return true

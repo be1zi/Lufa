@@ -30,6 +30,8 @@ class FlightFiltersViewController: BaseViewController {
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var placeFromLabel: UILabel!
     @IBOutlet weak var placeToLabel: UILabel!
+    @IBOutlet weak var fromPlacePicker: Picker!
+    @IBOutlet weak var toPlacePicker: Picker!
     
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var typeAllButton: UIButton!
@@ -49,6 +51,7 @@ class FlightFiltersViewController: BaseViewController {
         super.viewDidLoad()
         
         setDefaultsProperties()
+        setPickersData()
         setFilters()
     }
     
@@ -92,9 +95,11 @@ class FlightFiltersViewController: BaseViewController {
             
             switch item.type {
             case .date:
-                continue
+                fromDatePicker.date = item.values[.min] as? Date
+                toDatePicker.date = item.values[.max] as? Date
             case .place:
-                continue
+                fromPlacePicker.selectedData = item.values[.min] as? String
+                toPlacePicker.selectedData = item.values[.max] as? String
             case .travelTime:
                 if let value = item.values[.min] as? Float {
                     rangeSlider.selectedMinimum = value
@@ -126,13 +131,27 @@ class FlightFiltersViewController: BaseViewController {
     }
     
     func clearFields() {
-        toDatePicker.text = nil
-        fromDatePicker.text = nil
+        toDatePicker.date = nil
+        fromDatePicker.date = nil
     }
     
     func setDefaultSliderValues() {
         rangeSlider.selectedMinimum = rangeSlider.minValue
         rangeSlider.selectedMaximum = rangeSlider.maxValue
+    }
+    
+    func setPickersData() {
+        let cities: [City]? = LocalRepositoryContext.sharedInstance.getAllCities()
+        
+        guard let data = cities else {
+            return
+        }
+        
+        let keys = data.compactMap {$0.code}
+        let names = data.compactMap {$0.name}
+        
+        fromPlacePicker.data = (keys, names)
+        toPlacePicker.data = (keys, names)
     }
     
     func setType(_ all: Bool = true, _ local: Bool = false, _ international: Bool = false) {
@@ -196,13 +215,13 @@ class FlightFiltersViewController: BaseViewController {
     func createPlaceItem() -> FlightFilterItem? {
         let item = FlightFilterItem(type: .place)
         
-//        if let text = placeFromValueLabel.text {
-//            item.addValue(value: text, key: .min)
-//        }
-//
-//        if let text = placeToValueLabel.text {
-//            item.addValue(value: text, key: .max)
-//        }
+        if let text = fromPlacePicker.selectedData {
+            item.addValue(value: text, key: .min)
+        }
+
+        if let text = toPlacePicker.selectedData {
+            item.addValue(value: text, key: .max)
+        }
         
         return item.isEmpty() ? nil : item
     }

@@ -46,6 +46,7 @@
 		3D6C374422DDBF4900651BEF /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C374322DDBF4900651BEF /* Search.storyboard */; };
 		3D6C374722DDFDEB00651BEF /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */; };
 		3D6C374922DDFDF900651BEF /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */; };
+		3D8F22B922F2D06000BB10B6 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F22B822F2D06000BB10B6 /* Picker.swift */; };
 		3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */; };
 		3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */; };
 		3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */; };
@@ -198,6 +199,7 @@
 		3D6C374322DDBF4900651BEF /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		3D8F22B822F2D06000BB10B6 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+EmployeePermission.swift"; sourceTree = "<group>"; };
@@ -424,8 +426,9 @@
 		3D38138322F0196F006B24BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3D88B53E22F019100093D23B /* DatePicker */,
 				3D03A48322CF54FF001BAE56 /* Checkbox */,
+				3D88B53E22F019100093D23B /* DatePicker */,
+				3DA9E30722F2CFE200E7072A /* Picker */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +550,14 @@
 				3DA3E7BC22D47CCA0089425E /* Regex.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		3DA9E30722F2CFE200E7072A /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				3D8F22B822F2D06000BB10B6 /* Picker.swift */,
+			);
+			path = Picker;
 			sourceTree = "<group>";
 		};
 		3DABA3DC223B90DE00469FD1 = {
@@ -675,13 +686,13 @@
 		3DABA406223B940400469FD1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3DD4A3B022452508002B6A77 /* BaseViewController */,
+				3DB5F9B122CB83C800D4C007 /* Google */,
+				3DD4A3B3224525B6002B6A77 /* NoDataPresenter */,
+				3DD4A3B4224525CA002B6A77 /* ProgressPresenter */,
 				3D34DC83225351A800590FD2 /* UIKit */,
 				3D38138322F0196F006B24BD /* Views */,
-				3DB5F9B122CB83C800D4C007 /* Google */,
 				3DEA56FF2251FBE9003A34D4 /* WindowController */,
-				3DD4A3B4224525CA002B6A77 /* ProgressPresenter */,
-				3DD4A3B3224525B6002B6A77 /* NoDataPresenter */,
-				3DD4A3B022452508002B6A77 /* BaseViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1262,6 +1273,7 @@
 				3DB5F9B322CB83EE00D4C007 /* GMSMarker+Lufa.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,
 				3DF18B0422C5E2AC00AD10F5 /* CompoundSynchroManager.swift in Sources */,
+				3D8F22B922F2D06000BB10B6 /* Picker.swift in Sources */,
 				3D03A47E22CDD30E001BAE56 /* ProfileEditViewController.swift in Sources */,
 				3DAD82A822B28DC300131683 /* HomeFlightsTableViewCell.swift in Sources */,
 				3D25D58722B78B3100881E17 /* FlightDetailsHeaderTableViewCell.swift in Sources */,

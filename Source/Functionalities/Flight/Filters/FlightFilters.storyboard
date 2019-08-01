@@ -178,7 +178,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pM2-Zy-7DV">
                                                         <rect key="frame" x="0.0" y="23" width="162.5" height="35"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZL-wY-Ulc">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JZL-wY-Ulc" customClass="Picker" customModule="Lufa" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -196,7 +196,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaI-UH-cYe">
                                                         <rect key="frame" x="172.5" y="23" width="162.5" height="35"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7SY-VU-AZn">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7SY-VU-AZn" customClass="Picker" customModule="Lufa" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="162.5" height="35"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -499,7 +499,7 @@
                             <constraint firstItem="fDb-ke-bDc" firstAttribute="trailing" secondItem="fZr-Qd-3VY" secondAttribute="trailing" id="83P-8m-bKc"/>
                             <constraint firstItem="fZr-Qd-3VY" firstAttribute="top" secondItem="M0K-bF-1cJ" secondAttribute="bottom" id="Tep-dv-lZv"/>
                             <constraint firstItem="M0K-bF-1cJ" firstAttribute="top" secondItem="fDb-ke-bDc" secondAttribute="top" id="blw-nP-7rE"/>
-                            <constraint firstAttribute="bottom" secondItem="fZr-Qd-3VY" secondAttribute="bottom" id="io3-kb-7ce"/>
+                            <constraint firstItem="fDb-ke-bDc" firstAttribute="bottom" secondItem="fZr-Qd-3VY" secondAttribute="bottom" id="io3-kb-7ce"/>
                             <constraint firstItem="M0K-bF-1cJ" firstAttribute="leading" secondItem="fDb-ke-bDc" secondAttribute="leading" id="jeQ-jO-1Hx"/>
                             <constraint firstItem="fZr-Qd-3VY" firstAttribute="leading" secondItem="fDb-ke-bDc" secondAttribute="leading" id="pPb-bH-5k0"/>
                             <constraint firstItem="fDb-ke-bDc" firstAttribute="trailing" secondItem="M0K-bF-1cJ" secondAttribute="trailing" id="xVC-qW-7a5"/>
@@ -527,6 +527,7 @@
                         <outlet property="dateLabel" destination="r8r-Vh-g0M" id="jMA-oe-jg7"/>
                         <outlet property="fromDatePicker" destination="2dQ-JE-4ID" id="Gtz-Hr-wZA"/>
                         <outlet property="fromLabel" destination="UEX-kk-ndP" id="jis-JP-B0J"/>
+                        <outlet property="fromPlacePicker" destination="JZL-wY-Ulc" id="OF0-kI-c3N"/>
                         <outlet property="placeFromLabel" destination="71R-Ic-Unv" id="nBc-Lv-ER3"/>
                         <outlet property="placeLabel" destination="mjU-4f-3m7" id="h2D-8L-eAM"/>
                         <outlet property="placeToLabel" destination="o26-aN-qc7" id="qMG-E3-vBk"/>
@@ -534,6 +535,7 @@
                         <outlet property="resetButton" destination="vmI-Tm-hJw" id="EwO-hr-XwT"/>
                         <outlet property="toDatePicker" destination="FN0-rK-05E" id="OxA-zJ-npT"/>
                         <outlet property="toLabel" destination="YmD-dj-sqt" id="sPl-JL-hC7"/>
+                        <outlet property="toPlacePicker" destination="7SY-VU-AZn" id="LR5-VF-WBF"/>
                         <outlet property="travelLabel" destination="4vn-hc-iT9" id="t4J-DH-LKy"/>
                         <outlet property="typeAllButton" destination="8Iz-CE-GTh" id="bw9-Si-fAy"/>
                         <outlet property="typeInternationalButton" destination="xEF-bS-mey" id="MfI-PP-3aj"/>

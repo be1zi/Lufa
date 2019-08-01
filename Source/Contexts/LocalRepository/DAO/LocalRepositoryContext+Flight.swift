@@ -42,7 +42,7 @@ extension LocalRepositoryContext {
     
     func requestForFlight(withFilters items: [FlightFilterItem]?) -> NSFetchRequest<NSFetchRequestResult>? {
         
-        var from: Date?
+        var from: Date? = Date.init()
         var to: Date?
         
         guard let items = items else {
@@ -75,11 +75,13 @@ extension LocalRepositoryContext {
                 continue
             case .place:
                 if let value = item.values[.min] {
-                    predicatesArray.append("departureAirport = \(value)")
+                    let localPredicate = NSPredicate(format: "departureAirport = %@", argumentArray: [value])
+                    predicatesArray.append(localPredicate.predicateFormat)
                 }
                 
                 if let value = item.values[.max] {
-                    predicatesArray.append("arrivalAirport = \(value)")
+                    let localPredicate = NSPredicate(format: "arrivalAirport = %@", argumentArray: [value])
+                    predicatesArray.append(localPredicate.predicateFormat)
                 }
             case .travelTime:
                 if let min = item.values[.min] as? Float, let max = item.values[.max] as? Float {
@@ -110,7 +112,7 @@ extension LocalRepositoryContext {
             return request
         }
         
-        let result = self.executeFetch(fetchRequest: req) as? [Flight]
+        let result = self.executeFetch(fetchRequest: req).unmanagedCopy() as? [Flight]
         
         guard var res = result else {
             return req
@@ -204,7 +206,7 @@ extension LocalRepositoryContext {
         }
         
         if dateFrom != nil && dateTo != nil {
-            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate < %@", argumentArray: [designators, startDate, endDate])
+            request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@ and flightDate <= %@", argumentArray: [designators, startDate, endDate])
         } else if dateFrom != nil {
             request.predicate = NSPredicate(format: "flightDesignator IN %@ and flightDate >= %@", argumentArray: [designators, startDate])
         } else if dateTo != nil {

@@ -11,6 +11,14 @@ import CoreData
 
 extension LocalRepositoryContext {
     
+    func getAllCities() -> [City]? {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "City")
+        request.sortDescriptors = [NSSortDescriptor.init(key: "name", ascending: true)]
+        
+        return self.executeFetch(fetchRequest: request).unmanagedCopy() as? [City]
+    }
+    
     func getCity(shortCut: String?) -> City? {
         
         guard let shortCut = shortCut else {

@@ -23,7 +23,7 @@ extension LocalRepositoryContext {
         
         let context = LocalRepositoryContext.context
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Employee")
         let emp = self.executeFetch(fetchRequest: request).first as? Employee
         
         guard let employee = emp else {
@@ -38,9 +38,7 @@ extension LocalRepositoryContext {
             employee.lastName = lastName
         }
         
-        if let birthDate = data["birthDate"] as? Date {
-            employee.birthDate = birthDate
-        }
+        employee.birthDate = data["birthDate"] as? Date
         
         if let email = data["email"] as? String {
             employee.email = email

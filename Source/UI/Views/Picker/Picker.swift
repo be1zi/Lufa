@@ -1,29 +1,46 @@
 //
-//  DatePicker.swift
+//  Picker.swift
 //  Lufa
 //
-//  Created by Konrad Belzowski on 30/07/2019.
+//  Created by Konrad Belzowski on 01/08/2019.
 //  Copyright © 2019 Konrad Belzowski. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class DatePicker: UITextField {
+class Picker: UITextField {
     
-    let datePicker = UIDatePicker()
+    let dataPicker = UIPickerView()
     let editIndicatorView = UIView()
     let clearButton = UIButton()
     var showIndicator: Bool = true
-    var date: Date? {
+    var data: (keys: [String], values: [String])? {
         willSet {
-            if let value = newValue {
-                datePicker.date = value
-                text = DateFormatter.dateToString(date: value)
-            } else {
-                text = nil
-            }
+            dataPicker.reloadAllComponents()
+            keys = newValue?.keys
+            values = newValue?.values
+        }
+    }
+    
+    private var keys: [String]?
+    private var values: [String]?
+    private var selectedIndex: Int = 0 {
+        willSet {
+            selectedData = keys?[newValue]
+        }
+    }
+    
+    var selectedData: String? {
+        willSet {
             
+            if let value = newValue {
+                let index = keys?.firstIndex(of: value)
+                
+                if let idx = index {
+                    text = values?[idx]
+                }
+            }
             setClearButtonStyle()
         }
     }
@@ -33,14 +50,18 @@ class DatePicker: UITextField {
         
         setupPicker()
         setupView()
+        setClearButtonStyle()
     }
     
     private func setupPicker() {
-        datePicker.datePickerMode = .date
+        dataPicker.contentMode = .scaleAspectFit
+        dataPicker.delegate = self
+        dataPicker.dataSource = self
+        dataPicker.showsSelectionIndicator = true
         
-        inputView = datePicker
+        inputView = dataPicker
         delegate = self
-        date = nil
+        selectedData = nil
     }
     
     private func setupView() {
@@ -85,20 +106,42 @@ class DatePicker: UITextField {
     
     @objc private func shouldClear() {
         text = nil
-        date = nil
+        selectedData = nil
     }
 }
 
-extension DatePicker: UITextFieldDelegate {
+extension Picker: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         editIndicatorView.backgroundColor = UIColor.lufaGreenColor
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        text = DateFormatter.dateToString(date: datePicker.date)
-        date = datePicker.date
-        
+    func textFieldDidEndEditing(_ textField: UITextField) {        
         editIndicatorView.backgroundColor = UIColor.lufaGreyColor
+    }
+}
+
+extension Picker: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        guard let count = values?.count else {
+            return 0
+        }
+        
+        return count
+    }
+}
+
+extension Picker: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedIndex = row
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return values?[row]
     }
 }
