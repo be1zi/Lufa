@@ -1,46 +1,30 @@
 //
-//  DatePicker.swift
+//  BasePicker.swift
 //  Lufa
 //
-//  Created by Konrad Belzowski on 30/07/2019.
+//  Created by Konrad Belzowski on 01/08/2019.
 //  Copyright © 2019 Konrad Belzowski. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class DatePicker: UITextField {
+class BasePicker: UITextField {
     
-    let datePicker = UIDatePicker()
     let editIndicatorView = UIView()
     let clearButton = UIButton()
     var showIndicator: Bool = true
-    var date: Date? {
-        willSet {
-            if let value = newValue {
-                datePicker.date = value
-                text = DateFormatter.dateToString(date: value)
-            } else {
-                text = nil
-            }
-            
-            setClearButtonStyle()
-        }
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         setupPicker()
         setupView()
+        setClearButtonStyle()
     }
     
-    private func setupPicker() {
-        datePicker.datePickerMode = .date
+    func setupPicker() {
         
-        inputView = datePicker
-        delegate = self
-        date = nil
     }
     
     private func setupView() {
@@ -68,7 +52,7 @@ class DatePicker: UITextField {
         clearButton.frame = CGRect.init(x: self.frame.maxX - clearButtonSize - 5, y: self.bounds.height/2 - clearButtonSize/2, width: clearButtonSize, height: clearButtonSize)
     }
     
-    private func setClearButtonStyle() {
+    func setClearButtonStyle() {
         
         guard let value = text else {
             clearButton.isHidden = true
@@ -85,20 +69,21 @@ class DatePicker: UITextField {
     
     @objc private func shouldClear() {
         text = nil
-        date = nil
+        clear()
+    }
+    
+    func clear() {
+
     }
 }
 
-extension DatePicker: UITextFieldDelegate {
+extension Picker: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         editIndicatorView.backgroundColor = UIColor.lufaGreenColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        text = DateFormatter.dateToString(date: datePicker.date)
-        date = datePicker.date
-        
         editIndicatorView.backgroundColor = UIColor.lufaGreyColor
     }
 }

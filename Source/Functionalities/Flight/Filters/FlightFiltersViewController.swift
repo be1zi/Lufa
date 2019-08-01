@@ -133,6 +133,8 @@ class FlightFiltersViewController: BaseViewController {
     func clearFields() {
         toDatePicker.date = nil
         fromDatePicker.date = nil
+        toPlacePicker.selectedData = nil
+        fromPlacePicker.selectedData = nil
     }
     
     func setDefaultSliderValues() {

@@ -47,6 +47,7 @@
 		3D6C374722DDFDEB00651BEF /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */; };
 		3D6C374922DDFDF900651BEF /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */; };
 		3D8F22B922F2D06000BB10B6 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F22B822F2D06000BB10B6 /* Picker.swift */; };
+		3D8F22BD22F2EF6A00BB10B6 /* BasePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F22BC22F2EF6A00BB10B6 /* BasePicker.swift */; };
 		3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */; };
 		3DA3E7B722D462730089425E /* EmployeePermission+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */; };
 		3DA3E7B922D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */; };
@@ -200,6 +201,7 @@
 		3D6C374622DDFDEB00651BEF /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		3D6C374822DDFDF900651BEF /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		3D8F22B822F2D06000BB10B6 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		3D8F22BC22F2EF6A00BB10B6 /* BasePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePicker.swift; sourceTree = "<group>"; };
 		3DA3E7B422D462730089425E /* EmployeePermission+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3DA3E7B522D462730089425E /* EmployeePermission+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeePermission+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3DA3E7B822D4637A0089425E /* LocalRepositoryContext+EmployeePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalRepositoryContext+EmployeePermission.swift"; sourceTree = "<group>"; };
@@ -427,8 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				3D03A48322CF54FF001BAE56 /* Checkbox */,
-				3D88B53E22F019100093D23B /* DatePicker */,
-				3DA9E30722F2CFE200E7072A /* Picker */,
+				3D8F22BA22F2EF3A00BB10B6 /* Pickers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,6 +459,24 @@
 				3D38138422F01990006B24BD /* DatePicker.swift */,
 			);
 			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		3D8F22BA22F2EF3A00BB10B6 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				3D8F22BB22F2EF4500BB10B6 /* Base */,
+				3D88B53E22F019100093D23B /* DatePicker */,
+				3DA9E30722F2CFE200E7072A /* Picker */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		3D8F22BB22F2EF4500BB10B6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3D8F22BC22F2EF6A00BB10B6 /* BasePicker.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		3DA3E7BE22D4C0220089425E /* Synchronization */ = {
@@ -1301,6 +1320,7 @@
 				3D25D59622B7944900881E17 /* FlightDetailsAirportTableViewCell.swift in Sources */,
 				3DE0EE4B229D211E009AD5D8 /* CrewFlight+CoreDataProperties.swift in Sources */,
 				3DDDDB3D224E3E68006BFCD1 /* RemoteRepositoryContext+Authenticate.swift in Sources */,
+				3D8F22BD22F2EF6A00BB10B6 /* BasePicker.swift in Sources */,
 				3D25D57B22B7660100881E17 /* CountrySynchroManager.swift in Sources */,
 				3DEA56F62251F4FA003A34D4 /* AuthorizationViewController.swift in Sources */,
 				3DB5F9A522CB552F00D4C007 /* CrewSynchroManager.swift in Sources */,
