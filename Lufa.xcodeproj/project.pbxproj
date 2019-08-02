@@ -39,6 +39,7 @@
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3D38138522F01990006B24BD /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38138422F01990006B24BD /* DatePicker.swift */; };
 		3D43A5F022D8A2DD00EA33CF /* Array+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */; };
+		3D4CA2C522F4135C002E2E27 /* Date+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
@@ -193,6 +194,7 @@
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3D38138422F01990006B24BD /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Lufa.swift"; sourceTree = "<group>"; };
+		3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Lufa.swift"; sourceTree = "<group>"; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 			isa = PBXGroup;
 			children = (
 				3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */,
+				3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */,
 				3DA47B7522A501370095FA85 /* DateFormatter+Lufa.swift */,
 				3D03A48122CDFC08001BAE56 /* Notification+Lufa.swift */,
 				3DA6E99222560B7C00015999 /* String+Lufa.swift */,
@@ -1258,6 +1261,7 @@
 				3DE0EE57229D211E009AD5D8 /* Duty+CoreDataProperties.swift in Sources */,
 				3DCB50E422AF88CC00C0AFF0 /* MenuBaseItem.swift in Sources */,
 				3D6C374722DDFDEB00651BEF /* SearchTableViewCell.swift in Sources */,
+				3D4CA2C522F4135C002E2E27 /* Date+Lufa.swift in Sources */,
 				3DCB50E022AF84E800C0AFF0 /* MenuFactory.swift in Sources */,
 				3DDDDB37224B8DE3006BFCD1 /* RemoteRepositoryContext+Crew.swift in Sources */,
 				3DCB50D722AF7E2B00C0AFF0 /* Employee+CoreDataClass.swift in Sources */,

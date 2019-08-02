@@ -171,7 +171,12 @@ extension LocalRepositoryContext {
     }
     
     func getElseInWeekFlights() -> NSFetchRequest<NSFetchRequestResult>? {
-        return getTodayFlights()
+        
+        guard let tomorrow = Date().dayAfter?.startDay(), let sunday = Date().endOfWeek?.endDate() else {
+            return nil
+        }
+        
+        return getFlights(dateFrom: tomorrow, dateTo: sunday)
     }
     
     private func getFlights(dateFrom: Date? = nil, dateTo: Date? = nil) -> NSFetchRequest<NSFetchRequestResult>? {
@@ -204,8 +209,8 @@ extension LocalRepositoryContext {
             localDateTo = dateTo
         }
         
-        guard let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: localDateFrom),
-            let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: localDateTo) else {
+        guard let startDate = localDateFrom.startDay(),
+            let endDate = localDateTo.endDate() else {
             return nil
         }
         
