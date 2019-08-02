@@ -32,6 +32,8 @@
 "from.place.title" = "Odlot:";
 "to.place.title" = "Przylot";
 "all.title" = "Wszystkie";
+"show.title" = "Pokaż";
+"clear.title" = "Wyczyść";
 
 //Menu
 "menu.item.flight.title" = "Loty";

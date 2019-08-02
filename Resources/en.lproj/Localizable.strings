@@ -32,6 +32,8 @@
 "from.place.title" = "Departure:";
 "to.place.title" = "Arrival:";
 "all.title" = "All";
+"show.title" = "Show";
+"clear.title" = "Clear";
 
 //Menu
 "menu.item.flight.title" = "Flights";

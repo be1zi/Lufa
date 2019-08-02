@@ -19,6 +19,7 @@ class FlightDetailsTitleTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var showOnMapView: UIView!
+    @IBOutlet weak var showLabel: UILabel!
     
     var flight: Flight?
     var delegate: FlightDetailsTitleCellDelegate?
@@ -35,6 +36,7 @@ class FlightDetailsTitleTableViewCell: UITableViewCell {
         self.delegate = delegate
         
         setData()
+        setTranslations()
     }
     
     func setData() {
@@ -47,6 +49,10 @@ class FlightDetailsTitleTableViewCell: UITableViewCell {
             let flightDesignator = data.flightDesignator {
             titleLabel.text = "\(operatingAirline): \(flightDesignator)"
         }
+    }
+    
+    func setTranslations() {
+        showLabel.text = "show.title".localized()
     }
     
     // MARK: - Action

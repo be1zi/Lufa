@@ -62,7 +62,7 @@
                         <viewLayoutGuide key="safeArea" id="C1Z-GS-Xsk"/>
                     </view>
                     <navigationItem key="navigationItem" id="UCN-hv-N3q">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vks-uD-Bx5">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Vks-uD-Bx5">
                             <color key="tintColor" red="0.80784313730000001" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButtonAction:" destination="vc5-MQ-g3J" id="s9U-zf-37j"/>

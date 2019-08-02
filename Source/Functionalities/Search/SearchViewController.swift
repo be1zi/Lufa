@@ -69,6 +69,11 @@ class SearchViewController: BaseViewController {
     override func constraintToBottom() -> NSLayoutConstraint? {
         return bottomConstraint
     }
+   
+    override func loadTranslations() {
+        cancelButton.title = "cancel.title".localized()
+        clearButton.title = "clear.title".localized()
+    }
     
     // MARK: Data
     func reloadData() {
