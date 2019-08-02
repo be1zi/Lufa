@@ -58,7 +58,7 @@ class FlightDetailsScheduleTableViewCell: UITableViewCell {
         } else {
             arrivalValueLabel.text = nil
         }
-        
-        //flightTimeValueLabel.text = Period.timeInterval(stringDate: flight?.flightTime)
+
+        flightTimeValueLabel.text = Period.periodToDisplay(interval: Int(data.flightTime))
     }
 }

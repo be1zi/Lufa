@@ -71,4 +71,48 @@ class Period {
         
         return TimeInterval(exactly: time)
     }
+    
+    static func periodFromInterval(interval: Int) -> (hours: Int?, minutes: Int?, seconds: Int?) {
+        
+        var time = interval
+        var hours = 0, minutes = 0, seconds = 0
+        var returnHours, returnMinutes, returnSeconds: Int?
+        
+        time /= 1000
+        
+        hours = time / (60 * 60)
+        time -= hours * 60 * 60
+        
+        minutes = time / 60
+        time -= minutes * 60
+        
+        seconds = time
+        
+        if hours > 0 { returnHours = hours }
+        if minutes > 0 { returnMinutes = minutes }
+        if seconds > 0 { returnSeconds = seconds }
+        
+        return (returnHours, returnMinutes, returnSeconds)
+    }
+    
+    static func periodToDisplay(interval: Int) -> String? {
+        
+        let (hours, minutes, seconds) = periodFromInterval(interval: interval)
+        
+        if hours == nil, minutes == nil, seconds == nil { return nil }
+        
+        var result = ""
+        var components = [String]()
+        
+        if let h = hours {components.append("\(h)h") }
+        if let m = minutes { components.append("\(m)m") }
+        if let s = seconds { components.append("\(s)s") }
+        
+        components.forEach { element in
+            result += element
+            if components.firstIndex(of: element) != components.count - 1 { result += " : "}
+        }
+        
+        return result
+    }
 }
