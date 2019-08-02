@@ -68,6 +68,8 @@ class AuthorizationViewController: BaseViewController {
             RemoteRepositoryContext.sharedInstance.authenticate(withCode: code, success: { _ in
                 RemoteRepositoryContext.sharedInstance.authorizeOpen(withSuccess: { _ in
                     
+                    let forced = LanguageManager.sharedInstance.languageChanged
+                    
                     InitCompoundSynchroManager.sharedInstance.synchronizeWithCompletion(completion: { _, _ in
                         self.progressPresenter?.hideProgress()
                         
@@ -75,7 +77,7 @@ class AuthorizationViewController: BaseViewController {
                             AppDelegate.sharedInstance.windowController?.presentMenuController()
                         //}
                         
-                    }, forced: false)
+                    }, forced: forced)
                     
                 }, andFailure: { error in
                     self.progressPresenter?.hideProgress()
