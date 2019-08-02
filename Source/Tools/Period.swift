@@ -115,4 +115,23 @@ class Period {
         
         return result
     }
+    
+    static func remainingTimeToDate(date: Date?) -> (days: Int?, minutes: Int?, hours: Int?, seconds: Int?) {
+        
+        guard let date = date else {
+            return (nil, nil, nil, nil)
+        }
+        
+        let currentDate = Date.init()
+        let calendar = Calendar.current
+        let currentComponents = calendar.dateComponents([.hour, .minute, .second, .day], from: currentDate)
+        let comparisionComponents = calendar.dateComponents([.hour, .minute, .second, .day], from: date)
+        
+        let comparisionDayDifference = calendar.dateComponents([.day, .hour, .minute, .second], from: comparisionComponents, to: currentComponents)
+        
+        return (comparisionDayDifference.day,
+                comparisionDayDifference.hour,
+                comparisionDayDifference.minute,
+                comparisionDayDifference.second)
+    }
 }

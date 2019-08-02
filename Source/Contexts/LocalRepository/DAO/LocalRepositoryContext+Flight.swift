@@ -170,6 +170,15 @@ extension LocalRepositoryContext {
         return getFlights(dateFrom: Date.init(), dateTo: Date.init())
     }
     
+    func getClosestFlight() -> Flight? {
+        
+        guard let request = getAllFlights() else {
+            return nil
+        }
+        
+        return executeFetch(fetchRequest: request).first?.unmanagedCopy() as? Flight
+    }
+    
     func getElseInWeekFlights() -> NSFetchRequest<NSFetchRequestResult>? {
         
         guard let tomorrow = Date().dayAfter?.startDay(), let sunday = Date().endOfWeek?.endDate() else {

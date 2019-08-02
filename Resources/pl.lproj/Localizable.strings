@@ -70,6 +70,7 @@
 
 //Home
 "home.welcome.title" = "Witaj ponownie";
+"home.anotherFlight.title" = "Masz kolejny lot za:";
 "home.flights.number1.title" = "Masz dziś %@ lotów";
 "home.flights.number2.title" = "Masz dziś %@ loty";
 "home.flights.number3.title" = "Masz dziś %@ lot";

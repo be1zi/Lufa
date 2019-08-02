@@ -22,10 +22,15 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var anotherFlightLabel: UILabel!
+    @IBOutlet weak var counterLabel: UILabel!
     
     var employee: Employee?
+    var timer = Timer()
+    
     var todaysFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     var elseFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var days = 0, hours = 0, minutes = 0, seconds = 0
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -34,6 +39,7 @@ class HomeViewController: BaseViewController {
         registerCells()
         loadData()
         setData()
+        createTimer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +56,7 @@ class HomeViewController: BaseViewController {
     
     override func loadTranslations() {
         welcomeLabel.text = "home.welcome.title".localized()
+        anotherFlightLabel.text = "home.anotherFlight.title".localized()
     }
     
     func registerCells() {
@@ -109,6 +116,51 @@ class HomeViewController: BaseViewController {
         if let employee = employee {
             nameLabel.text = employee.fullName()
         }
+    }
+    
+    // MARK: Timer
+    func createTimer() {
+        getTimeInterval()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter), userInfo: nil, repeats: true)
+    }
+    
+    func getTimeInterval() {
+        let flight = LocalRepositoryContext.sharedInstance.getClosestFlight()
+        
+        var d, h, m, s: Int?
+        
+        (d, h, m, s) = Period.remainingTimeToDate(date: flight?.scheduledTimeOfDeparture)
+        
+        days = d ?? 0
+        hours = h ?? 0
+        minutes = m ?? 0
+        seconds = s ?? 0
+    }
+    
+    @objc func counter() {
+        
+        counterLabel.text = String.countdownText(days: days, hours: hours, minutes: minutes, seconds: seconds)
+    
+        seconds -= 1
+        
+        if seconds == -1 && minutes > 0 {
+            seconds = 59
+            minutes -= 1
+        }
+        
+        if minutes == -1 && hours > 0 {
+            minutes = 59
+            hours -= 1
+        }
+        
+        if hours == -1 && days > 0 {
+            hours = 23
+            days -= 1
+        }
+        
+        if days == 0 && hours == 0 && minutes == 0 && seconds == 0 { timer.invalidate() }
+        
     }
 }
 

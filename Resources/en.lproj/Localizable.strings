@@ -70,6 +70,7 @@
 
 //Home
 "home.welcome.title" = "Welcome back";
+"home.anotherFlight.title" = "You have another flight for:";
 "home.flights.number1.title" = "You have %@ flights today";
 "home.flights.number2.title" = "You have %@ flights today";
 "home.flights.number3.title" = "You have %@ flight today";

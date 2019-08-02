@@ -24,4 +24,28 @@ extension String {
         
         return bundle.localizedString(forKey: self, value: nil, table: nil)
     }
+    
+    static func countdownText(days: Int?, hours: Int?, minutes: Int?, seconds: Int?) -> String? {
+        
+        var components = [Int]()
+        var result = ""
+        
+        if let d = days, d > 0 { components.append(d) }
+        if let h = hours { components.append(h)}
+        if let m = minutes { components.append(m) }
+        if let s = seconds { components.append(s) }
+        
+        components.forEach { element in
+            
+            if element < 10 {
+                result.append("0\(element)")
+            } else {
+                result.append("\(element)")
+            }
+            
+            if components.firstIndex(of: element) != components.count - 1 { result += " : " }
+        }
+        
+        return result
+    }
 }
