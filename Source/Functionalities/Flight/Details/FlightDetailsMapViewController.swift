@@ -47,29 +47,32 @@ class FlightDetailsMapViewController: BaseViewController {
             return
         }
         
-        let camera = GMSCameraPosition.camera(withLatitude: from.latitude, longitude: from.longitude, zoom: 5)
+        let map = configureMap(cityFrom: from, cityTo: to)
+        
+        mapView.addSubview(map)
+    }
+    
+    func configureMap(cityFrom: City, cityTo: City) -> GMSMapView {
+        
+        let camera = GMSCameraPosition.camera(withLatitude: cityFrom.latitude, longitude: cityFrom.longitude, zoom: 5)
         let map = GMSMapView.map(withFrame: UIScreen.main.bounds, camera: camera)
         map.isMyLocationEnabled = true
         map.isMyLocationEnabled = true
         
-        let locationFrom = CLLocationCoordinate2D(latitude: from.latitude, longitude: from.longitude)
-        let markerFrom = GMSMarker(position: locationFrom)
-        markerFrom.title = "Departure"
-        markerFrom.icon = UIImage(named: "markerA")
-        markerFrom.setIconSize(scaledToSize: CGSize(width: 50, height: 50))
+        let locationA = CLLocationCoordinate2D(latitude: cityFrom.latitude, longitude: cityFrom.longitude)
+        let markerFrom = GMSMarker(name: "Departure", iconName: "markerA", location: locationA)
         markerFrom.map = map
-
-        let locationTo = CLLocationCoordinate2D(latitude: to.latitude, longitude: to.longitude)
-        let markerTo = GMSMarker(position: locationTo)
-        markerTo.title = "Arrival"
-        markerTo.icon = UIImage(named: "markerB")
-        markerTo.setIconSize(scaledToSize: CGSize(width: 50, height: 50))
+        
+        let locationB = CLLocationCoordinate2D(latitude: cityTo.latitude, longitude: cityTo.longitude)
+        let markerTo = GMSMarker(name: "Arrival", iconName: "markerB", location: locationB)
         markerTo.map = map
         
         let bounds = GMSCoordinateBounds(coordinate: markerFrom.position, coordinate: markerTo.position)
         let update = GMSCameraUpdate.fit(bounds, withPadding: 100)
-        map.animate(with: update)
         
-        mapView.addSubview(map)
+        map.animate(with: update)
+        map.addPathBetweenPoints(pointA: locationA, pointB: locationB)
+        
+        return map
     }
 }

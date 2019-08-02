@@ -40,6 +40,7 @@
 		3D38138522F01990006B24BD /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38138422F01990006B24BD /* DatePicker.swift */; };
 		3D43A5F022D8A2DD00EA33CF /* Array+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */; };
 		3D4CA2C522F4135C002E2E27 /* Date+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */; };
+		3D4CA2C722F42635002E2E27 /* GMSMapView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CA2C622F42635002E2E27 /* GMSMapView+Lufa.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
 		3D51F3B422D7443A006F575A /* CustomeCompoundSynchroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */; };
 		3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D64623322BA3A1D009691FA /* UIView+Lufa.swift */; };
@@ -195,6 +196,7 @@
 		3D38138422F01990006B24BD /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Lufa.swift"; sourceTree = "<group>"; };
 		3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Lufa.swift"; sourceTree = "<group>"; };
+		3D4CA2C622F42635002E2E27 /* GMSMapView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Lufa.swift"; sourceTree = "<group>"; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
 		3D51F3B322D7443A006F575A /* CustomeCompoundSynchroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCompoundSynchroManager.swift; sourceTree = "<group>"; };
 		3D64623322BA3A1D009691FA /* UIView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Lufa.swift"; sourceTree = "<group>"; };
@@ -765,6 +767,7 @@
 		3DB5F9B122CB83C800D4C007 /* Google */ = {
 			isa = PBXGroup;
 			children = (
+				3D4CA2C622F42635002E2E27 /* GMSMapView+Lufa.swift */,
 				3DB5F9B222CB83EE00D4C007 /* GMSMarker+Lufa.swift */,
 			);
 			path = Google;
@@ -1338,6 +1341,7 @@
 				3D25D58322B77F3500881E17 /* CitySynchroManager.swift in Sources */,
 				3DF18B0822C5FF8B00AD10F5 /* RemoteRepositoryContext+Airlines.swift in Sources */,
 				3DA3E7CC22D4C47B0089425E /* SynchronizationFactory.swift in Sources */,
+				3D4CA2C722F42635002E2E27 /* GMSMapView+Lufa.swift in Sources */,
 				3DA3E7C822D4C42C0089425E /* SynchronizationTableViewCell.swift in Sources */,
 				3DF18B0A22C600CD00AD10F5 /* AirlineSynchroManager.swift in Sources */,
 				3DD5697A22AFA10D00E43B38 /* FlightTableViewCell.swift in Sources */,
