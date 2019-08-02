@@ -109,8 +109,6 @@ class HomeViewController: BaseViewController {
         if let employee = employee {
             nameLabel.text = employee.fullName()
         }
-        
-        tableView.reloadData()
     }
 }
 
@@ -124,9 +122,9 @@ extension HomeViewController: UITableViewDelegate {
         
         switch indexPath.row {
         case HomeCellType.Todays.rawValue:
-            return 310
+            return 350
         case HomeCellType.Else.rawValue:
-            return 310
+            return 350
         default:
             return UITableView.automaticDimension
         }
@@ -172,13 +170,13 @@ extension HomeViewController: UITableViewDataSource {
         case HomeCellType.Todays.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell,
                 let flights = objects {
-                cell.setData(withFlights: flights, andDelegate: self)
+                cell.setData(withFlights: flights, andDelegate: self, andType: .Todays)
                 return cell
             }
         case HomeCellType.Else.rawValue:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "HomeFlightsTableViewCell", for: indexPath) as? HomeFlightsTableViewCell,
                 let flights = objects {
-                cell.setData(withFlights: flights, andDelegate: self)
+                cell.setData(withFlights: flights, andDelegate: self, andType: .Else)
                 return cell
             }
         default:
@@ -191,15 +189,25 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: HomeFlightsTableViewDelegate {
     
-    func collectionViewElementSelected(atIndex index: IndexPath) {
-       
-//        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
-//
-//        if let vc = vc, let object = fetchedResultsController?.object(at: index) as? Flight {
-//            vc.flight = object
-//
-//            self.navigationController?.pushViewController(vc, animated: true)
-//        }
+    func collectionViewElementSelected(atIndex index: IndexPath, type: HomeCellType) {
+
+        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
+        var objc: Flight?
+        
+        switch type {
+        case .Todays:
+            objc = todaysFetchedResultsController?.object(at: index) as? Flight
+        case .Else:
+            objc = elseFetchedResultsController?.object(at: index) as? Flight
+        default:
+            objc = nil
+        }
+        
+        if let vc = vc, let object = objc {
+            vc.flight = object
+
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

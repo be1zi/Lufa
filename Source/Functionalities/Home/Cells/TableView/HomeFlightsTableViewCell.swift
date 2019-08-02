@@ -11,7 +11,7 @@ import UIKit
 
 protocol HomeFlightsTableViewDelegate {
     
-    func collectionViewElementSelected(atIndex index: IndexPath)
+    func collectionViewElementSelected(atIndex index: IndexPath, type: HomeCellType)
 }
 
 class HomeFlightsTableViewCell: UITableViewCell {
@@ -21,6 +21,7 @@ class HomeFlightsTableViewCell: UITableViewCell {
     
     var flights: [Flight] = []
     var delegate: HomeFlightsTableViewDelegate?
+    var type: HomeCellType?
     
     // MARK: Lifecycle
     override func awakeFromNib() {
@@ -34,9 +35,10 @@ class HomeFlightsTableViewCell: UITableViewCell {
     }
     
     // MARK: Data
-    func setData(withFlights: [Flight], andDelegate: HomeFlightsTableViewDelegate) {
+    func setData(withFlights: [Flight], andDelegate: HomeFlightsTableViewDelegate, andType: HomeCellType) {
         flights = withFlights
         delegate = andDelegate
+        type = andType
         
         collectionView.reloadData()
     }
@@ -46,8 +48,8 @@ extension HomeFlightsTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let delegate = delegate {
-            delegate.collectionViewElementSelected(atIndex: indexPath)
+        if let delegate = delegate, let type = type {
+            delegate.collectionViewElementSelected(atIndex: indexPath, type: type)
         }
     }
 }
