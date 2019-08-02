@@ -15,6 +15,7 @@ protocol SearchDelegate {
     func searchControllerNeedsFetchRequestWithText(text: String) -> NSFetchRequest<NSFetchRequestResult>?
     func searchControllerNeedsName(forObject: NSManagedObject) -> String?
     func searchControllerNeedsSetAsViewed(objectKey: Any?)
+    func searchControllerNeedShowDetails(forObject: NSManagedObject) -> BaseViewController?
 }
 
 enum TextFieldState {
@@ -116,7 +117,16 @@ class SearchViewController: BaseViewController {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let object = fetchedResultsController?.object(at: indexPath) as? NSManagedObject else {
+            return
+        }
+        
         delegate?.searchControllerNeedsSetAsViewed(objectKey: fetchedResultsController?.object(at: indexPath))
+        
+        if let vc = delegate?.searchControllerNeedShowDetails(forObject: object.unmanagedCopy()) {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
@@ -133,7 +143,7 @@ extension SearchViewController: UITableViewDataSource {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as? SearchTableViewCell
-        let name = delegate.searchControllerNeedsName(forObject: object) ?? ""
+        let name = delegate.searchControllerNeedsName(forObject: object.unmanagedCopy()) ?? ""
         let typedText = searchTextField.text ?? ""
         let type: SearchImageType = typedText.count > 0 ? .search : .clock
         

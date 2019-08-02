@@ -146,7 +146,7 @@ extension FlightListViewController: UITableViewDataSource {
 }
 
 extension FlightListViewController: SearchDelegate {
-    
+
     func searchControllerNeedsFetchRequestForLastViewedData() -> NSFetchRequest<NSFetchRequestResult>? {
         return LocalRepositoryContext.sharedInstance.requestForLastViewedFlights()
     }
@@ -168,6 +168,18 @@ extension FlightListViewController: SearchDelegate {
         if let key = objectKey as? String {
             LocalRepositoryContext.sharedInstance.setFlightAsViewed(key: key)
         }
+    }
+    
+    func searchControllerNeedShowDetails(forObject: NSManagedObject) -> BaseViewController? {
+        
+        let vc = UIStoryboard.init(name: "FlightDetails", bundle: nil).instantiateInitialViewController() as? FlightDetailsViewController
+        
+        if let vc = vc, let object = forObject as? Flight {
+            vc.flight = object
+            return vc
+        }
+        
+        return nil
     }
 }
 
