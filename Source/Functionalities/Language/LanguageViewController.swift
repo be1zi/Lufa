@@ -38,7 +38,7 @@ class LanguageViewController: BaseViewController {
     
     private func setStyle() {
         
-        if LanguageManager.sharedInstance.selected {
+        if LanguageManager.sharedInstance.selectedBefore() {
             
             let selectedPL = LanguageManager.sharedInstance.currentLanguage == LANGUAGE_PL
             

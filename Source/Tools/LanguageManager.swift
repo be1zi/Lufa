@@ -15,16 +15,20 @@ class LanguageManager {
     
     static var sharedInstance = LanguageManager()
     
-    var selected = false
+    var languageChanged = false
     
     var currentLanguage: String {
         set {
             UserDefaults.standard.set(newValue, forKey: "currentLanguage")
             UserDefaults.standard.synchronize()
-            selected = true
+            languageChanged = true
         }
         get {
             return UserDefaults.standard.object(forKey: "currentLanguage") as? String ?? LANGUAGE_EN
         }
+    }
+    
+    func selectedBefore() -> Bool {
+        return UserDefaults.standard.object(forKey: "currentLanguage") as? String != nil
     }
 }

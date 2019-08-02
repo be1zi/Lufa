@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func configureUserInterface() {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        windowController?.presentLanguageController()
+        LanguageManager.sharedInstance.selectedBefore() ? windowController?.presentAuthorizationController() : windowController?.presentLanguageController()
         window?.makeKeyAndVisible()
     }
     
