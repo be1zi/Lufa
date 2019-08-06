@@ -32,6 +32,8 @@ class HomeFlightsTableViewCell: UITableViewCell {
         
         collectionView.register(UINib(nibName: "HomeFlightCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: "HomeFlightCollectionViewCell")
+        collectionView.register(UINib(nibName: "HomeNoDataCollectionViewCell", bundle: nil),
+                                forCellWithReuseIdentifier: "HomeNoDataCollectionViewCell")
     }
     
     // MARK: Data
@@ -48,7 +50,7 @@ extension HomeFlightsTableViewCell: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let delegate = delegate, let type = type {
+        if let delegate = delegate, let type = type, flights.count > 0 {
             delegate.collectionViewElementSelected(atIndex: indexPath, type: type)
         }
     }
@@ -57,19 +59,26 @@ extension HomeFlightsTableViewCell: UICollectionViewDelegate {
 extension HomeFlightsTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return flights.count
+        return flights.count > 0 ? flights.count : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeFlightCollectionViewCell", for: indexPath) as? HomeFlightCollectionViewCell
-        
-        guard let collectionCell = cell else {
-            return UICollectionViewCell()
+        switch flights.count {
+        case (let x) where x > 0:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeFlightCollectionViewCell", for: indexPath) as? HomeFlightCollectionViewCell
+            
+            guard let collectionCell = cell else {
+                return UICollectionViewCell()
+            }
+            
+            collectionCell.loadWithData(flight: flights[indexPath.row])
+            
+            return collectionCell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeNoDataCollectionViewCell", for: indexPath)
+            
+            return cell
         }
-        
-        collectionCell.loadWithData(flight: flights[indexPath.row])
-        
-        return collectionCell
     }
 }

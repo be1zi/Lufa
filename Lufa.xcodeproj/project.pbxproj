@@ -39,6 +39,8 @@
 		3D34DC882253536700590FD2 /* ProgressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D34DC872253536700590FD2 /* ProgressPresenter.swift */; };
 		3D38138522F01990006B24BD /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D38138422F01990006B24BD /* DatePicker.swift */; };
 		3D43A5F022D8A2DD00EA33CF /* Array+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */; };
+		3D4BFDE022F96EE1003E7E41 /* HomeNoDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4BFDDF22F96EE1003E7E41 /* HomeNoDataCollectionViewCell.swift */; };
+		3D4BFDE222F96EFF003E7E41 /* HomeNoDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D4BFDE122F96EFF003E7E41 /* HomeNoDataCollectionViewCell.xib */; };
 		3D4CA2C522F4135C002E2E27 /* Date+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */; };
 		3D4CA2C722F42635002E2E27 /* GMSMapView+Lufa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4CA2C622F42635002E2E27 /* GMSMapView+Lufa.swift */; };
 		3D50E55C22C9E3370070AB6E /* MenuFlightItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */; };
@@ -195,6 +197,8 @@
 		3D34DC872253536700590FD2 /* ProgressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressPresenter.swift; path = Source/UI/UIKit/Button/ProgressPresenter.swift; sourceTree = SOURCE_ROOT; };
 		3D38138422F01990006B24BD /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		3D43A5EF22D8A2DD00EA33CF /* Array+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Lufa.swift"; sourceTree = "<group>"; };
+		3D4BFDDF22F96EE1003E7E41 /* HomeNoDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoDataCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D4BFDE122F96EFF003E7E41 /* HomeNoDataCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoDataCollectionViewCell.xib; sourceTree = "<group>"; };
 		3D4CA2C422F4135C002E2E27 /* Date+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Lufa.swift"; sourceTree = "<group>"; };
 		3D4CA2C622F42635002E2E27 /* GMSMapView+Lufa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GMSMapView+Lufa.swift"; sourceTree = "<group>"; };
 		3D50E55B22C9E3370070AB6E /* MenuFlightItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFlightItem.swift; sourceTree = "<group>"; };
@@ -936,6 +940,8 @@
 			children = (
 				3DAD82A222B28CF200131683 /* HomeFlightCollectionViewCell.swift */,
 				3DAD82A522B28D2700131683 /* HomeFlightCollectionViewCell.xib */,
+				3D4BFDDF22F96EE1003E7E41 /* HomeNoDataCollectionViewCell.swift */,
+				3D4BFDE122F96EFF003E7E41 /* HomeNoDataCollectionViewCell.xib */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -1142,6 +1148,7 @@
 				3DA3E7CA22D4C4530089425E /* SynchronizationTableViewCell.xib in Resources */,
 				3DD5697B22AFA10D00E43B38 /* FlightTableViewCell.xib in Resources */,
 				3DD5696E22AF920700E43B38 /* Profile.storyboard in Resources */,
+				3D4BFDE222F96EFF003E7E41 /* HomeNoDataCollectionViewCell.xib in Resources */,
 				3DA6E98C22560AF600015999 /* Localizable.strings in Resources */,
 				3D25D59D22B79AA200881E17 /* FlightDetailsScheduleTableViewCell.xib in Resources */,
 				3DABA3F6223B90E100469FD1 /* Launch.storyboard in Resources */,
@@ -1295,6 +1302,7 @@
 				3DDDDB39224B8F54006BFCD1 /* RemoteRepositoryContext.swift in Sources */,
 				3DA3E7B622D462730089425E /* EmployeePermission+CoreDataClass.swift in Sources */,
 				3D64623422BA3A1D009691FA /* UIView+Lufa.swift in Sources */,
+				3D4BFDE022F96EE1003E7E41 /* HomeNoDataCollectionViewCell.swift in Sources */,
 				3DABA3EB223B90DE00469FD1 /* LaunchViewController.swift in Sources */,
 				3DB5F9B322CB83EE00D4C007 /* GMSMarker+Lufa.swift in Sources */,
 				3DE0EE4E229D211E009AD5D8 /* CrewMember+CoreDataClass.swift in Sources */,

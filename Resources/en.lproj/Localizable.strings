@@ -34,6 +34,7 @@
 "all.title" = "All";
 "show.title" = "Show";
 "clear.title" = "Clear";
+"noData.title" = "No data";
 
 //Menu
 "menu.item.flight.title" = "Flights";
