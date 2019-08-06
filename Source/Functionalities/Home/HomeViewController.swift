@@ -136,6 +136,11 @@ class HomeViewController: BaseViewController {
         hours = h ?? 0
         minutes = m ?? 0
         seconds = s ?? 0
+        
+        days = abs(days)
+        hours = abs(hours)
+        minutes = abs(minutes)
+        seconds = abs(seconds)
     }
     
     @objc func counter() {
